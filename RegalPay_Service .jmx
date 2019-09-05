@@ -256,7 +256,7 @@ vars.put(&apos;encodedstring&apos;,encodedstring);
 //vars.put(“decodedstring”,decodedstring);</stringProp>
       </JSR223PreProcessor>
       <hashTree/>
-      <ThreadGroup guiclass="ThreadGroupGui" testclass="ThreadGroup" testname="Company" enabled="true">
+      <ThreadGroup guiclass="ThreadGroupGui" testclass="ThreadGroup" testname="Company" enabled="false">
         <stringProp name="ThreadGroup.on_sample_error">continue</stringProp>
         <elementProp name="ThreadGroup.main_controller" elementType="LoopController" guiclass="LoopControlPanel" testclass="LoopController" testname="Loop Controller" enabled="true">
           <boolProp name="LoopController.continue_forever">false</boolProp>
@@ -754,46 +754,24 @@ vars.put(&apos;encodedstring&apos;,encodedstring);
                 <boolProp name="HTTPArgument.always_encode">false</boolProp>
                 <stringProp name="Argument.value">[&#xd;
             {&#xd;
-              &quot;ERPBatchNumber&quot;: &quot;Batch001&quot;,&#xd;
-              &quot;PaymentNumber&quot;: &quot;Pay001&quot;,&#xd;
-              &quot;paymentDate&quot;: &quot;2019-08-12&quot;,&#xd;
-              &quot;PaymentDescription&quot;: &quot;paymentdescription&quot;,&#xd;
+              &quot;ERPBatchNumber&quot;: &quot;Batch_${__time()}&quot;,&#xd;
+              &quot;PaymentNumber&quot;: &quot;${Payment_number}&quot;,&#xd;
+              &quot;paymentDate&quot;: &quot;${__timeShift(yyyy-MM-dd,,,,)}&quot;,&#xd;
+              &quot;PaymentDescription&quot;: &quot;payment_description&quot;,&#xd;
               &quot;PaymentMethod&quot;: 0,&#xd;
-              &quot;VendorNumber&quot;: &quot;ven001&quot;,&#xd;
-              &quot;AddressCode&quot;: &quot;address001&quot;,&#xd;
-              &quot;CheckNumber&quot;: &quot;check001&quot;,&#xd;
-              &quot;AccountCode&quot;: &quot;acc001&quot;,&#xd;
-              &quot;Currency&quot;: &quot;INR&quot;,&#xd;
-              &quot;InvoiceNumber&quot;: &quot;INV001&quot;,&#xd;
-              &quot;Date&quot;: &quot;2019-08-13&quot;,&#xd;
-              &quot;DueDate&quot;: &quot;2019-08-13&quot;,&#xd;
+              &quot;VendorNumber&quot;: &quot;Vendor_${Vendor_number}&quot;,&#xd;
+              &quot;AddressCode&quot;: &quot;address_${address_code}&quot;,&#xd;
+              &quot;CheckNumber&quot;: &quot;check_${Check_number}&quot;,&#xd;
+              &quot;AccountCode&quot;: &quot;account_${account_code}&quot;,&#xd;
+              &quot;Currency&quot;: &quot;${American_Cur}&quot;,&#xd;
+              &quot;InvoiceNumber&quot;: &quot;INVOICE_${Invoice number}&quot;,&#xd;
+              &quot;Date&quot;: &quot;${__timeShift(yyyy-MM-dd,,P1D,, c)}&quot;,&#xd;
+              &quot;DueDate&quot;: &quot;${__timeShift(yyyy-MM-dd,,P1D,, c)}&quot;,&#xd;
               &quot;PONumber&quot;: &quot;PO123&quot;,&#xd;
-              &quot;VoucherNumber&quot;: &quot;VO001&quot;,&#xd;
-              &quot;GrossAmount&quot;: 90.22,&#xd;
-              &quot;DiscountAmount&quot;: 120.22,&#xd;
-              &quot;NetAmount&quot;: 100.22,&#xd;
-              &quot;InvoiceDescription&quot;: &quot;invoicedescription&quot;,&#xd;
-              &quot;OriginalAmount&quot;: &quot;0.00&quot;&#xd;
-            },&#xd;
-            {&#xd;
-              &quot;ERPBatchNumber&quot;: &quot;Batch001&quot;,&#xd;
-              &quot;PaymentNumber&quot;: &quot;Pay002&quot;,&#xd;
-              &quot;paymentDate&quot;: &quot;2019-08-12&quot;,&#xd;
-              &quot;PaymentDescription&quot;: &quot;paymentdescription&quot;,&#xd;
-              &quot;PaymentMethod&quot;: 0,&#xd;
-              &quot;VendorNumber&quot;: &quot;ven001&quot;,&#xd;
-              &quot;AddressCode&quot;: &quot;address001&quot;,&#xd;
-              &quot;CheckNumber&quot;: &quot;check001&quot;,&#xd;
-              &quot;AccountCode&quot;: &quot;acc001&quot;,&#xd;
-              &quot;Currency&quot;: &quot;INR&quot;,&#xd;
-              &quot;InvoiceNumber&quot;: &quot;INV002&quot;,&#xd;
-              &quot;Date&quot;: &quot;2019-08-13&quot;,&#xd;
-              &quot;DueDate&quot;: &quot;2019-08-13&quot;,&#xd;
-              &quot;PONumber&quot;: &quot;PO123&quot;,&#xd;
-              &quot;VoucherNumber&quot;: &quot;VO001&quot;,&#xd;
-              &quot;GrossAmount&quot;: 90.22,&#xd;
-              &quot;DiscountAmount&quot;: 120.22,&#xd;
-              &quot;NetAmount&quot;: 100.22,&#xd;
+              &quot;VoucherNumber&quot;: &quot;VOUCHER_${Voucher_number}&quot;,&#xd;
+              &quot;GrossAmount&quot;: ${__javaScript((Math.random() * (180) - 90).toFixed(2) * 1,)}1,&#xd;
+              &quot;DiscountAmount&quot;:${__javaScript((Math.random() * (180) - 90).toFixed(2) * 1,)}2,&#xd;
+              &quot;NetAmount&quot;:${__javaScript((Math.random() * (180) - 90).toFixed(2) * 1,)}3,&#xd;
               &quot;InvoiceDescription&quot;: &quot;invoicedescription&quot;,&#xd;
               &quot;OriginalAmount&quot;: &quot;0.00&quot;&#xd;
             }&#xd;
@@ -837,6 +815,79 @@ vars.put(&apos;encodedstring&apos;,encodedstring);
               </elementProp>
             </collectionProp>
           </HeaderManager>
+          <hashTree/>
+          <RandomVariableConfig guiclass="TestBeanGUI" testclass="RandomVariableConfig" testname="Random Variable for Payment Number" enabled="true">
+            <stringProp name="variableName">Payment_number</stringProp>
+            <stringProp name="outputFormat"></stringProp>
+            <stringProp name="minimumValue">11111</stringProp>
+            <stringProp name="maximumValue">99999</stringProp>
+            <stringProp name="randomSeed"></stringProp>
+            <boolProp name="perThread">false</boolProp>
+          </RandomVariableConfig>
+          <hashTree/>
+          <RandomVariableConfig guiclass="TestBeanGUI" testclass="RandomVariableConfig" testname="Random Variable for Vendor Number" enabled="true">
+            <stringProp name="variableName">Vendor_number</stringProp>
+            <stringProp name="outputFormat"></stringProp>
+            <stringProp name="minimumValue">111</stringProp>
+            <stringProp name="maximumValue">999</stringProp>
+            <stringProp name="randomSeed"></stringProp>
+            <boolProp name="perThread">false</boolProp>
+          </RandomVariableConfig>
+          <hashTree/>
+          <RandomVariableConfig guiclass="TestBeanGUI" testclass="RandomVariableConfig" testname="Random Variable for Address code" enabled="true">
+            <stringProp name="variableName">address_code</stringProp>
+            <stringProp name="outputFormat"></stringProp>
+            <stringProp name="minimumValue">11</stringProp>
+            <stringProp name="maximumValue">99</stringProp>
+            <stringProp name="randomSeed"></stringProp>
+            <boolProp name="perThread">false</boolProp>
+          </RandomVariableConfig>
+          <hashTree/>
+          <RandomVariableConfig guiclass="TestBeanGUI" testclass="RandomVariableConfig" testname="Random Variable for Check  Number" enabled="true">
+            <stringProp name="variableName">Check_number</stringProp>
+            <stringProp name="outputFormat"></stringProp>
+            <stringProp name="minimumValue">11111</stringProp>
+            <stringProp name="maximumValue">99999</stringProp>
+            <stringProp name="randomSeed"></stringProp>
+            <boolProp name="perThread">false</boolProp>
+          </RandomVariableConfig>
+          <hashTree/>
+          <RandomVariableConfig guiclass="TestBeanGUI" testclass="RandomVariableConfig" testname="Random Variable for Account code" enabled="true">
+            <stringProp name="variableName">account_code</stringProp>
+            <stringProp name="outputFormat"></stringProp>
+            <stringProp name="minimumValue">11</stringProp>
+            <stringProp name="maximumValue">99</stringProp>
+            <stringProp name="randomSeed"></stringProp>
+            <boolProp name="perThread">false</boolProp>
+          </RandomVariableConfig>
+          <hashTree/>
+          <RandomVariableConfig guiclass="TestBeanGUI" testclass="RandomVariableConfig" testname="Random Variable for Invoice Number" enabled="true">
+            <stringProp name="variableName">Invoice number</stringProp>
+            <stringProp name="outputFormat"></stringProp>
+            <stringProp name="minimumValue">111</stringProp>
+            <stringProp name="maximumValue">999</stringProp>
+            <stringProp name="randomSeed"></stringProp>
+            <boolProp name="perThread">false</boolProp>
+          </RandomVariableConfig>
+          <hashTree/>
+          <RandomVariableConfig guiclass="TestBeanGUI" testclass="RandomVariableConfig" testname="Random Variable for Voucher Number" enabled="true">
+            <stringProp name="variableName">Voucher_number</stringProp>
+            <stringProp name="outputFormat"></stringProp>
+            <stringProp name="minimumValue">11</stringProp>
+            <stringProp name="maximumValue">99</stringProp>
+            <stringProp name="randomSeed"></stringProp>
+            <boolProp name="perThread">false</boolProp>
+          </RandomVariableConfig>
+          <hashTree/>
+          <ResponseAssertion guiclass="AssertionGui" testclass="ResponseAssertion" testname="Response Code201" enabled="true">
+            <collectionProp name="Asserion.test_strings">
+              <stringProp name="-1146597534">${Response201}</stringProp>
+            </collectionProp>
+            <stringProp name="Assertion.custom_message"></stringProp>
+            <stringProp name="Assertion.test_field">Assertion.response_code</stringProp>
+            <boolProp name="Assertion.assume_success">true</boolProp>
+            <intProp name="Assertion.test_type">2</intProp>
+          </ResponseAssertion>
           <hashTree/>
         </hashTree>
         <BeanShellPreProcessor guiclass="TestBeanGUI" testclass="BeanShellPreProcessor" testname="Scripts need to be written  for ADD Payments once the Json is proper " enabled="false">
@@ -1700,7 +1751,7 @@ vars.put(&apos;encodedstring&apos;,encodedstring);
           </ResponseAssertion>
           <hashTree/>
         </hashTree>
-        <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="P: Verify user is able to Add Quick Payment to the RegalPay invalid amount field" enabled="true">
+        <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="N: Verify user is able to Add Quick Payment to the RegalPay invalid amount field" enabled="true">
           <boolProp name="HTTPSampler.postBodyRaw">true</boolProp>
           <elementProp name="HTTPsampler.Arguments" elementType="Arguments">
             <collectionProp name="Arguments.arguments">
@@ -1766,7 +1817,7 @@ vars.put(&apos;encodedstring&apos;,encodedstring);
           </ResponseAssertion>
           <hashTree/>
         </hashTree>
-        <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="P: Verify user is able to Add Quick Payment to the RegalPay invalid Payment Method field" enabled="true">
+        <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="N: Verify user is able to Add Quick Payment to the RegalPay invalid Payment Method field" enabled="true">
           <boolProp name="HTTPSampler.postBodyRaw">true</boolProp>
           <elementProp name="HTTPsampler.Arguments" elementType="Arguments">
             <collectionProp name="Arguments.arguments">
@@ -1832,7 +1883,7 @@ vars.put(&apos;encodedstring&apos;,encodedstring);
           </ResponseAssertion>
           <hashTree/>
         </hashTree>
-        <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="P: Verify user is able to Add Quick Payment to the RegalPay invalid Account code field" enabled="true">
+        <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="N: Verify user is able to Add Quick Payment to the RegalPay invalid Account code field" enabled="true">
           <boolProp name="HTTPSampler.postBodyRaw">true</boolProp>
           <elementProp name="HTTPsampler.Arguments" elementType="Arguments">
             <collectionProp name="Arguments.arguments">
@@ -1898,7 +1949,7 @@ vars.put(&apos;encodedstring&apos;,encodedstring);
           </ResponseAssertion>
           <hashTree/>
         </hashTree>
-        <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="P: Verify user is able to Add Quick Payment to the RegalPay invalid  Currency field" enabled="true">
+        <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="N: Verify user is able to Add Quick Payment to the RegalPay invalid  Currency field" enabled="true">
           <boolProp name="HTTPSampler.postBodyRaw">true</boolProp>
           <elementProp name="HTTPsampler.Arguments" elementType="Arguments">
             <collectionProp name="Arguments.arguments">
@@ -1964,7 +2015,7 @@ vars.put(&apos;encodedstring&apos;,encodedstring);
           </ResponseAssertion>
           <hashTree/>
         </hashTree>
-        <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="P: Verify user is able to Add Quick Payment to the RegalPay invalid Payee name field" enabled="true">
+        <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="N: Verify user is able to Add Quick Payment to the RegalPay invalid Payee name field" enabled="true">
           <boolProp name="HTTPSampler.postBodyRaw">true</boolProp>
           <elementProp name="HTTPsampler.Arguments" elementType="Arguments">
             <collectionProp name="Arguments.arguments">
@@ -2030,7 +2081,7 @@ vars.put(&apos;encodedstring&apos;,encodedstring);
           </ResponseAssertion>
           <hashTree/>
         </hashTree>
-        <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="P: Verify user is able to Add Quick Payment to the RegalPay invalid PayeeEmail  field" enabled="true">
+        <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="N: Verify user is able to Add Quick Payment to the RegalPay invalid PayeeEmail  field" enabled="true">
           <boolProp name="HTTPSampler.postBodyRaw">true</boolProp>
           <elementProp name="HTTPsampler.Arguments" elementType="Arguments">
             <collectionProp name="Arguments.arguments">
@@ -2096,7 +2147,7 @@ vars.put(&apos;encodedstring&apos;,encodedstring);
           </ResponseAssertion>
           <hashTree/>
         </hashTree>
-        <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="P: Verify user is able to Add Quick Payment to the RegalPay Null amount field" enabled="true">
+        <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="N: Verify user is able to Add Quick Payment to the RegalPay Null amount field" enabled="true">
           <boolProp name="HTTPSampler.postBodyRaw">true</boolProp>
           <elementProp name="HTTPsampler.Arguments" elementType="Arguments">
             <collectionProp name="Arguments.arguments">
@@ -2162,7 +2213,7 @@ vars.put(&apos;encodedstring&apos;,encodedstring);
           </ResponseAssertion>
           <hashTree/>
         </hashTree>
-        <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="P: Verify user is able to Add Quick Payment to the RegalPay Null Payment Method field" enabled="true">
+        <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="N: Verify user is able to Add Quick Payment to the RegalPay Null Payment Method field" enabled="true">
           <boolProp name="HTTPSampler.postBodyRaw">true</boolProp>
           <elementProp name="HTTPsampler.Arguments" elementType="Arguments">
             <collectionProp name="Arguments.arguments">
@@ -2228,7 +2279,7 @@ vars.put(&apos;encodedstring&apos;,encodedstring);
           </ResponseAssertion>
           <hashTree/>
         </hashTree>
-        <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="P: Verify user is able to Add Quick Payment to the RegalPay Null Account code field" enabled="true">
+        <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="N: Verify user is able to Add Quick Payment to the RegalPay Null Account code field" enabled="true">
           <boolProp name="HTTPSampler.postBodyRaw">true</boolProp>
           <elementProp name="HTTPsampler.Arguments" elementType="Arguments">
             <collectionProp name="Arguments.arguments">
@@ -2294,7 +2345,7 @@ vars.put(&apos;encodedstring&apos;,encodedstring);
           </ResponseAssertion>
           <hashTree/>
         </hashTree>
-        <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="P: Verify user is able to Add Quick Payment to the RegalPay Null Currency field" enabled="true">
+        <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="N: Verify user is able to Add Quick Payment to the RegalPay Null Currency field" enabled="true">
           <boolProp name="HTTPSampler.postBodyRaw">true</boolProp>
           <elementProp name="HTTPsampler.Arguments" elementType="Arguments">
             <collectionProp name="Arguments.arguments">
@@ -2360,7 +2411,7 @@ vars.put(&apos;encodedstring&apos;,encodedstring);
           </ResponseAssertion>
           <hashTree/>
         </hashTree>
-        <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="P: Verify user is able to Add Quick Payment to the RegalPay Null Payee name field" enabled="true">
+        <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="N: Verify user is able to Add Quick Payment to the RegalPay Null Payee name field" enabled="true">
           <boolProp name="HTTPSampler.postBodyRaw">true</boolProp>
           <elementProp name="HTTPsampler.Arguments" elementType="Arguments">
             <collectionProp name="Arguments.arguments">
@@ -2426,7 +2477,7 @@ vars.put(&apos;encodedstring&apos;,encodedstring);
           </ResponseAssertion>
           <hashTree/>
         </hashTree>
-        <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="P: Verify user is able to Add Quick Payment to the RegalPay Null PayeeEmail  field" enabled="true">
+        <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="N: Verify user is able to Add Quick Payment to the RegalPay Null PayeeEmail  field" enabled="true">
           <boolProp name="HTTPSampler.postBodyRaw">true</boolProp>
           <elementProp name="HTTPsampler.Arguments" elementType="Arguments">
             <collectionProp name="Arguments.arguments">
@@ -2492,7 +2543,7 @@ vars.put(&apos;encodedstring&apos;,encodedstring);
           </ResponseAssertion>
           <hashTree/>
         </hashTree>
-        <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="P: Verify user is able to Add Quick Payment to the RegalPay Empty amount field" enabled="true">
+        <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="N: Verify user is able to Add Quick Payment to the RegalPay Empty amount field" enabled="true">
           <boolProp name="HTTPSampler.postBodyRaw">true</boolProp>
           <elementProp name="HTTPsampler.Arguments" elementType="Arguments">
             <collectionProp name="Arguments.arguments">
@@ -2558,7 +2609,7 @@ vars.put(&apos;encodedstring&apos;,encodedstring);
           </ResponseAssertion>
           <hashTree/>
         </hashTree>
-        <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="P: Verify user is able to Add Quick Payment to the RegalPay Empty Payment Method field" enabled="true">
+        <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="N: Verify user is able to Add Quick Payment to the RegalPay Empty Payment Method field" enabled="true">
           <boolProp name="HTTPSampler.postBodyRaw">true</boolProp>
           <elementProp name="HTTPsampler.Arguments" elementType="Arguments">
             <collectionProp name="Arguments.arguments">
@@ -2624,7 +2675,7 @@ vars.put(&apos;encodedstring&apos;,encodedstring);
           </ResponseAssertion>
           <hashTree/>
         </hashTree>
-        <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="P: Verify user is able to Add Quick Payment to the RegalPay Empty Account code field" enabled="true">
+        <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="N: Verify user is able to Add Quick Payment to the RegalPay Empty Account code field" enabled="true">
           <boolProp name="HTTPSampler.postBodyRaw">true</boolProp>
           <elementProp name="HTTPsampler.Arguments" elementType="Arguments">
             <collectionProp name="Arguments.arguments">
@@ -2690,7 +2741,7 @@ vars.put(&apos;encodedstring&apos;,encodedstring);
           </ResponseAssertion>
           <hashTree/>
         </hashTree>
-        <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="P: Verify user is able to Add Quick Payment to the RegalPay Empty Currency field" enabled="true">
+        <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="N: Verify user is able to Add Quick Payment to the RegalPay Empty Currency field" enabled="true">
           <boolProp name="HTTPSampler.postBodyRaw">true</boolProp>
           <elementProp name="HTTPsampler.Arguments" elementType="Arguments">
             <collectionProp name="Arguments.arguments">
@@ -2756,7 +2807,7 @@ vars.put(&apos;encodedstring&apos;,encodedstring);
           </ResponseAssertion>
           <hashTree/>
         </hashTree>
-        <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="P: Verify user is able to Add Quick Payment to the RegalPay Empty Payee name field" enabled="true">
+        <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="N: Verify user is able to Add Quick Payment to the RegalPay Empty Payee name field" enabled="true">
           <boolProp name="HTTPSampler.postBodyRaw">true</boolProp>
           <elementProp name="HTTPsampler.Arguments" elementType="Arguments">
             <collectionProp name="Arguments.arguments">
@@ -2822,7 +2873,7 @@ vars.put(&apos;encodedstring&apos;,encodedstring);
           </ResponseAssertion>
           <hashTree/>
         </hashTree>
-        <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="P: Verify user is able to Add Quick Payment to the RegalPay Empty PayeeEmail  field" enabled="true">
+        <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="N: Verify user is able to Add Quick Payment to the RegalPay Empty PayeeEmail  field" enabled="true">
           <boolProp name="HTTPSampler.postBodyRaw">true</boolProp>
           <elementProp name="HTTPsampler.Arguments" elementType="Arguments">
             <collectionProp name="Arguments.arguments">
@@ -3013,13 +3064,13 @@ vars.put(&apos;encodedstring&apos;,encodedstring);
                 <boolProp name="HTTPArgument.always_encode">false</boolProp>
                 <stringProp name="Argument.value"> [&#xd;
           {&#xd;
-            &quot;vendorName&quot;: &quot;VendorName&quot;,&#xd;
+            &quot;vendorName&quot;: &quot;VendorOne_${__time}_123&quot;,&#xd;
             &quot;paymentMethod&quot;: 0,&#xd;
-            &quot;taxId&quot;: &quot;123456&quot;,&#xd;
+            &quot;taxId&quot;: &quot;${tax_ID}&quot;,&#xd;
             &quot;duns&quot;: &quot;098765&quot;,&#xd;
-            &quot;vendorNumber&quot;: &quot;VEN001&quot;,&#xd;
-            &quot;email&quot;: &quot;vendor@regal-us.com&quot;,&#xd;
-            &quot;contact&quot;: &quot;123456789&quot;,&#xd;
+            &quot;vendorNumber&quot;: &quot;Vendor_${vendor_Number}&quot;,&#xd;
+            &quot;email&quot;:  &quot;${__RandomString(10,qwertyuiopasra)}@mail.com&quot;,&#xd;
+            &quot;contact&quot;: &quot;${contact}&quot;,&#xd;
             &quot;addressLine1&quot;: &quot;IBIS&quot;,&#xd;
             &quot;addressLine2&quot;: &quot;Regus bussiness&quot;,&#xd;
             &quot;addressLine3&quot;: &quot;Nicofi Technologies pvt ltd&quot;,&#xd;
@@ -3030,18 +3081,18 @@ vars.put(&apos;encodedstring&apos;,encodedstring);
             &quot;countryCode&quot;: &quot;IN&quot;,&#xd;
             &quot;country&quot;: &quot;INDIA&quot;&#xd;
           },&#xd;
-            {&#xd;
-            &quot;vendorName&quot;: &quot;VendorName&quot;,&#xd;
+          {&#xd;
+            &quot;vendorName&quot;: &quot;VendorTwo_${__time}_456&quot;,&#xd;
             &quot;paymentMethod&quot;: 0,&#xd;
-            &quot;taxId&quot;: &quot;123456&quot;,&#xd;
-            &quot;duns&quot;: &quot;098765&quot;,&#xd;
-            &quot;vendorNumber&quot;: &quot;VEN0012&quot;,&#xd;
-            &quot;email&quot;: &quot;vendor@regal-us.com&quot;,&#xd;
-            &quot;contact&quot;: &quot;123456789&quot;,&#xd;
-            &quot;addressLine1&quot;: &quot;IBIS&quot;,&#xd;
-            &quot;addressLine2&quot;: &quot;Regus bussiness&quot;,&#xd;
-            &quot;addressLine3&quot;: &quot;Regal Technologies pvt ltd&quot;,&#xd;
-            &quot;addressLine4&quot;: &quot;MG Road&quot;,&#xd;
+            &quot;taxId&quot;: &quot;${tax_ID}&quot;,&#xd;
+            &quot;duns&quot;: &quot;258963&quot;,&#xd;
+            &quot;vendorNumber&quot;: &quot;Vendor_${vendor_Number}&quot;,&#xd;
+            &quot;email&quot;:  &quot;${__RandomString(10,qwertyuiopasra)}@mail.com&quot;,&#xd;
+            &quot;contact&quot;: &quot;${contact}&quot;,&#xd;
+            &quot;addressLine1&quot;: &quot;AMR Tech Park&quot;,&#xd;
+            &quot;addressLine2&quot;: &quot;bussiness Park&quot;,&#xd;
+            &quot;addressLine3&quot;: &quot;Software Technologies pvt ltd&quot;,&#xd;
+            &quot;addressLine4&quot;: &quot;Silk board Road&quot;,&#xd;
             &quot;city&quot;: &quot;Bangalore&quot;,&#xd;
             &quot;state&quot;: &quot;Karnataka&quot;,&#xd;
             &quot;zipCode&quot;: &quot;560001&quot;,&#xd;
@@ -3089,6 +3140,43 @@ vars.put(&apos;encodedstring&apos;,encodedstring);
             </collectionProp>
           </HeaderManager>
           <hashTree/>
+          <ResponseAssertion guiclass="AssertionGui" testclass="ResponseAssertion" testname="Response Code201" enabled="true">
+            <collectionProp name="Asserion.test_strings">
+              <stringProp name="-1146597534">${Response201}</stringProp>
+            </collectionProp>
+            <stringProp name="Assertion.custom_message"></stringProp>
+            <stringProp name="Assertion.test_field">Assertion.response_code</stringProp>
+            <boolProp name="Assertion.assume_success">true</boolProp>
+            <intProp name="Assertion.test_type">2</intProp>
+          </ResponseAssertion>
+          <hashTree/>
+          <RandomVariableConfig guiclass="TestBeanGUI" testclass="RandomVariableConfig" testname="Random Variable for tax ID" enabled="true">
+            <stringProp name="variableName">tax_ID</stringProp>
+            <stringProp name="outputFormat"></stringProp>
+            <stringProp name="minimumValue">11111</stringProp>
+            <stringProp name="maximumValue">99999</stringProp>
+            <stringProp name="randomSeed"></stringProp>
+            <boolProp name="perThread">false</boolProp>
+          </RandomVariableConfig>
+          <hashTree/>
+          <RandomVariableConfig guiclass="TestBeanGUI" testclass="RandomVariableConfig" testname="Random Variable for vendor_Number" enabled="true">
+            <stringProp name="variableName">vendor_Number</stringProp>
+            <stringProp name="outputFormat"></stringProp>
+            <stringProp name="minimumValue">1111111</stringProp>
+            <stringProp name="maximumValue">9999999</stringProp>
+            <stringProp name="randomSeed"></stringProp>
+            <boolProp name="perThread">false</boolProp>
+          </RandomVariableConfig>
+          <hashTree/>
+          <RandomVariableConfig guiclass="TestBeanGUI" testclass="RandomVariableConfig" testname="Random Variable for contact" enabled="true">
+            <stringProp name="variableName">contact</stringProp>
+            <stringProp name="outputFormat"></stringProp>
+            <stringProp name="minimumValue">1111111111</stringProp>
+            <stringProp name="maximumValue">9999999999</stringProp>
+            <stringProp name="randomSeed"></stringProp>
+            <boolProp name="perThread">false</boolProp>
+          </RandomVariableConfig>
+          <hashTree/>
         </hashTree>
         <BeanShellPreProcessor guiclass="TestBeanGUI" testclass="BeanShellPreProcessor" testname="Scripts need to be written  for ADD Vendor data once the Json is proper with known Mandatory fields" enabled="false">
           <boolProp name="resetInterpreter">false</boolProp>
@@ -3112,9 +3200,9 @@ vars.put(&apos;encodedstring&apos;,encodedstring);
                 <boolProp name="HTTPArgument.always_encode">false</boolProp>
                 <stringProp name="Argument.value">[&#xd;
           {&#xd;
-            &quot;vendorNumber&quot;: &quot;Ven001&quot;,&#xd;
+            &quot;vendorNumber&quot;: &quot;Vendor_${__time}_111&quot;,&#xd;
             &quot;bankName&quot;: &quot;ICICI&quot;,&#xd;
-            &quot;accountNumber&quot;: &quot;ACC001&quot;,&#xd;
+            &quot;accountNumber&quot;: &quot;ACC_${account_number}&quot;,&#xd;
             &quot;accountType&quot;: &quot;SB&quot;,&#xd;
             &quot;accountCurrency&quot;: &quot;INR&quot;,&#xd;
             &quot;iban&quot;: &quot;IBAN001&quot;,&#xd;
@@ -3122,30 +3210,19 @@ vars.put(&apos;encodedstring&apos;,encodedstring);
             &quot;domesticRoutingCode&quot;: &quot;09986876&quot;,&#xd;
             &quot;swift&quot;: &quot;654564564&quot;&#xd;
           },&#xd;
-           {&#xd;
-            &quot;vendorNumber&quot;: &quot;Ven002&quot;,&#xd;
-            &quot;bankName&quot;: &quot;ICICI&quot;,&#xd;
-            &quot;accountNumber&quot;: &quot;ACC001&quot;,&#xd;
-            &quot;accountType&quot;: &quot;SB&quot;,&#xd;
-            &quot;accountCurrency&quot;: &quot;INR&quot;,&#xd;
-            &quot;iban&quot;: &quot;IBAN001&quot;,&#xd;
-            &quot;otherAccountNumber&quot;: &quot;132123123&quot;,&#xd;
-            &quot;domesticRoutingCode&quot;: &quot;09986876&quot;,&#xd;
-            &quot;swift&quot;: &quot;654564564&quot;&#xd;
-          },&#xd;
-            {&#xd;
-            &quot;vendorNumber&quot;: &quot;Ven003&quot;,&#xd;
-            &quot;bankName&quot;: &quot;ICICI&quot;,&#xd;
-            &quot;accountNumber&quot;: &quot;ACC001&quot;,&#xd;
-            &quot;accountType&quot;: &quot;SB&quot;,&#xd;
-            &quot;accountCurrency&quot;: &quot;INR&quot;,&#xd;
-            &quot;iban&quot;: &quot;IBAN001&quot;,&#xd;
-            &quot;otherAccountNumber&quot;: &quot;132123123&quot;,&#xd;
-            &quot;domesticRoutingCode&quot;: &quot;09986876&quot;,&#xd;
-            &quot;swift&quot;: &quot;654564564&quot;&#xd;
+&#xd;
+          {&#xd;
+            &quot;vendorNumber&quot;: &quot;Vendor_${__time}_222&quot;,&#xd;
+            &quot;bankName&quot;: &quot;HDFC&quot;,&#xd;
+            &quot;accountNumber&quot;: &quot;ACC_${account_number}_2&quot;,&#xd;
+            &quot;accountType&quot;: &quot;CB&quot;,&#xd;
+            &quot;accountCurrency&quot;: &quot;USD&quot;,&#xd;
+            &quot;iban&quot;: &quot;IBAN002&quot;,&#xd;
+            &quot;otherAccountNumber&quot;: &quot;987987987&quot;,&#xd;
+            &quot;domesticRoutingCode&quot;: &quot;36925814&quot;,&#xd;
+            &quot;swift&quot;: &quot;123456&quot;&#xd;
           }&#xd;
-        ]&#xd;
-                 </stringProp>
+       ]</stringProp>
                 <stringProp name="Argument.metadata">=</stringProp>
               </elementProp>
             </collectionProp>
@@ -3185,6 +3262,25 @@ vars.put(&apos;encodedstring&apos;,encodedstring);
               </elementProp>
             </collectionProp>
           </HeaderManager>
+          <hashTree/>
+          <ResponseAssertion guiclass="AssertionGui" testclass="ResponseAssertion" testname="Response Code200" enabled="true">
+            <collectionProp name="Asserion.test_strings">
+              <stringProp name="-1146597565">${Response200}</stringProp>
+            </collectionProp>
+            <stringProp name="Assertion.custom_message"></stringProp>
+            <stringProp name="Assertion.test_field">Assertion.response_code</stringProp>
+            <boolProp name="Assertion.assume_success">true</boolProp>
+            <intProp name="Assertion.test_type">2</intProp>
+          </ResponseAssertion>
+          <hashTree/>
+          <RandomVariableConfig guiclass="TestBeanGUI" testclass="RandomVariableConfig" testname="Random Variable for account number" enabled="true">
+            <stringProp name="variableName">account_number</stringProp>
+            <stringProp name="outputFormat"></stringProp>
+            <stringProp name="minimumValue">11111</stringProp>
+            <stringProp name="maximumValue">99999</stringProp>
+            <stringProp name="randomSeed"></stringProp>
+            <boolProp name="perThread">false</boolProp>
+          </RandomVariableConfig>
           <hashTree/>
         </hashTree>
         <BeanShellPreProcessor guiclass="TestBeanGUI" testclass="BeanShellPreProcessor" testname="Scripts need to be written  for ADD Vendor&apos;s Bank data once the Json is proper with known Mandatory fields" enabled="false">
@@ -3296,8 +3392,15 @@ vars.put(&apos;encodedstring&apos;,encodedstring);
             </collectionProp>
           </HeaderManager>
           <hashTree/>
+          <JSONPostProcessor guiclass="JSONPostProcessorGui" testclass="JSONPostProcessor" testname="JSON Extractor" enabled="true">
+            <stringProp name="JSONPostProcessor.referenceNames">AddressID</stringProp>
+            <stringProp name="JSONPostProcessor.jsonPathExprs">$..id</stringProp>
+            <stringProp name="JSONPostProcessor.match_numbers">-1</stringProp>
+            <boolProp name="JSONPostProcessor.compute_concat">true</boolProp>
+          </JSONPostProcessor>
+          <hashTree/>
         </hashTree>
-        <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="P: Verify user is able to GET Particular Vendor detail by Invalid Vendor ID" enabled="true">
+        <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="N: Verify user is able to GET Particular Vendor detail by Invalid Vendor ID" enabled="true">
           <elementProp name="HTTPsampler.Arguments" elementType="Arguments" guiclass="HTTPArgumentsPanel" testclass="Arguments" testname="User Defined Variables" enabled="true">
             <collectionProp name="Arguments.arguments"/>
           </elementProp>
@@ -3348,7 +3451,7 @@ vars.put(&apos;encodedstring&apos;,encodedstring);
           </ResponseAssertion>
           <hashTree/>
         </hashTree>
-        <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="P: Verify user is able to GET Particular vendor detail by Null Vendor ID" enabled="true">
+        <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="N: Verify user is able to GET Particular vendor detail by Null Vendor ID" enabled="true">
           <elementProp name="HTTPsampler.Arguments" elementType="Arguments" guiclass="HTTPArgumentsPanel" testclass="Arguments" testname="User Defined Variables" enabled="true">
             <collectionProp name="Arguments.arguments"/>
           </elementProp>
@@ -3399,7 +3502,7 @@ vars.put(&apos;encodedstring&apos;,encodedstring);
           </ResponseAssertion>
           <hashTree/>
         </hashTree>
-        <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="P: Verify user is able to GET Particular vendor detail by Empty Vendor ID" enabled="true">
+        <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="N: Verify user is able to GET Particular vendor detail by Empty Vendor ID" enabled="true">
           <elementProp name="HTTPsampler.Arguments" elementType="Arguments" guiclass="HTTPArgumentsPanel" testclass="Arguments" testname="User Defined Variables" enabled="true">
             <collectionProp name="Arguments.arguments"/>
           </elementProp>
@@ -3463,15 +3566,15 @@ vars.put(&apos;encodedstring&apos;,encodedstring);
             <collectionProp name="Arguments.arguments">
               <elementProp name="" elementType="HTTPArgument">
                 <boolProp name="HTTPArgument.always_encode">false</boolProp>
-                <stringProp name="Argument.value">   {&#xd;
-       &quot;id&quot;: 5,&#xd;
-          &quot;vendorName&quot;: &quot;SLV&quot;,&#xd;
-          &quot;paymentMethod&quot;: &quot;CARD&quot;,&#xd;
-          &quot;taxId&quot;: &quot;123456&quot;,&#xd;
+                <stringProp name="Argument.value">{&#xd;
+       &quot;id&quot;:&quot;${VendorID_1}&quot;,&#xd;
+          &quot;vendorName&quot;: &quot;CoffeeDay_${__time}&quot;,&#xd;
+          &quot;paymentMethod&quot;: &quot;${Card_Payment}&quot;,&#xd;
+          &quot;taxId&quot;: &quot;${tax_ID}&quot;,&#xd;
           &quot;duns&quot;: &quot;123&quot;,&#xd;
-          &quot;vendorNumber&quot;: &quot;QP000000001&quot;,&#xd;
-          &quot;email&quot;: &quot;slv@gmail.com&quot;,&#xd;
-          &quot;contact&quot;: &quot;1234567890&quot;&#xd;
+          &quot;vendorNumber&quot;: &quot;${vendor_Number}&quot;,&#xd;
+          &quot;email&quot;: &quot;${__RandomString(10,qwertyuiopasra)}@mail.com&quot;,&#xd;
+          &quot;contact&quot;: &quot;${contact}&quot;&#xd;
     }  </stringProp>
                 <stringProp name="Argument.metadata">=</stringProp>
               </elementProp>
@@ -3513,6 +3616,43 @@ vars.put(&apos;encodedstring&apos;,encodedstring);
             </collectionProp>
           </HeaderManager>
           <hashTree/>
+          <ResponseAssertion guiclass="AssertionGui" testclass="ResponseAssertion" testname="Response Code200" enabled="true">
+            <collectionProp name="Asserion.test_strings">
+              <stringProp name="-1146597565">${Response200}</stringProp>
+            </collectionProp>
+            <stringProp name="Assertion.custom_message"></stringProp>
+            <stringProp name="Assertion.test_field">Assertion.response_code</stringProp>
+            <boolProp name="Assertion.assume_success">true</boolProp>
+            <intProp name="Assertion.test_type">2</intProp>
+          </ResponseAssertion>
+          <hashTree/>
+          <RandomVariableConfig guiclass="TestBeanGUI" testclass="RandomVariableConfig" testname="Random Variable for tax ID" enabled="true">
+            <stringProp name="variableName">tax_ID</stringProp>
+            <stringProp name="outputFormat"></stringProp>
+            <stringProp name="minimumValue">11111</stringProp>
+            <stringProp name="maximumValue">99999</stringProp>
+            <stringProp name="randomSeed"></stringProp>
+            <boolProp name="perThread">false</boolProp>
+          </RandomVariableConfig>
+          <hashTree/>
+          <RandomVariableConfig guiclass="TestBeanGUI" testclass="RandomVariableConfig" testname="Random Variable for vendor_Number" enabled="true">
+            <stringProp name="variableName">vendor_Number</stringProp>
+            <stringProp name="outputFormat"></stringProp>
+            <stringProp name="minimumValue">1111111</stringProp>
+            <stringProp name="maximumValue">9999999</stringProp>
+            <stringProp name="randomSeed"></stringProp>
+            <boolProp name="perThread">false</boolProp>
+          </RandomVariableConfig>
+          <hashTree/>
+          <RandomVariableConfig guiclass="TestBeanGUI" testclass="RandomVariableConfig" testname="Random Variable for contact" enabled="true">
+            <stringProp name="variableName">contact</stringProp>
+            <stringProp name="outputFormat"></stringProp>
+            <stringProp name="minimumValue">1111111111</stringProp>
+            <stringProp name="maximumValue">9999999999</stringProp>
+            <stringProp name="randomSeed"></stringProp>
+            <boolProp name="perThread">false</boolProp>
+          </RandomVariableConfig>
+          <hashTree/>
         </hashTree>
         <BeanShellPreProcessor guiclass="TestBeanGUI" testclass="BeanShellPreProcessor" testname="Scripts need to be written  for UPDATE Vendor data once the Json is proper with known Mandatory fields" enabled="false">
           <boolProp name="resetInterpreter">false</boolProp>
@@ -3535,10 +3675,10 @@ vars.put(&apos;encodedstring&apos;,encodedstring);
               <elementProp name="" elementType="HTTPArgument">
                 <boolProp name="HTTPArgument.always_encode">false</boolProp>
                 <stringProp name="Argument.value">  {&#xd;
-      &quot;id&quot;: 7,&#xd;
-      &quot;addressLine1&quot;: &quot;IBIS&quot;,&#xd;
-      &quot;addressLine2&quot;: &quot;Regus bussiness&quot;,&#xd;
-      &quot;addressLine3&quot;: &quot;Regal Technologies pvt ltd&quot;,&#xd;
+       &quot;id&quot;: ${AddressID_3},&#xd;
+      &quot;addressLine1&quot;: &quot;${__RandomString(10,qwertyuiopasra)}&quot;,&#xd;
+      &quot;addressLine2&quot;: &quot;${__RandomString(10,qwertyuiopasra)}&quot;,&#xd;
+      &quot;addressLine3&quot;: &quot;Nicofi Technologies pvt ltd&quot;,&#xd;
       &quot;addressLine4&quot;: &quot;Hosur Road&quot;,&#xd;
       &quot;city&quot;: &quot;Bangalore&quot;,&#xd;
       &quot;state&quot;: &quot;Karnataka&quot;,&#xd;
@@ -3585,6 +3725,16 @@ vars.put(&apos;encodedstring&apos;,encodedstring);
               </elementProp>
             </collectionProp>
           </HeaderManager>
+          <hashTree/>
+          <ResponseAssertion guiclass="AssertionGui" testclass="ResponseAssertion" testname="Response Code200" enabled="true">
+            <collectionProp name="Asserion.test_strings">
+              <stringProp name="-1146597565">${Response200}</stringProp>
+            </collectionProp>
+            <stringProp name="Assertion.custom_message"></stringProp>
+            <stringProp name="Assertion.test_field">Assertion.response_code</stringProp>
+            <boolProp name="Assertion.assume_success">true</boolProp>
+            <intProp name="Assertion.test_type">2</intProp>
+          </ResponseAssertion>
           <hashTree/>
         </hashTree>
         <BeanShellPreProcessor guiclass="TestBeanGUI" testclass="BeanShellPreProcessor" testname="Scripts need to be written  for UPDATE Vendor&apos;s address once the Json is proper with known Mandatory fields" enabled="false">
