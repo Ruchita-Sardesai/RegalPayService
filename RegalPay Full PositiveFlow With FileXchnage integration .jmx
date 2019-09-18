@@ -237,9 +237,9 @@
             <stringProp name="Argument.value">http://regalpayservice-dev.us-west-2.elasticbeanstalk.com/api/v1/payments/uploads</stringProp>
             <stringProp name="Argument.metadata">=</stringProp>
           </elementProp>
-          <elementProp name="VenInputFieldID" elementType="Argument">
-            <stringProp name="Argument.name">VenInputFieldID</stringProp>
-            <stringProp name="Argument.value"></stringProp>
+          <elementProp name="VendorAPIURL" elementType="Argument">
+            <stringProp name="Argument.name">VendorAPIURL</stringProp>
+            <stringProp name="Argument.value">http://regalpayservice-dev.us-west-2.elasticbeanstalk.com/api/v1/vendors/uploads</stringProp>
             <stringProp name="Argument.metadata">=</stringProp>
           </elementProp>
           <elementProp name="----------------------------------------------" elementType="Argument">
@@ -290,6 +290,16 @@
           <elementProp name="VBankMapFilePath" elementType="Argument">
             <stringProp name="Argument.name">VBankMapFilePath</stringProp>
             <stringProp name="Argument.value">/VBankMappingIdFile.csv</stringProp>
+            <stringProp name="Argument.metadata">=</stringProp>
+          </elementProp>
+          <elementProp name="-------------------------------------------------" elementType="Argument">
+            <stringProp name="Argument.name">-------------------------------------------------</stringProp>
+            <stringProp name="Argument.value">--------------------------------------</stringProp>
+            <stringProp name="Argument.metadata">=</stringProp>
+          </elementProp>
+          <elementProp name="VBankAPIURL" elementType="Argument">
+            <stringProp name="Argument.name">VBankAPIURL</stringProp>
+            <stringProp name="Argument.value">http://regalpayservice-dev.us-west-2.elasticbeanstalk.com/api/v1/vendorbankdata/uploads</stringProp>
             <stringProp name="Argument.metadata">=</stringProp>
           </elementProp>
         </collectionProp>
@@ -744,11 +754,11 @@ try {
      print(&quot;Payment Number&quot;+&quot;,&quot;+&quot;2&quot;+&quot;,&quot;+&quot;true&quot;+&quot;,&quot;+&quot;50&quot;+&quot;,&quot;+&quot;3&quot;+&quot;,&quot;+&quot;true&quot;+&quot;,&quot;+&quot;true&quot; +&quot;,&quot;+&quot;false&quot;+&quot;,&quot;+&quot;0&quot;);
      print(&quot;Check Number&quot;+&quot;,&quot;+&quot;3&quot;+&quot;,&quot;+&quot;false&quot;+&quot;,&quot;+&quot;30&quot;+&quot;,&quot;+&quot;1&quot;+&quot;,&quot;+&quot;true&quot;+&quot;,&quot;+&quot;true&quot;+&quot;,&quot;+&quot;false&quot;+&quot;,&quot;+&quot;0&quot;);
      print(&quot;Vendor ID&quot;+&quot;,&quot;+&quot;4&quot;+&quot;,&quot;+&quot;true&quot;+&quot;,&quot;+&quot;50&quot;+&quot;,&quot;+&quot;3&quot;+&quot;,&quot;+&quot;true&quot;+&quot;,&quot;+&quot;true&quot;+&quot;,&quot;+&quot;false&quot;+&quot;,&quot;+&quot;0&quot;);
-     print(&quot;Payment Date&quot;+&quot;,&quot;+&quot;5&quot;+&quot;,&quot;+&quot;true&quot;+&quot;,&quot;+&quot;10&quot;+&quot;,&quot;+&quot;2&quot;+&quot;,&quot;+&quot;false&quot;+&quot;,&quot;+&quot;true&quot;+&quot;,&quot;+&quot;false&quot;+&quot;,&quot;+&quot;0&quot;);
+     print(&quot;Payment Date&quot;+&quot;,&quot;+&quot;5&quot;+&quot;,&quot;+&quot;true&quot;+&quot;,&quot;+&quot;0&quot;+&quot;,&quot;+&quot;2&quot;+&quot;,&quot;+&quot;false&quot;+&quot;,&quot;+&quot;true&quot;+&quot;,&quot;+&quot;false&quot;+&quot;,&quot;+&quot;0&quot;);
      print(&quot;Payment Comment&quot;+&quot;,&quot;+&quot;6&quot;+&quot;,&quot;+&quot;false&quot;+&quot;,&quot;+&quot;60&quot;+&quot;,&quot;+&quot;3&quot;+&quot;,&quot;+&quot;true&quot;+&quot;,&quot;+&quot;true&quot;+&quot;,&quot;+&quot;false&quot;+&quot;,&quot;+&quot;0&quot;);     
      print(&quot;Invoice Number&quot;+&quot;,&quot;+&quot;7&quot;+&quot;,&quot;+&quot;true&quot;+&quot;,&quot;+&quot;60&quot;+&quot;,&quot;+&quot;3&quot;+&quot;,&quot;+&quot;true&quot;+&quot;,&quot;+&quot;true&quot;+&quot;,&quot;+&quot;false&quot;+&quot;,&quot;+&quot;0&quot;);
-     print(&quot;Invoice Date&quot;+&quot;,&quot;+&quot;8&quot;+&quot;,&quot;+&quot;true&quot;+&quot;,&quot;+&quot;10&quot;+&quot;,&quot;+&quot;2&quot;+&quot;,&quot;+&quot;false&quot;+&quot;,&quot;+&quot;true&quot;+&quot;,&quot;+&quot;false&quot;+&quot;,&quot;+&quot;0&quot;);
-     print(&quot;Invoice Due Date&quot;+&quot;,&quot;+&quot;9&quot;+&quot;,&quot;+&quot;false&quot;+&quot;,&quot;+&quot;10&quot;+&quot;,&quot;+&quot;2&quot;+&quot;,&quot;+&quot;false&quot;+&quot;,&quot;+&quot;true&quot; +&quot;,&quot;+&quot;false&quot;+&quot;,&quot;+&quot;0&quot;);
+     print(&quot;Invoice Date&quot;+&quot;,&quot;+&quot;8&quot;+&quot;,&quot;+&quot;true&quot;+&quot;,&quot;+&quot;0&quot;+&quot;,&quot;+&quot;2&quot;+&quot;,&quot;+&quot;false&quot;+&quot;,&quot;+&quot;true&quot;+&quot;,&quot;+&quot;false&quot;+&quot;,&quot;+&quot;0&quot;);
+     print(&quot;Invoice Due Date&quot;+&quot;,&quot;+&quot;9&quot;+&quot;,&quot;+&quot;false&quot;+&quot;,&quot;+&quot;0&quot;+&quot;,&quot;+&quot;2&quot;+&quot;,&quot;+&quot;false&quot;+&quot;,&quot;+&quot;true&quot; +&quot;,&quot;+&quot;false&quot;+&quot;,&quot;+&quot;0&quot;);
      print(&quot;Invoice Description&quot;+&quot;,&quot;+&quot;10&quot;+&quot;,&quot;+&quot;false&quot;+&quot;,&quot;+&quot;100&quot;+&quot;,&quot;+&quot;3&quot;+&quot;,&quot;+&quot;true&quot;+&quot;,&quot;+&quot;true&quot; +&quot;,&quot;+&quot;false&quot;+&quot;,&quot;+&quot;0&quot;);
      print(&quot;Invoice Gross Amount&quot;+&quot;,&quot;+&quot;11&quot;+&quot;,&quot;+&quot;false&quot;+&quot;,&quot;+&quot;22&quot;+&quot;,&quot;+&quot;4&quot;+&quot;,&quot;+&quot;true&quot;+&quot;,&quot;+&quot;true&quot;+&quot;,&quot;+&quot;false&quot;+&quot;,&quot;+&quot;0&quot;);
      print(&quot;Invoice Discount Amount&quot;+&quot;,&quot;+&quot;12&quot;+&quot;,&quot;+&quot;true&quot;+&quot;,&quot;+&quot;22&quot;+&quot;,&quot;+&quot;4&quot;+&quot;,&quot;+&quot;true&quot;+&quot;,&quot;+&quot;true&quot;+&quot;,&quot;+&quot;false&quot;+&quot;,&quot;+&quot;0&quot;);
@@ -756,10 +766,14 @@ try {
      print(&quot;Currency&quot;+&quot;,&quot;+&quot;14&quot;+&quot;,&quot;+&quot;true&quot;+&quot;,&quot;+&quot;3&quot;+&quot;,&quot;+&quot;3&quot;+&quot;,&quot;+&quot;true&quot;+&quot;,&quot;+&quot;true&quot;+&quot;,&quot;+&quot;false&quot;+&quot;,&quot;+&quot;0&quot;);     
      print(&quot;PO Number&quot;+&quot;,&quot;+&quot;15&quot;+&quot;,&quot;+&quot;false&quot;+&quot;,&quot;+&quot;50&quot;+&quot;,&quot;+&quot;3&quot;+&quot;,&quot;+&quot;true&quot;+&quot;,&quot;+&quot;true&quot;+&quot;,&quot;+&quot;false&quot;+&quot;,&quot;+&quot;0&quot;);
      print(&quot;Account Number&quot;+&quot;,&quot;+&quot;16&quot;+&quot;,&quot;+&quot;true&quot;+&quot;,&quot;+&quot;100&quot;+&quot;,&quot;+&quot;3&quot;+&quot;,&quot;+&quot;true&quot;+&quot;,&quot;+&quot;true&quot;+&quot;,&quot;+&quot;false&quot;+&quot;,&quot;+&quot;0&quot;);
-     print(&quot;Company ID&quot;+&quot;,&quot;+&quot;17&quot;+&quot;,&quot;+&quot;false&quot;+&quot;,&quot;+&quot;100&quot;+&quot;,&quot;+&quot;3&quot;+&quot;,&quot;+&quot;true&quot;+&quot;,&quot;+&quot;true&quot; +&quot;,&quot;+&quot;false&quot;+&quot;,&quot;+&quot;0&quot;);
-     print(&quot;Payment Type&quot;+&quot;,&quot;+&quot;18&quot;+&quot;,&quot;+&quot;false&quot;+&quot;,&quot;+&quot;100&quot;+&quot;,&quot;+&quot;3&quot;+&quot;,&quot;+&quot;true&quot;+&quot;,&quot;+&quot;true&quot; +&quot;,&quot;+&quot;false&quot;+&quot;,&quot;+&quot;0&quot;);
-     print(&quot;Address Code&quot;+&quot;,&quot;+&quot;19&quot;+&quot;,&quot;+&quot;false&quot;+&quot;,&quot;+&quot;50&quot;+&quot;,&quot;+&quot;3&quot;+&quot;,&quot;+&quot;true&quot;+&quot;,&quot;+&quot;true&quot;+&quot;,&quot;+&quot;false&quot;+&quot;,&quot;+&quot;0&quot;);
-     print(&quot;Voided&quot;+&quot;,&quot;+&quot;20&quot;+&quot;,&quot;+&quot;false&quot;+&quot;,&quot;+&quot;50&quot;+&quot;,&quot;+&quot;3&quot;+&quot;,&quot;+&quot;true&quot;+&quot;,&quot;+&quot;true&quot;+&quot;,&quot;+&quot;false&quot;+&quot;,&quot;+&quot;0&quot;);
+     
+     // print(&quot;Company ID&quot;+&quot;,&quot;+&quot;17&quot;+&quot;,&quot;+&quot;false&quot;+&quot;,&quot;+&quot;100&quot;+&quot;,&quot;+&quot;3&quot;+&quot;,&quot;+&quot;true&quot;+&quot;,&quot;+&quot;true&quot; +&quot;,&quot;+&quot;false&quot;+&quot;,&quot;+&quot;0&quot;);
+    // print(&quot;Payment Type&quot;+&quot;,&quot;+&quot;18&quot;+&quot;,&quot;+&quot;false&quot;+&quot;,&quot;+&quot;100&quot;+&quot;,&quot;+&quot;3&quot;+&quot;,&quot;+&quot;true&quot;+&quot;,&quot;+&quot;true&quot; +&quot;,&quot;+&quot;false&quot;+&quot;,&quot;+&quot;0&quot;);
+    // print(&quot;Address Code&quot;+&quot;,&quot;+&quot;19&quot;+&quot;,&quot;+&quot;false&quot;+&quot;,&quot;+&quot;50&quot;+&quot;,&quot;+&quot;3&quot;+&quot;,&quot;+&quot;true&quot;+&quot;,&quot;+&quot;true&quot;+&quot;,&quot;+&quot;false&quot;+&quot;,&quot;+&quot;0&quot;);
+    // print(&quot;Voided&quot;+&quot;,&quot;+&quot;20&quot;+&quot;,&quot;+&quot;false&quot;+&quot;,&quot;+&quot;50&quot;+&quot;,&quot;+&quot;3&quot;+&quot;,&quot;+&quot;true&quot;+&quot;,&quot;+&quot;true&quot;+&quot;,&quot;+&quot;false&quot;+&quot;,&quot;+&quot;0&quot;);
+
+ 
+  
 
      
      f.close();
@@ -776,7 +790,7 @@ catch (Throwable ex) {
         <hashTree/>
         <LoopController guiclass="LoopControlPanel" testclass="LoopController" testname="Loop Controller for creating multiple fields " enabled="true">
           <boolProp name="LoopController.continue_forever">true</boolProp>
-          <stringProp name="LoopController.loops">8</stringProp>
+          <stringProp name="LoopController.loops">16</stringProp>
         </LoopController>
         <hashTree>
           <CSVDataSet guiclass="TestBeanGUI" testclass="CSVDataSet" testname="CSV Data Set Config" enabled="true">
@@ -894,7 +908,7 @@ catch (Throwable ex) {
           &quot;Name&quot;:&quot;PaymentFile${__time()}&quot;,&#xd;
           &quot;OutputFileTypeId&quot;: ${PayOutputFileType_ID},&#xd;
           &quot;InputFileTypeId&quot; : ${InputFileType_ID},&#xd;
-          &quot;hasHeader&quot;: ${false},&#xd;
+          &quot;hasHeader&quot;: ${true},&#xd;
           &quot;hasTrailer&quot;: ${true},&#xd;
           }</stringProp>
                 <stringProp name="Argument.metadata">=</stringProp>
@@ -1047,11 +1061,27 @@ catch (Throwable ex) {
               <elementProp name="" elementType="HTTPArgument">
                 <boolProp name="HTTPArgument.always_encode">false</boolProp>
                 <stringProp name="Argument.value">{&#xd;
-  &quot;fileContent&quot;: &quot;I,123456789,3154456789,362564230,01-10-2018,240.19,Ali Jacob,Urgent&#xd;
-I,126666345,3154456789,362564230,09-09-2018,7400,Aliajsdjfjasdhjfhj,Urgent&#xd;
-V,111112745,3154456789,362564230,09-09-2018,1400,,Urgent&#xd;
-S,133332845,3154456789,362564230,11-09-2018,5400,Jacob,Urgent&#xd;
-I,363636219,3154456789,362564230,11-09-2018,4400,Deo,Test&quot;&#xd;
+  &quot;fileContent&quot;: &quot;ERP Batch ID,Payment Number,Check Number,Vendor ID,Payment Date,Payment Comment,Invoice Number,Invoice Date,Invoice Due Date,Invoice Description,Invoice Gross Amount,Invoice Discount Amount,Invoice Net Amount,Currency,PO Number,Account Number&#xd;
+B10000001,PN000000001,20000000001,VEN_00000001,,Payment Comment01,INV000000001,,,Invoice Description 0001,5555.55,10,5545.55,USD,PONO00001,ACNO012300000000001&#xd;
+B10000002,PN000000002,20000000002,VEN_00000002,,Payment Comment02,INV000000002,,,Invoice Description 0002,5000,10,4990,USD,PONO00002,ACNO012300000000002&#xd;
+B10000003,PN000000003,20000000003,VEN_00000003,,Payment Comment03,INV000000003,,,Invoice Description 0003,800,0,800,USD,PONO00003,ACNO012300000000003&#xd;
+B10000004,PN000000004,20000000004,VEN_00000004,,Payment Comment04,INV000000004,,,Invoice Description 0004,2000,0,2000,USD,PONO00004,ACNO012300000000004&#xd;
+B10000005,PN000000005,20000000005,VEN_00000005,,Payment Comment05,INV000000005,,,Invoice Description 0005,22222.22,0,22222.22,USD,PONO00005,ACNO012300000000005&#xd;
+B10000006,PN000000006,20000000006,VEN_00000006,,Payment Comment06,INV000000006,,,Invoice Description 0006,999999999,0,999999999,USD,PONO00006,ACNO012300000000006&#xd;
+B10000007,PN000000007,20000000007,VEN_00000007,,Payment Comment07,INV000000007,,,Invoice Description 0007,565325652,0,565325652,USD,PONO00007,ACNO012300000000007&#xd;
+B10000008,PN000000008,20000000008,VEN_00000008,,Payment Comment08,INV000000008,,,Invoice Description 0008,200,0,200,USD,PONO00008,ACNO012300000000008&#xd;
+B10000009,PN000000009,20000000009,VEN_00000009,,Payment Comment09,INV000000009,,,Invoice Description 0009,220,0,220,USD,PONO00009,ACNO012300000000009&#xd;
+B10000010,PN000000010,20000000010,VEN_00000010,,Payment Comment10,INV000000010,,,Invoice Description 0010,3658,0,3658,USD,PONO00010,ACNO012300000000010&#xd;
+B10000011,PN000000011,20000000011,VEN_00000011,,Payment Comment11,INV000000011,,,Invoice Description 0011,15569,0,15569,USD,PONO00011,ACNO012300000000011&#xd;
+B10000012,PN000000012,20000000012,VEN_00000012,,Payment Comment12,INV000000012,,,Invoice Description 0012,6999,0,6999,USD,PONO00012,ACNO012300000000012&#xd;
+B10000013,PN000000013,20000000013,VEN_00000013,,Payment Comment13,INV000000013,,,Invoice Description 0013,15200,0,15200,USD,PONO00013,ACNO012300000000013&#xd;
+B10000014,PN000000014,20000000014,VEN_00000014,,Payment Comment14,INV000000014,,,Invoice Description 0014,400,50,350,USD,PONO00014,ACNO012300000000014&#xd;
+B10000015,PN000000015,20000000015,VEN_00000015,,Payment Comment15,INV000000015,,,Invoice Description 0015,5586,20,5566,USD,PONO00015,ACNO012300000000015&#xd;
+B10000016,PN000000016,20000000016,VEN_00000016,,Payment Comment16,INV000000016,,,Invoice Description 0016,105264,250,105014,USD,PONO00016,ACNO012300000000016&#xd;
+B10000017,PN000000017,20000000017,VEN_00000017,,Payment Comment17,INV000000017,,,Invoice Description 0017,50652,0,50652,USD,PONO00017,ACNO012300000000017&#xd;
+B10000018,PN000000018,20000000018,VEN_00000018,,Payment Comment18,INV000000018,,,Invoice Description 0018,32485,0,32485,USD,PONO00018,ACNO012300000000018&#xd;
+B10000019,PN000000019,20000000019,VEN_00000019,,Payment Comment19,INV000000019,,,Invoice Description 0019,222532,0,222532,USD,PONO00019,ACNO012300000000019&#xd;
+B10000020,PN000000020,20000000020,VEN_00000020,,Payment Comment20,INV000000020,,,Invoice Description 0020,123365,55.69,123309.31,USD,PONO00020,ACNO012300000000020&quot;&#xd;
 }</stringProp>
                 <stringProp name="Argument.metadata">=</stringProp>
               </elementProp>
@@ -1228,7 +1258,7 @@ catch (Throwable ex) {
       <hashTree>
         <JDBCSampler guiclass="TestBeanGUI" testclass="JDBCSampler" testname="Fetch OutputfileFields Details for Payment profile" enabled="true">
           <stringProp name="dataSource"> Payment profile1</stringProp>
-          <stringProp name="query">select CAST(OutputFileFieldId as INTEGER) AS OutputFileField, * from OutputFileFields where OutputFileTypeId = &apos;${__property(PayOutputFileType_ID)}&apos;</stringProp>
+          <stringProp name="query">select CAST(OutputFileFieldId as INTEGER) AS OutputFileField, * from Mappings where ProfileId = &apos;${__property(PaymentProfileID)}&apos;</stringProp>
           <stringProp name="queryArguments"></stringProp>
           <stringProp name="queryArgumentsTypes"></stringProp>
           <stringProp name="queryTimeout"></stringProp>
@@ -1324,7 +1354,7 @@ catch (Throwable ex) {
       <hashTree>
         <JDBCSampler guiclass="TestBeanGUI" testclass="JDBCSampler" testname="Fetch InputfileFields Details for Payment profile" enabled="true">
           <stringProp name="dataSource"> Payment profile2</stringProp>
-          <stringProp name="query">select CAST(Id as INTEGER) AS InputID, * from InputFileFields where ProfileId = &apos;${__property(PaymentProfileID)}&apos;</stringProp>
+          <stringProp name="query">select CAST(Id as INTEGER) AS InputID, * from InputFileFields where ProfileId = &apos;${__property(PaymentProfileID)}&apos; order by ColumnNumber </stringProp>
           <stringProp name="queryArguments"></stringProp>
           <stringProp name="queryArgumentsTypes"></stringProp>
           <stringProp name="queryTimeout"></stringProp>
@@ -1418,6 +1448,49 @@ catch (Throwable ex) {
         <stringProp name="ThreadGroup.delay"></stringProp>
       </ThreadGroup>
       <hashTree>
+        <BeanShellSampler guiclass="BeanShellSamplerGui" testclass="BeanShellSampler" testname="BeanShell Sampler for Mapping ID" enabled="true">
+          <stringProp name="BeanShellSampler.query">import org.apache.commons.io.FileUtils;    //necessary import
+import org.apache.jmeter.gui.GuiPackage;
+import org.apache.commons.io.FilenameUtils; 
+
+
+try {
+
+	String testPlanFile = GuiPackage.getInstance().getTestPlanFile();
+	String testPlanFileDir = FilenameUtils.getFullPathNoEndSeparator(testPlanFile);
+	vars.put(&quot;testPlanFileDir&quot;, testPlanFileDir);
+	log.info(&quot;testPlanFileDir:&quot; + testPlanFileDir);
+
+List lines = FileUtils.readLines(new File(testPlanFileDir+&quot;/${PayMapFilePath}&quot;)); // read CSV file into the array of lines in memory
+
+String row5 = lines.get(4);
+String row8 = lines.get(7);
+String row9 = lines.get(8);
+
+
+//String[] cells = row3.split(&quot;,&quot;);    //split row 10 into cells using comma as delimiter
+//String cell0 = cells[0];    // get value of 4th column, counting is zero-based
+log.info(&quot;row value = &quot; + row5);    // print the value into jmeter.log file
+vars.put(&quot;row5value&quot;, row5); 
+log.info(&quot;row value = &quot; + row8);    // print the value into jmeter.log file
+vars.put(&quot;row8value&quot;, row8); 
+log.info(&quot;row value = &quot; + row9);    // print the value into jmeter.log file
+vars.put(&quot;row9value&quot;, row9);   
+
+}
+
+
+catch (Throwable ex) {
+    log.error(&quot;Error in Beanshell&quot;, ex);
+    throw ex;
+}
+
+</stringProp>
+          <stringProp name="BeanShellSampler.filename"></stringProp>
+          <stringProp name="BeanShellSampler.parameters"></stringProp>
+          <boolProp name="BeanShellSampler.resetInterpreter">false</boolProp>
+        </BeanShellSampler>
+        <hashTree/>
         <BeanShellPreProcessor guiclass="TestBeanGUI" testclass="BeanShellPreProcessor" testname="Payment File upload" enabled="false">
           <stringProp name="filename"></stringProp>
           <stringProp name="parameters"></stringProp>
@@ -1427,7 +1500,7 @@ catch (Throwable ex) {
         <hashTree/>
         <LoopController guiclass="LoopControlPanel" testclass="LoopController" testname="Loop Controller for Mapping" enabled="true">
           <boolProp name="LoopController.continue_forever">true</boolProp>
-          <stringProp name="LoopController.loops">8</stringProp>
+          <stringProp name="LoopController.loops">16</stringProp>
         </LoopController>
         <hashTree>
           <CSVDataSet guiclass="TestBeanGUI" testclass="CSVDataSet" testname="CSV Data Set Config for MapID" enabled="true">
@@ -1540,7 +1613,304 @@ catch (Throwable ex) {
             <hashTree/>
           </hashTree>
         </hashTree>
-        <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="Step8: Activate the payment profile" enabled="true">
+        <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="Step8: Set Default value for dateTime Datatype(Paymenet Date)" enabled="true">
+          <boolProp name="HTTPSampler.postBodyRaw">true</boolProp>
+          <elementProp name="HTTPsampler.Arguments" elementType="Arguments">
+            <collectionProp name="Arguments.arguments">
+              <elementProp name="" elementType="HTTPArgument">
+                <boolProp name="HTTPArgument.always_encode">false</boolProp>
+                <stringProp name="Argument.value">{&#xd;
+  &#xd;
+  &quot;DefaultToCurrentDate&quot;: true,&#xd;
+  &quot;DateFormat&quot; : &quot;MM/dd/yyyy&quot;&#xd;
+}</stringProp>
+                <stringProp name="Argument.metadata">=</stringProp>
+              </elementProp>
+            </collectionProp>
+          </elementProp>
+          <stringProp name="HTTPSampler.domain">${URL}</stringProp>
+          <stringProp name="HTTPSampler.port">UFT-8</stringProp>
+          <stringProp name="HTTPSampler.protocol">http</stringProp>
+          <stringProp name="HTTPSampler.contentEncoding"></stringProp>
+          <stringProp name="HTTPSampler.path">${Profiles}/${__property(PaymentProfileID)}/mappings/${row5value}/mapping-default-settings</stringProp>
+          <stringProp name="HTTPSampler.method">POST</stringProp>
+          <boolProp name="HTTPSampler.follow_redirects">false</boolProp>
+          <boolProp name="HTTPSampler.auto_redirects">true</boolProp>
+          <boolProp name="HTTPSampler.use_keepalive">true</boolProp>
+          <boolProp name="HTTPSampler.DO_MULTIPART_POST">false</boolProp>
+          <stringProp name="HTTPSampler.embedded_url_re"></stringProp>
+          <stringProp name="HTTPSampler.connect_timeout"></stringProp>
+          <stringProp name="HTTPSampler.response_timeout"></stringProp>
+        </HTTPSamplerProxy>
+        <hashTree>
+          <HeaderManager guiclass="HeaderPanel" testclass="HeaderManager" testname="HTTP Header Manager" enabled="true">
+            <collectionProp name="HeaderManager.headers">
+              <elementProp name="Referer" elementType="Header">
+                <stringProp name="Header.name">Referer</stringProp>
+                <stringProp name="Header.value">http://regalpaycloudfilexchangeapiserver-test.pgzemykzam.us-west-2.elasticbeanstalk.com/swagger/index.html</stringProp>
+              </elementProp>
+              <elementProp name="Accept-Language" elementType="Header">
+                <stringProp name="Header.name">Accept-Language</stringProp>
+                <stringProp name="Header.value">en-US,en;q=0.5</stringProp>
+              </elementProp>
+              <elementProp name="Content-Type" elementType="Header">
+                <stringProp name="Header.name">Content-Type</stringProp>
+                <stringProp name="Header.value">application/json; charset=UTF-8</stringProp>
+              </elementProp>
+              <elementProp name="Cache-Control" elementType="Header">
+                <stringProp name="Header.name">Cache-Control</stringProp>
+                <stringProp name="Header.value">no-cache</stringProp>
+              </elementProp>
+              <elementProp name="Accept" elementType="Header">
+                <stringProp name="Header.name">Accept</stringProp>
+                <stringProp name="Header.value">application/json</stringProp>
+              </elementProp>
+            </collectionProp>
+          </HeaderManager>
+          <hashTree/>
+          <ResponseAssertion guiclass="AssertionGui" testclass="ResponseAssertion" testname="Response Code201" enabled="true">
+            <collectionProp name="Asserion.test_strings">
+              <stringProp name="-1146597534">${Response201}</stringProp>
+            </collectionProp>
+            <stringProp name="Assertion.custom_message"></stringProp>
+            <stringProp name="Assertion.test_field">Assertion.response_code</stringProp>
+            <boolProp name="Assertion.assume_success">false</boolProp>
+            <intProp name="Assertion.test_type">2</intProp>
+          </ResponseAssertion>
+          <hashTree/>
+          <ResponseAssertion guiclass="AssertionGui" testclass="ResponseAssertion" testname="Response Assertion" enabled="true">
+            <collectionProp name="Asserion.test_strings">
+              <stringProp name="-340323263">response</stringProp>
+              <stringProp name="1402947425">requestStatus</stringProp>
+              <stringProp name="49">1</stringProp>
+            </collectionProp>
+            <stringProp name="Assertion.custom_message"></stringProp>
+            <stringProp name="Assertion.test_field">Assertion.response_data</stringProp>
+            <boolProp name="Assertion.assume_success">false</boolProp>
+            <intProp name="Assertion.test_type">16</intProp>
+          </ResponseAssertion>
+          <hashTree/>
+        </hashTree>
+        <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="Step8: Set Default value for dateTime Datatype(Invoice Date)" enabled="true">
+          <boolProp name="HTTPSampler.postBodyRaw">true</boolProp>
+          <elementProp name="HTTPsampler.Arguments" elementType="Arguments">
+            <collectionProp name="Arguments.arguments">
+              <elementProp name="" elementType="HTTPArgument">
+                <boolProp name="HTTPArgument.always_encode">false</boolProp>
+                <stringProp name="Argument.value">{&#xd;
+  &#xd;
+  &quot;DefaultToCurrentDate&quot;: true,&#xd;
+  &quot;DateFormat&quot; : &quot;MM/dd/yyyy&quot;&#xd;
+}</stringProp>
+                <stringProp name="Argument.metadata">=</stringProp>
+              </elementProp>
+            </collectionProp>
+          </elementProp>
+          <stringProp name="HTTPSampler.domain">${URL}</stringProp>
+          <stringProp name="HTTPSampler.port">UFT-8</stringProp>
+          <stringProp name="HTTPSampler.protocol">http</stringProp>
+          <stringProp name="HTTPSampler.contentEncoding"></stringProp>
+          <stringProp name="HTTPSampler.path">${Profiles}/${__property(PaymentProfileID)}/mappings/${row8value}/mapping-default-settings</stringProp>
+          <stringProp name="HTTPSampler.method">POST</stringProp>
+          <boolProp name="HTTPSampler.follow_redirects">false</boolProp>
+          <boolProp name="HTTPSampler.auto_redirects">true</boolProp>
+          <boolProp name="HTTPSampler.use_keepalive">true</boolProp>
+          <boolProp name="HTTPSampler.DO_MULTIPART_POST">false</boolProp>
+          <stringProp name="HTTPSampler.embedded_url_re"></stringProp>
+          <stringProp name="HTTPSampler.connect_timeout"></stringProp>
+          <stringProp name="HTTPSampler.response_timeout"></stringProp>
+        </HTTPSamplerProxy>
+        <hashTree>
+          <HeaderManager guiclass="HeaderPanel" testclass="HeaderManager" testname="HTTP Header Manager" enabled="true">
+            <collectionProp name="HeaderManager.headers">
+              <elementProp name="Referer" elementType="Header">
+                <stringProp name="Header.name">Referer</stringProp>
+                <stringProp name="Header.value">http://regalpaycloudfilexchangeapiserver-test.pgzemykzam.us-west-2.elasticbeanstalk.com/swagger/index.html</stringProp>
+              </elementProp>
+              <elementProp name="Accept-Language" elementType="Header">
+                <stringProp name="Header.name">Accept-Language</stringProp>
+                <stringProp name="Header.value">en-US,en;q=0.5</stringProp>
+              </elementProp>
+              <elementProp name="Content-Type" elementType="Header">
+                <stringProp name="Header.name">Content-Type</stringProp>
+                <stringProp name="Header.value">application/json; charset=UTF-8</stringProp>
+              </elementProp>
+              <elementProp name="Cache-Control" elementType="Header">
+                <stringProp name="Header.name">Cache-Control</stringProp>
+                <stringProp name="Header.value">no-cache</stringProp>
+              </elementProp>
+              <elementProp name="Accept" elementType="Header">
+                <stringProp name="Header.name">Accept</stringProp>
+                <stringProp name="Header.value">application/json</stringProp>
+              </elementProp>
+            </collectionProp>
+          </HeaderManager>
+          <hashTree/>
+          <ResponseAssertion guiclass="AssertionGui" testclass="ResponseAssertion" testname="Response Code201" enabled="true">
+            <collectionProp name="Asserion.test_strings">
+              <stringProp name="-1146597534">${Response201}</stringProp>
+            </collectionProp>
+            <stringProp name="Assertion.custom_message"></stringProp>
+            <stringProp name="Assertion.test_field">Assertion.response_code</stringProp>
+            <boolProp name="Assertion.assume_success">false</boolProp>
+            <intProp name="Assertion.test_type">2</intProp>
+          </ResponseAssertion>
+          <hashTree/>
+          <ResponseAssertion guiclass="AssertionGui" testclass="ResponseAssertion" testname="Response Assertion" enabled="true">
+            <collectionProp name="Asserion.test_strings">
+              <stringProp name="-340323263">response</stringProp>
+              <stringProp name="1402947425">requestStatus</stringProp>
+              <stringProp name="49">1</stringProp>
+            </collectionProp>
+            <stringProp name="Assertion.custom_message"></stringProp>
+            <stringProp name="Assertion.test_field">Assertion.response_data</stringProp>
+            <boolProp name="Assertion.assume_success">false</boolProp>
+            <intProp name="Assertion.test_type">16</intProp>
+          </ResponseAssertion>
+          <hashTree/>
+        </hashTree>
+        <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="Step8: Set Default value for dateTime Datatype(Invoice Due date)" enabled="true">
+          <boolProp name="HTTPSampler.postBodyRaw">true</boolProp>
+          <elementProp name="HTTPsampler.Arguments" elementType="Arguments">
+            <collectionProp name="Arguments.arguments">
+              <elementProp name="" elementType="HTTPArgument">
+                <boolProp name="HTTPArgument.always_encode">false</boolProp>
+                <stringProp name="Argument.value">{&#xd;
+  &#xd;
+  &quot;DefaultToCurrentDate&quot;: true,&#xd;
+  &quot;DateFormat&quot; : &quot;MM/dd/yyyy&quot;&#xd;
+}</stringProp>
+                <stringProp name="Argument.metadata">=</stringProp>
+              </elementProp>
+            </collectionProp>
+          </elementProp>
+          <stringProp name="HTTPSampler.domain">${URL}</stringProp>
+          <stringProp name="HTTPSampler.port">UFT-8</stringProp>
+          <stringProp name="HTTPSampler.protocol">http</stringProp>
+          <stringProp name="HTTPSampler.contentEncoding"></stringProp>
+          <stringProp name="HTTPSampler.path">${Profiles}/${__property(PaymentProfileID)}/mappings/${row9value}/mapping-default-settings</stringProp>
+          <stringProp name="HTTPSampler.method">POST</stringProp>
+          <boolProp name="HTTPSampler.follow_redirects">false</boolProp>
+          <boolProp name="HTTPSampler.auto_redirects">true</boolProp>
+          <boolProp name="HTTPSampler.use_keepalive">true</boolProp>
+          <boolProp name="HTTPSampler.DO_MULTIPART_POST">false</boolProp>
+          <stringProp name="HTTPSampler.embedded_url_re"></stringProp>
+          <stringProp name="HTTPSampler.connect_timeout"></stringProp>
+          <stringProp name="HTTPSampler.response_timeout"></stringProp>
+        </HTTPSamplerProxy>
+        <hashTree>
+          <HeaderManager guiclass="HeaderPanel" testclass="HeaderManager" testname="HTTP Header Manager" enabled="true">
+            <collectionProp name="HeaderManager.headers">
+              <elementProp name="Referer" elementType="Header">
+                <stringProp name="Header.name">Referer</stringProp>
+                <stringProp name="Header.value">http://regalpaycloudfilexchangeapiserver-test.pgzemykzam.us-west-2.elasticbeanstalk.com/swagger/index.html</stringProp>
+              </elementProp>
+              <elementProp name="Accept-Language" elementType="Header">
+                <stringProp name="Header.name">Accept-Language</stringProp>
+                <stringProp name="Header.value">en-US,en;q=0.5</stringProp>
+              </elementProp>
+              <elementProp name="Content-Type" elementType="Header">
+                <stringProp name="Header.name">Content-Type</stringProp>
+                <stringProp name="Header.value">application/json; charset=UTF-8</stringProp>
+              </elementProp>
+              <elementProp name="Cache-Control" elementType="Header">
+                <stringProp name="Header.name">Cache-Control</stringProp>
+                <stringProp name="Header.value">no-cache</stringProp>
+              </elementProp>
+              <elementProp name="Accept" elementType="Header">
+                <stringProp name="Header.name">Accept</stringProp>
+                <stringProp name="Header.value">application/json</stringProp>
+              </elementProp>
+            </collectionProp>
+          </HeaderManager>
+          <hashTree/>
+          <ResponseAssertion guiclass="AssertionGui" testclass="ResponseAssertion" testname="Response Code201" enabled="true">
+            <collectionProp name="Asserion.test_strings">
+              <stringProp name="-1146597534">${Response201}</stringProp>
+            </collectionProp>
+            <stringProp name="Assertion.custom_message"></stringProp>
+            <stringProp name="Assertion.test_field">Assertion.response_code</stringProp>
+            <boolProp name="Assertion.assume_success">false</boolProp>
+            <intProp name="Assertion.test_type">2</intProp>
+          </ResponseAssertion>
+          <hashTree/>
+          <ResponseAssertion guiclass="AssertionGui" testclass="ResponseAssertion" testname="Response Assertion" enabled="true">
+            <collectionProp name="Asserion.test_strings">
+              <stringProp name="-340323263">response</stringProp>
+              <stringProp name="1402947425">requestStatus</stringProp>
+              <stringProp name="49">1</stringProp>
+            </collectionProp>
+            <stringProp name="Assertion.custom_message"></stringProp>
+            <stringProp name="Assertion.test_field">Assertion.response_data</stringProp>
+            <boolProp name="Assertion.assume_success">false</boolProp>
+            <intProp name="Assertion.test_type">16</intProp>
+          </ResponseAssertion>
+          <hashTree/>
+        </hashTree>
+        <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="Step9: Validate the Mapping" enabled="true">
+          <elementProp name="HTTPsampler.Arguments" elementType="Arguments" guiclass="HTTPArgumentsPanel" testclass="Arguments" testname="User Defined Variables" enabled="true">
+            <collectionProp name="Arguments.arguments"/>
+          </elementProp>
+          <stringProp name="HTTPSampler.domain">${URL}</stringProp>
+          <stringProp name="HTTPSampler.port">UFT-8</stringProp>
+          <stringProp name="HTTPSampler.protocol">http</stringProp>
+          <stringProp name="HTTPSampler.contentEncoding"></stringProp>
+          <stringProp name="HTTPSampler.path">${Profiles}/${__property(PaymentProfileID)}/validate-map</stringProp>
+          <stringProp name="HTTPSampler.method">POST</stringProp>
+          <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
+          <boolProp name="HTTPSampler.auto_redirects">false</boolProp>
+          <boolProp name="HTTPSampler.use_keepalive">true</boolProp>
+          <boolProp name="HTTPSampler.DO_MULTIPART_POST">false</boolProp>
+          <stringProp name="HTTPSampler.embedded_url_re"></stringProp>
+          <stringProp name="HTTPSampler.connect_timeout"></stringProp>
+          <stringProp name="HTTPSampler.response_timeout"></stringProp>
+        </HTTPSamplerProxy>
+        <hashTree>
+          <HeaderManager guiclass="HeaderPanel" testclass="HeaderManager" testname="HTTP Header Manager" enabled="true">
+            <collectionProp name="HeaderManager.headers">
+              <elementProp name="Accept-Language" elementType="Header">
+                <stringProp name="Header.name">Accept-Language</stringProp>
+                <stringProp name="Header.value">en-US,en;q=0.5</stringProp>
+              </elementProp>
+              <elementProp name="Content-Type" elementType="Header">
+                <stringProp name="Header.name">Content-Type</stringProp>
+                <stringProp name="Header.value">application/json; charset=UTF-8</stringProp>
+              </elementProp>
+              <elementProp name="Cache-Control" elementType="Header">
+                <stringProp name="Header.name">Cache-Control</stringProp>
+                <stringProp name="Header.value">no-cache</stringProp>
+              </elementProp>
+              <elementProp name="Accept" elementType="Header">
+                <stringProp name="Header.name">Accept</stringProp>
+                <stringProp name="Header.value">application/json</stringProp>
+              </elementProp>
+            </collectionProp>
+          </HeaderManager>
+          <hashTree/>
+          <ResponseAssertion guiclass="AssertionGui" testclass="ResponseAssertion" testname="Response Code200" enabled="true">
+            <collectionProp name="Asserion.test_strings">
+              <stringProp name="-1146597565">${Response200}</stringProp>
+            </collectionProp>
+            <stringProp name="Assertion.custom_message"></stringProp>
+            <stringProp name="Assertion.test_field">Assertion.response_code</stringProp>
+            <boolProp name="Assertion.assume_success">false</boolProp>
+            <intProp name="Assertion.test_type">2</intProp>
+          </ResponseAssertion>
+          <hashTree/>
+          <ResponseAssertion guiclass="AssertionGui" testclass="ResponseAssertion" testname="Response Assertion" enabled="true">
+            <collectionProp name="Asserion.test_strings">
+              <stringProp name="-340323263">response</stringProp>
+              <stringProp name="1402947425">requestStatus</stringProp>
+              <stringProp name="49">1</stringProp>
+            </collectionProp>
+            <stringProp name="Assertion.custom_message"></stringProp>
+            <stringProp name="Assertion.test_field">Assertion.response_data</stringProp>
+            <boolProp name="Assertion.assume_success">false</boolProp>
+            <intProp name="Assertion.test_type">16</intProp>
+          </ResponseAssertion>
+          <hashTree/>
+        </hashTree>
+        <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="Step10: Activate the payment profile" enabled="true">
           <elementProp name="HTTPsampler.Arguments" elementType="Arguments" guiclass="HTTPArgumentsPanel" testclass="Arguments" testname="User Defined Variables" enabled="true">
             <collectionProp name="Arguments.arguments"/>
           </elementProp>
@@ -1603,18 +1973,34 @@ catch (Throwable ex) {
           </ResponseAssertion>
           <hashTree/>
         </hashTree>
-        <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="Step9: Sumbit /Upload the payment file" enabled="true">
+        <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="Step11: Sumbit /Upload the payment file" enabled="true">
           <boolProp name="HTTPSampler.postBodyRaw">true</boolProp>
           <elementProp name="HTTPsampler.Arguments" elementType="Arguments">
             <collectionProp name="Arguments.arguments">
               <elementProp name="" elementType="HTTPArgument">
                 <boolProp name="HTTPArgument.always_encode">false</boolProp>
                 <stringProp name="Argument.value">{&#xd;
-  &quot;fileContent&quot;: &quot;I,123456789,3154456789,362564230,01/1/2018,240.19,Ali Jacob,Urgent&#xd;
-I,126666345,3154456789,362564230,09/09/2018,7400,Aliajsdjfjasdhjfhj,Urgent&#xd;
-V,111112745,3154456789,362564230,09/09/2018,1400,,Urgent&#xd;
-S,133332845,3154456789,362564230,11/09/2018,5400,Jacob,Urgent&#xd;
-I,363636219,3154456789,362564230,11/09/2018,4400,Deo,Test&quot;&#xd;
+  &quot;fileContent&quot;: &quot;ERP Batch ID,Payment Number,Check Number,Vendor ID,Payment Date,Payment Comment,Invoice Number,Invoice Date,Invoice Due Date,Invoice Description,Invoice Gross Amount,Invoice Discount Amount,Invoice Net Amount,Currency,PO Number,Account Number&#xd;
+B10000001,PN000000001,20000000001,VEN_00000001,,Payment Comment01,INV000000001,,,Invoice Description 0001,5555.55,10,5545.55,USD,PONO00001,ACNO012300000000001&#xd;
+B10000002,PN000000002,20000000002,VEN_00000002,,Payment Comment02,INV000000002,,,Invoice Description 0002,5000,10,4990,USD,PONO00002,ACNO012300000000002&#xd;
+B10000003,PN000000003,20000000003,VEN_00000003,,Payment Comment03,INV000000003,,,Invoice Description 0003,800,0,800,USD,PONO00003,ACNO012300000000003&#xd;
+B10000004,PN000000004,20000000004,VEN_00000004,,Payment Comment04,INV000000004,,,Invoice Description 0004,2000,0,2000,USD,PONO00004,ACNO012300000000004&#xd;
+B10000005,PN000000005,20000000005,VEN_00000005,,Payment Comment05,INV000000005,,,Invoice Description 0005,22222.22,0,22222.22,USD,PONO00005,ACNO012300000000005&#xd;
+B10000006,PN000000006,20000000006,VEN_00000006,,Payment Comment06,INV000000006,,,Invoice Description 0006,999999999,0,999999999,USD,PONO00006,ACNO012300000000006&#xd;
+B10000007,PN000000007,20000000007,VEN_00000007,,Payment Comment07,INV000000007,,,Invoice Description 0007,565325652,0,565325652,USD,PONO00007,ACNO012300000000007&#xd;
+B10000008,PN000000008,20000000008,VEN_00000008,,Payment Comment08,INV000000008,,,Invoice Description 0008,200,0,200,USD,PONO00008,ACNO012300000000008&#xd;
+B10000009,PN000000009,20000000009,VEN_00000009,,Payment Comment09,INV000000009,,,Invoice Description 0009,220,0,220,USD,PONO00009,ACNO012300000000009&#xd;
+B10000010,PN000000010,20000000010,VEN_00000010,,Payment Comment10,INV000000010,,,Invoice Description 0010,3658,0,3658,USD,PONO00010,ACNO012300000000010&#xd;
+B10000011,PN000000011,20000000011,VEN_00000011,,Payment Comment11,INV000000011,,,Invoice Description 0011,15569,0,15569,USD,PONO00011,ACNO012300000000011&#xd;
+B10000012,PN000000012,20000000012,VEN_00000012,,Payment Comment12,INV000000012,,,Invoice Description 0012,6999,0,6999,USD,PONO00012,ACNO012300000000012&#xd;
+B10000013,PN000000013,20000000013,VEN_00000013,,Payment Comment13,INV000000013,,,Invoice Description 0013,15200,0,15200,USD,PONO00013,ACNO012300000000013&#xd;
+B10000014,PN000000014,20000000014,VEN_00000014,,Payment Comment14,INV000000014,,,Invoice Description 0014,400,50,350,USD,PONO00014,ACNO012300000000014&#xd;
+B10000015,PN000000015,20000000015,VEN_00000015,,Payment Comment15,INV000000015,,,Invoice Description 0015,5586,20,5566,USD,PONO00015,ACNO012300000000015&#xd;
+B10000016,PN000000016,20000000016,VEN_00000016,,Payment Comment16,INV000000016,,,Invoice Description 0016,105264,250,105014,USD,PONO00016,ACNO012300000000016&#xd;
+B10000017,PN000000017,20000000017,VEN_00000017,,Payment Comment17,INV000000017,,,Invoice Description 0017,50652,0,50652,USD,PONO00017,ACNO012300000000017&#xd;
+B10000018,PN000000018,20000000018,VEN_00000018,,Payment Comment18,INV000000018,,,Invoice Description 0018,32485,0,32485,USD,PONO00018,ACNO012300000000018&#xd;
+B10000019,PN000000019,20000000019,VEN_00000019,,Payment Comment19,INV000000019,,,Invoice Description 0019,222532,0,222532,USD,PONO00019,ACNO012300000000019&#xd;
+B10000020,PN000000020,20000000020,VEN_00000020,,Payment Comment20,INV000000020,,,Invoice Description 0020,123365,55.69,123309.31,USD,PONO00020,ACNO012300000000020&quot;&#xd;
 }</stringProp>
                 <stringProp name="Argument.metadata">=</stringProp>
               </elementProp>
@@ -1713,7 +2099,7 @@ I,363636219,3154456789,362564230,11/09/2018,4400,Deo,Test&quot;&#xd;
   &quot;name&quot;: &quot;Vendor${OutputFile_name}&quot;,&#xd;
   &quot;description&quot;: &quot;${Desc}&quot;,&#xd;
      &quot;outputType&quot;: &quot;${OutputType1}&quot;,&#xd;
-  &quot;url&quot;: &quot;${APIpostURL}&quot;&#xd;
+  &quot;url&quot;: &quot;${VendorAPIURL}&quot;&#xd;
 }</stringProp>
                 <stringProp name="Argument.metadata">=</stringProp>
               </elementProp>
@@ -1833,8 +2219,8 @@ try {
      print(&quot;Annual Spend&quot;+&quot;,&quot;+&quot;14&quot;+&quot;,&quot;+&quot;false&quot;+&quot;,&quot;+&quot;22&quot;+&quot;,&quot;+&quot;4&quot;+&quot;,&quot;+&quot;true&quot;+&quot;,&quot;+&quot;true&quot;+&quot;,&quot;+&quot;false&quot;+&quot;,&quot;+&quot;0&quot;);     
      print(&quot;Contact&quot;+&quot;,&quot;+&quot;15&quot;+&quot;,&quot;+&quot;false&quot;+&quot;,&quot;+&quot;100&quot;+&quot;,&quot;+&quot;3&quot;+&quot;,&quot;+&quot;true&quot;+&quot;,&quot;+&quot;true&quot;+&quot;,&quot;+&quot;false&quot;+&quot;,&quot;+&quot;0&quot;);
      print(&quot;Company ID&quot;+&quot;,&quot;+&quot;16&quot;+&quot;,&quot;+&quot;false&quot;+&quot;,&quot;+&quot;100&quot;+&quot;,&quot;+&quot;3&quot;+&quot;,&quot;+&quot;true&quot;+&quot;,&quot;+&quot;true&quot;+&quot;,&quot;+&quot;false&quot;+&quot;,&quot;+&quot;0&quot;);
-     print(&quot;Phone Number&quot;+&quot;,&quot;+&quot;17&quot;+&quot;,&quot;+&quot;false&quot;+&quot;,&quot;+&quot;10&quot;+&quot;,&quot;+&quot;3&quot;+&quot;,&quot;+&quot;true&quot;+&quot;,&quot;+&quot;true&quot; +&quot;,&quot;+&quot;false&quot;+&quot;,&quot;+&quot;0&quot;);
-     print(&quot;AddressCode&quot;+&quot;,&quot;+&quot;18&quot;+&quot;,&quot;+&quot;false&quot;+&quot;,&quot;+&quot;100&quot;+&quot;,&quot;+&quot;3&quot;+&quot;,&quot;+&quot;true&quot;+&quot;,&quot;+&quot;true&quot; +&quot;,&quot;+&quot;false&quot;+&quot;,&quot;+&quot;0&quot;);
+   //  print(&quot;Phone Number&quot;+&quot;,&quot;+&quot;17&quot;+&quot;,&quot;+&quot;false&quot;+&quot;,&quot;+&quot;10&quot;+&quot;,&quot;+&quot;3&quot;+&quot;,&quot;+&quot;true&quot;+&quot;,&quot;+&quot;true&quot; +&quot;,&quot;+&quot;false&quot;+&quot;,&quot;+&quot;0&quot;);
+   //  print(&quot;AddressCode&quot;+&quot;,&quot;+&quot;18&quot;+&quot;,&quot;+&quot;false&quot;+&quot;,&quot;+&quot;100&quot;+&quot;,&quot;+&quot;3&quot;+&quot;,&quot;+&quot;true&quot;+&quot;,&quot;+&quot;true&quot; +&quot;,&quot;+&quot;false&quot;+&quot;,&quot;+&quot;0&quot;);
      
      f.close();
 
@@ -1850,7 +2236,7 @@ catch (Throwable ex) {
         <hashTree/>
         <LoopController guiclass="LoopControlPanel" testclass="LoopController" testname="Loop Controller for creating multiple fields " enabled="true">
           <boolProp name="LoopController.continue_forever">true</boolProp>
-          <stringProp name="LoopController.loops">8</stringProp>
+          <stringProp name="LoopController.loops">16</stringProp>
         </LoopController>
         <hashTree>
           <CSVDataSet guiclass="TestBeanGUI" testclass="CSVDataSet" testname="CSV Data Set Config" enabled="true">
@@ -1968,7 +2354,7 @@ catch (Throwable ex) {
           &quot;Name&quot;:&quot;PaymentFile${__time()}&quot;,&#xd;
           &quot;OutputFileTypeId&quot;: ${VenOutputFileType_ID},&#xd;
           &quot;InputFileTypeId&quot; : ${__property(InputFileType_ID)},&#xd;
-          &quot;hasHeader&quot;: ${false},&#xd;
+          &quot;hasHeader&quot;: ${true},&#xd;
           &quot;hasTrailer&quot;: ${true},&#xd;
           }</stringProp>
                 <stringProp name="Argument.metadata">=</stringProp>
@@ -2121,11 +2507,27 @@ catch (Throwable ex) {
               <elementProp name="" elementType="HTTPArgument">
                 <boolProp name="HTTPArgument.always_encode">false</boolProp>
                 <stringProp name="Argument.value">{&#xd;
-  &quot;fileContent&quot;: &quot;I,123456789,3154456789,362564230,01-10-2018,240.19,Ali Jacob,Urgent&#xd;
-I,126666345,3154456789,362564230,09-09-2018,7400,Aliajsdjfjasdhjfhj,Urgent&#xd;
-V,111112745,3154456789,362564230,09-09-2018,1400,,Urgent&#xd;
-S,133332845,3154456789,362564230,11-09-2018,5400,Jacob,Urgent&#xd;
-I,363636219,3154456789,362564230,11-09-2018,4400,Deo,Test&quot;&#xd;
+  &quot;fileContent&quot;: &quot;Vendor ID,Vendor Name,Check Number,Address 1,Address 2,Address 3,City,State,Zip Code,Country Code,Country,Email,Payment Type,Annual Spend,Contact,Company ID&#xd;
+VEN_00000001,Vendor0001,20000000001,Vendor Address 1,Vendor Address 2,Vendor Address 3,ATLANTA,GA,20021,US,USA,Test@gmail.com,1,1203556,1236523216,CID1&#xd;
+VEN_00000002,Vendor0002,20000000002,Vendor Address 1,Vendor Address 2,Vendor Address 4,ATLANTA,GA,20021,US,USA,Test@gmail.com,1,1203557,1236523217,CID2&#xd;
+VEN_00000003,Vendor0003,20000000003,Vendor Address 1,Vendor Address 2,Vendor Address 5,ATLANTA,GA,20021,US,USA,Test@gmail.com,1,1203558,1236523218,CID3&#xd;
+VEN_00000004,Vendor0004,20000000004,Vendor Address 1,Vendor Address 2,Vendor Address 6,ATLANTA,GA,20021,US,USA,Test@gmail.com,1,1203559,1236523219,CID4&#xd;
+VEN_00000005,Vendor0005,20000000005,Vendor Address 1,Vendor Address 2,Vendor Address 7,ATLANTA,GA,20021,US,USA,Test@gmail.com,1,1203560,1236523220,CID5&#xd;
+VEN_00000006,Vendor0006,20000000006,Vendor Address 1,Vendor Address 2,Vendor Address 8,ATLANTA,GA,20021,US,USA,Test@gmail.com,1,1203561,1236523221,CID6&#xd;
+VEN_00000007,Vendor0007,20000000007,Vendor Address 1,Vendor Address 2,Vendor Address 9,ATLANTA,GA,20021,US,USA,Test@gmail.com,1,1203562,1236523222,CID7&#xd;
+VEN_00000008,Vendor0008,20000000008,Vendor Address 1,Vendor Address 2,Vendor Address 10,ATLANTA,GA,20021,US,USA,Test@gmail.com,2,1203563,1236523223,CID8&#xd;
+VEN_00000009,Vendor0009,20000000009,Vendor Address 1,Vendor Address 2,Vendor Address 11,ATLANTA,GA,20021,US,USA,Test@gmail.com,2,1203564,1236523224,CID9&#xd;
+VEN_00000010,Vendor0010,20000000010,Vendor Address 1,Vendor Address 2,Vendor Address 12,ATLANTA,GA,20021,US,USA,Test@gmail.com,2,1203565,1236523225,CID10&#xd;
+VEN_00000011,Vendor0011,20000000011,Vendor Address 1,Vendor Address 2,Vendor Address 13,ATLANTA,GA,20021,US,USA,Test@gmail.com,2,1203566,1236523226,CID11&#xd;
+VEN_00000012,Vendor0012,20000000012,Vendor Address 1,Vendor Address 2,Vendor Address 14,ATLANTA,GA,20021,US,USA,Test@gmail.com,2,1203567,1236523227,CID12&#xd;
+VEN_00000013,Vendor0013,20000000013,Vendor Address 1,Vendor Address 2,Vendor Address 15,ATLANTA,GA,20021,US,USA,Test@gmail.com,2,1203568,1236523228,CID13&#xd;
+VEN_00000014,Vendor0014,20000000014,Vendor Address 1,Vendor Address 2,Vendor Address 16,ATLANTA,GA,20021,US,USA,Test@gmail.com,2,1203569,1236523229,CID14&#xd;
+VEN_00000015,Vendor0015,20000000015,Vendor Address 1,Vendor Address 2,Vendor Address 17,ATLANTA,GA,20021,US,USA,Test@gmail.com,0,1203570,1236523230,CID15&#xd;
+VEN_00000016,Vendor0016,20000000016,Vendor Address 1,Vendor Address 2,Vendor Address 18,ATLANTA,GA,20021,US,USA,Test@gmail.com,0,1203571,1236523231,CID16&#xd;
+VEN_00000017,Vendor0017,20000000017,Vendor Address 1,Vendor Address 2,Vendor Address 19,ATLANTA,GA,20021,US,USA,Test@gmail.com,0,1203572,1236523232,CID17&#xd;
+VEN_00000018,Vendor0018,20000000018,Vendor Address 1,Vendor Address 2,Vendor Address 20,ATLANTA,GA,20021,US,USA,Test@gmail.com,3,1203573,1236523233,CID18&#xd;
+VEN_00000019,Vendor0019,20000000019,Vendor Address 1,Vendor Address 2,Vendor Address 21,ATLANTA,GA,20021,US,USA,Test@gmail.com,3,1203574,1236523234,CID19&#xd;
+VEN_00000020,Vendor0020,20000000020,Vendor Address 1,Vendor Address 2,Vendor Address 22,ATLANTA,GA,20021,US,USA,Test@gmail.com,3,1203575,1236523235,CID20&quot;&#xd;
 }</stringProp>
                 <stringProp name="Argument.metadata">=</stringProp>
               </elementProp>
@@ -2302,7 +2704,7 @@ catch (Throwable ex) {
       <hashTree>
         <JDBCSampler guiclass="TestBeanGUI" testclass="JDBCSampler" testname="Fetch OutputfileFields Details for Vendor profile" enabled="true">
           <stringProp name="dataSource"> Vendor profile1</stringProp>
-          <stringProp name="query">select CAST(OutputFileFieldId as INTEGER) AS OutputFileField, * from OutputFileFields where OutputFileTypeId = &apos;${__property(VenOutputFileType_ID)}&apos;</stringProp>
+          <stringProp name="query">select CAST(OutputFileFieldId as INTEGER) AS OutputFileField, * from Mappings where ProfileId = &apos;${__property(VendorProfileID)}&apos;</stringProp>
           <stringProp name="queryArguments"></stringProp>
           <stringProp name="queryArgumentsTypes"></stringProp>
           <stringProp name="queryTimeout"></stringProp>
@@ -2398,7 +2800,7 @@ catch (Throwable ex) {
       <hashTree>
         <JDBCSampler guiclass="TestBeanGUI" testclass="JDBCSampler" testname="Fetch InputfileFields Details for Vendor profile" enabled="true">
           <stringProp name="dataSource"> Vendor profile2</stringProp>
-          <stringProp name="query">select CAST(Id as INTEGER) AS InputID, * from InputFileFields where ProfileId = &apos;${__property(VendorProfileID)}&apos;</stringProp>
+          <stringProp name="query">select CAST(Id as INTEGER) AS InputID, * from InputFileFields where ProfileId = &apos;${__property(VendorProfileID)}&apos; order by ColumnNumber </stringProp>
           <stringProp name="queryArguments"></stringProp>
           <stringProp name="queryArgumentsTypes"></stringProp>
           <stringProp name="queryTimeout"></stringProp>
@@ -2501,7 +2903,7 @@ catch (Throwable ex) {
         <hashTree/>
         <LoopController guiclass="LoopControlPanel" testclass="LoopController" testname="Loop Controller for Mapping" enabled="true">
           <boolProp name="LoopController.continue_forever">true</boolProp>
-          <stringProp name="LoopController.loops">8</stringProp>
+          <stringProp name="LoopController.loops">16</stringProp>
         </LoopController>
         <hashTree>
           <CSVDataSet guiclass="TestBeanGUI" testclass="CSVDataSet" testname="CSV Data Set Config for MapID" enabled="true">
@@ -2614,7 +3016,70 @@ catch (Throwable ex) {
             <hashTree/>
           </hashTree>
         </hashTree>
-        <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="Step8: Activate the Vendor profile" enabled="true">
+        <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="Step8: Validate the Mapping" enabled="true">
+          <elementProp name="HTTPsampler.Arguments" elementType="Arguments" guiclass="HTTPArgumentsPanel" testclass="Arguments" testname="User Defined Variables" enabled="true">
+            <collectionProp name="Arguments.arguments"/>
+          </elementProp>
+          <stringProp name="HTTPSampler.domain">${URL}</stringProp>
+          <stringProp name="HTTPSampler.port">UFT-8</stringProp>
+          <stringProp name="HTTPSampler.protocol">http</stringProp>
+          <stringProp name="HTTPSampler.contentEncoding"></stringProp>
+          <stringProp name="HTTPSampler.path">${Profiles}/${__property(VendorProfileID)}/validate-map</stringProp>
+          <stringProp name="HTTPSampler.method">POST</stringProp>
+          <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
+          <boolProp name="HTTPSampler.auto_redirects">false</boolProp>
+          <boolProp name="HTTPSampler.use_keepalive">true</boolProp>
+          <boolProp name="HTTPSampler.DO_MULTIPART_POST">false</boolProp>
+          <stringProp name="HTTPSampler.embedded_url_re"></stringProp>
+          <stringProp name="HTTPSampler.connect_timeout"></stringProp>
+          <stringProp name="HTTPSampler.response_timeout"></stringProp>
+        </HTTPSamplerProxy>
+        <hashTree>
+          <HeaderManager guiclass="HeaderPanel" testclass="HeaderManager" testname="HTTP Header Manager" enabled="true">
+            <collectionProp name="HeaderManager.headers">
+              <elementProp name="Accept-Language" elementType="Header">
+                <stringProp name="Header.name">Accept-Language</stringProp>
+                <stringProp name="Header.value">en-US,en;q=0.5</stringProp>
+              </elementProp>
+              <elementProp name="Content-Type" elementType="Header">
+                <stringProp name="Header.name">Content-Type</stringProp>
+                <stringProp name="Header.value">application/json; charset=UTF-8</stringProp>
+              </elementProp>
+              <elementProp name="Cache-Control" elementType="Header">
+                <stringProp name="Header.name">Cache-Control</stringProp>
+                <stringProp name="Header.value">no-cache</stringProp>
+              </elementProp>
+              <elementProp name="Accept" elementType="Header">
+                <stringProp name="Header.name">Accept</stringProp>
+                <stringProp name="Header.value">application/json</stringProp>
+              </elementProp>
+            </collectionProp>
+          </HeaderManager>
+          <hashTree/>
+          <ResponseAssertion guiclass="AssertionGui" testclass="ResponseAssertion" testname="Response Code200" enabled="true">
+            <collectionProp name="Asserion.test_strings">
+              <stringProp name="-1146597565">${Response200}</stringProp>
+            </collectionProp>
+            <stringProp name="Assertion.custom_message"></stringProp>
+            <stringProp name="Assertion.test_field">Assertion.response_code</stringProp>
+            <boolProp name="Assertion.assume_success">false</boolProp>
+            <intProp name="Assertion.test_type">2</intProp>
+          </ResponseAssertion>
+          <hashTree/>
+          <ResponseAssertion guiclass="AssertionGui" testclass="ResponseAssertion" testname="Response Assertion" enabled="true">
+            <collectionProp name="Asserion.test_strings">
+              <stringProp name="-340323263">response</stringProp>
+              <stringProp name="1402947425">requestStatus</stringProp>
+              <stringProp name="49">1</stringProp>
+            </collectionProp>
+            <stringProp name="Assertion.custom_message"></stringProp>
+            <stringProp name="Assertion.test_field">Assertion.response_data</stringProp>
+            <boolProp name="Assertion.assume_success">false</boolProp>
+            <intProp name="Assertion.test_type">16</intProp>
+          </ResponseAssertion>
+          <hashTree/>
+        </hashTree>
+        <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="Step9: Activate the Vendor profile" enabled="true">
           <elementProp name="HTTPsampler.Arguments" elementType="Arguments" guiclass="HTTPArgumentsPanel" testclass="Arguments" testname="User Defined Variables" enabled="true">
             <collectionProp name="Arguments.arguments"/>
           </elementProp>
@@ -2677,18 +3142,34 @@ catch (Throwable ex) {
           </ResponseAssertion>
           <hashTree/>
         </hashTree>
-        <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="Step9: Sumbit /Upload the Vendor file" enabled="true">
+        <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="Step10: Sumbit /Upload the Vendor file" enabled="true">
           <boolProp name="HTTPSampler.postBodyRaw">true</boolProp>
           <elementProp name="HTTPsampler.Arguments" elementType="Arguments">
             <collectionProp name="Arguments.arguments">
               <elementProp name="" elementType="HTTPArgument">
                 <boolProp name="HTTPArgument.always_encode">false</boolProp>
                 <stringProp name="Argument.value">{&#xd;
-  &quot;fileContent&quot;: &quot;I,123456789,3154456789,362564230,01/1/2018,240.19,Ali Jacob,Urgent&#xd;
-I,126666345,3154456789,362564230,09/09/2018,7400,Aliajsdjfjasdhjfhj,Urgent&#xd;
-V,111112745,3154456789,362564230,09/09/2018,1400,,Urgent&#xd;
-S,133332845,3154456789,362564230,11/09/2018,5400,Jacob,Urgent&#xd;
-I,363636219,3154456789,362564230,11/09/2018,4400,Deo,Test&quot;&#xd;
+  &quot;fileContent&quot;: &quot;Vendor ID,Vendor Name,Check Number,Address 1,Address 2,Address 3,City,State,Zip Code,Country Code,Country,Email,Payment Type,Annual Spend,Contact,Company ID&#xd;
+VEN_00000001,Vendor0001,20000000001,Vendor Address 1,Vendor Address 2,Vendor Address 3,ATLANTA,GA,20021,US,USA,Test@gmail.com,1,1203556,1236523216,CID1&#xd;
+VEN_00000002,Vendor0002,20000000002,Vendor Address 1,Vendor Address 2,Vendor Address 4,ATLANTA,GA,20021,US,USA,Test@gmail.com,1,1203557,1236523217,CID2&#xd;
+VEN_00000003,Vendor0003,20000000003,Vendor Address 1,Vendor Address 2,Vendor Address 5,ATLANTA,GA,20021,US,USA,Test@gmail.com,1,1203558,1236523218,CID3&#xd;
+VEN_00000004,Vendor0004,20000000004,Vendor Address 1,Vendor Address 2,Vendor Address 6,ATLANTA,GA,20021,US,USA,Test@gmail.com,1,1203559,1236523219,CID4&#xd;
+VEN_00000005,Vendor0005,20000000005,Vendor Address 1,Vendor Address 2,Vendor Address 7,ATLANTA,GA,20021,US,USA,Test@gmail.com,1,1203560,1236523220,CID5&#xd;
+VEN_00000006,Vendor0006,20000000006,Vendor Address 1,Vendor Address 2,Vendor Address 8,ATLANTA,GA,20021,US,USA,Test@gmail.com,1,1203561,1236523221,CID6&#xd;
+VEN_00000007,Vendor0007,20000000007,Vendor Address 1,Vendor Address 2,Vendor Address 9,ATLANTA,GA,20021,US,USA,Test@gmail.com,1,1203562,1236523222,CID7&#xd;
+VEN_00000008,Vendor0008,20000000008,Vendor Address 1,Vendor Address 2,Vendor Address 10,ATLANTA,GA,20021,US,USA,Test@gmail.com,2,1203563,1236523223,CID8&#xd;
+VEN_00000009,Vendor0009,20000000009,Vendor Address 1,Vendor Address 2,Vendor Address 11,ATLANTA,GA,20021,US,USA,Test@gmail.com,2,1203564,1236523224,CID9&#xd;
+VEN_00000010,Vendor0010,20000000010,Vendor Address 1,Vendor Address 2,Vendor Address 12,ATLANTA,GA,20021,US,USA,Test@gmail.com,2,1203565,1236523225,CID10&#xd;
+VEN_00000011,Vendor0011,20000000011,Vendor Address 1,Vendor Address 2,Vendor Address 13,ATLANTA,GA,20021,US,USA,Test@gmail.com,2,1203566,1236523226,CID11&#xd;
+VEN_00000012,Vendor0012,20000000012,Vendor Address 1,Vendor Address 2,Vendor Address 14,ATLANTA,GA,20021,US,USA,Test@gmail.com,2,1203567,1236523227,CID12&#xd;
+VEN_00000013,Vendor0013,20000000013,Vendor Address 1,Vendor Address 2,Vendor Address 15,ATLANTA,GA,20021,US,USA,Test@gmail.com,2,1203568,1236523228,CID13&#xd;
+VEN_00000014,Vendor0014,20000000014,Vendor Address 1,Vendor Address 2,Vendor Address 16,ATLANTA,GA,20021,US,USA,Test@gmail.com,2,1203569,1236523229,CID14&#xd;
+VEN_00000015,Vendor0015,20000000015,Vendor Address 1,Vendor Address 2,Vendor Address 17,ATLANTA,GA,20021,US,USA,Test@gmail.com,0,1203570,1236523230,CID15&#xd;
+VEN_00000016,Vendor0016,20000000016,Vendor Address 1,Vendor Address 2,Vendor Address 18,ATLANTA,GA,20021,US,USA,Test@gmail.com,0,1203571,1236523231,CID16&#xd;
+VEN_00000017,Vendor0017,20000000017,Vendor Address 1,Vendor Address 2,Vendor Address 19,ATLANTA,GA,20021,US,USA,Test@gmail.com,0,1203572,1236523232,CID17&#xd;
+VEN_00000018,Vendor0018,20000000018,Vendor Address 1,Vendor Address 2,Vendor Address 20,ATLANTA,GA,20021,US,USA,Test@gmail.com,3,1203573,1236523233,CID18&#xd;
+VEN_00000019,Vendor0019,20000000019,Vendor Address 1,Vendor Address 2,Vendor Address 21,ATLANTA,GA,20021,US,USA,Test@gmail.com,3,1203574,1236523234,CID19&#xd;
+VEN_00000020,Vendor0020,20000000020,Vendor Address 1,Vendor Address 2,Vendor Address 22,ATLANTA,GA,20021,US,USA,Test@gmail.com,3,1203575,1236523235,CID20&quot;&#xd;
 }</stringProp>
                 <stringProp name="Argument.metadata">=</stringProp>
               </elementProp>
@@ -2787,7 +3268,7 @@ I,363636219,3154456789,362564230,11/09/2018,4400,Deo,Test&quot;&#xd;
   &quot;name&quot;: &quot;OutputFile_${OutputFile_name}&quot;,&#xd;
   &quot;description&quot;: &quot;${Desc}&quot;,&#xd;
      &quot;outputType&quot;: &quot;${OutputType1}&quot;,&#xd;
-  &quot;url&quot;: &quot;${APIpostURL}&quot;&#xd;
+  &quot;url&quot;: &quot;${VBankAPIURL}&quot;&#xd;
 }</stringProp>
                 <stringProp name="Argument.metadata">=</stringProp>
               </elementProp>
@@ -2890,14 +3371,14 @@ try {
      f = new FileOutputStream(path+vars.get(&quot;FilePathVBank&quot;), false); 
      p = new PrintStream(f); 
      this.interpreter.setOut(p); 
-     print(&quot;VendorBank ID&quot;+&quot;,&quot;+&quot;1&quot;+&quot;,&quot;+&quot;false&quot;+&quot;,&quot;+&quot;1&quot;+&quot;,&quot;+&quot;3&quot;+&quot;,&quot;+&quot;true&quot;+&quot;,&quot;+&quot;true&quot; +&quot;,&quot;+&quot;false&quot;+&quot;,&quot;+&quot;0&quot;);
-     print(&quot;VendorBank Name&quot;+&quot;,&quot;+&quot;2&quot;+&quot;,&quot;+&quot;false&quot;+&quot;,&quot;+&quot;10&quot;+&quot;,&quot;+&quot;3&quot;+&quot;,&quot;+&quot;false&quot;+&quot;,&quot;+&quot;true&quot; +&quot;,&quot;+&quot;false&quot;+&quot;,&quot;+&quot;0&quot;);
-     print(&quot;BankCheck Number&quot;+&quot;,&quot;+&quot;3&quot;+&quot;,&quot;+&quot;false&quot;+&quot;,&quot;+&quot;10&quot;+&quot;,&quot;+&quot;3&quot;+&quot;,&quot;+&quot;false&quot;+&quot;,&quot;+&quot;false&quot;+&quot;,&quot;+&quot;false&quot;+&quot;,&quot;+&quot;0&quot;);
-     print(&quot;BankAddress 1&quot;+&quot;,&quot;+&quot;4&quot;+&quot;,&quot;+&quot;false&quot;+&quot;,&quot;+&quot;10&quot;+&quot;,&quot;+&quot;3&quot;+&quot;,&quot;+&quot;true&quot;+&quot;,&quot;+&quot;true&quot;+&quot;,&quot;+&quot;false&quot;+&quot;,&quot;+&quot;0&quot;);
-     print(&quot;BankAddress 2&quot;+&quot;,&quot;+&quot;6&quot;+&quot;,&quot;+&quot;false&quot;+&quot;,&quot;+&quot;10&quot;+&quot;,&quot;+&quot;3&quot;+&quot;,&quot;+&quot;false&quot;+&quot;,&quot;+&quot;true&quot;+&quot;,&quot;+&quot;false&quot;+&quot;,&quot;+&quot;0&quot;);
-     print(&quot;BankAddress 3&quot;+&quot;,&quot;+&quot;5&quot;+&quot;,&quot;+&quot;false&quot;+&quot;,&quot;+&quot;10&quot;+&quot;,&quot;+&quot;3&quot;+&quot;,&quot;+&quot;false&quot;+&quot;,&quot;+&quot;true&quot;+&quot;,&quot;+&quot;false&quot;+&quot;,&quot;+&quot;0&quot;);     
-     print(&quot;City&quot;+&quot;,&quot;+&quot;7&quot;+&quot;,&quot;+&quot;false&quot;+&quot;,&quot;+&quot;20&quot;+&quot;,&quot;+&quot;3&quot;+&quot;,&quot;+&quot;true&quot;+&quot;,&quot;+&quot;false&quot;+&quot;,&quot;+&quot;false&quot;+&quot;,&quot;+&quot;0&quot;);
-     print(&quot;State&quot;+&quot;,&quot;+&quot;8&quot;+&quot;,&quot;+&quot;false&quot;+&quot;,&quot;+&quot;20&quot;+&quot;,&quot;+&quot;3&quot;+&quot;,&quot;+&quot;true&quot;+&quot;,&quot;+&quot;true&quot;+&quot;,&quot;+&quot;false&quot;+&quot;,&quot;+&quot;0&quot;);
+     print(&quot;VendorBank ID&quot;+&quot;,&quot;+&quot;1&quot;+&quot;,&quot;+&quot;true&quot;+&quot;,&quot;+&quot;50&quot;+&quot;,&quot;+&quot;3&quot;+&quot;,&quot;+&quot;true&quot;+&quot;,&quot;+&quot;true&quot; +&quot;,&quot;+&quot;false&quot;+&quot;,&quot;+&quot;0&quot;);
+     print(&quot;VendorBank Name&quot;+&quot;,&quot;+&quot;2&quot;+&quot;,&quot;+&quot;true&quot;+&quot;,&quot;+&quot;100&quot;+&quot;,&quot;+&quot;3&quot;+&quot;,&quot;+&quot;true&quot;+&quot;,&quot;+&quot;true&quot; +&quot;,&quot;+&quot;false&quot;+&quot;,&quot;+&quot;0&quot;);
+     print(&quot;BankCheck Number&quot;+&quot;,&quot;+&quot;3&quot;+&quot;,&quot;+&quot;false&quot;+&quot;,&quot;+&quot;50&quot;+&quot;,&quot;+&quot;3&quot;+&quot;,&quot;+&quot;true&quot;+&quot;,&quot;+&quot;true&quot;+&quot;,&quot;+&quot;false&quot;+&quot;,&quot;+&quot;0&quot;);
+     print(&quot;BankAddress 1&quot;+&quot;,&quot;+&quot;4&quot;+&quot;,&quot;+&quot;false&quot;+&quot;,&quot;+&quot;100&quot;+&quot;,&quot;+&quot;3&quot;+&quot;,&quot;+&quot;true&quot;+&quot;,&quot;+&quot;true&quot;+&quot;,&quot;+&quot;false&quot;+&quot;,&quot;+&quot;0&quot;);
+     print(&quot;BankAddress 2&quot;+&quot;,&quot;+&quot;6&quot;+&quot;,&quot;+&quot;false&quot;+&quot;,&quot;+&quot;100&quot;+&quot;,&quot;+&quot;3&quot;+&quot;,&quot;+&quot;true&quot;+&quot;,&quot;+&quot;true&quot;+&quot;,&quot;+&quot;false&quot;+&quot;,&quot;+&quot;0&quot;);
+     print(&quot;BankAddress 3&quot;+&quot;,&quot;+&quot;5&quot;+&quot;,&quot;+&quot;false&quot;+&quot;,&quot;+&quot;100&quot;+&quot;,&quot;+&quot;3&quot;+&quot;,&quot;+&quot;true&quot;+&quot;,&quot;+&quot;true&quot;+&quot;,&quot;+&quot;false&quot;+&quot;,&quot;+&quot;0&quot;);     
+     print(&quot;City&quot;+&quot;,&quot;+&quot;7&quot;+&quot;,&quot;+&quot;false&quot;+&quot;,&quot;+&quot;50&quot;+&quot;,&quot;+&quot;3&quot;+&quot;,&quot;+&quot;true&quot;+&quot;,&quot;+&quot;true&quot;+&quot;,&quot;+&quot;false&quot;+&quot;,&quot;+&quot;0&quot;);
+     print(&quot;State&quot;+&quot;,&quot;+&quot;8&quot;+&quot;,&quot;+&quot;false&quot;+&quot;,&quot;+&quot;50&quot;+&quot;,&quot;+&quot;3&quot;+&quot;,&quot;+&quot;true&quot;+&quot;,&quot;+&quot;true&quot;+&quot;,&quot;+&quot;false&quot;+&quot;,&quot;+&quot;0&quot;);
         
      f.close();
 
@@ -3031,7 +3512,7 @@ catch (Throwable ex) {
           &quot;Name&quot;:&quot;PaymentFile${__time()}&quot;,&#xd;
           &quot;OutputFileTypeId&quot;: ${VBankOutputFileType_ID},&#xd;
           &quot;InputFileTypeId&quot; : ${__property(InputFileType_ID)},&#xd;
-          &quot;hasHeader&quot;: ${false},&#xd;
+          &quot;hasHeader&quot;: ${true},&#xd;
           &quot;hasTrailer&quot;: ${true},&#xd;
           }</stringProp>
                 <stringProp name="Argument.metadata">=</stringProp>
@@ -3184,12 +3665,16 @@ catch (Throwable ex) {
               <elementProp name="" elementType="HTTPArgument">
                 <boolProp name="HTTPArgument.always_encode">false</boolProp>
                 <stringProp name="Argument.value">{&#xd;
-  &quot;fileContent&quot;: &quot;Record_Type,Routing_Number,Account_Number,Check_Number,Issue_Date,Amount,Payee_name,Notes&#xd;
-I,123456789,3154456789,362564230,01-10-2018,240.19,Ali Jacob,Urgent&#xd;
-I,126666345,3154456789,362564230,09-09-2018,7400,Aliajsdjfjasdhjfhj,Urgent&#xd;
-V,111112745,3154456789,362564230,09-09-2018,1400,,Urgent&#xd;
-S,133332845,3154456789,362564230,11-09-2018,5400,Jacob,Urgent&#xd;
-I,363636219,3154456789,362564230,11-09-2018,4400,Deo,Test&quot;&#xd;
+  &quot;fileContent&quot;: &quot;VendorBank ID,VendorBank Name,BankCheck Number,BankAddress 1,BankAddress 2,BankAddress 3,City,State&#xd;
+RegalB,Regal Bank,900000001,Regal Bank Address 1,Regal Bank Address 2,Regal Bank Address 3,CT,GA&#xd;
+BISBI,State bank ,800000523,SBI Bank Address1,SBI Bank Address2,SBI Bank Address3,CT,KA&#xd;
+HDFC,The Housing Development Finance Corporation Limited,69222222,HDFC Bank  Address 1,HDFC Bank  Address 2,HDFC Bank  Address 3,CT,HA&#xd;
+ICICI,Industrial Credit and Investment Corporation of India,235544222,ICICI Bank Address1,ICICI Bank Address1,ICICI Bank Address1,CT,IA&#xd;
+Kotak,Kotak Mahindra ,2656764121,KM BankAddress1,KM BankAddress1,KM BankAddress1,CT,KM&#xd;
+AMEX,American express,1222222222,AMEX Bank Address1,AMEX Bank Address1,AMEX Bank Address1,CT,AM&#xd;
+SVB,Selicon velly,3321000000,SVB Bank ADDRESS1,SVB Bank ADDRESS1,SVB Bank ADDRESS1,CT,SV&#xd;
+FTB,Fifth Third,6662200000,FTB Bank Address1,FTB Bank Address1,FTB Bank Address1,CT,FT&#xd;
+JPM,JP morgan,255550000,JPM Bank Adrress1,JPM Bank Adrress1,JPM Bank Adrress1,CT,JP&quot;&#xd;
 }</stringProp>
                 <stringProp name="Argument.metadata">=</stringProp>
               </elementProp>
@@ -3366,7 +3851,7 @@ catch (Throwable ex) {
       <hashTree>
         <JDBCSampler guiclass="TestBeanGUI" testclass="JDBCSampler" testname="Fetch OutputfileFields Details for Vendor BANK profile" enabled="true">
           <stringProp name="dataSource">VBank profile1</stringProp>
-          <stringProp name="query">select CAST(OutputFileFieldId as INTEGER) AS OutputFileField, * from OutputFileFields where OutputFileTypeId = &apos;${__property(VBankOutputFileType_ID)}&apos;</stringProp>
+          <stringProp name="query">select CAST(OutputFileFieldId as INTEGER) AS OutputFileField, * from Mappings where ProfileId = &apos;${__property(VBankProfileID)}&apos;</stringProp>
           <stringProp name="queryArguments"></stringProp>
           <stringProp name="queryArgumentsTypes"></stringProp>
           <stringProp name="queryTimeout"></stringProp>
@@ -3462,7 +3947,7 @@ catch (Throwable ex) {
       <hashTree>
         <JDBCSampler guiclass="TestBeanGUI" testclass="JDBCSampler" testname="Fetch InputfileFields Details for Vendor BANK profile" enabled="true">
           <stringProp name="dataSource">VBank profile2</stringProp>
-          <stringProp name="query">select CAST(Id as INTEGER) AS InputID, * from InputFileFields where ProfileId = &apos;${__property(VBankProfileID)}&apos;</stringProp>
+          <stringProp name="query">select CAST(Id as INTEGER) AS InputID, * from InputFileFields where ProfileId = &apos;${__property(VBankProfileID)}&apos; order by ColumnNumber </stringProp>
           <stringProp name="queryArguments"></stringProp>
           <stringProp name="queryArgumentsTypes"></stringProp>
           <stringProp name="queryTimeout"></stringProp>
@@ -3678,7 +4163,70 @@ catch (Throwable ex) {
             <hashTree/>
           </hashTree>
         </hashTree>
-        <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="Step8: Activate the VendorBank profile" enabled="true">
+        <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="Step8: Validate the Mapping" enabled="true">
+          <elementProp name="HTTPsampler.Arguments" elementType="Arguments" guiclass="HTTPArgumentsPanel" testclass="Arguments" testname="User Defined Variables" enabled="true">
+            <collectionProp name="Arguments.arguments"/>
+          </elementProp>
+          <stringProp name="HTTPSampler.domain">${URL}</stringProp>
+          <stringProp name="HTTPSampler.port">UFT-8</stringProp>
+          <stringProp name="HTTPSampler.protocol">http</stringProp>
+          <stringProp name="HTTPSampler.contentEncoding"></stringProp>
+          <stringProp name="HTTPSampler.path">${Profiles}/${__property(VBankProfileID)}/validate-map</stringProp>
+          <stringProp name="HTTPSampler.method">POST</stringProp>
+          <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
+          <boolProp name="HTTPSampler.auto_redirects">false</boolProp>
+          <boolProp name="HTTPSampler.use_keepalive">true</boolProp>
+          <boolProp name="HTTPSampler.DO_MULTIPART_POST">false</boolProp>
+          <stringProp name="HTTPSampler.embedded_url_re"></stringProp>
+          <stringProp name="HTTPSampler.connect_timeout"></stringProp>
+          <stringProp name="HTTPSampler.response_timeout"></stringProp>
+        </HTTPSamplerProxy>
+        <hashTree>
+          <HeaderManager guiclass="HeaderPanel" testclass="HeaderManager" testname="HTTP Header Manager" enabled="true">
+            <collectionProp name="HeaderManager.headers">
+              <elementProp name="Accept-Language" elementType="Header">
+                <stringProp name="Header.name">Accept-Language</stringProp>
+                <stringProp name="Header.value">en-US,en;q=0.5</stringProp>
+              </elementProp>
+              <elementProp name="Content-Type" elementType="Header">
+                <stringProp name="Header.name">Content-Type</stringProp>
+                <stringProp name="Header.value">application/json; charset=UTF-8</stringProp>
+              </elementProp>
+              <elementProp name="Cache-Control" elementType="Header">
+                <stringProp name="Header.name">Cache-Control</stringProp>
+                <stringProp name="Header.value">no-cache</stringProp>
+              </elementProp>
+              <elementProp name="Accept" elementType="Header">
+                <stringProp name="Header.name">Accept</stringProp>
+                <stringProp name="Header.value">application/json</stringProp>
+              </elementProp>
+            </collectionProp>
+          </HeaderManager>
+          <hashTree/>
+          <ResponseAssertion guiclass="AssertionGui" testclass="ResponseAssertion" testname="Response Code200" enabled="true">
+            <collectionProp name="Asserion.test_strings">
+              <stringProp name="-1146597565">${Response200}</stringProp>
+            </collectionProp>
+            <stringProp name="Assertion.custom_message"></stringProp>
+            <stringProp name="Assertion.test_field">Assertion.response_code</stringProp>
+            <boolProp name="Assertion.assume_success">false</boolProp>
+            <intProp name="Assertion.test_type">2</intProp>
+          </ResponseAssertion>
+          <hashTree/>
+          <ResponseAssertion guiclass="AssertionGui" testclass="ResponseAssertion" testname="Response Assertion" enabled="true">
+            <collectionProp name="Asserion.test_strings">
+              <stringProp name="-340323263">response</stringProp>
+              <stringProp name="1402947425">requestStatus</stringProp>
+              <stringProp name="49">1</stringProp>
+            </collectionProp>
+            <stringProp name="Assertion.custom_message"></stringProp>
+            <stringProp name="Assertion.test_field">Assertion.response_data</stringProp>
+            <boolProp name="Assertion.assume_success">false</boolProp>
+            <intProp name="Assertion.test_type">16</intProp>
+          </ResponseAssertion>
+          <hashTree/>
+        </hashTree>
+        <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="Step9: Activate the VendorBank profile" enabled="true">
           <elementProp name="HTTPsampler.Arguments" elementType="Arguments" guiclass="HTTPArgumentsPanel" testclass="Arguments" testname="User Defined Variables" enabled="true">
             <collectionProp name="Arguments.arguments"/>
           </elementProp>
@@ -3741,18 +4289,23 @@ catch (Throwable ex) {
           </ResponseAssertion>
           <hashTree/>
         </hashTree>
-        <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="Step9: Sumbit /Upload the VendorBank file" enabled="true">
+        <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="Step10: Sumbit /Upload the VendorBank file" enabled="true">
           <boolProp name="HTTPSampler.postBodyRaw">true</boolProp>
           <elementProp name="HTTPsampler.Arguments" elementType="Arguments">
             <collectionProp name="Arguments.arguments">
               <elementProp name="" elementType="HTTPArgument">
                 <boolProp name="HTTPArgument.always_encode">false</boolProp>
                 <stringProp name="Argument.value">{&#xd;
-  &quot;fileContent&quot;: &quot;I,123456789,3154456789,362564230,01/1/2018,240.19,Ali Jacob,Urgent&#xd;
-I,126666345,3154456789,362564230,09/09/2018,7400,Aliajsdjfjasdhjfhj,Urgent&#xd;
-V,111112745,3154456789,362564230,09/09/2018,1400,,Urgent&#xd;
-S,133332845,3154456789,362564230,11/09/2018,5400,Jacob,Urgent&#xd;
-I,363636219,3154456789,362564230,11/09/2018,4400,Deo,Test&quot;&#xd;
+  &quot;fileContent&quot;: &quot;VendorBank ID,VendorBank Name,BankCheck Number,BankAddress 1,BankAddress 2,BankAddress 3,City,State&#xd;
+RegalB,Regal Bank,900000001,Regal Bank Address 1,Regal Bank Address 2,Regal Bank Address 3,CT,GA&#xd;
+BISBI,State bank ,800000523,SBI Bank Address1,SBI Bank Address2,SBI Bank Address3,CT,KA&#xd;
+HDFC,The Housing Development Finance Corporation Limited,69222222,HDFC Bank  Address 1,HDFC Bank  Address 2,HDFC Bank  Address 3,CT,HA&#xd;
+ICICI,Industrial Credit and Investment Corporation of India,235544222,ICICI Bank Address1,ICICI Bank Address1,ICICI Bank Address1,CT,IA&#xd;
+Kotak,Kotak Mahindra ,2656764121,KM BankAddress1,KM BankAddress1,KM BankAddress1,CT,KM&#xd;
+AMEX,American express,1222222222,AMEX Bank Address1,AMEX Bank Address1,AMEX Bank Address1,CT,AM&#xd;
+SVB,Selicon velly,3321000000,SVB Bank ADDRESS1,SVB Bank ADDRESS1,SVB Bank ADDRESS1,CT,SV&#xd;
+FTB,Fifth Third,6662200000,FTB Bank Address1,FTB Bank Address1,FTB Bank Address1,CT,FT&#xd;
+JPM,JP morgan,255550000,JPM Bank Adrress1,JPM Bank Adrress1,JPM Bank Adrress1,CT,JP&quot;&#xd;
 }</stringProp>
                 <stringProp name="Argument.metadata">=</stringProp>
               </elementProp>
@@ -3875,7 +4428,7 @@ I,363636219,3154456789,362564230,11/09/2018,4400,Deo,Test&quot;&#xd;
               </elementProp>
             </collectionProp>
           </elementProp>
-          <stringProp name="HTTPSampler.domain">${URL}</stringProp>
+          <stringProp name="HTTPSampler.domain">${RpURL}</stringProp>
           <stringProp name="HTTPSampler.port">UFT-8</stringProp>
           <stringProp name="HTTPSampler.protocol">http</stringProp>
           <stringProp name="HTTPSampler.contentEncoding"></stringProp>
@@ -3922,7 +4475,7 @@ I,363636219,3154456789,362564230,11/09/2018,4400,Deo,Test&quot;&#xd;
           </ResponseAssertion>
           <hashTree/>
         </hashTree>
-        <BeanShellPreProcessor guiclass="TestBeanGUI" testclass="BeanShellPreProcessor" testname="POST Company" enabled="false">
+        <BeanShellPreProcessor guiclass="TestBeanGUI" testclass="BeanShellPreProcessor" testname="Add Payement,Vendor and Vendor Bank IDs" enabled="false">
           <stringProp name="filename"></stringProp>
           <stringProp name="parameters"></stringProp>
           <boolProp name="resetInterpreter">false</boolProp>
@@ -3990,185 +4543,6 @@ I,363636219,3154456789,362564230,11/09/2018,4400,Deo,Test&quot;&#xd;
             <boolProp name="Assertion.assume_success">true</boolProp>
             <intProp name="Assertion.test_type">2</intProp>
           </ResponseAssertion>
-          <hashTree/>
-        </hashTree>
-        <BeanShellPreProcessor guiclass="TestBeanGUI" testclass="BeanShellPreProcessor" testname="Add Payments to the RegalPay(From FIleXchange)" enabled="false">
-          <boolProp name="resetInterpreter">false</boolProp>
-          <stringProp name="parameters"></stringProp>
-          <stringProp name="filename"></stringProp>
-          <stringProp name="script"></stringProp>
-        </BeanShellPreProcessor>
-        <hashTree/>
-        <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="P: Verify user is able to ADD Payments to the RegalPay from FileXchange" enabled="false">
-          <boolProp name="HTTPSampler.postBodyRaw">true</boolProp>
-          <elementProp name="HTTPsampler.Arguments" elementType="Arguments">
-            <collectionProp name="Arguments.arguments">
-              <elementProp name="" elementType="HTTPArgument">
-                <boolProp name="HTTPArgument.always_encode">false</boolProp>
-                <stringProp name="Argument.value">[&#xd;
-            {&#xd;
-              &quot;ERPBatchNumber&quot;: &quot;Batch_${__time()}&quot;,&#xd;
-              &quot;PaymentNumber&quot;: &quot;${Payment_number}&quot;,&#xd;
-              &quot;paymentDate&quot;: &quot;${__timeShift(yyyy-MM-dd,,,,)}&quot;,&#xd;
-              &quot;PaymentDescription&quot;: &quot;paymentdescription&quot;,&#xd;
-              &quot;PaymentMethod&quot;: 0,&#xd;
-              &quot;VendorNumber&quot;: &quot;Vendor_${Vendor_number}&quot;,&#xd;
-              &quot;AddressCode&quot;: &quot;address_${address_code}&quot;,&#xd;
-              &quot;CheckNumber&quot;: &quot;check_${Check_number}&quot;,&#xd;
-              &quot;AccountCode&quot;: &quot;account_${account_code}&quot;,&#xd;
-              &quot;Currency&quot;: &quot;${American_Cur}&quot;,&#xd;
-              &quot;InvoiceNumber&quot;: &quot;INVOICE_${Invoice number}&quot;,&#xd;
-              &quot;Date&quot;: &quot;${__timeShift(yyyy-MM-dd,,P1D,, c)}&quot;,&#xd;
-              &quot;DueDate&quot;: &quot;${__timeShift(yyyy-MM-dd,,P1D,, c)}&quot;,&#xd;
-              &quot;PONumber&quot;: &quot;PO123&quot;,&#xd;
-              &quot;VoucherNumber&quot;: &quot;VOUCHER_${Voucher_number}&quot;,&#xd;
-              &quot;GrossAmount&quot;: 90.22,&#xd;
-              &quot;DiscountAmount&quot;: 120.22,&#xd;
-              &quot;NetAmount&quot;: 100.22,&#xd;
-              &quot;InvoiceDescription&quot;: &quot;invoicedescription&quot;,&#xd;
-              &quot;OriginalAmount&quot;: &quot;0.00&quot;&#xd;
-            }&#xd;
-          ]</stringProp>
-                <stringProp name="Argument.metadata">=</stringProp>
-              </elementProp>
-            </collectionProp>
-          </elementProp>
-          <stringProp name="HTTPSampler.domain">${RpayURL}</stringProp>
-          <stringProp name="HTTPSampler.port">UFT-8</stringProp>
-          <stringProp name="HTTPSampler.protocol">http</stringProp>
-          <stringProp name="HTTPSampler.contentEncoding"></stringProp>
-          <stringProp name="HTTPSampler.path">${Payment}/uploads</stringProp>
-          <stringProp name="HTTPSampler.method">POST</stringProp>
-          <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
-          <boolProp name="HTTPSampler.auto_redirects">false</boolProp>
-          <boolProp name="HTTPSampler.use_keepalive">true</boolProp>
-          <boolProp name="HTTPSampler.DO_MULTIPART_POST">false</boolProp>
-          <stringProp name="HTTPSampler.embedded_url_re"></stringProp>
-          <stringProp name="HTTPSampler.connect_timeout"></stringProp>
-          <stringProp name="HTTPSampler.response_timeout"></stringProp>
-        </HTTPSamplerProxy>
-        <hashTree>
-          <HeaderManager guiclass="HeaderPanel" testclass="HeaderManager" testname="HTTP Header Manager" enabled="true">
-            <collectionProp name="HeaderManager.headers">
-              <elementProp name="Accept-Language" elementType="Header">
-                <stringProp name="Header.name">Accept-Language</stringProp>
-                <stringProp name="Header.value">en-US,en;q=0.5</stringProp>
-              </elementProp>
-              <elementProp name="Content-Type" elementType="Header">
-                <stringProp name="Header.name">Content-Type</stringProp>
-                <stringProp name="Header.value">application/json; charset=UTF-8</stringProp>
-              </elementProp>
-              <elementProp name="Cache-Control" elementType="Header">
-                <stringProp name="Header.name">Cache-Control</stringProp>
-                <stringProp name="Header.value">no-cache</stringProp>
-              </elementProp>
-              <elementProp name="Accept" elementType="Header">
-                <stringProp name="Header.name">Accept</stringProp>
-                <stringProp name="Header.value">application/json</stringProp>
-              </elementProp>
-            </collectionProp>
-          </HeaderManager>
-          <hashTree/>
-          <RandomVariableConfig guiclass="TestBeanGUI" testclass="RandomVariableConfig" testname="Random Variable for Payment Number" enabled="true">
-            <stringProp name="variableName">Payment_number</stringProp>
-            <stringProp name="outputFormat"></stringProp>
-            <stringProp name="minimumValue">11111</stringProp>
-            <stringProp name="maximumValue">99999</stringProp>
-            <stringProp name="randomSeed"></stringProp>
-            <boolProp name="perThread">false</boolProp>
-          </RandomVariableConfig>
-          <hashTree/>
-          <RandomVariableConfig guiclass="TestBeanGUI" testclass="RandomVariableConfig" testname="Random Variable for Vendor Number" enabled="true">
-            <stringProp name="variableName">Vendor_number</stringProp>
-            <stringProp name="outputFormat"></stringProp>
-            <stringProp name="minimumValue">111</stringProp>
-            <stringProp name="maximumValue">999</stringProp>
-            <stringProp name="randomSeed"></stringProp>
-            <boolProp name="perThread">false</boolProp>
-          </RandomVariableConfig>
-          <hashTree/>
-          <RandomVariableConfig guiclass="TestBeanGUI" testclass="RandomVariableConfig" testname="Random Variable for Address code" enabled="true">
-            <stringProp name="variableName">address_code</stringProp>
-            <stringProp name="outputFormat"></stringProp>
-            <stringProp name="minimumValue">11</stringProp>
-            <stringProp name="maximumValue">99</stringProp>
-            <stringProp name="randomSeed"></stringProp>
-            <boolProp name="perThread">false</boolProp>
-          </RandomVariableConfig>
-          <hashTree/>
-          <RandomVariableConfig guiclass="TestBeanGUI" testclass="RandomVariableConfig" testname="Random Variable for Check  Number" enabled="true">
-            <stringProp name="variableName">Check_number</stringProp>
-            <stringProp name="outputFormat"></stringProp>
-            <stringProp name="minimumValue">11111</stringProp>
-            <stringProp name="maximumValue">99999</stringProp>
-            <stringProp name="randomSeed"></stringProp>
-            <boolProp name="perThread">false</boolProp>
-          </RandomVariableConfig>
-          <hashTree/>
-          <RandomVariableConfig guiclass="TestBeanGUI" testclass="RandomVariableConfig" testname="Random Variable for Account code" enabled="true">
-            <stringProp name="variableName">account_code</stringProp>
-            <stringProp name="outputFormat"></stringProp>
-            <stringProp name="minimumValue">11</stringProp>
-            <stringProp name="maximumValue">99</stringProp>
-            <stringProp name="randomSeed"></stringProp>
-            <boolProp name="perThread">false</boolProp>
-          </RandomVariableConfig>
-          <hashTree/>
-          <RandomVariableConfig guiclass="TestBeanGUI" testclass="RandomVariableConfig" testname="Random Variable for Invoice Number" enabled="true">
-            <stringProp name="variableName">Invoice number</stringProp>
-            <stringProp name="outputFormat"></stringProp>
-            <stringProp name="minimumValue">111</stringProp>
-            <stringProp name="maximumValue">999</stringProp>
-            <stringProp name="randomSeed"></stringProp>
-            <boolProp name="perThread">false</boolProp>
-          </RandomVariableConfig>
-          <hashTree/>
-          <RandomVariableConfig guiclass="TestBeanGUI" testclass="RandomVariableConfig" testname="Random Variable for Voucher Number" enabled="true">
-            <stringProp name="variableName">Voucher_number</stringProp>
-            <stringProp name="outputFormat"></stringProp>
-            <stringProp name="minimumValue">11</stringProp>
-            <stringProp name="maximumValue">99</stringProp>
-            <stringProp name="randomSeed"></stringProp>
-            <boolProp name="perThread">false</boolProp>
-          </RandomVariableConfig>
-          <hashTree/>
-          <ResponseAssertion guiclass="AssertionGui" testclass="ResponseAssertion" testname="Response Code201" enabled="true">
-            <collectionProp name="Asserion.test_strings">
-              <stringProp name="-1146597534">${Response201}</stringProp>
-            </collectionProp>
-            <stringProp name="Assertion.custom_message"></stringProp>
-            <stringProp name="Assertion.test_field">Assertion.response_code</stringProp>
-            <boolProp name="Assertion.assume_success">true</boolProp>
-            <intProp name="Assertion.test_type">2</intProp>
-          </ResponseAssertion>
-          <hashTree/>
-        </hashTree>
-        <LoopController guiclass="LoopControlPanel" testclass="LoopController" testname="Loop Controller" enabled="false">
-          <boolProp name="LoopController.continue_forever">true</boolProp>
-          <stringProp name="LoopController.loops">1</stringProp>
-        </LoopController>
-        <hashTree>
-          <BeanShellPreProcessor guiclass="TestBeanGUI" testclass="BeanShellPreProcessor" testname="BeanShell PreProcessor for Random date" enabled="false">
-            <boolProp name="resetInterpreter">false</boolProp>
-            <stringProp name="parameters"></stringProp>
-            <stringProp name="filename"></stringProp>
-            <stringProp name="script">import java.text.SimpleDateFormat;
-import java.util.Calendar;
-
-calendar = Calendar.getInstance();
-calendar.set(2018, 0, 1);
-startTime = calendar.getTimeInMillis();
-calendar.set(2018, 11, 31);
-endTime = calendar.getTimeInMillis();
-randomTime1 = startTime + (long)(Math.random()*(endTime-startTime));
-randomTime2 = randomTime1 + (long)(Math.random()*(endTime - randomTime1)+86400000);
-
-formatter = new SimpleDateFormat(&quot;yyyy-MM-dd&quot;);
-calendar.setTimeInMillis(randomTime1);
-vars.put(&quot;PaymentDate&quot;, formatter.format(calendar.getTime()));
-calendar.setTimeInMillis(randomTime2);
-vars.put(&quot;Date&quot;, formatter.format(calendar.getTime()));</stringProp>
-          </BeanShellPreProcessor>
           <hashTree/>
         </hashTree>
       </hashTree>
@@ -4372,185 +4746,6 @@ vars.put(&quot;Date&quot;, formatter.format(calendar.getTime()));</stringProp>
             <intProp name="Assertion.test_type">2</intProp>
           </ResponseAssertion>
           <hashTree/>
-        </hashTree>
-        <BeanShellPreProcessor guiclass="TestBeanGUI" testclass="BeanShellPreProcessor" testname="Add Payments to the RegalPay(From FIleXchange)" enabled="false">
-          <boolProp name="resetInterpreter">false</boolProp>
-          <stringProp name="parameters"></stringProp>
-          <stringProp name="filename"></stringProp>
-          <stringProp name="script"></stringProp>
-        </BeanShellPreProcessor>
-        <hashTree/>
-        <LoopController guiclass="LoopControlPanel" testclass="LoopController" testname="Loop Controller" enabled="false">
-          <boolProp name="LoopController.continue_forever">true</boolProp>
-          <stringProp name="LoopController.loops">1</stringProp>
-        </LoopController>
-        <hashTree>
-          <BeanShellPreProcessor guiclass="TestBeanGUI" testclass="BeanShellPreProcessor" testname="BeanShell PreProcessor for Random date" enabled="false">
-            <boolProp name="resetInterpreter">false</boolProp>
-            <stringProp name="parameters"></stringProp>
-            <stringProp name="filename"></stringProp>
-            <stringProp name="script">import java.text.SimpleDateFormat;
-import java.util.Calendar;
-
-calendar = Calendar.getInstance();
-calendar.set(2018, 0, 1);
-startTime = calendar.getTimeInMillis();
-calendar.set(2018, 11, 31);
-endTime = calendar.getTimeInMillis();
-randomTime1 = startTime + (long)(Math.random()*(endTime-startTime));
-randomTime2 = randomTime1 + (long)(Math.random()*(endTime - randomTime1)+86400000);
-
-formatter = new SimpleDateFormat(&quot;yyyy-MM-dd&quot;);
-calendar.setTimeInMillis(randomTime1);
-vars.put(&quot;PaymentDate&quot;, formatter.format(calendar.getTime()));
-calendar.setTimeInMillis(randomTime2);
-vars.put(&quot;Date&quot;, formatter.format(calendar.getTime()));</stringProp>
-          </BeanShellPreProcessor>
-          <hashTree/>
-          <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="P: Verify user is able to ADD Payments to the RegalPay from FileXchange" enabled="true">
-            <boolProp name="HTTPSampler.postBodyRaw">true</boolProp>
-            <elementProp name="HTTPsampler.Arguments" elementType="Arguments">
-              <collectionProp name="Arguments.arguments">
-                <elementProp name="" elementType="HTTPArgument">
-                  <boolProp name="HTTPArgument.always_encode">false</boolProp>
-                  <stringProp name="Argument.value">[&#xd;
-            {&#xd;
-              &quot;ERPBatchNumber&quot;: &quot;Batch_${__time()}&quot;,&#xd;
-              &quot;PaymentNumber&quot;: &quot;${Payment_number}&quot;,&#xd;
-              &quot;paymentDate&quot;: &quot;${__timeShift(yyyy-MM-dd,,,,)}&quot;,&#xd;
-              &quot;PaymentDescription&quot;: &quot;payment_description&quot;,&#xd;
-              &quot;PaymentMethod&quot;: 0,&#xd;
-              &quot;VendorNumber&quot;: &quot;Vendor_${Vendor_number}&quot;,&#xd;
-              &quot;AddressCode&quot;: &quot;address_${address_code}&quot;,&#xd;
-              &quot;CheckNumber&quot;: &quot;check_${Check_number}&quot;,&#xd;
-              &quot;AccountCode&quot;: &quot;account_${account_code}&quot;,&#xd;
-              &quot;Currency&quot;: &quot;${American_Cur}&quot;,&#xd;
-              &quot;InvoiceNumber&quot;: &quot;INVOICE_${Invoice number}&quot;,&#xd;
-              &quot;Date&quot;: &quot;${__timeShift(yyyy-MM-dd,,P1D,, c)}&quot;,&#xd;
-              &quot;DueDate&quot;: &quot;${__timeShift(yyyy-MM-dd,,P1D,, c)}&quot;,&#xd;
-              &quot;PONumber&quot;: &quot;PO123&quot;,&#xd;
-              &quot;VoucherNumber&quot;: &quot;VOUCHER_${Voucher_number}&quot;,&#xd;
-              &quot;GrossAmount&quot;: ${__javaScript((Math.random() * (180) - 90).toFixed(2) * 1,)}1,&#xd;
-              &quot;DiscountAmount&quot;:${__javaScript((Math.random() * (180) - 90).toFixed(2) * 1,)}2,&#xd;
-              &quot;NetAmount&quot;:${__javaScript((Math.random() * (180) - 90).toFixed(2) * 1,)}3,&#xd;
-              &quot;InvoiceDescription&quot;: &quot;invoicedescription&quot;,&#xd;
-              &quot;OriginalAmount&quot;: &quot;0.00&quot;&#xd;
-            }&#xd;
-          ]</stringProp>
-                  <stringProp name="Argument.metadata">=</stringProp>
-                </elementProp>
-              </collectionProp>
-            </elementProp>
-            <stringProp name="HTTPSampler.domain">${URL}</stringProp>
-            <stringProp name="HTTPSampler.port">UFT-8</stringProp>
-            <stringProp name="HTTPSampler.protocol">http</stringProp>
-            <stringProp name="HTTPSampler.contentEncoding"></stringProp>
-            <stringProp name="HTTPSampler.path">${Payment}/uploads</stringProp>
-            <stringProp name="HTTPSampler.method">POST</stringProp>
-            <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
-            <boolProp name="HTTPSampler.auto_redirects">false</boolProp>
-            <boolProp name="HTTPSampler.use_keepalive">true</boolProp>
-            <boolProp name="HTTPSampler.DO_MULTIPART_POST">false</boolProp>
-            <stringProp name="HTTPSampler.embedded_url_re"></stringProp>
-            <stringProp name="HTTPSampler.connect_timeout"></stringProp>
-            <stringProp name="HTTPSampler.response_timeout"></stringProp>
-          </HTTPSamplerProxy>
-          <hashTree>
-            <HeaderManager guiclass="HeaderPanel" testclass="HeaderManager" testname="HTTP Header Manager" enabled="true">
-              <collectionProp name="HeaderManager.headers">
-                <elementProp name="Accept-Language" elementType="Header">
-                  <stringProp name="Header.name">Accept-Language</stringProp>
-                  <stringProp name="Header.value">en-US,en;q=0.5</stringProp>
-                </elementProp>
-                <elementProp name="Content-Type" elementType="Header">
-                  <stringProp name="Header.name">Content-Type</stringProp>
-                  <stringProp name="Header.value">application/json; charset=UTF-8</stringProp>
-                </elementProp>
-                <elementProp name="Cache-Control" elementType="Header">
-                  <stringProp name="Header.name">Cache-Control</stringProp>
-                  <stringProp name="Header.value">no-cache</stringProp>
-                </elementProp>
-                <elementProp name="Accept" elementType="Header">
-                  <stringProp name="Header.name">Accept</stringProp>
-                  <stringProp name="Header.value">application/json</stringProp>
-                </elementProp>
-              </collectionProp>
-            </HeaderManager>
-            <hashTree/>
-            <RandomVariableConfig guiclass="TestBeanGUI" testclass="RandomVariableConfig" testname="Random Variable for Payment Number" enabled="true">
-              <stringProp name="variableName">Payment_number</stringProp>
-              <stringProp name="outputFormat"></stringProp>
-              <stringProp name="minimumValue">11111</stringProp>
-              <stringProp name="maximumValue">99999</stringProp>
-              <stringProp name="randomSeed"></stringProp>
-              <boolProp name="perThread">false</boolProp>
-            </RandomVariableConfig>
-            <hashTree/>
-            <RandomVariableConfig guiclass="TestBeanGUI" testclass="RandomVariableConfig" testname="Random Variable for Vendor Number" enabled="true">
-              <stringProp name="variableName">Vendor_number</stringProp>
-              <stringProp name="outputFormat"></stringProp>
-              <stringProp name="minimumValue">111</stringProp>
-              <stringProp name="maximumValue">999</stringProp>
-              <stringProp name="randomSeed"></stringProp>
-              <boolProp name="perThread">false</boolProp>
-            </RandomVariableConfig>
-            <hashTree/>
-            <RandomVariableConfig guiclass="TestBeanGUI" testclass="RandomVariableConfig" testname="Random Variable for Address code" enabled="true">
-              <stringProp name="variableName">address_code</stringProp>
-              <stringProp name="outputFormat"></stringProp>
-              <stringProp name="minimumValue">11</stringProp>
-              <stringProp name="maximumValue">99</stringProp>
-              <stringProp name="randomSeed"></stringProp>
-              <boolProp name="perThread">false</boolProp>
-            </RandomVariableConfig>
-            <hashTree/>
-            <RandomVariableConfig guiclass="TestBeanGUI" testclass="RandomVariableConfig" testname="Random Variable for Check  Number" enabled="true">
-              <stringProp name="variableName">Check_number</stringProp>
-              <stringProp name="outputFormat"></stringProp>
-              <stringProp name="minimumValue">11111</stringProp>
-              <stringProp name="maximumValue">99999</stringProp>
-              <stringProp name="randomSeed"></stringProp>
-              <boolProp name="perThread">false</boolProp>
-            </RandomVariableConfig>
-            <hashTree/>
-            <RandomVariableConfig guiclass="TestBeanGUI" testclass="RandomVariableConfig" testname="Random Variable for Account code" enabled="true">
-              <stringProp name="variableName">account_code</stringProp>
-              <stringProp name="outputFormat"></stringProp>
-              <stringProp name="minimumValue">11</stringProp>
-              <stringProp name="maximumValue">99</stringProp>
-              <stringProp name="randomSeed"></stringProp>
-              <boolProp name="perThread">false</boolProp>
-            </RandomVariableConfig>
-            <hashTree/>
-            <RandomVariableConfig guiclass="TestBeanGUI" testclass="RandomVariableConfig" testname="Random Variable for Invoice Number" enabled="true">
-              <stringProp name="variableName">Invoice number</stringProp>
-              <stringProp name="outputFormat"></stringProp>
-              <stringProp name="minimumValue">111</stringProp>
-              <stringProp name="maximumValue">999</stringProp>
-              <stringProp name="randomSeed"></stringProp>
-              <boolProp name="perThread">false</boolProp>
-            </RandomVariableConfig>
-            <hashTree/>
-            <RandomVariableConfig guiclass="TestBeanGUI" testclass="RandomVariableConfig" testname="Random Variable for Voucher Number" enabled="true">
-              <stringProp name="variableName">Voucher_number</stringProp>
-              <stringProp name="outputFormat"></stringProp>
-              <stringProp name="minimumValue">11</stringProp>
-              <stringProp name="maximumValue">99</stringProp>
-              <stringProp name="randomSeed"></stringProp>
-              <boolProp name="perThread">false</boolProp>
-            </RandomVariableConfig>
-            <hashTree/>
-            <ResponseAssertion guiclass="AssertionGui" testclass="ResponseAssertion" testname="Response Code201" enabled="true">
-              <collectionProp name="Asserion.test_strings">
-                <stringProp name="-1146597534">${Response201}</stringProp>
-              </collectionProp>
-              <stringProp name="Assertion.custom_message"></stringProp>
-              <stringProp name="Assertion.test_field">Assertion.response_code</stringProp>
-              <boolProp name="Assertion.assume_success">true</boolProp>
-              <intProp name="Assertion.test_type">2</intProp>
-            </ResponseAssertion>
-            <hashTree/>
-          </hashTree>
         </hashTree>
         <BeanShellPreProcessor guiclass="TestBeanGUI" testclass="BeanShellPreProcessor" testname="GET All Unconfirmed Payments" enabled="false">
           <boolProp name="resetInterpreter">false</boolProp>
@@ -5036,6 +5231,579 @@ vars.put(&quot;Date&quot;, formatter.format(calendar.getTime()));</stringProp>
           </ResponseAssertion>
           <hashTree/>
         </hashTree>
+        <BeanShellPreProcessor guiclass="TestBeanGUI" testclass="BeanShellPreProcessor" testname="GET ALL Vendors from RegalPay" enabled="false">
+          <stringProp name="filename"></stringProp>
+          <stringProp name="parameters"></stringProp>
+          <boolProp name="resetInterpreter">false</boolProp>
+          <stringProp name="script"></stringProp>
+        </BeanShellPreProcessor>
+        <hashTree/>
+        <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="P: Verify user is able to GET all Vendors details" enabled="true">
+          <elementProp name="HTTPsampler.Arguments" elementType="Arguments" guiclass="HTTPArgumentsPanel" testclass="Arguments" testname="User Defined Variables" enabled="true">
+            <collectionProp name="Arguments.arguments"/>
+          </elementProp>
+          <stringProp name="HTTPSampler.domain">${RpURL}</stringProp>
+          <stringProp name="HTTPSampler.port">UFT-8</stringProp>
+          <stringProp name="HTTPSampler.protocol">http</stringProp>
+          <stringProp name="HTTPSampler.contentEncoding"></stringProp>
+          <stringProp name="HTTPSampler.path">${Vendors}</stringProp>
+          <stringProp name="HTTPSampler.method">GET</stringProp>
+          <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
+          <boolProp name="HTTPSampler.auto_redirects">false</boolProp>
+          <boolProp name="HTTPSampler.use_keepalive">true</boolProp>
+          <boolProp name="HTTPSampler.DO_MULTIPART_POST">false</boolProp>
+          <stringProp name="HTTPSampler.embedded_url_re"></stringProp>
+          <stringProp name="HTTPSampler.connect_timeout"></stringProp>
+          <stringProp name="HTTPSampler.response_timeout"></stringProp>
+        </HTTPSamplerProxy>
+        <hashTree>
+          <HeaderManager guiclass="HeaderPanel" testclass="HeaderManager" testname="HTTP Header Manager" enabled="true">
+            <collectionProp name="HeaderManager.headers">
+              <elementProp name="Accept-Language" elementType="Header">
+                <stringProp name="Header.name">Accept-Language</stringProp>
+                <stringProp name="Header.value">en-US,en;q=0.5</stringProp>
+              </elementProp>
+              <elementProp name="Content-Type" elementType="Header">
+                <stringProp name="Header.name">Content-Type</stringProp>
+                <stringProp name="Header.value">application/json; charset=UTF-8</stringProp>
+              </elementProp>
+              <elementProp name="Cache-Control" elementType="Header">
+                <stringProp name="Header.name">Cache-Control</stringProp>
+                <stringProp name="Header.value">no-cache</stringProp>
+              </elementProp>
+              <elementProp name="Accept" elementType="Header">
+                <stringProp name="Header.name">Accept</stringProp>
+                <stringProp name="Header.value">application/json</stringProp>
+              </elementProp>
+            </collectionProp>
+          </HeaderManager>
+          <hashTree/>
+          <JSONPostProcessor guiclass="JSONPostProcessorGui" testclass="JSONPostProcessor" testname="JSON Extractor" enabled="true">
+            <stringProp name="JSONPostProcessor.referenceNames">VendorID</stringProp>
+            <stringProp name="JSONPostProcessor.jsonPathExprs">$..id</stringProp>
+            <stringProp name="JSONPostProcessor.match_numbers">-1</stringProp>
+            <boolProp name="JSONPostProcessor.compute_concat">true</boolProp>
+          </JSONPostProcessor>
+          <hashTree/>
+          <ResponseAssertion guiclass="AssertionGui" testclass="ResponseAssertion" testname="Response Code200" enabled="true">
+            <collectionProp name="Asserion.test_strings">
+              <stringProp name="-1146597565">${Response200}</stringProp>
+            </collectionProp>
+            <stringProp name="Assertion.custom_message"></stringProp>
+            <stringProp name="Assertion.test_field">Assertion.response_code</stringProp>
+            <boolProp name="Assertion.assume_success">true</boolProp>
+            <intProp name="Assertion.test_type">2</intProp>
+          </ResponseAssertion>
+          <hashTree/>
+        </hashTree>
+        <BeanShellPreProcessor guiclass="TestBeanGUI" testclass="BeanShellPreProcessor" testname="GET particular Vendor details from RegalPay" enabled="false">
+          <stringProp name="filename"></stringProp>
+          <stringProp name="parameters"></stringProp>
+          <boolProp name="resetInterpreter">false</boolProp>
+          <stringProp name="script"></stringProp>
+        </BeanShellPreProcessor>
+        <hashTree/>
+        <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="P: Verify user is able to GET particular Vendors details" enabled="true">
+          <elementProp name="HTTPsampler.Arguments" elementType="Arguments" guiclass="HTTPArgumentsPanel" testclass="Arguments" testname="User Defined Variables" enabled="true">
+            <collectionProp name="Arguments.arguments"/>
+          </elementProp>
+          <stringProp name="HTTPSampler.domain">${RpURL}</stringProp>
+          <stringProp name="HTTPSampler.port">UFT-8</stringProp>
+          <stringProp name="HTTPSampler.protocol">http</stringProp>
+          <stringProp name="HTTPSampler.contentEncoding"></stringProp>
+          <stringProp name="HTTPSampler.path">${Vendors}/${VendorID_1}</stringProp>
+          <stringProp name="HTTPSampler.method">GET</stringProp>
+          <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
+          <boolProp name="HTTPSampler.auto_redirects">false</boolProp>
+          <boolProp name="HTTPSampler.use_keepalive">true</boolProp>
+          <boolProp name="HTTPSampler.DO_MULTIPART_POST">false</boolProp>
+          <stringProp name="HTTPSampler.embedded_url_re"></stringProp>
+          <stringProp name="HTTPSampler.connect_timeout"></stringProp>
+          <stringProp name="HTTPSampler.response_timeout"></stringProp>
+        </HTTPSamplerProxy>
+        <hashTree>
+          <HeaderManager guiclass="HeaderPanel" testclass="HeaderManager" testname="HTTP Header Manager" enabled="true">
+            <collectionProp name="HeaderManager.headers">
+              <elementProp name="Accept-Language" elementType="Header">
+                <stringProp name="Header.name">Accept-Language</stringProp>
+                <stringProp name="Header.value">en-US,en;q=0.5</stringProp>
+              </elementProp>
+              <elementProp name="Content-Type" elementType="Header">
+                <stringProp name="Header.name">Content-Type</stringProp>
+                <stringProp name="Header.value">application/json; charset=UTF-8</stringProp>
+              </elementProp>
+              <elementProp name="Cache-Control" elementType="Header">
+                <stringProp name="Header.name">Cache-Control</stringProp>
+                <stringProp name="Header.value">no-cache</stringProp>
+              </elementProp>
+              <elementProp name="Accept" elementType="Header">
+                <stringProp name="Header.name">Accept</stringProp>
+                <stringProp name="Header.value">application/json</stringProp>
+              </elementProp>
+            </collectionProp>
+          </HeaderManager>
+          <hashTree/>
+          <ResponseAssertion guiclass="AssertionGui" testclass="ResponseAssertion" testname="Response Code200" enabled="true">
+            <collectionProp name="Asserion.test_strings">
+              <stringProp name="-1146597565">${Response200}</stringProp>
+            </collectionProp>
+            <stringProp name="Assertion.custom_message"></stringProp>
+            <stringProp name="Assertion.test_field">Assertion.response_code</stringProp>
+            <boolProp name="Assertion.assume_success">true</boolProp>
+            <intProp name="Assertion.test_type">2</intProp>
+          </ResponseAssertion>
+          <hashTree/>
+          <JSONPostProcessor guiclass="JSONPostProcessorGui" testclass="JSONPostProcessor" testname="JSON Extractor" enabled="true">
+            <stringProp name="JSONPostProcessor.referenceNames">AddressID</stringProp>
+            <stringProp name="JSONPostProcessor.jsonPathExprs">$..id</stringProp>
+            <stringProp name="JSONPostProcessor.match_numbers">-1</stringProp>
+            <boolProp name="JSONPostProcessor.compute_concat">true</boolProp>
+          </JSONPostProcessor>
+          <hashTree/>
+        </hashTree>
+        <BeanShellPreProcessor guiclass="TestBeanGUI" testclass="BeanShellPreProcessor" testname="Update vendor to the RegalPay" enabled="false">
+          <stringProp name="filename"></stringProp>
+          <stringProp name="parameters"></stringProp>
+          <boolProp name="resetInterpreter">false</boolProp>
+          <stringProp name="script"></stringProp>
+        </BeanShellPreProcessor>
+        <hashTree/>
+        <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="P: Verify user is able to UPDATE Vendor to the RegalPay" enabled="true">
+          <boolProp name="HTTPSampler.postBodyRaw">true</boolProp>
+          <elementProp name="HTTPsampler.Arguments" elementType="Arguments">
+            <collectionProp name="Arguments.arguments">
+              <elementProp name="" elementType="HTTPArgument">
+                <boolProp name="HTTPArgument.always_encode">false</boolProp>
+                <stringProp name="Argument.value">{&#xd;
+       &quot;id&quot;:&quot;${VendorID_1}&quot;,&#xd;
+          &quot;vendorName&quot;: &quot;CoffeeDay_${__time}&quot;,&#xd;
+          &quot;paymentMethod&quot;: &quot;${Card_Payment}&quot;,&#xd;
+          &quot;taxId&quot;: &quot;${tax_ID}&quot;,&#xd;
+          &quot;duns&quot;: &quot;123&quot;,&#xd;
+          &quot;vendorNumber&quot;: &quot;${vendor_Number}&quot;,&#xd;
+          &quot;email&quot;: &quot;${__RandomString(10,qwertyuiopasra)}@mail.com&quot;,&#xd;
+          &quot;contact&quot;: &quot;${contact}&quot;&#xd;
+    }  </stringProp>
+                <stringProp name="Argument.metadata">=</stringProp>
+              </elementProp>
+            </collectionProp>
+          </elementProp>
+          <stringProp name="HTTPSampler.domain">${RpURL}</stringProp>
+          <stringProp name="HTTPSampler.port">UFT-8</stringProp>
+          <stringProp name="HTTPSampler.protocol">http</stringProp>
+          <stringProp name="HTTPSampler.contentEncoding"></stringProp>
+          <stringProp name="HTTPSampler.path">${Vendors}</stringProp>
+          <stringProp name="HTTPSampler.method">PUT</stringProp>
+          <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
+          <boolProp name="HTTPSampler.auto_redirects">false</boolProp>
+          <boolProp name="HTTPSampler.use_keepalive">true</boolProp>
+          <boolProp name="HTTPSampler.DO_MULTIPART_POST">false</boolProp>
+          <stringProp name="HTTPSampler.embedded_url_re"></stringProp>
+          <stringProp name="HTTPSampler.connect_timeout"></stringProp>
+          <stringProp name="HTTPSampler.response_timeout"></stringProp>
+        </HTTPSamplerProxy>
+        <hashTree>
+          <HeaderManager guiclass="HeaderPanel" testclass="HeaderManager" testname="HTTP Header Manager" enabled="true">
+            <collectionProp name="HeaderManager.headers">
+              <elementProp name="Accept-Language" elementType="Header">
+                <stringProp name="Header.name">Accept-Language</stringProp>
+                <stringProp name="Header.value">en-US,en;q=0.5</stringProp>
+              </elementProp>
+              <elementProp name="Content-Type" elementType="Header">
+                <stringProp name="Header.name">Content-Type</stringProp>
+                <stringProp name="Header.value">application/json; charset=UTF-8</stringProp>
+              </elementProp>
+              <elementProp name="Cache-Control" elementType="Header">
+                <stringProp name="Header.name">Cache-Control</stringProp>
+                <stringProp name="Header.value">no-cache</stringProp>
+              </elementProp>
+              <elementProp name="Accept" elementType="Header">
+                <stringProp name="Header.name">Accept</stringProp>
+                <stringProp name="Header.value">application/json</stringProp>
+              </elementProp>
+            </collectionProp>
+          </HeaderManager>
+          <hashTree/>
+          <ResponseAssertion guiclass="AssertionGui" testclass="ResponseAssertion" testname="Response Code200" enabled="true">
+            <collectionProp name="Asserion.test_strings">
+              <stringProp name="-1146597565">${Response200}</stringProp>
+            </collectionProp>
+            <stringProp name="Assertion.custom_message"></stringProp>
+            <stringProp name="Assertion.test_field">Assertion.response_code</stringProp>
+            <boolProp name="Assertion.assume_success">true</boolProp>
+            <intProp name="Assertion.test_type">2</intProp>
+          </ResponseAssertion>
+          <hashTree/>
+          <RandomVariableConfig guiclass="TestBeanGUI" testclass="RandomVariableConfig" testname="Random Variable for tax ID" enabled="true">
+            <stringProp name="variableName">tax_ID</stringProp>
+            <stringProp name="outputFormat"></stringProp>
+            <stringProp name="minimumValue">11111</stringProp>
+            <stringProp name="maximumValue">99999</stringProp>
+            <stringProp name="randomSeed"></stringProp>
+            <boolProp name="perThread">false</boolProp>
+          </RandomVariableConfig>
+          <hashTree/>
+          <RandomVariableConfig guiclass="TestBeanGUI" testclass="RandomVariableConfig" testname="Random Variable for vendor_Number" enabled="true">
+            <stringProp name="variableName">vendor_Number</stringProp>
+            <stringProp name="outputFormat"></stringProp>
+            <stringProp name="minimumValue">1111111</stringProp>
+            <stringProp name="maximumValue">9999999</stringProp>
+            <stringProp name="randomSeed"></stringProp>
+            <boolProp name="perThread">false</boolProp>
+          </RandomVariableConfig>
+          <hashTree/>
+          <RandomVariableConfig guiclass="TestBeanGUI" testclass="RandomVariableConfig" testname="Random Variable for contact" enabled="true">
+            <stringProp name="variableName">contact</stringProp>
+            <stringProp name="outputFormat"></stringProp>
+            <stringProp name="minimumValue">1111111111</stringProp>
+            <stringProp name="maximumValue">9999999999</stringProp>
+            <stringProp name="randomSeed"></stringProp>
+            <boolProp name="perThread">false</boolProp>
+          </RandomVariableConfig>
+          <hashTree/>
+        </hashTree>
+        <BeanShellPreProcessor guiclass="TestBeanGUI" testclass="BeanShellPreProcessor" testname="Update vendor&apos;s address to the RegalPay" enabled="false">
+          <stringProp name="filename"></stringProp>
+          <stringProp name="parameters"></stringProp>
+          <boolProp name="resetInterpreter">false</boolProp>
+          <stringProp name="script"></stringProp>
+        </BeanShellPreProcessor>
+        <hashTree/>
+        <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="P: Verify user is able to UPDATE Vendor&apos;s address to the RegalPay" enabled="true">
+          <boolProp name="HTTPSampler.postBodyRaw">true</boolProp>
+          <elementProp name="HTTPsampler.Arguments" elementType="Arguments">
+            <collectionProp name="Arguments.arguments">
+              <elementProp name="" elementType="HTTPArgument">
+                <boolProp name="HTTPArgument.always_encode">false</boolProp>
+                <stringProp name="Argument.value">  {&#xd;
+       &quot;id&quot;: ${AddressID_3},&#xd;
+      &quot;addressLine1&quot;: &quot;${__RandomString(10,qwertyuiopasra)}&quot;,&#xd;
+      &quot;addressLine2&quot;: &quot;${__RandomString(10,qwertyuiopasra)}&quot;,&#xd;
+      &quot;addressLine3&quot;: &quot;Nicofi Technologies pvt ltd&quot;,&#xd;
+      &quot;addressLine4&quot;: &quot;Hosur Road&quot;,&#xd;
+      &quot;city&quot;: &quot;${City}&quot;,&#xd;
+            &quot;state&quot;: &quot;${State}&quot;,&#xd;
+            &quot;zipCode&quot;: &quot;${PinCode}&quot;,&#xd;
+            &quot;countryCode&quot;: &quot;${CCode}&quot;,&#xd;
+            &quot;country&quot;: &quot;${County}&quot;&#xd;
+   }</stringProp>
+                <stringProp name="Argument.metadata">=</stringProp>
+              </elementProp>
+            </collectionProp>
+          </elementProp>
+          <stringProp name="HTTPSampler.domain">${RpURL}</stringProp>
+          <stringProp name="HTTPSampler.port">UFT-8</stringProp>
+          <stringProp name="HTTPSampler.protocol">http</stringProp>
+          <stringProp name="HTTPSampler.contentEncoding"></stringProp>
+          <stringProp name="HTTPSampler.path">${Vendors}/${VendorID_1}/addresses</stringProp>
+          <stringProp name="HTTPSampler.method">PUT</stringProp>
+          <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
+          <boolProp name="HTTPSampler.auto_redirects">false</boolProp>
+          <boolProp name="HTTPSampler.use_keepalive">true</boolProp>
+          <boolProp name="HTTPSampler.DO_MULTIPART_POST">false</boolProp>
+          <stringProp name="HTTPSampler.embedded_url_re"></stringProp>
+          <stringProp name="HTTPSampler.connect_timeout"></stringProp>
+          <stringProp name="HTTPSampler.response_timeout"></stringProp>
+        </HTTPSamplerProxy>
+        <hashTree>
+          <HeaderManager guiclass="HeaderPanel" testclass="HeaderManager" testname="HTTP Header Manager" enabled="true">
+            <collectionProp name="HeaderManager.headers">
+              <elementProp name="Accept-Language" elementType="Header">
+                <stringProp name="Header.name">Accept-Language</stringProp>
+                <stringProp name="Header.value">en-US,en;q=0.5</stringProp>
+              </elementProp>
+              <elementProp name="Content-Type" elementType="Header">
+                <stringProp name="Header.name">Content-Type</stringProp>
+                <stringProp name="Header.value">application/json; charset=UTF-8</stringProp>
+              </elementProp>
+              <elementProp name="Cache-Control" elementType="Header">
+                <stringProp name="Header.name">Cache-Control</stringProp>
+                <stringProp name="Header.value">no-cache</stringProp>
+              </elementProp>
+              <elementProp name="Accept" elementType="Header">
+                <stringProp name="Header.name">Accept</stringProp>
+                <stringProp name="Header.value">application/json</stringProp>
+              </elementProp>
+            </collectionProp>
+          </HeaderManager>
+          <hashTree/>
+          <ResponseAssertion guiclass="AssertionGui" testclass="ResponseAssertion" testname="Response Code200" enabled="true">
+            <collectionProp name="Asserion.test_strings">
+              <stringProp name="-1146597565">${Response200}</stringProp>
+            </collectionProp>
+            <stringProp name="Assertion.custom_message"></stringProp>
+            <stringProp name="Assertion.test_field">Assertion.response_code</stringProp>
+            <boolProp name="Assertion.assume_success">true</boolProp>
+            <intProp name="Assertion.test_type">2</intProp>
+          </ResponseAssertion>
+          <hashTree/>
+        </hashTree>
+        <BeanShellPreProcessor guiclass="TestBeanGUI" testclass="BeanShellPreProcessor" testname="Update vendor&apos;s bank data to the RegalPay" enabled="false">
+          <stringProp name="filename"></stringProp>
+          <stringProp name="parameters"></stringProp>
+          <boolProp name="resetInterpreter">false</boolProp>
+          <stringProp name="script"></stringProp>
+        </BeanShellPreProcessor>
+        <hashTree/>
+        <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="P: Verify user is able to UPDATE Vendor&apos;s Bank data to the RegalPay" enabled="true">
+          <boolProp name="HTTPSampler.postBodyRaw">true</boolProp>
+          <elementProp name="HTTPsampler.Arguments" elementType="Arguments">
+            <collectionProp name="Arguments.arguments">
+              <elementProp name="" elementType="HTTPArgument">
+                <boolProp name="HTTPArgument.always_encode">false</boolProp>
+                <stringProp name="Argument.value">{&#xd;
+      &quot;id&quot;: 7,&#xd;
+      &quot;bankName&quot;: &quot;Hdfc&quot;,&#xd;
+      &quot;accountNumber&quot;: &quot;12334234&quot;,&#xd;
+      &quot;accountType&quot;: &quot;SB&quot;,&#xd;
+      &quot;accountCurrency&quot;: &quot;INR&quot;,&#xd;
+      &quot;iban&quot;: &quot;IBAN&quot;,&#xd;
+      &quot;otherAccountNumber&quot;: &quot;1231231233&quot;,&#xd;
+      &quot;domesticRoutingCode&quot;: &quot;99088&quot;,&#xd;
+      &quot;swift&quot;: &quot;SWift123&quot;,&#xd;
+      &quot;address&quot;: {&#xd;
+            &quot;addressLine1&quot;: &quot;IBIS&quot;,&#xd;
+            &quot;addressLine2&quot;: &quot;Regus bussiness&quot;,&#xd;
+            &quot;addressLine3&quot;: &quot;Regal Technologies pvt ltd&quot;,&#xd;
+            &quot;addressLine4&quot;: &quot;Hosur Road&quot;,&#xd;
+            &quot;city&quot;: &quot;${City}&quot;,&#xd;
+            &quot;state&quot;: &quot;${State}&quot;,&#xd;
+            &quot;zipCode&quot;: &quot;${PinCode}&quot;,&#xd;
+            &quot;countryCode&quot;: &quot;${CCode}&quot;,&#xd;
+            &quot;country&quot;: &quot;${County}&quot;&#xd;
+        }&#xd;
+   }&#xd;
+     </stringProp>
+                <stringProp name="Argument.metadata">=</stringProp>
+              </elementProp>
+            </collectionProp>
+          </elementProp>
+          <stringProp name="HTTPSampler.domain">${RpURL}</stringProp>
+          <stringProp name="HTTPSampler.port">UFT-8</stringProp>
+          <stringProp name="HTTPSampler.protocol">http</stringProp>
+          <stringProp name="HTTPSampler.contentEncoding"></stringProp>
+          <stringProp name="HTTPSampler.path">${Vendors}/${VendorID_1}/bank-account</stringProp>
+          <stringProp name="HTTPSampler.method">PUT</stringProp>
+          <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
+          <boolProp name="HTTPSampler.auto_redirects">false</boolProp>
+          <boolProp name="HTTPSampler.use_keepalive">true</boolProp>
+          <boolProp name="HTTPSampler.DO_MULTIPART_POST">false</boolProp>
+          <stringProp name="HTTPSampler.embedded_url_re"></stringProp>
+          <stringProp name="HTTPSampler.connect_timeout"></stringProp>
+          <stringProp name="HTTPSampler.response_timeout"></stringProp>
+        </HTTPSamplerProxy>
+        <hashTree>
+          <HeaderManager guiclass="HeaderPanel" testclass="HeaderManager" testname="HTTP Header Manager" enabled="true">
+            <collectionProp name="HeaderManager.headers">
+              <elementProp name="Accept-Language" elementType="Header">
+                <stringProp name="Header.name">Accept-Language</stringProp>
+                <stringProp name="Header.value">en-US,en;q=0.5</stringProp>
+              </elementProp>
+              <elementProp name="Content-Type" elementType="Header">
+                <stringProp name="Header.name">Content-Type</stringProp>
+                <stringProp name="Header.value">application/json; charset=UTF-8</stringProp>
+              </elementProp>
+              <elementProp name="Cache-Control" elementType="Header">
+                <stringProp name="Header.name">Cache-Control</stringProp>
+                <stringProp name="Header.value">no-cache</stringProp>
+              </elementProp>
+              <elementProp name="Accept" elementType="Header">
+                <stringProp name="Header.name">Accept</stringProp>
+                <stringProp name="Header.value">application/json</stringProp>
+              </elementProp>
+            </collectionProp>
+          </HeaderManager>
+          <hashTree/>
+          <ResponseAssertion guiclass="AssertionGui" testclass="ResponseAssertion" testname="Response Code200" enabled="true">
+            <collectionProp name="Asserion.test_strings">
+              <stringProp name="-1146597565">${Response200}</stringProp>
+            </collectionProp>
+            <stringProp name="Assertion.custom_message"></stringProp>
+            <stringProp name="Assertion.test_field">Assertion.response_code</stringProp>
+            <boolProp name="Assertion.assume_success">true</boolProp>
+            <intProp name="Assertion.test_type">2</intProp>
+          </ResponseAssertion>
+          <hashTree/>
+        </hashTree>
+        <BeanShellPreProcessor guiclass="TestBeanGUI" testclass="BeanShellPreProcessor" testname="Add Payments to the RegalPay(From FIleXchange)" enabled="false">
+          <boolProp name="resetInterpreter">false</boolProp>
+          <stringProp name="parameters"></stringProp>
+          <stringProp name="filename"></stringProp>
+          <stringProp name="script"></stringProp>
+        </BeanShellPreProcessor>
+        <hashTree/>
+        <LoopController guiclass="LoopControlPanel" testclass="LoopController" testname="Loop Controller" enabled="false">
+          <boolProp name="LoopController.continue_forever">true</boolProp>
+          <stringProp name="LoopController.loops">1</stringProp>
+        </LoopController>
+        <hashTree>
+          <BeanShellPreProcessor guiclass="TestBeanGUI" testclass="BeanShellPreProcessor" testname="BeanShell PreProcessor for Random date" enabled="false">
+            <boolProp name="resetInterpreter">false</boolProp>
+            <stringProp name="parameters"></stringProp>
+            <stringProp name="filename"></stringProp>
+            <stringProp name="script">import java.text.SimpleDateFormat;
+import java.util.Calendar;
+
+calendar = Calendar.getInstance();
+calendar.set(2018, 0, 1);
+startTime = calendar.getTimeInMillis();
+calendar.set(2018, 11, 31);
+endTime = calendar.getTimeInMillis();
+randomTime1 = startTime + (long)(Math.random()*(endTime-startTime));
+randomTime2 = randomTime1 + (long)(Math.random()*(endTime - randomTime1)+86400000);
+
+formatter = new SimpleDateFormat(&quot;yyyy-MM-dd&quot;);
+calendar.setTimeInMillis(randomTime1);
+vars.put(&quot;PaymentDate&quot;, formatter.format(calendar.getTime()));
+calendar.setTimeInMillis(randomTime2);
+vars.put(&quot;Date&quot;, formatter.format(calendar.getTime()));</stringProp>
+          </BeanShellPreProcessor>
+          <hashTree/>
+          <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="P: Verify user is able to ADD Payments to the RegalPay from FileXchange" enabled="true">
+            <boolProp name="HTTPSampler.postBodyRaw">true</boolProp>
+            <elementProp name="HTTPsampler.Arguments" elementType="Arguments">
+              <collectionProp name="Arguments.arguments">
+                <elementProp name="" elementType="HTTPArgument">
+                  <boolProp name="HTTPArgument.always_encode">false</boolProp>
+                  <stringProp name="Argument.value">[&#xd;
+            {&#xd;
+              &quot;ERPBatchNumber&quot;: &quot;Batch_${__time()}&quot;,&#xd;
+              &quot;PaymentNumber&quot;: &quot;${Payment_number}&quot;,&#xd;
+              &quot;paymentDate&quot;: &quot;${__timeShift(yyyy-MM-dd,,,,)}&quot;,&#xd;
+              &quot;PaymentDescription&quot;: &quot;payment_description&quot;,&#xd;
+              &quot;PaymentMethod&quot;: 0,&#xd;
+              &quot;VendorNumber&quot;: &quot;Vendor_${Vendor_number}&quot;,&#xd;
+              &quot;AddressCode&quot;: &quot;address_${address_code}&quot;,&#xd;
+              &quot;CheckNumber&quot;: &quot;check_${Check_number}&quot;,&#xd;
+              &quot;AccountCode&quot;: &quot;account_${account_code}&quot;,&#xd;
+              &quot;Currency&quot;: &quot;${American_Cur}&quot;,&#xd;
+              &quot;InvoiceNumber&quot;: &quot;INVOICE_${Invoice number}&quot;,&#xd;
+              &quot;Date&quot;: &quot;${__timeShift(yyyy-MM-dd,,P1D,, c)}&quot;,&#xd;
+              &quot;DueDate&quot;: &quot;${__timeShift(yyyy-MM-dd,,P1D,, c)}&quot;,&#xd;
+              &quot;PONumber&quot;: &quot;PO123&quot;,&#xd;
+              &quot;VoucherNumber&quot;: &quot;VOUCHER_${Voucher_number}&quot;,&#xd;
+              &quot;GrossAmount&quot;: ${__javaScript((Math.random() * (180) - 90).toFixed(2) * 1,)}1,&#xd;
+              &quot;DiscountAmount&quot;:${__javaScript((Math.random() * (180) - 90).toFixed(2) * 1,)}2,&#xd;
+              &quot;NetAmount&quot;:${__javaScript((Math.random() * (180) - 90).toFixed(2) * 1,)}3,&#xd;
+              &quot;InvoiceDescription&quot;: &quot;invoicedescription&quot;,&#xd;
+              &quot;OriginalAmount&quot;: &quot;0.00&quot;&#xd;
+            }&#xd;
+          ]</stringProp>
+                  <stringProp name="Argument.metadata">=</stringProp>
+                </elementProp>
+              </collectionProp>
+            </elementProp>
+            <stringProp name="HTTPSampler.domain">${URL}</stringProp>
+            <stringProp name="HTTPSampler.port">UFT-8</stringProp>
+            <stringProp name="HTTPSampler.protocol">http</stringProp>
+            <stringProp name="HTTPSampler.contentEncoding"></stringProp>
+            <stringProp name="HTTPSampler.path">${Payment}/uploads</stringProp>
+            <stringProp name="HTTPSampler.method">POST</stringProp>
+            <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
+            <boolProp name="HTTPSampler.auto_redirects">false</boolProp>
+            <boolProp name="HTTPSampler.use_keepalive">true</boolProp>
+            <boolProp name="HTTPSampler.DO_MULTIPART_POST">false</boolProp>
+            <stringProp name="HTTPSampler.embedded_url_re"></stringProp>
+            <stringProp name="HTTPSampler.connect_timeout"></stringProp>
+            <stringProp name="HTTPSampler.response_timeout"></stringProp>
+          </HTTPSamplerProxy>
+          <hashTree>
+            <HeaderManager guiclass="HeaderPanel" testclass="HeaderManager" testname="HTTP Header Manager" enabled="true">
+              <collectionProp name="HeaderManager.headers">
+                <elementProp name="Accept-Language" elementType="Header">
+                  <stringProp name="Header.name">Accept-Language</stringProp>
+                  <stringProp name="Header.value">en-US,en;q=0.5</stringProp>
+                </elementProp>
+                <elementProp name="Content-Type" elementType="Header">
+                  <stringProp name="Header.name">Content-Type</stringProp>
+                  <stringProp name="Header.value">application/json; charset=UTF-8</stringProp>
+                </elementProp>
+                <elementProp name="Cache-Control" elementType="Header">
+                  <stringProp name="Header.name">Cache-Control</stringProp>
+                  <stringProp name="Header.value">no-cache</stringProp>
+                </elementProp>
+                <elementProp name="Accept" elementType="Header">
+                  <stringProp name="Header.name">Accept</stringProp>
+                  <stringProp name="Header.value">application/json</stringProp>
+                </elementProp>
+              </collectionProp>
+            </HeaderManager>
+            <hashTree/>
+            <RandomVariableConfig guiclass="TestBeanGUI" testclass="RandomVariableConfig" testname="Random Variable for Payment Number" enabled="true">
+              <stringProp name="variableName">Payment_number</stringProp>
+              <stringProp name="outputFormat"></stringProp>
+              <stringProp name="minimumValue">11111</stringProp>
+              <stringProp name="maximumValue">99999</stringProp>
+              <stringProp name="randomSeed"></stringProp>
+              <boolProp name="perThread">false</boolProp>
+            </RandomVariableConfig>
+            <hashTree/>
+            <RandomVariableConfig guiclass="TestBeanGUI" testclass="RandomVariableConfig" testname="Random Variable for Vendor Number" enabled="true">
+              <stringProp name="variableName">Vendor_number</stringProp>
+              <stringProp name="outputFormat"></stringProp>
+              <stringProp name="minimumValue">111</stringProp>
+              <stringProp name="maximumValue">999</stringProp>
+              <stringProp name="randomSeed"></stringProp>
+              <boolProp name="perThread">false</boolProp>
+            </RandomVariableConfig>
+            <hashTree/>
+            <RandomVariableConfig guiclass="TestBeanGUI" testclass="RandomVariableConfig" testname="Random Variable for Address code" enabled="true">
+              <stringProp name="variableName">address_code</stringProp>
+              <stringProp name="outputFormat"></stringProp>
+              <stringProp name="minimumValue">11</stringProp>
+              <stringProp name="maximumValue">99</stringProp>
+              <stringProp name="randomSeed"></stringProp>
+              <boolProp name="perThread">false</boolProp>
+            </RandomVariableConfig>
+            <hashTree/>
+            <RandomVariableConfig guiclass="TestBeanGUI" testclass="RandomVariableConfig" testname="Random Variable for Check  Number" enabled="true">
+              <stringProp name="variableName">Check_number</stringProp>
+              <stringProp name="outputFormat"></stringProp>
+              <stringProp name="minimumValue">11111</stringProp>
+              <stringProp name="maximumValue">99999</stringProp>
+              <stringProp name="randomSeed"></stringProp>
+              <boolProp name="perThread">false</boolProp>
+            </RandomVariableConfig>
+            <hashTree/>
+            <RandomVariableConfig guiclass="TestBeanGUI" testclass="RandomVariableConfig" testname="Random Variable for Account code" enabled="true">
+              <stringProp name="variableName">account_code</stringProp>
+              <stringProp name="outputFormat"></stringProp>
+              <stringProp name="minimumValue">11</stringProp>
+              <stringProp name="maximumValue">99</stringProp>
+              <stringProp name="randomSeed"></stringProp>
+              <boolProp name="perThread">false</boolProp>
+            </RandomVariableConfig>
+            <hashTree/>
+            <RandomVariableConfig guiclass="TestBeanGUI" testclass="RandomVariableConfig" testname="Random Variable for Invoice Number" enabled="true">
+              <stringProp name="variableName">Invoice number</stringProp>
+              <stringProp name="outputFormat"></stringProp>
+              <stringProp name="minimumValue">111</stringProp>
+              <stringProp name="maximumValue">999</stringProp>
+              <stringProp name="randomSeed"></stringProp>
+              <boolProp name="perThread">false</boolProp>
+            </RandomVariableConfig>
+            <hashTree/>
+            <RandomVariableConfig guiclass="TestBeanGUI" testclass="RandomVariableConfig" testname="Random Variable for Voucher Number" enabled="true">
+              <stringProp name="variableName">Voucher_number</stringProp>
+              <stringProp name="outputFormat"></stringProp>
+              <stringProp name="minimumValue">11</stringProp>
+              <stringProp name="maximumValue">99</stringProp>
+              <stringProp name="randomSeed"></stringProp>
+              <boolProp name="perThread">false</boolProp>
+            </RandomVariableConfig>
+            <hashTree/>
+            <ResponseAssertion guiclass="AssertionGui" testclass="ResponseAssertion" testname="Response Code201" enabled="true">
+              <collectionProp name="Asserion.test_strings">
+                <stringProp name="-1146597534">${Response201}</stringProp>
+              </collectionProp>
+              <stringProp name="Assertion.custom_message"></stringProp>
+              <stringProp name="Assertion.test_field">Assertion.response_code</stringProp>
+              <boolProp name="Assertion.assume_success">true</boolProp>
+              <intProp name="Assertion.test_type">2</intProp>
+            </ResponseAssertion>
+            <hashTree/>
+          </hashTree>
+        </hashTree>
         <BeanShellPreProcessor guiclass="TestBeanGUI" testclass="BeanShellPreProcessor" testname="Add vendors to the RegalPay" enabled="false">
           <stringProp name="filename"></stringProp>
           <stringProp name="parameters"></stringProp>
@@ -5207,7 +5975,7 @@ vars.put(&quot;Date&quot;, formatter.format(calendar.getTime()));</stringProp>
               </elementProp>
             </collectionProp>
           </elementProp>
-          <stringProp name="HTTPSampler.domain">${URL}</stringProp>
+          <stringProp name="HTTPSampler.domain">${RpURL}</stringProp>
           <stringProp name="HTTPSampler.port">UFT-8</stringProp>
           <stringProp name="HTTPSampler.protocol">http</stringProp>
           <stringProp name="HTTPSampler.contentEncoding"></stringProp>
@@ -5261,400 +6029,6 @@ vars.put(&quot;Date&quot;, formatter.format(calendar.getTime()));</stringProp>
             <stringProp name="randomSeed"></stringProp>
             <boolProp name="perThread">false</boolProp>
           </RandomVariableConfig>
-          <hashTree/>
-        </hashTree>
-        <BeanShellPreProcessor guiclass="TestBeanGUI" testclass="BeanShellPreProcessor" testname="GET ALL Vendors from RegalPay" enabled="false">
-          <stringProp name="filename"></stringProp>
-          <stringProp name="parameters"></stringProp>
-          <boolProp name="resetInterpreter">false</boolProp>
-          <stringProp name="script"></stringProp>
-        </BeanShellPreProcessor>
-        <hashTree/>
-        <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="P: Verify user is able to GET all Vendors details" enabled="true">
-          <elementProp name="HTTPsampler.Arguments" elementType="Arguments" guiclass="HTTPArgumentsPanel" testclass="Arguments" testname="User Defined Variables" enabled="true">
-            <collectionProp name="Arguments.arguments"/>
-          </elementProp>
-          <stringProp name="HTTPSampler.domain">${RpURL}</stringProp>
-          <stringProp name="HTTPSampler.port">UFT-8</stringProp>
-          <stringProp name="HTTPSampler.protocol">http</stringProp>
-          <stringProp name="HTTPSampler.contentEncoding"></stringProp>
-          <stringProp name="HTTPSampler.path">${Vendors}</stringProp>
-          <stringProp name="HTTPSampler.method">GET</stringProp>
-          <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
-          <boolProp name="HTTPSampler.auto_redirects">false</boolProp>
-          <boolProp name="HTTPSampler.use_keepalive">true</boolProp>
-          <boolProp name="HTTPSampler.DO_MULTIPART_POST">false</boolProp>
-          <stringProp name="HTTPSampler.embedded_url_re"></stringProp>
-          <stringProp name="HTTPSampler.connect_timeout"></stringProp>
-          <stringProp name="HTTPSampler.response_timeout"></stringProp>
-        </HTTPSamplerProxy>
-        <hashTree>
-          <HeaderManager guiclass="HeaderPanel" testclass="HeaderManager" testname="HTTP Header Manager" enabled="true">
-            <collectionProp name="HeaderManager.headers">
-              <elementProp name="Accept-Language" elementType="Header">
-                <stringProp name="Header.name">Accept-Language</stringProp>
-                <stringProp name="Header.value">en-US,en;q=0.5</stringProp>
-              </elementProp>
-              <elementProp name="Content-Type" elementType="Header">
-                <stringProp name="Header.name">Content-Type</stringProp>
-                <stringProp name="Header.value">application/json; charset=UTF-8</stringProp>
-              </elementProp>
-              <elementProp name="Cache-Control" elementType="Header">
-                <stringProp name="Header.name">Cache-Control</stringProp>
-                <stringProp name="Header.value">no-cache</stringProp>
-              </elementProp>
-              <elementProp name="Accept" elementType="Header">
-                <stringProp name="Header.name">Accept</stringProp>
-                <stringProp name="Header.value">application/json</stringProp>
-              </elementProp>
-            </collectionProp>
-          </HeaderManager>
-          <hashTree/>
-          <JSONPostProcessor guiclass="JSONPostProcessorGui" testclass="JSONPostProcessor" testname="JSON Extractor" enabled="true">
-            <stringProp name="JSONPostProcessor.referenceNames">VendorID</stringProp>
-            <stringProp name="JSONPostProcessor.jsonPathExprs">$..id</stringProp>
-            <stringProp name="JSONPostProcessor.match_numbers">-1</stringProp>
-            <boolProp name="JSONPostProcessor.compute_concat">true</boolProp>
-          </JSONPostProcessor>
-          <hashTree/>
-          <ResponseAssertion guiclass="AssertionGui" testclass="ResponseAssertion" testname="Response Code200" enabled="true">
-            <collectionProp name="Asserion.test_strings">
-              <stringProp name="-1146597565">${Response200}</stringProp>
-            </collectionProp>
-            <stringProp name="Assertion.custom_message"></stringProp>
-            <stringProp name="Assertion.test_field">Assertion.response_code</stringProp>
-            <boolProp name="Assertion.assume_success">true</boolProp>
-            <intProp name="Assertion.test_type">2</intProp>
-          </ResponseAssertion>
-          <hashTree/>
-        </hashTree>
-        <BeanShellPreProcessor guiclass="TestBeanGUI" testclass="BeanShellPreProcessor" testname="GET particular Vendor details from RegalPay" enabled="false">
-          <stringProp name="filename"></stringProp>
-          <stringProp name="parameters"></stringProp>
-          <boolProp name="resetInterpreter">false</boolProp>
-          <stringProp name="script"></stringProp>
-        </BeanShellPreProcessor>
-        <hashTree/>
-        <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="P: Verify user is able to GET particular Vendors details" enabled="true">
-          <elementProp name="HTTPsampler.Arguments" elementType="Arguments" guiclass="HTTPArgumentsPanel" testclass="Arguments" testname="User Defined Variables" enabled="true">
-            <collectionProp name="Arguments.arguments"/>
-          </elementProp>
-          <stringProp name="HTTPSampler.domain">${RpURL}</stringProp>
-          <stringProp name="HTTPSampler.port">UFT-8</stringProp>
-          <stringProp name="HTTPSampler.protocol">http</stringProp>
-          <stringProp name="HTTPSampler.contentEncoding"></stringProp>
-          <stringProp name="HTTPSampler.path">${Vendors}/${VendorID_1}</stringProp>
-          <stringProp name="HTTPSampler.method">GET</stringProp>
-          <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
-          <boolProp name="HTTPSampler.auto_redirects">false</boolProp>
-          <boolProp name="HTTPSampler.use_keepalive">true</boolProp>
-          <boolProp name="HTTPSampler.DO_MULTIPART_POST">false</boolProp>
-          <stringProp name="HTTPSampler.embedded_url_re"></stringProp>
-          <stringProp name="HTTPSampler.connect_timeout"></stringProp>
-          <stringProp name="HTTPSampler.response_timeout"></stringProp>
-        </HTTPSamplerProxy>
-        <hashTree>
-          <HeaderManager guiclass="HeaderPanel" testclass="HeaderManager" testname="HTTP Header Manager" enabled="true">
-            <collectionProp name="HeaderManager.headers">
-              <elementProp name="Accept-Language" elementType="Header">
-                <stringProp name="Header.name">Accept-Language</stringProp>
-                <stringProp name="Header.value">en-US,en;q=0.5</stringProp>
-              </elementProp>
-              <elementProp name="Content-Type" elementType="Header">
-                <stringProp name="Header.name">Content-Type</stringProp>
-                <stringProp name="Header.value">application/json; charset=UTF-8</stringProp>
-              </elementProp>
-              <elementProp name="Cache-Control" elementType="Header">
-                <stringProp name="Header.name">Cache-Control</stringProp>
-                <stringProp name="Header.value">no-cache</stringProp>
-              </elementProp>
-              <elementProp name="Accept" elementType="Header">
-                <stringProp name="Header.name">Accept</stringProp>
-                <stringProp name="Header.value">application/json</stringProp>
-              </elementProp>
-            </collectionProp>
-          </HeaderManager>
-          <hashTree/>
-          <ResponseAssertion guiclass="AssertionGui" testclass="ResponseAssertion" testname="Response Code200" enabled="true">
-            <collectionProp name="Asserion.test_strings">
-              <stringProp name="-1146597565">${Response200}</stringProp>
-            </collectionProp>
-            <stringProp name="Assertion.custom_message"></stringProp>
-            <stringProp name="Assertion.test_field">Assertion.response_code</stringProp>
-            <boolProp name="Assertion.assume_success">true</boolProp>
-            <intProp name="Assertion.test_type">2</intProp>
-          </ResponseAssertion>
-          <hashTree/>
-          <JSONPostProcessor guiclass="JSONPostProcessorGui" testclass="JSONPostProcessor" testname="JSON Extractor" enabled="true">
-            <stringProp name="JSONPostProcessor.referenceNames">AddressID</stringProp>
-            <stringProp name="JSONPostProcessor.jsonPathExprs">$..id</stringProp>
-            <stringProp name="JSONPostProcessor.match_numbers">-1</stringProp>
-            <boolProp name="JSONPostProcessor.compute_concat">true</boolProp>
-          </JSONPostProcessor>
-          <hashTree/>
-        </hashTree>
-        <BeanShellPreProcessor guiclass="TestBeanGUI" testclass="BeanShellPreProcessor" testname="Update vendor to the RegalPay" enabled="false">
-          <stringProp name="filename"></stringProp>
-          <stringProp name="parameters"></stringProp>
-          <boolProp name="resetInterpreter">false</boolProp>
-          <stringProp name="script"></stringProp>
-        </BeanShellPreProcessor>
-        <hashTree/>
-        <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="P: Verify user is able to UPDATE Vendor to the RegalPay" enabled="false">
-          <boolProp name="HTTPSampler.postBodyRaw">true</boolProp>
-          <elementProp name="HTTPsampler.Arguments" elementType="Arguments">
-            <collectionProp name="Arguments.arguments">
-              <elementProp name="" elementType="HTTPArgument">
-                <boolProp name="HTTPArgument.always_encode">false</boolProp>
-                <stringProp name="Argument.value">{&#xd;
-       &quot;id&quot;:&quot;${VendorID_1}&quot;,&#xd;
-          &quot;vendorName&quot;: &quot;CoffeeDay_${__time}&quot;,&#xd;
-          &quot;paymentMethod&quot;: &quot;${Card_Payment}&quot;,&#xd;
-          &quot;taxId&quot;: &quot;${tax_ID}&quot;,&#xd;
-          &quot;duns&quot;: &quot;123&quot;,&#xd;
-          &quot;vendorNumber&quot;: &quot;${vendor_Number}&quot;,&#xd;
-          &quot;email&quot;: &quot;${__RandomString(10,qwertyuiopasra)}@mail.com&quot;,&#xd;
-          &quot;contact&quot;: &quot;${contact}&quot;&#xd;
-    }  </stringProp>
-                <stringProp name="Argument.metadata">=</stringProp>
-              </elementProp>
-            </collectionProp>
-          </elementProp>
-          <stringProp name="HTTPSampler.domain">${URL}</stringProp>
-          <stringProp name="HTTPSampler.port">UFT-8</stringProp>
-          <stringProp name="HTTPSampler.protocol">http</stringProp>
-          <stringProp name="HTTPSampler.contentEncoding"></stringProp>
-          <stringProp name="HTTPSampler.path">${Vendors}</stringProp>
-          <stringProp name="HTTPSampler.method">PUT</stringProp>
-          <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
-          <boolProp name="HTTPSampler.auto_redirects">false</boolProp>
-          <boolProp name="HTTPSampler.use_keepalive">true</boolProp>
-          <boolProp name="HTTPSampler.DO_MULTIPART_POST">false</boolProp>
-          <stringProp name="HTTPSampler.embedded_url_re"></stringProp>
-          <stringProp name="HTTPSampler.connect_timeout"></stringProp>
-          <stringProp name="HTTPSampler.response_timeout"></stringProp>
-        </HTTPSamplerProxy>
-        <hashTree>
-          <HeaderManager guiclass="HeaderPanel" testclass="HeaderManager" testname="HTTP Header Manager" enabled="true">
-            <collectionProp name="HeaderManager.headers">
-              <elementProp name="Accept-Language" elementType="Header">
-                <stringProp name="Header.name">Accept-Language</stringProp>
-                <stringProp name="Header.value">en-US,en;q=0.5</stringProp>
-              </elementProp>
-              <elementProp name="Content-Type" elementType="Header">
-                <stringProp name="Header.name">Content-Type</stringProp>
-                <stringProp name="Header.value">application/json; charset=UTF-8</stringProp>
-              </elementProp>
-              <elementProp name="Cache-Control" elementType="Header">
-                <stringProp name="Header.name">Cache-Control</stringProp>
-                <stringProp name="Header.value">no-cache</stringProp>
-              </elementProp>
-              <elementProp name="Accept" elementType="Header">
-                <stringProp name="Header.name">Accept</stringProp>
-                <stringProp name="Header.value">application/json</stringProp>
-              </elementProp>
-            </collectionProp>
-          </HeaderManager>
-          <hashTree/>
-          <ResponseAssertion guiclass="AssertionGui" testclass="ResponseAssertion" testname="Response Code200" enabled="true">
-            <collectionProp name="Asserion.test_strings">
-              <stringProp name="-1146597565">${Response200}</stringProp>
-            </collectionProp>
-            <stringProp name="Assertion.custom_message"></stringProp>
-            <stringProp name="Assertion.test_field">Assertion.response_code</stringProp>
-            <boolProp name="Assertion.assume_success">true</boolProp>
-            <intProp name="Assertion.test_type">2</intProp>
-          </ResponseAssertion>
-          <hashTree/>
-          <RandomVariableConfig guiclass="TestBeanGUI" testclass="RandomVariableConfig" testname="Random Variable for tax ID" enabled="true">
-            <stringProp name="variableName">tax_ID</stringProp>
-            <stringProp name="outputFormat"></stringProp>
-            <stringProp name="minimumValue">11111</stringProp>
-            <stringProp name="maximumValue">99999</stringProp>
-            <stringProp name="randomSeed"></stringProp>
-            <boolProp name="perThread">false</boolProp>
-          </RandomVariableConfig>
-          <hashTree/>
-          <RandomVariableConfig guiclass="TestBeanGUI" testclass="RandomVariableConfig" testname="Random Variable for vendor_Number" enabled="true">
-            <stringProp name="variableName">vendor_Number</stringProp>
-            <stringProp name="outputFormat"></stringProp>
-            <stringProp name="minimumValue">1111111</stringProp>
-            <stringProp name="maximumValue">9999999</stringProp>
-            <stringProp name="randomSeed"></stringProp>
-            <boolProp name="perThread">false</boolProp>
-          </RandomVariableConfig>
-          <hashTree/>
-          <RandomVariableConfig guiclass="TestBeanGUI" testclass="RandomVariableConfig" testname="Random Variable for contact" enabled="true">
-            <stringProp name="variableName">contact</stringProp>
-            <stringProp name="outputFormat"></stringProp>
-            <stringProp name="minimumValue">1111111111</stringProp>
-            <stringProp name="maximumValue">9999999999</stringProp>
-            <stringProp name="randomSeed"></stringProp>
-            <boolProp name="perThread">false</boolProp>
-          </RandomVariableConfig>
-          <hashTree/>
-        </hashTree>
-        <BeanShellPreProcessor guiclass="TestBeanGUI" testclass="BeanShellPreProcessor" testname="Update vendor&apos;s address to the RegalPay" enabled="false">
-          <stringProp name="filename"></stringProp>
-          <stringProp name="parameters"></stringProp>
-          <boolProp name="resetInterpreter">false</boolProp>
-          <stringProp name="script"></stringProp>
-        </BeanShellPreProcessor>
-        <hashTree/>
-        <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="P: Verify user is able to UPDATE Vendor&apos;s address to the RegalPay" enabled="false">
-          <boolProp name="HTTPSampler.postBodyRaw">true</boolProp>
-          <elementProp name="HTTPsampler.Arguments" elementType="Arguments">
-            <collectionProp name="Arguments.arguments">
-              <elementProp name="" elementType="HTTPArgument">
-                <boolProp name="HTTPArgument.always_encode">false</boolProp>
-                <stringProp name="Argument.value">  {&#xd;
-       &quot;id&quot;: ${AddressID_3},&#xd;
-      &quot;addressLine1&quot;: &quot;${__RandomString(10,qwertyuiopasra)}&quot;,&#xd;
-      &quot;addressLine2&quot;: &quot;${__RandomString(10,qwertyuiopasra)}&quot;,&#xd;
-      &quot;addressLine3&quot;: &quot;Nicofi Technologies pvt ltd&quot;,&#xd;
-      &quot;addressLine4&quot;: &quot;Hosur Road&quot;,&#xd;
-      &quot;city&quot;: &quot;${City}&quot;,&#xd;
-            &quot;state&quot;: &quot;${State}&quot;,&#xd;
-            &quot;zipCode&quot;: &quot;${PinCode}&quot;,&#xd;
-            &quot;countryCode&quot;: &quot;${CCode}&quot;,&#xd;
-            &quot;country&quot;: &quot;${County}&quot;&#xd;
-   }</stringProp>
-                <stringProp name="Argument.metadata">=</stringProp>
-              </elementProp>
-            </collectionProp>
-          </elementProp>
-          <stringProp name="HTTPSampler.domain">${URL}</stringProp>
-          <stringProp name="HTTPSampler.port">UFT-8</stringProp>
-          <stringProp name="HTTPSampler.protocol">http</stringProp>
-          <stringProp name="HTTPSampler.contentEncoding"></stringProp>
-          <stringProp name="HTTPSampler.path">${Vendors}/${VendorID_1}/addresses</stringProp>
-          <stringProp name="HTTPSampler.method">PUT</stringProp>
-          <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
-          <boolProp name="HTTPSampler.auto_redirects">false</boolProp>
-          <boolProp name="HTTPSampler.use_keepalive">true</boolProp>
-          <boolProp name="HTTPSampler.DO_MULTIPART_POST">false</boolProp>
-          <stringProp name="HTTPSampler.embedded_url_re"></stringProp>
-          <stringProp name="HTTPSampler.connect_timeout"></stringProp>
-          <stringProp name="HTTPSampler.response_timeout"></stringProp>
-        </HTTPSamplerProxy>
-        <hashTree>
-          <HeaderManager guiclass="HeaderPanel" testclass="HeaderManager" testname="HTTP Header Manager" enabled="true">
-            <collectionProp name="HeaderManager.headers">
-              <elementProp name="Accept-Language" elementType="Header">
-                <stringProp name="Header.name">Accept-Language</stringProp>
-                <stringProp name="Header.value">en-US,en;q=0.5</stringProp>
-              </elementProp>
-              <elementProp name="Content-Type" elementType="Header">
-                <stringProp name="Header.name">Content-Type</stringProp>
-                <stringProp name="Header.value">application/json; charset=UTF-8</stringProp>
-              </elementProp>
-              <elementProp name="Cache-Control" elementType="Header">
-                <stringProp name="Header.name">Cache-Control</stringProp>
-                <stringProp name="Header.value">no-cache</stringProp>
-              </elementProp>
-              <elementProp name="Accept" elementType="Header">
-                <stringProp name="Header.name">Accept</stringProp>
-                <stringProp name="Header.value">application/json</stringProp>
-              </elementProp>
-            </collectionProp>
-          </HeaderManager>
-          <hashTree/>
-          <ResponseAssertion guiclass="AssertionGui" testclass="ResponseAssertion" testname="Response Code200" enabled="true">
-            <collectionProp name="Asserion.test_strings">
-              <stringProp name="-1146597565">${Response200}</stringProp>
-            </collectionProp>
-            <stringProp name="Assertion.custom_message"></stringProp>
-            <stringProp name="Assertion.test_field">Assertion.response_code</stringProp>
-            <boolProp name="Assertion.assume_success">true</boolProp>
-            <intProp name="Assertion.test_type">2</intProp>
-          </ResponseAssertion>
-          <hashTree/>
-        </hashTree>
-        <BeanShellPreProcessor guiclass="TestBeanGUI" testclass="BeanShellPreProcessor" testname="Update vendor&apos;s bank data to the RegalPay" enabled="false">
-          <stringProp name="filename"></stringProp>
-          <stringProp name="parameters"></stringProp>
-          <boolProp name="resetInterpreter">false</boolProp>
-          <stringProp name="script"></stringProp>
-        </BeanShellPreProcessor>
-        <hashTree/>
-        <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="P: Verify user is able to UPDATE Vendor&apos;s Bank data to the RegalPay" enabled="false">
-          <boolProp name="HTTPSampler.postBodyRaw">true</boolProp>
-          <elementProp name="HTTPsampler.Arguments" elementType="Arguments">
-            <collectionProp name="Arguments.arguments">
-              <elementProp name="" elementType="HTTPArgument">
-                <boolProp name="HTTPArgument.always_encode">false</boolProp>
-                <stringProp name="Argument.value">{&#xd;
-      &quot;id&quot;: 7,&#xd;
-      &quot;bankName&quot;: &quot;Hdfc&quot;,&#xd;
-      &quot;accountNumber&quot;: &quot;12334234&quot;,&#xd;
-      &quot;accountType&quot;: &quot;SB&quot;,&#xd;
-      &quot;accountCurrency&quot;: &quot;INR&quot;,&#xd;
-      &quot;iban&quot;: &quot;IBAN&quot;,&#xd;
-      &quot;otherAccountNumber&quot;: &quot;1231231233&quot;,&#xd;
-      &quot;domesticRoutingCode&quot;: &quot;99088&quot;,&#xd;
-      &quot;swift&quot;: &quot;SWift123&quot;,&#xd;
-      &quot;address&quot;: {&#xd;
-            &quot;addressLine1&quot;: &quot;IBIS&quot;,&#xd;
-            &quot;addressLine2&quot;: &quot;Regus bussiness&quot;,&#xd;
-            &quot;addressLine3&quot;: &quot;Regal Technologies pvt ltd&quot;,&#xd;
-            &quot;addressLine4&quot;: &quot;Hosur Road&quot;,&#xd;
-            &quot;city&quot;: &quot;${City}&quot;,&#xd;
-            &quot;state&quot;: &quot;${State}&quot;,&#xd;
-            &quot;zipCode&quot;: &quot;${PinCode}&quot;,&#xd;
-            &quot;countryCode&quot;: &quot;${CCode}&quot;,&#xd;
-            &quot;country&quot;: &quot;${County}&quot;&#xd;
-        }&#xd;
-   }&#xd;
-     </stringProp>
-                <stringProp name="Argument.metadata">=</stringProp>
-              </elementProp>
-            </collectionProp>
-          </elementProp>
-          <stringProp name="HTTPSampler.domain">${URL}</stringProp>
-          <stringProp name="HTTPSampler.port">UFT-8</stringProp>
-          <stringProp name="HTTPSampler.protocol">http</stringProp>
-          <stringProp name="HTTPSampler.contentEncoding"></stringProp>
-          <stringProp name="HTTPSampler.path">${Vendors}/${VendorID_1}/bank-account</stringProp>
-          <stringProp name="HTTPSampler.method">PUT</stringProp>
-          <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
-          <boolProp name="HTTPSampler.auto_redirects">false</boolProp>
-          <boolProp name="HTTPSampler.use_keepalive">true</boolProp>
-          <boolProp name="HTTPSampler.DO_MULTIPART_POST">false</boolProp>
-          <stringProp name="HTTPSampler.embedded_url_re"></stringProp>
-          <stringProp name="HTTPSampler.connect_timeout"></stringProp>
-          <stringProp name="HTTPSampler.response_timeout"></stringProp>
-        </HTTPSamplerProxy>
-        <hashTree>
-          <HeaderManager guiclass="HeaderPanel" testclass="HeaderManager" testname="HTTP Header Manager" enabled="true">
-            <collectionProp name="HeaderManager.headers">
-              <elementProp name="Accept-Language" elementType="Header">
-                <stringProp name="Header.name">Accept-Language</stringProp>
-                <stringProp name="Header.value">en-US,en;q=0.5</stringProp>
-              </elementProp>
-              <elementProp name="Content-Type" elementType="Header">
-                <stringProp name="Header.name">Content-Type</stringProp>
-                <stringProp name="Header.value">application/json; charset=UTF-8</stringProp>
-              </elementProp>
-              <elementProp name="Cache-Control" elementType="Header">
-                <stringProp name="Header.name">Cache-Control</stringProp>
-                <stringProp name="Header.value">no-cache</stringProp>
-              </elementProp>
-              <elementProp name="Accept" elementType="Header">
-                <stringProp name="Header.name">Accept</stringProp>
-                <stringProp name="Header.value">application/json</stringProp>
-              </elementProp>
-            </collectionProp>
-          </HeaderManager>
-          <hashTree/>
-          <ResponseAssertion guiclass="AssertionGui" testclass="ResponseAssertion" testname="Response Code200" enabled="true">
-            <collectionProp name="Asserion.test_strings">
-              <stringProp name="-1146597565">${Response200}</stringProp>
-            </collectionProp>
-            <stringProp name="Assertion.custom_message"></stringProp>
-            <stringProp name="Assertion.test_field">Assertion.response_code</stringProp>
-            <boolProp name="Assertion.assume_success">true</boolProp>
-            <intProp name="Assertion.test_type">2</intProp>
-          </ResponseAssertion>
           <hashTree/>
         </hashTree>
       </hashTree>
