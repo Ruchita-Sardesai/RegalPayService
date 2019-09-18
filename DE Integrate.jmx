@@ -292,7 +292,7 @@
           </elementProp>
           <elementProp name="databaseName" elementType="Argument">
             <stringProp name="Argument.name">databaseName</stringProp>
-            <stringProp name="Argument.value">TWO01</stringProp>
+            <stringProp name="Argument.value">RegalPayStaging1</stringProp>
             <stringProp name="Argument.metadata">=</stringProp>
           </elementProp>
           <elementProp name="serverName" elementType="Argument">
@@ -691,7 +691,11 @@
                 <stringProp name="Argument.value">{&#xd;
   &quot;name&quot;: &quot;Query_DB1${__time()}&quot;,&#xd;
   &quot;description&quot;: &quot;New query for DB1${__time()}&quot;,&#xd;
-  &quot;queryString&quot;: &quot;SELECT CHK.BACHNUMB &apos;ERPBatchNumber&apos;,  CHK.VCHRNMBR &apos;PaymentNumber&apos;,  CHK.VENDORID &apos;VendorNumber&apos;,  CHK.DOCNUMBR &apos;CheckNumber&apos;,  CHK.DOCDATE &apos;PaymentDate&apos;,  COALESCE (INV.DOCNUMBR,INVOPEN.DOCNUMBR) &apos;InvoiceNumber&apos;,  COALESCE (INV.TRXDSCRN,INVOPEN.TRXDSCRN) &apos;InvoiceDescription&apos;,  COALESCE (INV.DOCDATE,INVOPEN.DOCDATE) &apos;Date&apos;,  COALESCE (INV.DUEDATE,INVOPEN.DUEDATE) &apos;DueDate&apos;,  AP.APPLDAMT &apos;GrossAmount&apos;,  0.0 &apos;DiscountAmount&apos;,  AP.APPLDAMT &apos;NetAmount&apos;,  CHK.TRXDSCRN &apos;PaymentDescription&apos;,  &apos;USD&apos; &apos;Currency&apos;,  COALESCE (INV.VADCDTRO,INVOPEN.VADCDTRO) &apos;AddressCode&apos;,  &apos;&apos; &apos;PaymentMethod&apos;,  &apos;&apos; PONumber,  CHK.CHEKBKID &apos;CompanyID&apos;,  &apos;&apos; &apos;AccountNumber&apos;,  &apos;&apos; Voided    FROM PM30300 AP Left Join PM30200 CHK ON AP.VCHRNMBR = CHK.VCHRNMBR AND CHK.VENDORID = AP.VENDORID AND CHK.DOCTYPE = 6 AND AP.DOCTYPE = 6    LEFT JOIN PM30200 INV ON AP.APTVCHNM = INV.VCHRNMBR AND INV.DOCTYPE = 1 AND AP.DOCTYPE = 6 AND AP.VENDORID = INV.VENDORID    LEFT JOIN PM20000 INVOPEN ON  AP.APTVCHNM = INVOPEN.VCHRNMBR AND  INVOPEN.DOCTYPE = 1 AND AP.DOCTYPE = 6 AND AP.VENDORID = INVOPEN.VENDORID  WHERE CHK.VOIDED = 0 AND CHK.DOCDATE &lt; GETDATE() -30&quot;&#xd;
+  &quot;queryString&quot;:&quot;SELECT A.ERPBatchID &apos;ERPBatchNumber&apos;, A.PaymentNumber &apos;PaymentNumber&apos;, A.VendorID &apos;VendorNumber&apos;, A.CheckNumber &apos;CheckNumber&apos;,&#xd;
+A.CheckDate &apos;PaymentDate&apos;, A.InvoiceNumber &apos;InvoiceNumber&apos;, A.InvoiceDescription &apos;InvoiceDescription&apos;,  &#xd;
+A.InvoiceDate &apos;Date&apos;,  A.InvoiceDueDate &apos;DueDate&apos;,  A.GrossAmount &apos;GrossAmount&apos;,  A.DiscountAmount &apos;DiscountAmount&apos;, &#xd;
+ A.NetAmount &apos;NetAmount&apos;,  &apos;Payment_description&apos; &apos;PaymentDescription&apos;,  A.Currency &apos;Currency&apos;,  A.AddressCode &apos;AddressCode&apos;,  &apos;&apos; &apos;PaymentMethod&apos;, &#xd;
+ A.PONumber &apos;PONumber&apos;, &apos;UPTOWN_TRUST&apos; &apos;CompanyID&apos;,  &apos;&apos; &apos;AccountNumber&apos;,  &apos;&apos; Voided    FROM St_Payments A&quot;&#xd;
  }</stringProp>
                 <stringProp name="Argument.metadata">=</stringProp>
               </elementProp>
@@ -863,9 +867,13 @@ catch (Throwable ex)
               <elementProp name="" elementType="HTTPArgument">
                 <boolProp name="HTTPArgument.always_encode">false</boolProp>
                 <stringProp name="Argument.value">{&#xd;
-  &quot;name&quot;: &quot;Query_DB1${__time()}&quot;,&#xd;
+  &quot;name&quot;: &quot;Query_DB2${__time()}&quot;,&#xd;
   &quot;description&quot;: &quot;New query for DB1${__time()}&quot;,&#xd;
-  &quot;queryString&quot;: &quot;SELECT  A.VENDORID  &apos;VendorNumber&apos;,    B.VENDNAME  &apos;VendorName&apos;,    ADRSCODE  &apos;AddressCode&apos;,    A.ADDRESS1  &apos;AddressLine1&apos;,    A.ADDRESS2  &apos;AddressLine2&apos;,    A.ADDRESS3  &apos;AddressLine3&apos;,    A.CITY  &apos;City&apos;,    A.STATE  &apos;State&apos;,    A.ZIPCODE  &apos;ZipCode&apos;,    A.CCode  &apos;CountryCode&apos;,    A.COUNTRY  &apos;Country&apos;,    &apos;0&apos;  &apos;PaymentMethod&apos;,    0  &apos;Annual Spend&apos;,    &apos;&apos;   &apos;Email&apos;,    &apos;&apos;   &apos;Company ID&apos;,    &apos;&apos;   &apos;Phone Number&apos;,    &apos;&apos;  &apos;contact&apos;   FROM PM00300 A,PM00200 B     WHERE  A.VENDORID = B.VENDORID&quot;&#xd;
+  &quot;queryString&quot;: &quot;SELECT A.VENDORID &apos;VendorNumber&apos;, A.VENDORNAME&apos;VendorName&apos;, A.ADRSCODE&apos;AddressCode&apos;,A.ADDRESS1  &apos;AddressLine1&apos;,&#xd;
+A.ADDRESS2  &apos;AddressLine2&apos;,    A.ADDRESS3  &apos;AddressLine3&apos;,    A.CITY  &apos;City&apos;,    A.STATE  &apos;State&apos;, &#xd;
+A.ZIPCODE  &apos;ZipCode&apos;,    A.CCODE  &apos;CountryCode&apos;,    A.COUNTRY  &apos;Country&apos;,    &apos;0&apos;  &apos;PaymentMethod&apos;, &#xd;
+&apos;0&apos;  &apos;Annual Spend&apos;,    &apos;&apos;   &apos;Email&apos;,    &apos;&apos;   &apos;Company ID&apos;,    &apos;&apos;   &apos;Phone Number&apos;,    &apos;&apos;  &apos;contact&apos;  &#xd;
+ FROM St_Vendor_Details A&quot;,&#xd;
  }</stringProp>
                 <stringProp name="Argument.metadata">=</stringProp>
               </elementProp>
@@ -1037,10 +1045,11 @@ catch (Throwable ex)
               <elementProp name="" elementType="HTTPArgument">
                 <boolProp name="HTTPArgument.always_encode">false</boolProp>
                 <stringProp name="Argument.value">{&#xd;
-  &quot;name&quot;: &quot;Query_DB1${__time()}&quot;,&#xd;
-  &quot;description&quot;: &quot;string&quot;,&#xd;
-  &quot;queryString&quot;: &quot;SELECT  A.VENDORID  &apos;VendorNumber&apos;,   B.VENDNAME  &apos;BankName&apos;,   ADRSCODE  &apos;AccountNumber&apos;,   &apos;0&apos;  &apos;AccountType&apos;,   &apos;INR&apos;  &apos;AccountCurrency&apos;,   A.ADDRESS3  &apos;IBAN&apos;    FROM PM00300 A,PM00200 B    WHERE  A.VENDORID = B.VENDORID&quot;&#xd;
-}</stringProp>
+  &quot;name&quot;: &quot;Query_DB3${__time()}&quot;,&#xd;
+  &quot;description&quot;: &quot;New query for DB2${__time()}&quot;,&#xd;
+  &quot;queryString&quot;: &quot;SELECT B.VENDORID &apos;VendorNumber&apos;, B.VENDORNAME &apos;BankName&apos;, ADRSCODE &apos;AccountNumber&apos;, &apos;0&apos;  &apos;AccountType&apos;, &apos;INR&apos; &apos;AccountCurrency&apos;, A.IBAN  &apos;IBAN&apos;  FROM Vendors A,St_Vendor_Details B &#xd;
+ WHERE  A.VendorID = B.VENDORID;&quot;,&#xd;
+ }</stringProp>
                 <stringProp name="Argument.metadata">=</stringProp>
               </elementProp>
             </collectionProp>
@@ -1218,7 +1227,11 @@ catch (Throwable ex)
                 <stringProp name="Argument.value">{&#xd;
   &quot;name&quot;: &quot;Query_DB1${__time()}&quot;,&#xd;
   &quot;description&quot;: &quot;New query for DB1${__time()}&quot;,&#xd;
-  &quot;queryString&quot;: &quot;SELECT CHK.BACHNUMB &apos;ERPBatchNumber&apos;,  CHK.VCHRNMBR &apos;PaymentNumber&apos;,  CHK.VENDORID &apos;VendorNumber&apos;,  CHK.DOCNUMBR &apos;CheckNumber&apos;,  CHK.DOCDATE &apos;PaymentDate&apos;,  COALESCE (INV.DOCNUMBR,INVOPEN.DOCNUMBR) &apos;InvoiceNumber&apos;,  COALESCE (INV.TRXDSCRN,INVOPEN.TRXDSCRN) &apos;InvoiceDescription&apos;,  COALESCE (INV.DOCDATE,INVOPEN.DOCDATE) &apos;Date&apos;,  COALESCE (INV.DUEDATE,INVOPEN.DUEDATE) &apos;DueDate&apos;,  AP.APPLDAMT &apos;GrossAmount&apos;,  0.0 &apos;DiscountAmount&apos;,  AP.APPLDAMT &apos;NetAmount&apos;,  CHK.TRXDSCRN &apos;PaymentDescription&apos;,  &apos;USD&apos; &apos;Currency&apos;,  COALESCE (INV.VADCDTRO,INVOPEN.VADCDTRO) &apos;AddressCode&apos;,  &apos;&apos; &apos;PaymentMethod&apos;,  &apos;&apos; PONumber,  CHK.CHEKBKID &apos;CompanyID&apos;,  &apos;&apos; &apos;AccountNumber&apos;,  &apos;&apos; Voided    FROM PM30300 AP Left Join PM30200 CHK ON AP.VCHRNMBR = CHK.VCHRNMBR AND CHK.VENDORID = AP.VENDORID AND CHK.DOCTYPE = 6 AND AP.DOCTYPE = 6    LEFT JOIN PM30200 INV ON AP.APTVCHNM = INV.VCHRNMBR AND INV.DOCTYPE = 1 AND AP.DOCTYPE = 6 AND AP.VENDORID = INV.VENDORID    LEFT JOIN PM20000 INVOPEN ON  AP.APTVCHNM = INVOPEN.VCHRNMBR AND  INVOPEN.DOCTYPE = 1 AND AP.DOCTYPE = 6 AND AP.VENDORID = INVOPEN.VENDORID  WHERE CHK.VOIDED = 0 AND CHK.DOCDATE &lt; GETDATE() -30&quot;,&#xd;
+  &quot;queryString&quot;: &quot;SELECT A.ERPBatchID &apos;ERPBatchNumber&apos;, A.PaymentNumber &apos;PaymentNumber&apos;, A.VendorID &apos;VendorNumber&apos;, A.CheckNumber &apos;CheckNumber&apos;,&#xd;
+A.CheckDate &apos;PaymentDate&apos;, A.InvoiceNumber &apos;InvoiceNumber&apos;, A.InvoiceDescription &apos;InvoiceDescription&apos;,  &#xd;
+A.InvoiceDate &apos;Date&apos;,  A.InvoiceDueDate &apos;DueDate&apos;,  A.GrossAmount &apos;GrossAmount&apos;,  A.DiscountAmount &apos;DiscountAmount&apos;, &#xd;
+ A.NetAmount &apos;NetAmount&apos;,  &apos;Payment_description&apos; &apos;PaymentDescription&apos;,  A.Currency &apos;Currency&apos;,  A.AddressCode &apos;AddressCode&apos;,  &apos;&apos; &apos;PaymentMethod&apos;, &#xd;
+ A.PONumber &apos;PONumber&apos;, &apos;UPTOWN_TRUST&apos; &apos;CompanyID&apos;,  &apos;&apos; &apos;AccountNumber&apos;,  &apos;&apos; Voided    FROM St_Payments A&quot;,&#xd;
  }</stringProp>
                 <stringProp name="Argument.metadata">=</stringProp>
               </elementProp>
@@ -1303,9 +1316,13 @@ catch (Throwable ex)
               <elementProp name="" elementType="HTTPArgument">
                 <boolProp name="HTTPArgument.always_encode">false</boolProp>
                 <stringProp name="Argument.value">{&#xd;
-  &quot;name&quot;: &quot;Query_DB1${__time()}&quot;,&#xd;
+  &quot;name&quot;: &quot;Query_DB2${__time()}&quot;,&#xd;
   &quot;description&quot;: &quot;New query for DB1${__time()}&quot;,&#xd;
-  &quot;queryString&quot;: &quot;SELECT  A.VENDORID  &apos;VendorNumber&apos;,    B.VENDNAME  &apos;VendorName&apos;,    ADRSCODE  &apos;AddressCode&apos;,    A.ADDRESS1  &apos;AddressLine1&apos;,    A.ADDRESS2  &apos;AddressLine2&apos;,    A.ADDRESS3  &apos;AddressLine3&apos;,    A.CITY  &apos;City&apos;,    A.STATE  &apos;State&apos;,    A.ZIPCODE  &apos;ZipCode&apos;,    A.CCode  &apos;CountryCode&apos;,    A.COUNTRY  &apos;Country&apos;,    &apos;0&apos;  &apos;PaymentMethod&apos;,    0  &apos;Annual Spend&apos;,    &apos;&apos;   &apos;Email&apos;,    &apos;&apos;   &apos;Company ID&apos;,    &apos;&apos;   &apos;Phone Number&apos;,    &apos;&apos;  &apos;contact&apos;   FROM PM00300 A,PM00200 B     WHERE  A.VENDORID = B.VENDORID&quot;,&#xd;
+  &quot;queryString&quot;: &quot;SELECT A.VENDORID &apos;VendorNumber&apos;, A.VENDORNAME&apos;VendorName&apos;, A.ADRSCODE&apos;AddressCode&apos;,A.ADDRESS1  &apos;AddressLine1&apos;,&#xd;
+A.ADDRESS2  &apos;AddressLine2&apos;,    A.ADDRESS3  &apos;AddressLine3&apos;,    A.CITY  &apos;City&apos;,    A.STATE  &apos;State&apos;, &#xd;
+A.ZIPCODE  &apos;ZipCode&apos;,    A.CCODE  &apos;CountryCode&apos;,    A.COUNTRY  &apos;Country&apos;,    &apos;0&apos;  &apos;PaymentMethod&apos;, &#xd;
+&apos;0&apos;  &apos;Annual Spend&apos;,    &apos;&apos;   &apos;Email&apos;,    &apos;&apos;   &apos;Company ID&apos;,    &apos;&apos;   &apos;Phone Number&apos;,    &apos;&apos;  &apos;contact&apos;  &#xd;
+ FROM St_Vendor_Details A&quot;,&#xd;
  }</stringProp>
                 <stringProp name="Argument.metadata">=</stringProp>
               </elementProp>
@@ -1390,9 +1407,10 @@ catch (Throwable ex)
               <elementProp name="" elementType="HTTPArgument">
                 <boolProp name="HTTPArgument.always_encode">false</boolProp>
                 <stringProp name="Argument.value">{&#xd;
-  &quot;name&quot;: &quot;Query_DB2${__time()}&quot;,&#xd;
+  &quot;name&quot;: &quot;Query_DB3${__time()}&quot;,&#xd;
   &quot;description&quot;: &quot;New query for DB2${__time()}&quot;,&#xd;
-  &quot;queryString&quot;: &quot;SELECT  A.VENDORID  &apos;VendorNumber&apos;,   B.VENDNAME  &apos;BankName&apos;,   ADRSCODE  &apos;AccountNumber&apos;,   &apos;0&apos;  &apos;AccountType&apos;,   &apos;INR&apos;  &apos;AccountCurrency&apos;,   A.ADDRESS3  &apos;IBAN&apos;    FROM PM00300 A,PM00200 B    WHERE  A.VENDORID = B.VENDORID&quot;,&#xd;
+  &quot;queryString&quot;: &quot;SELECT B.VENDORID &apos;VendorNumber&apos;, B.VENDORNAME &apos;BankName&apos;, ADRSCODE &apos;AccountNumber&apos;, &apos;0&apos;  &apos;AccountType&apos;, &apos;INR&apos; &apos;AccountCurrency&apos;, A.IBAN  &apos;IBAN&apos;  FROM Vendors A,St_Vendor_Details B &#xd;
+ WHERE  A.VendorID = B.VENDORID;&quot;,&#xd;
  }</stringProp>
                 <stringProp name="Argument.metadata">=</stringProp>
               </elementProp>
