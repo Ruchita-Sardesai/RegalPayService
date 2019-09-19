@@ -254,12 +254,12 @@
           </elementProp>
           <elementProp name="PayOutFilePath" elementType="Argument">
             <stringProp name="Argument.name">PayOutFilePath</stringProp>
-            <stringProp name="Argument.value">/PayMappingIdFile.csv</stringProp>
+            <stringProp name="Argument.value">/PayOutputfiledIdFile.csv</stringProp>
             <stringProp name="Argument.metadata">=</stringProp>
           </elementProp>
           <elementProp name="PayMapFilePath" elementType="Argument">
             <stringProp name="Argument.name">PayMapFilePath</stringProp>
-            <stringProp name="Argument.value">/PayOutputfiledIdFile.csv</stringProp>
+            <stringProp name="Argument.value">/PayMappingIdFile.csv</stringProp>
             <stringProp name="Argument.metadata">=</stringProp>
           </elementProp>
           <elementProp name="VenInFilePath" elementType="Argument">
@@ -4889,7 +4889,7 @@ JPM,JP morgan,255550000,JPM Bank Adrress1,JPM Bank Adrress1,JPM Bank Adrress1,CT
           <stringProp name="script"></stringProp>
         </BeanShellPreProcessor>
         <hashTree/>
-        <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="P: Verify user is able to all Payments Details" enabled="true">
+        <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="P: Verify user is able to Get all Payments Details" enabled="true">
           <elementProp name="HTTPsampler.Arguments" elementType="Arguments" guiclass="HTTPArgumentsPanel" testclass="Arguments" testname="User Defined Variables" enabled="true">
             <collectionProp name="Arguments.arguments"/>
           </elementProp>
