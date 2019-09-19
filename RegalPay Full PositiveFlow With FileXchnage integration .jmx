@@ -767,10 +767,10 @@ try {
      print(&quot;PO Number&quot;+&quot;,&quot;+&quot;15&quot;+&quot;,&quot;+&quot;false&quot;+&quot;,&quot;+&quot;50&quot;+&quot;,&quot;+&quot;3&quot;+&quot;,&quot;+&quot;true&quot;+&quot;,&quot;+&quot;true&quot;+&quot;,&quot;+&quot;false&quot;+&quot;,&quot;+&quot;0&quot;);
      print(&quot;Account Number&quot;+&quot;,&quot;+&quot;16&quot;+&quot;,&quot;+&quot;true&quot;+&quot;,&quot;+&quot;100&quot;+&quot;,&quot;+&quot;3&quot;+&quot;,&quot;+&quot;true&quot;+&quot;,&quot;+&quot;true&quot;+&quot;,&quot;+&quot;false&quot;+&quot;,&quot;+&quot;0&quot;);
      
-     // print(&quot;Company ID&quot;+&quot;,&quot;+&quot;17&quot;+&quot;,&quot;+&quot;false&quot;+&quot;,&quot;+&quot;100&quot;+&quot;,&quot;+&quot;3&quot;+&quot;,&quot;+&quot;true&quot;+&quot;,&quot;+&quot;true&quot; +&quot;,&quot;+&quot;false&quot;+&quot;,&quot;+&quot;0&quot;);
-    // print(&quot;Payment Type&quot;+&quot;,&quot;+&quot;18&quot;+&quot;,&quot;+&quot;false&quot;+&quot;,&quot;+&quot;100&quot;+&quot;,&quot;+&quot;3&quot;+&quot;,&quot;+&quot;true&quot;+&quot;,&quot;+&quot;true&quot; +&quot;,&quot;+&quot;false&quot;+&quot;,&quot;+&quot;0&quot;);
-    // print(&quot;Address Code&quot;+&quot;,&quot;+&quot;19&quot;+&quot;,&quot;+&quot;false&quot;+&quot;,&quot;+&quot;50&quot;+&quot;,&quot;+&quot;3&quot;+&quot;,&quot;+&quot;true&quot;+&quot;,&quot;+&quot;true&quot;+&quot;,&quot;+&quot;false&quot;+&quot;,&quot;+&quot;0&quot;);
-    // print(&quot;Voided&quot;+&quot;,&quot;+&quot;20&quot;+&quot;,&quot;+&quot;false&quot;+&quot;,&quot;+&quot;50&quot;+&quot;,&quot;+&quot;3&quot;+&quot;,&quot;+&quot;true&quot;+&quot;,&quot;+&quot;true&quot;+&quot;,&quot;+&quot;false&quot;+&quot;,&quot;+&quot;0&quot;);
+     print(&quot;Company ID&quot;+&quot;,&quot;+&quot;17&quot;+&quot;,&quot;+&quot;false&quot;+&quot;,&quot;+&quot;100&quot;+&quot;,&quot;+&quot;3&quot;+&quot;,&quot;+&quot;true&quot;+&quot;,&quot;+&quot;true&quot; +&quot;,&quot;+&quot;false&quot;+&quot;,&quot;+&quot;0&quot;);
+    print(&quot;Payment Type&quot;+&quot;,&quot;+&quot;18&quot;+&quot;,&quot;+&quot;false&quot;+&quot;,&quot;+&quot;100&quot;+&quot;,&quot;+&quot;3&quot;+&quot;,&quot;+&quot;true&quot;+&quot;,&quot;+&quot;true&quot; +&quot;,&quot;+&quot;false&quot;+&quot;,&quot;+&quot;0&quot;);
+    print(&quot;Address Code&quot;+&quot;,&quot;+&quot;19&quot;+&quot;,&quot;+&quot;false&quot;+&quot;,&quot;+&quot;50&quot;+&quot;,&quot;+&quot;3&quot;+&quot;,&quot;+&quot;true&quot;+&quot;,&quot;+&quot;true&quot;+&quot;,&quot;+&quot;false&quot;+&quot;,&quot;+&quot;0&quot;);
+    print(&quot;Voided&quot;+&quot;,&quot;+&quot;20&quot;+&quot;,&quot;+&quot;false&quot;+&quot;,&quot;+&quot;50&quot;+&quot;,&quot;+&quot;3&quot;+&quot;,&quot;+&quot;true&quot;+&quot;,&quot;+&quot;true&quot;+&quot;,&quot;+&quot;false&quot;+&quot;,&quot;+&quot;0&quot;);
 
  
   
@@ -790,7 +790,7 @@ catch (Throwable ex) {
         <hashTree/>
         <LoopController guiclass="LoopControlPanel" testclass="LoopController" testname="Loop Controller for creating multiple fields " enabled="true">
           <boolProp name="LoopController.continue_forever">true</boolProp>
-          <stringProp name="LoopController.loops">16</stringProp>
+          <stringProp name="LoopController.loops">20</stringProp>
         </LoopController>
         <hashTree>
           <CSVDataSet guiclass="TestBeanGUI" testclass="CSVDataSet" testname="CSV Data Set Config" enabled="true">
@@ -1061,27 +1061,28 @@ catch (Throwable ex) {
               <elementProp name="" elementType="HTTPArgument">
                 <boolProp name="HTTPArgument.always_encode">false</boolProp>
                 <stringProp name="Argument.value">{&#xd;
-  &quot;fileContent&quot;: &quot;ERP Batch ID,Payment Number,Check Number,Vendor ID,Payment Date,Payment Comment,Invoice Number,Invoice Date,Invoice Due Date,Invoice Description,Invoice Gross Amount,Invoice Discount Amount,Invoice Net Amount,Currency,PO Number,Account Number&#xd;
-B10000001,PN000000001,20000000001,VEN_00000001,,Payment Comment01,INV000000001,,,Invoice Description 0001,5555.55,10,5545.55,USD,PONO00001,ACNO012300000000001&#xd;
-B10000002,PN000000002,20000000002,VEN_00000002,,Payment Comment02,INV000000002,,,Invoice Description 0002,5000,10,4990,USD,PONO00002,ACNO012300000000002&#xd;
-B10000003,PN000000003,20000000003,VEN_00000003,,Payment Comment03,INV000000003,,,Invoice Description 0003,800,0,800,USD,PONO00003,ACNO012300000000003&#xd;
-B10000004,PN000000004,20000000004,VEN_00000004,,Payment Comment04,INV000000004,,,Invoice Description 0004,2000,0,2000,USD,PONO00004,ACNO012300000000004&#xd;
-B10000005,PN000000005,20000000005,VEN_00000005,,Payment Comment05,INV000000005,,,Invoice Description 0005,22222.22,0,22222.22,USD,PONO00005,ACNO012300000000005&#xd;
-B10000006,PN000000006,20000000006,VEN_00000006,,Payment Comment06,INV000000006,,,Invoice Description 0006,999999999,0,999999999,USD,PONO00006,ACNO012300000000006&#xd;
-B10000007,PN000000007,20000000007,VEN_00000007,,Payment Comment07,INV000000007,,,Invoice Description 0007,565325652,0,565325652,USD,PONO00007,ACNO012300000000007&#xd;
-B10000008,PN000000008,20000000008,VEN_00000008,,Payment Comment08,INV000000008,,,Invoice Description 0008,200,0,200,USD,PONO00008,ACNO012300000000008&#xd;
-B10000009,PN000000009,20000000009,VEN_00000009,,Payment Comment09,INV000000009,,,Invoice Description 0009,220,0,220,USD,PONO00009,ACNO012300000000009&#xd;
-B10000010,PN000000010,20000000010,VEN_00000010,,Payment Comment10,INV000000010,,,Invoice Description 0010,3658,0,3658,USD,PONO00010,ACNO012300000000010&#xd;
-B10000011,PN000000011,20000000011,VEN_00000011,,Payment Comment11,INV000000011,,,Invoice Description 0011,15569,0,15569,USD,PONO00011,ACNO012300000000011&#xd;
-B10000012,PN000000012,20000000012,VEN_00000012,,Payment Comment12,INV000000012,,,Invoice Description 0012,6999,0,6999,USD,PONO00012,ACNO012300000000012&#xd;
-B10000013,PN000000013,20000000013,VEN_00000013,,Payment Comment13,INV000000013,,,Invoice Description 0013,15200,0,15200,USD,PONO00013,ACNO012300000000013&#xd;
-B10000014,PN000000014,20000000014,VEN_00000014,,Payment Comment14,INV000000014,,,Invoice Description 0014,400,50,350,USD,PONO00014,ACNO012300000000014&#xd;
-B10000015,PN000000015,20000000015,VEN_00000015,,Payment Comment15,INV000000015,,,Invoice Description 0015,5586,20,5566,USD,PONO00015,ACNO012300000000015&#xd;
-B10000016,PN000000016,20000000016,VEN_00000016,,Payment Comment16,INV000000016,,,Invoice Description 0016,105264,250,105014,USD,PONO00016,ACNO012300000000016&#xd;
-B10000017,PN000000017,20000000017,VEN_00000017,,Payment Comment17,INV000000017,,,Invoice Description 0017,50652,0,50652,USD,PONO00017,ACNO012300000000017&#xd;
-B10000018,PN000000018,20000000018,VEN_00000018,,Payment Comment18,INV000000018,,,Invoice Description 0018,32485,0,32485,USD,PONO00018,ACNO012300000000018&#xd;
-B10000019,PN000000019,20000000019,VEN_00000019,,Payment Comment19,INV000000019,,,Invoice Description 0019,222532,0,222532,USD,PONO00019,ACNO012300000000019&#xd;
-B10000020,PN000000020,20000000020,VEN_00000020,,Payment Comment20,INV000000020,,,Invoice Description 0020,123365,55.69,123309.31,USD,PONO00020,ACNO012300000000020&quot;&#xd;
+  &quot;fileContent&quot;: &quot;ERP Batch ID,Payment Number,Check Number,Vendor ID,Payment Date,Payment Comment,Invoice Number,Invoice Date,Invoice Due Date,Invoice Description,Invoice Gross Amount,Invoice Discount Amount,Invoice Net Amount,Currency,PO Number,Account Number,Company ID,Payment Type,Address Code,Voided&#xd;
+B10000001,PN000000001,20000000001,VEN_00000001,,Payment Comment01,INV000000001,,,Invoice Description 0001,5555.55,10,5545.55,USD,PONO00001,ACNO012300000000001,CID0001,1,ADDRESSCODE1,0&#xd;
+B10000002,PN000000002,20000000002,VEN_00000002,,Payment Comment02,INV000000002,,,Invoice Description 0002,5000,10,4990,USD,PONO00002,ACNO012300000000002,CID0002,1,ADDRESSCODE2,0&#xd;
+B10000003,PN000000003,20000000003,VEN_00000003,,Payment Comment03,INV000000003,,,Invoice Description 0003,800,0,800,USD,PONO00003,ACNO012300000000003,CID0003,1,ADDRESSCODE3,0&#xd;
+B10000004,PN000000004,20000000004,VEN_00000004,,Payment Comment04,INV000000004,,,Invoice Description 0004,2000,0,2000,USD,PONO00004,ACNO012300000000004,CID0004,1,ADDRESSCODE4,0&#xd;
+B10000005,PN000000005,20000000005,VEN_00000005,,Payment Comment05,INV000000005,,,Invoice Description 0005,22222.22,0,22222.22,USD,PONO00005,ACNO012300000000005,CID0005,1,ADDRESSCODE5,0&#xd;
+B10000006,PN000000006,20000000006,VEN_00000006,,Payment Comment06,INV000000006,,,Invoice Description 0006,999999999,0,999999999,USD,PONO00006,ACNO012300000000006,CID0006,1,ADDRESSCODE6,0&#xd;
+B10000007,PN000000007,20000000007,VEN_00000007,,Payment Comment07,INV000000007,,,Invoice Description 0007,565325652,0,565325652,USD,PONO00007,ACNO012300000000007,CID0007,1,ADDRESSCODE7,0&#xd;
+B10000008,PN000000008,20000000008,VEN_00000008,,Payment Comment08,INV000000008,,,Invoice Description 0008,200,0,200,USD,PONO00008,ACNO012300000000008,CID0008,2,ADDRESSCODE8,0&#xd;
+B10000009,PN000000009,20000000009,VEN_00000009,,Payment Comment09,INV000000009,,,Invoice Description 0009,220,0,220,USD,PONO00009,ACNO012300000000009,CID0009,2,ADDRESSCODE9,0&#xd;
+B10000010,PN000000010,20000000010,VEN_00000010,,Payment Comment10,INV000000010,,,Invoice Description 0010,3658,0,3658,USD,PONO00010,ACNO012300000000010,CID0010,2,ADDRESSCODE10,0&#xd;
+B10000011,PN000000011,20000000011,VEN_00000011,,Payment Comment11,INV000000011,,,Invoice Description 0011,15569,0,15569,USD,PONO00011,ACNO012300000000011,CID0011,2,ADDRESSCODE11,0&#xd;
+B10000012,PN000000012,20000000012,VEN_00000012,,Payment Comment12,INV000000012,,,Invoice Description 0012,6999,0,6999,USD,PONO00012,ACNO012300000000012,CID0012,2,ADDRESSCODE12,0&#xd;
+B10000013,PN000000013,20000000013,VEN_00000013,,Payment Comment13,INV000000013,,,Invoice Description 0013,15200,0,15200,USD,PONO00013,ACNO012300000000013,CID0013,2,ADDRESSCODE13,0&#xd;
+B10000014,PN000000014,20000000014,VEN_00000014,,Payment Comment14,INV000000014,,,Invoice Description 0014,400,50,350,USD,PONO00014,ACNO012300000000014,CID0014,2,ADDRESSCODE14,0&#xd;
+B10000015,PN000000015,20000000015,VEN_00000015,,Payment Comment15,INV000000015,,,Invoice Description 0015,5586,20,5566,USD,PONO00015,ACNO012300000000015,CID0015,0,ADDRESSCODE15,0&#xd;
+B10000016,PN000000016,20000000016,VEN_00000016,,Payment Comment16,INV000000016,,,Invoice Description 0016,105264,250,105014,USD,PONO00016,ACNO012300000000016,CID0016,0,ADDRESSCODE16,0&#xd;
+B10000017,PN000000017,20000000017,VEN_00000017,,Payment Comment17,INV000000017,,,Invoice Description 0017,50652,0,50652,USD,PONO00017,ACNO012300000000017,CID0017,0,ADDRESSCODE17,0&#xd;
+B10000018,PN000000018,20000000018,VEN_00000018,,Payment Comment18,INV000000018,,,Invoice Description 0018,32485,0,32485,USD,PONO00018,ACNO012300000000018,CID0018,3,ADDRESSCODE18,0&#xd;
+B10000019,PN000000019,20000000019,VEN_00000019,,Payment Comment19,INV000000019,,,Invoice Description 0019,222532,0,222532,USD,PONO00019,ACNO012300000000019,CID0019,3,ADDRESSCODE19,0&#xd;
+B10000020,PN000000020,20000000020,VEN_00000020,,Payment Comment20,INV000000020,,,Invoice Description 0020,123365,55.69,123309.31,USD,PONO00020,ACNO012300000000020,CID0020,3,ADDRESSCODE20,0&#xd;
+&quot;&#xd;
 }</stringProp>
                 <stringProp name="Argument.metadata">=</stringProp>
               </elementProp>
@@ -1162,7 +1163,7 @@ B10000020,PN000000020,20000000020,VEN_00000020,,Payment Comment20,INV000000020,,
       <hashTree>
         <JDBCSampler guiclass="TestBeanGUI" testclass="JDBCSampler" testname="Fetch MappingID Details for Payment profile" enabled="true">
           <stringProp name="dataSource"> Payment profile</stringProp>
-          <stringProp name="query">select CAST(Id as INTEGER) AS MappingID, * from Mappings where ProfileId = &apos;${__property(PaymentProfileID)}&apos;</stringProp>
+          <stringProp name="query">select CAST(Id as INTEGER) AS MappingID, * from Mappings where ProfileId = &apos;${__property(PaymentProfileID)}&apos; order by OutputFileFieldId</stringProp>
           <stringProp name="queryArguments"></stringProp>
           <stringProp name="queryArgumentsTypes"></stringProp>
           <stringProp name="queryTimeout"></stringProp>
@@ -1258,7 +1259,7 @@ catch (Throwable ex) {
       <hashTree>
         <JDBCSampler guiclass="TestBeanGUI" testclass="JDBCSampler" testname="Fetch OutputfileFields Details for Payment profile" enabled="true">
           <stringProp name="dataSource"> Payment profile1</stringProp>
-          <stringProp name="query">select CAST(OutputFileFieldId as INTEGER) AS OutputFileField, * from Mappings where ProfileId = &apos;${__property(PaymentProfileID)}&apos;</stringProp>
+          <stringProp name="query">select CAST(OutputFileFieldId as INTEGER) AS OutputFileField, * from OutputFileFields where OutputFileTypeId = &apos;${__property(PayOutputFileType_ID)}&apos; order by OutputFileField  </stringProp>
           <stringProp name="queryArguments"></stringProp>
           <stringProp name="queryArgumentsTypes"></stringProp>
           <stringProp name="queryTimeout"></stringProp>
@@ -1500,7 +1501,7 @@ catch (Throwable ex) {
         <hashTree/>
         <LoopController guiclass="LoopControlPanel" testclass="LoopController" testname="Loop Controller for Mapping" enabled="true">
           <boolProp name="LoopController.continue_forever">true</boolProp>
-          <stringProp name="LoopController.loops">16</stringProp>
+          <stringProp name="LoopController.loops">20</stringProp>
         </LoopController>
         <hashTree>
           <CSVDataSet guiclass="TestBeanGUI" testclass="CSVDataSet" testname="CSV Data Set Config for MapID" enabled="true">
@@ -1980,27 +1981,28 @@ catch (Throwable ex) {
               <elementProp name="" elementType="HTTPArgument">
                 <boolProp name="HTTPArgument.always_encode">false</boolProp>
                 <stringProp name="Argument.value">{&#xd;
-  &quot;fileContent&quot;: &quot;ERP Batch ID,Payment Number,Check Number,Vendor ID,Payment Date,Payment Comment,Invoice Number,Invoice Date,Invoice Due Date,Invoice Description,Invoice Gross Amount,Invoice Discount Amount,Invoice Net Amount,Currency,PO Number,Account Number&#xd;
-B10000001,PN000000001,20000000001,VEN_00000001,,Payment Comment01,INV000000001,,,Invoice Description 0001,5555.55,10,5545.55,USD,PONO00001,ACNO012300000000001&#xd;
-B10000002,PN000000002,20000000002,VEN_00000002,,Payment Comment02,INV000000002,,,Invoice Description 0002,5000,10,4990,USD,PONO00002,ACNO012300000000002&#xd;
-B10000003,PN000000003,20000000003,VEN_00000003,,Payment Comment03,INV000000003,,,Invoice Description 0003,800,0,800,USD,PONO00003,ACNO012300000000003&#xd;
-B10000004,PN000000004,20000000004,VEN_00000004,,Payment Comment04,INV000000004,,,Invoice Description 0004,2000,0,2000,USD,PONO00004,ACNO012300000000004&#xd;
-B10000005,PN000000005,20000000005,VEN_00000005,,Payment Comment05,INV000000005,,,Invoice Description 0005,22222.22,0,22222.22,USD,PONO00005,ACNO012300000000005&#xd;
-B10000006,PN000000006,20000000006,VEN_00000006,,Payment Comment06,INV000000006,,,Invoice Description 0006,999999999,0,999999999,USD,PONO00006,ACNO012300000000006&#xd;
-B10000007,PN000000007,20000000007,VEN_00000007,,Payment Comment07,INV000000007,,,Invoice Description 0007,565325652,0,565325652,USD,PONO00007,ACNO012300000000007&#xd;
-B10000008,PN000000008,20000000008,VEN_00000008,,Payment Comment08,INV000000008,,,Invoice Description 0008,200,0,200,USD,PONO00008,ACNO012300000000008&#xd;
-B10000009,PN000000009,20000000009,VEN_00000009,,Payment Comment09,INV000000009,,,Invoice Description 0009,220,0,220,USD,PONO00009,ACNO012300000000009&#xd;
-B10000010,PN000000010,20000000010,VEN_00000010,,Payment Comment10,INV000000010,,,Invoice Description 0010,3658,0,3658,USD,PONO00010,ACNO012300000000010&#xd;
-B10000011,PN000000011,20000000011,VEN_00000011,,Payment Comment11,INV000000011,,,Invoice Description 0011,15569,0,15569,USD,PONO00011,ACNO012300000000011&#xd;
-B10000012,PN000000012,20000000012,VEN_00000012,,Payment Comment12,INV000000012,,,Invoice Description 0012,6999,0,6999,USD,PONO00012,ACNO012300000000012&#xd;
-B10000013,PN000000013,20000000013,VEN_00000013,,Payment Comment13,INV000000013,,,Invoice Description 0013,15200,0,15200,USD,PONO00013,ACNO012300000000013&#xd;
-B10000014,PN000000014,20000000014,VEN_00000014,,Payment Comment14,INV000000014,,,Invoice Description 0014,400,50,350,USD,PONO00014,ACNO012300000000014&#xd;
-B10000015,PN000000015,20000000015,VEN_00000015,,Payment Comment15,INV000000015,,,Invoice Description 0015,5586,20,5566,USD,PONO00015,ACNO012300000000015&#xd;
-B10000016,PN000000016,20000000016,VEN_00000016,,Payment Comment16,INV000000016,,,Invoice Description 0016,105264,250,105014,USD,PONO00016,ACNO012300000000016&#xd;
-B10000017,PN000000017,20000000017,VEN_00000017,,Payment Comment17,INV000000017,,,Invoice Description 0017,50652,0,50652,USD,PONO00017,ACNO012300000000017&#xd;
-B10000018,PN000000018,20000000018,VEN_00000018,,Payment Comment18,INV000000018,,,Invoice Description 0018,32485,0,32485,USD,PONO00018,ACNO012300000000018&#xd;
-B10000019,PN000000019,20000000019,VEN_00000019,,Payment Comment19,INV000000019,,,Invoice Description 0019,222532,0,222532,USD,PONO00019,ACNO012300000000019&#xd;
-B10000020,PN000000020,20000000020,VEN_00000020,,Payment Comment20,INV000000020,,,Invoice Description 0020,123365,55.69,123309.31,USD,PONO00020,ACNO012300000000020&quot;&#xd;
+  &quot;fileContent&quot;: &quot;ERP Batch ID,Payment Number,Check Number,Vendor ID,Payment Date,Payment Comment,Invoice Number,Invoice Date,Invoice Due Date,Invoice Description,Invoice Gross Amount,Invoice Discount Amount,Invoice Net Amount,Currency,PO Number,Account Number,Company ID,Payment Type,Address Code,Voided&#xd;
+B10000001,PN000000001,20000000001,VEN_00000001,,Payment Comment01,INV000000001,,,Invoice Description 0001,5555.55,10,5545.55,USD,PONO00001,ACNO012300000000001,CID0001,1,ADDRESSCODE1,0&#xd;
+B10000002,PN000000002,20000000002,VEN_00000002,,Payment Comment02,INV000000002,,,Invoice Description 0002,5000,10,4990,USD,PONO00002,ACNO012300000000002,CID0002,1,ADDRESSCODE2,0&#xd;
+B10000003,PN000000003,20000000003,VEN_00000003,,Payment Comment03,INV000000003,,,Invoice Description 0003,800,0,800,USD,PONO00003,ACNO012300000000003,CID0003,1,ADDRESSCODE3,0&#xd;
+B10000004,PN000000004,20000000004,VEN_00000004,,Payment Comment04,INV000000004,,,Invoice Description 0004,2000,0,2000,USD,PONO00004,ACNO012300000000004,CID0004,1,ADDRESSCODE4,0&#xd;
+B10000005,PN000000005,20000000005,VEN_00000005,,Payment Comment05,INV000000005,,,Invoice Description 0005,22222.22,0,22222.22,USD,PONO00005,ACNO012300000000005,CID0005,1,ADDRESSCODE5,0&#xd;
+B10000006,PN000000006,20000000006,VEN_00000006,,Payment Comment06,INV000000006,,,Invoice Description 0006,999999999,0,999999999,USD,PONO00006,ACNO012300000000006,CID0006,1,ADDRESSCODE6,0&#xd;
+B10000007,PN000000007,20000000007,VEN_00000007,,Payment Comment07,INV000000007,,,Invoice Description 0007,565325652,0,565325652,USD,PONO00007,ACNO012300000000007,CID0007,1,ADDRESSCODE7,0&#xd;
+B10000008,PN000000008,20000000008,VEN_00000008,,Payment Comment08,INV000000008,,,Invoice Description 0008,200,0,200,USD,PONO00008,ACNO012300000000008,CID0008,2,ADDRESSCODE8,0&#xd;
+B10000009,PN000000009,20000000009,VEN_00000009,,Payment Comment09,INV000000009,,,Invoice Description 0009,220,0,220,USD,PONO00009,ACNO012300000000009,CID0009,2,ADDRESSCODE9,0&#xd;
+B10000010,PN000000010,20000000010,VEN_00000010,,Payment Comment10,INV000000010,,,Invoice Description 0010,3658,0,3658,USD,PONO00010,ACNO012300000000010,CID0010,2,ADDRESSCODE10,0&#xd;
+B10000011,PN000000011,20000000011,VEN_00000011,,Payment Comment11,INV000000011,,,Invoice Description 0011,15569,0,15569,USD,PONO00011,ACNO012300000000011,CID0011,2,ADDRESSCODE11,0&#xd;
+B10000012,PN000000012,20000000012,VEN_00000012,,Payment Comment12,INV000000012,,,Invoice Description 0012,6999,0,6999,USD,PONO00012,ACNO012300000000012,CID0012,2,ADDRESSCODE12,0&#xd;
+B10000013,PN000000013,20000000013,VEN_00000013,,Payment Comment13,INV000000013,,,Invoice Description 0013,15200,0,15200,USD,PONO00013,ACNO012300000000013,CID0013,2,ADDRESSCODE13,0&#xd;
+B10000014,PN000000014,20000000014,VEN_00000014,,Payment Comment14,INV000000014,,,Invoice Description 0014,400,50,350,USD,PONO00014,ACNO012300000000014,CID0014,2,ADDRESSCODE14,0&#xd;
+B10000015,PN000000015,20000000015,VEN_00000015,,Payment Comment15,INV000000015,,,Invoice Description 0015,5586,20,5566,USD,PONO00015,ACNO012300000000015,CID0015,0,ADDRESSCODE15,0&#xd;
+B10000016,PN000000016,20000000016,VEN_00000016,,Payment Comment16,INV000000016,,,Invoice Description 0016,105264,250,105014,USD,PONO00016,ACNO012300000000016,CID0016,0,ADDRESSCODE16,0&#xd;
+B10000017,PN000000017,20000000017,VEN_00000017,,Payment Comment17,INV000000017,,,Invoice Description 0017,50652,0,50652,USD,PONO00017,ACNO012300000000017,CID0017,0,ADDRESSCODE17,0&#xd;
+B10000018,PN000000018,20000000018,VEN_00000018,,Payment Comment18,INV000000018,,,Invoice Description 0018,32485,0,32485,USD,PONO00018,ACNO012300000000018,CID0018,3,ADDRESSCODE18,0&#xd;
+B10000019,PN000000019,20000000019,VEN_00000019,,Payment Comment19,INV000000019,,,Invoice Description 0019,222532,0,222532,USD,PONO00019,ACNO012300000000019,CID0019,3,ADDRESSCODE19,0&#xd;
+B10000020,PN000000020,20000000020,VEN_00000020,,Payment Comment20,INV000000020,,,Invoice Description 0020,123365,55.69,123309.31,USD,PONO00020,ACNO012300000000020,CID0020,3,ADDRESSCODE20,0&#xd;
+&quot;&#xd;
 }</stringProp>
                 <stringProp name="Argument.metadata">=</stringProp>
               </elementProp>
@@ -2219,8 +2221,8 @@ try {
      print(&quot;Annual Spend&quot;+&quot;,&quot;+&quot;14&quot;+&quot;,&quot;+&quot;false&quot;+&quot;,&quot;+&quot;22&quot;+&quot;,&quot;+&quot;4&quot;+&quot;,&quot;+&quot;true&quot;+&quot;,&quot;+&quot;true&quot;+&quot;,&quot;+&quot;false&quot;+&quot;,&quot;+&quot;0&quot;);     
      print(&quot;Contact&quot;+&quot;,&quot;+&quot;15&quot;+&quot;,&quot;+&quot;false&quot;+&quot;,&quot;+&quot;100&quot;+&quot;,&quot;+&quot;3&quot;+&quot;,&quot;+&quot;true&quot;+&quot;,&quot;+&quot;true&quot;+&quot;,&quot;+&quot;false&quot;+&quot;,&quot;+&quot;0&quot;);
      print(&quot;Company ID&quot;+&quot;,&quot;+&quot;16&quot;+&quot;,&quot;+&quot;false&quot;+&quot;,&quot;+&quot;100&quot;+&quot;,&quot;+&quot;3&quot;+&quot;,&quot;+&quot;true&quot;+&quot;,&quot;+&quot;true&quot;+&quot;,&quot;+&quot;false&quot;+&quot;,&quot;+&quot;0&quot;);
-   //  print(&quot;Phone Number&quot;+&quot;,&quot;+&quot;17&quot;+&quot;,&quot;+&quot;false&quot;+&quot;,&quot;+&quot;10&quot;+&quot;,&quot;+&quot;3&quot;+&quot;,&quot;+&quot;true&quot;+&quot;,&quot;+&quot;true&quot; +&quot;,&quot;+&quot;false&quot;+&quot;,&quot;+&quot;0&quot;);
-   //  print(&quot;AddressCode&quot;+&quot;,&quot;+&quot;18&quot;+&quot;,&quot;+&quot;false&quot;+&quot;,&quot;+&quot;100&quot;+&quot;,&quot;+&quot;3&quot;+&quot;,&quot;+&quot;true&quot;+&quot;,&quot;+&quot;true&quot; +&quot;,&quot;+&quot;false&quot;+&quot;,&quot;+&quot;0&quot;);
+     print(&quot;Phone Number&quot;+&quot;,&quot;+&quot;17&quot;+&quot;,&quot;+&quot;false&quot;+&quot;,&quot;+&quot;10&quot;+&quot;,&quot;+&quot;3&quot;+&quot;,&quot;+&quot;true&quot;+&quot;,&quot;+&quot;true&quot; +&quot;,&quot;+&quot;false&quot;+&quot;,&quot;+&quot;0&quot;);
+     print(&quot;AddressCode&quot;+&quot;,&quot;+&quot;18&quot;+&quot;,&quot;+&quot;false&quot;+&quot;,&quot;+&quot;100&quot;+&quot;,&quot;+&quot;3&quot;+&quot;,&quot;+&quot;true&quot;+&quot;,&quot;+&quot;true&quot; +&quot;,&quot;+&quot;false&quot;+&quot;,&quot;+&quot;0&quot;);
      
      f.close();
 
@@ -2236,7 +2238,7 @@ catch (Throwable ex) {
         <hashTree/>
         <LoopController guiclass="LoopControlPanel" testclass="LoopController" testname="Loop Controller for creating multiple fields " enabled="true">
           <boolProp name="LoopController.continue_forever">true</boolProp>
-          <stringProp name="LoopController.loops">16</stringProp>
+          <stringProp name="LoopController.loops">18</stringProp>
         </LoopController>
         <hashTree>
           <CSVDataSet guiclass="TestBeanGUI" testclass="CSVDataSet" testname="CSV Data Set Config" enabled="true">
@@ -2507,27 +2509,27 @@ catch (Throwable ex) {
               <elementProp name="" elementType="HTTPArgument">
                 <boolProp name="HTTPArgument.always_encode">false</boolProp>
                 <stringProp name="Argument.value">{&#xd;
-  &quot;fileContent&quot;: &quot;Vendor ID,Vendor Name,Check Number,Address 1,Address 2,Address 3,City,State,Zip Code,Country Code,Country,Email,Payment Type,Annual Spend,Contact,Company ID&#xd;
-VEN_00000001,Vendor0001,20000000001,Vendor Address 1,Vendor Address 2,Vendor Address 3,ATLANTA,GA,20021,US,USA,Test@gmail.com,1,1203556,1236523216,CID1&#xd;
-VEN_00000002,Vendor0002,20000000002,Vendor Address 1,Vendor Address 2,Vendor Address 4,ATLANTA,GA,20021,US,USA,Test@gmail.com,1,1203557,1236523217,CID2&#xd;
-VEN_00000003,Vendor0003,20000000003,Vendor Address 1,Vendor Address 2,Vendor Address 5,ATLANTA,GA,20021,US,USA,Test@gmail.com,1,1203558,1236523218,CID3&#xd;
-VEN_00000004,Vendor0004,20000000004,Vendor Address 1,Vendor Address 2,Vendor Address 6,ATLANTA,GA,20021,US,USA,Test@gmail.com,1,1203559,1236523219,CID4&#xd;
-VEN_00000005,Vendor0005,20000000005,Vendor Address 1,Vendor Address 2,Vendor Address 7,ATLANTA,GA,20021,US,USA,Test@gmail.com,1,1203560,1236523220,CID5&#xd;
-VEN_00000006,Vendor0006,20000000006,Vendor Address 1,Vendor Address 2,Vendor Address 8,ATLANTA,GA,20021,US,USA,Test@gmail.com,1,1203561,1236523221,CID6&#xd;
-VEN_00000007,Vendor0007,20000000007,Vendor Address 1,Vendor Address 2,Vendor Address 9,ATLANTA,GA,20021,US,USA,Test@gmail.com,1,1203562,1236523222,CID7&#xd;
-VEN_00000008,Vendor0008,20000000008,Vendor Address 1,Vendor Address 2,Vendor Address 10,ATLANTA,GA,20021,US,USA,Test@gmail.com,2,1203563,1236523223,CID8&#xd;
-VEN_00000009,Vendor0009,20000000009,Vendor Address 1,Vendor Address 2,Vendor Address 11,ATLANTA,GA,20021,US,USA,Test@gmail.com,2,1203564,1236523224,CID9&#xd;
-VEN_00000010,Vendor0010,20000000010,Vendor Address 1,Vendor Address 2,Vendor Address 12,ATLANTA,GA,20021,US,USA,Test@gmail.com,2,1203565,1236523225,CID10&#xd;
-VEN_00000011,Vendor0011,20000000011,Vendor Address 1,Vendor Address 2,Vendor Address 13,ATLANTA,GA,20021,US,USA,Test@gmail.com,2,1203566,1236523226,CID11&#xd;
-VEN_00000012,Vendor0012,20000000012,Vendor Address 1,Vendor Address 2,Vendor Address 14,ATLANTA,GA,20021,US,USA,Test@gmail.com,2,1203567,1236523227,CID12&#xd;
-VEN_00000013,Vendor0013,20000000013,Vendor Address 1,Vendor Address 2,Vendor Address 15,ATLANTA,GA,20021,US,USA,Test@gmail.com,2,1203568,1236523228,CID13&#xd;
-VEN_00000014,Vendor0014,20000000014,Vendor Address 1,Vendor Address 2,Vendor Address 16,ATLANTA,GA,20021,US,USA,Test@gmail.com,2,1203569,1236523229,CID14&#xd;
-VEN_00000015,Vendor0015,20000000015,Vendor Address 1,Vendor Address 2,Vendor Address 17,ATLANTA,GA,20021,US,USA,Test@gmail.com,0,1203570,1236523230,CID15&#xd;
-VEN_00000016,Vendor0016,20000000016,Vendor Address 1,Vendor Address 2,Vendor Address 18,ATLANTA,GA,20021,US,USA,Test@gmail.com,0,1203571,1236523231,CID16&#xd;
-VEN_00000017,Vendor0017,20000000017,Vendor Address 1,Vendor Address 2,Vendor Address 19,ATLANTA,GA,20021,US,USA,Test@gmail.com,0,1203572,1236523232,CID17&#xd;
-VEN_00000018,Vendor0018,20000000018,Vendor Address 1,Vendor Address 2,Vendor Address 20,ATLANTA,GA,20021,US,USA,Test@gmail.com,3,1203573,1236523233,CID18&#xd;
-VEN_00000019,Vendor0019,20000000019,Vendor Address 1,Vendor Address 2,Vendor Address 21,ATLANTA,GA,20021,US,USA,Test@gmail.com,3,1203574,1236523234,CID19&#xd;
-VEN_00000020,Vendor0020,20000000020,Vendor Address 1,Vendor Address 2,Vendor Address 22,ATLANTA,GA,20021,US,USA,Test@gmail.com,3,1203575,1236523235,CID20&quot;&#xd;
+  &quot;fileContent&quot;: &quot;Vendor ID,Vendor Name,Check Number,Address 1,Address 2,Address 3,City,State,Zip Code,Country Code,Country,Email,Payment Type,Annual Spend,Contact,Company ID,Phone Number,AddressCode&#xd;
+VEN_00000001,Vendor0001,20000000001,Vendor Address 1,Vendor Address 2,Vendor Address 3,ATLANTA,GA,20021,US,USA,Test@gmail.com,1,1203556,1236523216,CID1,1236523216,ADDCode001&#xd;
+VEN_00000002,Vendor0002,20000000002,Vendor Address 1,Vendor Address 2,Vendor Address 4,ATLANTA,GA,20021,US,USA,Test@gmail.com,1,1203557,1236523217,CID2,1236523217,ADDCode002&#xd;
+VEN_00000003,Vendor0003,20000000003,Vendor Address 1,Vendor Address 2,Vendor Address 5,ATLANTA,GA,20021,US,USA,Test@gmail.com,1,1203558,1236523218,CID3,1236523218,ADDCode003&#xd;
+VEN_00000004,Vendor0004,20000000004,Vendor Address 1,Vendor Address 2,Vendor Address 6,ATLANTA,GA,20021,US,USA,Test@gmail.com,1,1203559,1236523219,CID4,1236523219,ADDCode004&#xd;
+VEN_00000005,Vendor0005,20000000005,Vendor Address 1,Vendor Address 2,Vendor Address 7,ATLANTA,GA,20021,US,USA,Test@gmail.com,1,1203560,1236523220,CID5,1236523220,ADDCode005&#xd;
+VEN_00000006,Vendor0006,20000000006,Vendor Address 1,Vendor Address 2,Vendor Address 8,ATLANTA,GA,20021,US,USA,Test@gmail.com,1,1203561,1236523221,CID6,1236523221,ADDCode006&#xd;
+VEN_00000007,Vendor0007,20000000007,Vendor Address 1,Vendor Address 2,Vendor Address 9,ATLANTA,GA,20021,US,USA,Test@gmail.com,1,1203562,1236523222,CID7,1236523222,ADDCode007&#xd;
+VEN_00000008,Vendor0008,20000000008,Vendor Address 1,Vendor Address 2,Vendor Address 10,ATLANTA,GA,20021,US,USA,Test@gmail.com,2,1203563,1236523223,CID8,1236523223,ADDCode008&#xd;
+VEN_00000009,Vendor0009,20000000009,Vendor Address 1,Vendor Address 2,Vendor Address 11,ATLANTA,GA,20021,US,USA,Test@gmail.com,2,1203564,1236523224,CID9,1236523224,ADDCode009&#xd;
+VEN_00000010,Vendor0010,20000000010,Vendor Address 1,Vendor Address 2,Vendor Address 12,ATLANTA,GA,20021,US,USA,Test@gmail.com,2,1203565,1236523225,CID10,1236523225,ADDCode010&#xd;
+VEN_00000011,Vendor0011,20000000011,Vendor Address 1,Vendor Address 2,Vendor Address 13,ATLANTA,GA,20021,US,USA,Test@gmail.com,2,1203566,1236523226,CID11,1236523226,ADDCode011&#xd;
+VEN_00000012,Vendor0012,20000000012,Vendor Address 1,Vendor Address 2,Vendor Address 14,ATLANTA,GA,20021,US,USA,Test@gmail.com,2,1203567,1236523227,CID12,1236523227,ADDCode012&#xd;
+VEN_00000013,Vendor0013,20000000013,Vendor Address 1,Vendor Address 2,Vendor Address 15,ATLANTA,GA,20021,US,USA,Test@gmail.com,2,1203568,1236523228,CID13,1236523228,ADDCode013&#xd;
+VEN_00000014,Vendor0014,20000000014,Vendor Address 1,Vendor Address 2,Vendor Address 16,ATLANTA,GA,20021,US,USA,Test@gmail.com,2,1203569,1236523229,CID14,1236523229,ADDCode014&#xd;
+VEN_00000015,Vendor0015,20000000015,Vendor Address 1,Vendor Address 2,Vendor Address 17,ATLANTA,GA,20021,US,USA,Test@gmail.com,0,1203570,1236523230,CID15,1236523230,ADDCode015&#xd;
+VEN_00000016,Vendor0016,20000000016,Vendor Address 1,Vendor Address 2,Vendor Address 18,ATLANTA,GA,20021,US,USA,Test@gmail.com,0,1203571,1236523231,CID16,1236523231,ADDCode016&#xd;
+VEN_00000017,Vendor0017,20000000017,Vendor Address 1,Vendor Address 2,Vendor Address 19,ATLANTA,GA,20021,US,USA,Test@gmail.com,0,1203572,1236523232,CID17,1236523232,ADDCode017&#xd;
+VEN_00000018,Vendor0018,20000000018,Vendor Address 1,Vendor Address 2,Vendor Address 20,ATLANTA,GA,20021,US,USA,Test@gmail.com,3,1203573,1236523233,CID18,1236523233,ADDCode018&#xd;
+VEN_00000019,Vendor0019,20000000019,Vendor Address 1,Vendor Address 2,Vendor Address 21,ATLANTA,GA,20021,US,USA,Test@gmail.com,3,1203574,1236523234,CID19,1236523234,ADDCode019&#xd;
+VEN_00000020,Vendor0020,20000000020,Vendor Address 1,Vendor Address 2,Vendor Address 22,ATLANTA,GA,20021,US,USA,Test@gmail.com,3,1203575,1236523235,CID20,1236523235,ADDCode020&quot;&#xd;
 }</stringProp>
                 <stringProp name="Argument.metadata">=</stringProp>
               </elementProp>
@@ -2608,7 +2610,7 @@ VEN_00000020,Vendor0020,20000000020,Vendor Address 1,Vendor Address 2,Vendor Add
       <hashTree>
         <JDBCSampler guiclass="TestBeanGUI" testclass="JDBCSampler" testname="Fetch MappingID Details for Vendor profile" enabled="true">
           <stringProp name="dataSource"> Vendor profile</stringProp>
-          <stringProp name="query">select CAST(Id as INTEGER) AS MappingID, * from Mappings where ProfileId = &apos;${__property(VendorProfileID)}&apos;</stringProp>
+          <stringProp name="query">select CAST(Id as INTEGER) AS MappingID, * from Mappings where ProfileId = &apos;${__property(VendorProfileID)}&apos; order by OutputFileFieldId</stringProp>
           <stringProp name="queryArguments"></stringProp>
           <stringProp name="queryArgumentsTypes"></stringProp>
           <stringProp name="queryTimeout"></stringProp>
@@ -2704,7 +2706,7 @@ catch (Throwable ex) {
       <hashTree>
         <JDBCSampler guiclass="TestBeanGUI" testclass="JDBCSampler" testname="Fetch OutputfileFields Details for Vendor profile" enabled="true">
           <stringProp name="dataSource"> Vendor profile1</stringProp>
-          <stringProp name="query">select CAST(OutputFileFieldId as INTEGER) AS OutputFileField, * from Mappings where ProfileId = &apos;${__property(VendorProfileID)}&apos;</stringProp>
+          <stringProp name="query">select CAST(OutputFileFieldId as INTEGER) AS OutputFileField, * from OutputFileFields where OutputFileTypeId = &apos;${__property(VenOutputFileType_ID)}&apos; order by OutputFileField  </stringProp>
           <stringProp name="queryArguments"></stringProp>
           <stringProp name="queryArgumentsTypes"></stringProp>
           <stringProp name="queryTimeout"></stringProp>
@@ -2903,7 +2905,7 @@ catch (Throwable ex) {
         <hashTree/>
         <LoopController guiclass="LoopControlPanel" testclass="LoopController" testname="Loop Controller for Mapping" enabled="true">
           <boolProp name="LoopController.continue_forever">true</boolProp>
-          <stringProp name="LoopController.loops">16</stringProp>
+          <stringProp name="LoopController.loops">18</stringProp>
         </LoopController>
         <hashTree>
           <CSVDataSet guiclass="TestBeanGUI" testclass="CSVDataSet" testname="CSV Data Set Config for MapID" enabled="true">
@@ -3149,27 +3151,27 @@ catch (Throwable ex) {
               <elementProp name="" elementType="HTTPArgument">
                 <boolProp name="HTTPArgument.always_encode">false</boolProp>
                 <stringProp name="Argument.value">{&#xd;
-  &quot;fileContent&quot;: &quot;Vendor ID,Vendor Name,Check Number,Address 1,Address 2,Address 3,City,State,Zip Code,Country Code,Country,Email,Payment Type,Annual Spend,Contact,Company ID&#xd;
-VEN_00000001,Vendor0001,20000000001,Vendor Address 1,Vendor Address 2,Vendor Address 3,ATLANTA,GA,20021,US,USA,Test@gmail.com,1,1203556,1236523216,CID1&#xd;
-VEN_00000002,Vendor0002,20000000002,Vendor Address 1,Vendor Address 2,Vendor Address 4,ATLANTA,GA,20021,US,USA,Test@gmail.com,1,1203557,1236523217,CID2&#xd;
-VEN_00000003,Vendor0003,20000000003,Vendor Address 1,Vendor Address 2,Vendor Address 5,ATLANTA,GA,20021,US,USA,Test@gmail.com,1,1203558,1236523218,CID3&#xd;
-VEN_00000004,Vendor0004,20000000004,Vendor Address 1,Vendor Address 2,Vendor Address 6,ATLANTA,GA,20021,US,USA,Test@gmail.com,1,1203559,1236523219,CID4&#xd;
-VEN_00000005,Vendor0005,20000000005,Vendor Address 1,Vendor Address 2,Vendor Address 7,ATLANTA,GA,20021,US,USA,Test@gmail.com,1,1203560,1236523220,CID5&#xd;
-VEN_00000006,Vendor0006,20000000006,Vendor Address 1,Vendor Address 2,Vendor Address 8,ATLANTA,GA,20021,US,USA,Test@gmail.com,1,1203561,1236523221,CID6&#xd;
-VEN_00000007,Vendor0007,20000000007,Vendor Address 1,Vendor Address 2,Vendor Address 9,ATLANTA,GA,20021,US,USA,Test@gmail.com,1,1203562,1236523222,CID7&#xd;
-VEN_00000008,Vendor0008,20000000008,Vendor Address 1,Vendor Address 2,Vendor Address 10,ATLANTA,GA,20021,US,USA,Test@gmail.com,2,1203563,1236523223,CID8&#xd;
-VEN_00000009,Vendor0009,20000000009,Vendor Address 1,Vendor Address 2,Vendor Address 11,ATLANTA,GA,20021,US,USA,Test@gmail.com,2,1203564,1236523224,CID9&#xd;
-VEN_00000010,Vendor0010,20000000010,Vendor Address 1,Vendor Address 2,Vendor Address 12,ATLANTA,GA,20021,US,USA,Test@gmail.com,2,1203565,1236523225,CID10&#xd;
-VEN_00000011,Vendor0011,20000000011,Vendor Address 1,Vendor Address 2,Vendor Address 13,ATLANTA,GA,20021,US,USA,Test@gmail.com,2,1203566,1236523226,CID11&#xd;
-VEN_00000012,Vendor0012,20000000012,Vendor Address 1,Vendor Address 2,Vendor Address 14,ATLANTA,GA,20021,US,USA,Test@gmail.com,2,1203567,1236523227,CID12&#xd;
-VEN_00000013,Vendor0013,20000000013,Vendor Address 1,Vendor Address 2,Vendor Address 15,ATLANTA,GA,20021,US,USA,Test@gmail.com,2,1203568,1236523228,CID13&#xd;
-VEN_00000014,Vendor0014,20000000014,Vendor Address 1,Vendor Address 2,Vendor Address 16,ATLANTA,GA,20021,US,USA,Test@gmail.com,2,1203569,1236523229,CID14&#xd;
-VEN_00000015,Vendor0015,20000000015,Vendor Address 1,Vendor Address 2,Vendor Address 17,ATLANTA,GA,20021,US,USA,Test@gmail.com,0,1203570,1236523230,CID15&#xd;
-VEN_00000016,Vendor0016,20000000016,Vendor Address 1,Vendor Address 2,Vendor Address 18,ATLANTA,GA,20021,US,USA,Test@gmail.com,0,1203571,1236523231,CID16&#xd;
-VEN_00000017,Vendor0017,20000000017,Vendor Address 1,Vendor Address 2,Vendor Address 19,ATLANTA,GA,20021,US,USA,Test@gmail.com,0,1203572,1236523232,CID17&#xd;
-VEN_00000018,Vendor0018,20000000018,Vendor Address 1,Vendor Address 2,Vendor Address 20,ATLANTA,GA,20021,US,USA,Test@gmail.com,3,1203573,1236523233,CID18&#xd;
-VEN_00000019,Vendor0019,20000000019,Vendor Address 1,Vendor Address 2,Vendor Address 21,ATLANTA,GA,20021,US,USA,Test@gmail.com,3,1203574,1236523234,CID19&#xd;
-VEN_00000020,Vendor0020,20000000020,Vendor Address 1,Vendor Address 2,Vendor Address 22,ATLANTA,GA,20021,US,USA,Test@gmail.com,3,1203575,1236523235,CID20&quot;&#xd;
+  &quot;fileContent&quot;: &quot;Vendor ID,Vendor Name,Check Number,Address 1,Address 2,Address 3,City,State,Zip Code,Country Code,Country,Email,Payment Type,Annual Spend,Contact,Company ID,Phone Number,AddressCode&#xd;
+VEN_00000001,Vendor0001,20000000001,Vendor Address 1,Vendor Address 2,Vendor Address 3,ATLANTA,GA,20021,US,USA,Test@gmail.com,1,1203556,1236523216,CID1,1236523216,ADDCode001&#xd;
+VEN_00000002,Vendor0002,20000000002,Vendor Address 1,Vendor Address 2,Vendor Address 4,ATLANTA,GA,20021,US,USA,Test@gmail.com,1,1203557,1236523217,CID2,1236523217,ADDCode002&#xd;
+VEN_00000003,Vendor0003,20000000003,Vendor Address 1,Vendor Address 2,Vendor Address 5,ATLANTA,GA,20021,US,USA,Test@gmail.com,1,1203558,1236523218,CID3,1236523218,ADDCode003&#xd;
+VEN_00000004,Vendor0004,20000000004,Vendor Address 1,Vendor Address 2,Vendor Address 6,ATLANTA,GA,20021,US,USA,Test@gmail.com,1,1203559,1236523219,CID4,1236523219,ADDCode004&#xd;
+VEN_00000005,Vendor0005,20000000005,Vendor Address 1,Vendor Address 2,Vendor Address 7,ATLANTA,GA,20021,US,USA,Test@gmail.com,1,1203560,1236523220,CID5,1236523220,ADDCode005&#xd;
+VEN_00000006,Vendor0006,20000000006,Vendor Address 1,Vendor Address 2,Vendor Address 8,ATLANTA,GA,20021,US,USA,Test@gmail.com,1,1203561,1236523221,CID6,1236523221,ADDCode006&#xd;
+VEN_00000007,Vendor0007,20000000007,Vendor Address 1,Vendor Address 2,Vendor Address 9,ATLANTA,GA,20021,US,USA,Test@gmail.com,1,1203562,1236523222,CID7,1236523222,ADDCode007&#xd;
+VEN_00000008,Vendor0008,20000000008,Vendor Address 1,Vendor Address 2,Vendor Address 10,ATLANTA,GA,20021,US,USA,Test@gmail.com,2,1203563,1236523223,CID8,1236523223,ADDCode008&#xd;
+VEN_00000009,Vendor0009,20000000009,Vendor Address 1,Vendor Address 2,Vendor Address 11,ATLANTA,GA,20021,US,USA,Test@gmail.com,2,1203564,1236523224,CID9,1236523224,ADDCode009&#xd;
+VEN_00000010,Vendor0010,20000000010,Vendor Address 1,Vendor Address 2,Vendor Address 12,ATLANTA,GA,20021,US,USA,Test@gmail.com,2,1203565,1236523225,CID10,1236523225,ADDCode010&#xd;
+VEN_00000011,Vendor0011,20000000011,Vendor Address 1,Vendor Address 2,Vendor Address 13,ATLANTA,GA,20021,US,USA,Test@gmail.com,2,1203566,1236523226,CID11,1236523226,ADDCode011&#xd;
+VEN_00000012,Vendor0012,20000000012,Vendor Address 1,Vendor Address 2,Vendor Address 14,ATLANTA,GA,20021,US,USA,Test@gmail.com,2,1203567,1236523227,CID12,1236523227,ADDCode012&#xd;
+VEN_00000013,Vendor0013,20000000013,Vendor Address 1,Vendor Address 2,Vendor Address 15,ATLANTA,GA,20021,US,USA,Test@gmail.com,2,1203568,1236523228,CID13,1236523228,ADDCode013&#xd;
+VEN_00000014,Vendor0014,20000000014,Vendor Address 1,Vendor Address 2,Vendor Address 16,ATLANTA,GA,20021,US,USA,Test@gmail.com,2,1203569,1236523229,CID14,1236523229,ADDCode014&#xd;
+VEN_00000015,Vendor0015,20000000015,Vendor Address 1,Vendor Address 2,Vendor Address 17,ATLANTA,GA,20021,US,USA,Test@gmail.com,0,1203570,1236523230,CID15,1236523230,ADDCode015&#xd;
+VEN_00000016,Vendor0016,20000000016,Vendor Address 1,Vendor Address 2,Vendor Address 18,ATLANTA,GA,20021,US,USA,Test@gmail.com,0,1203571,1236523231,CID16,1236523231,ADDCode016&#xd;
+VEN_00000017,Vendor0017,20000000017,Vendor Address 1,Vendor Address 2,Vendor Address 19,ATLANTA,GA,20021,US,USA,Test@gmail.com,0,1203572,1236523232,CID17,1236523232,ADDCode017&#xd;
+VEN_00000018,Vendor0018,20000000018,Vendor Address 1,Vendor Address 2,Vendor Address 20,ATLANTA,GA,20021,US,USA,Test@gmail.com,3,1203573,1236523233,CID18,1236523233,ADDCode018&#xd;
+VEN_00000019,Vendor0019,20000000019,Vendor Address 1,Vendor Address 2,Vendor Address 21,ATLANTA,GA,20021,US,USA,Test@gmail.com,3,1203574,1236523234,CID19,1236523234,ADDCode019&#xd;
+VEN_00000020,Vendor0020,20000000020,Vendor Address 1,Vendor Address 2,Vendor Address 22,ATLANTA,GA,20021,US,USA,Test@gmail.com,3,1203575,1236523235,CID20,1236523235,ADDCode020&quot;&#xd;
 }</stringProp>
                 <stringProp name="Argument.metadata">=</stringProp>
               </elementProp>
@@ -3755,7 +3757,7 @@ JPM,JP morgan,255550000,JPM Bank Adrress1,JPM Bank Adrress1,JPM Bank Adrress1,CT
       <hashTree>
         <JDBCSampler guiclass="TestBeanGUI" testclass="JDBCSampler" testname="Fetch MappingID Details for Vendor BANK profile" enabled="true">
           <stringProp name="dataSource">VBank profile</stringProp>
-          <stringProp name="query">select CAST(Id as INTEGER) AS MappingID, * from Mappings where ProfileId = &apos;${__property(VBankProfileID)}&apos;</stringProp>
+          <stringProp name="query">select CAST(Id as INTEGER) AS MappingID, * from Mappings where ProfileId = &apos;${__property(VBankProfileID)}&apos; order by OutputFileFieldId</stringProp>
           <stringProp name="queryArguments"></stringProp>
           <stringProp name="queryArgumentsTypes"></stringProp>
           <stringProp name="queryTimeout"></stringProp>
@@ -3851,7 +3853,7 @@ catch (Throwable ex) {
       <hashTree>
         <JDBCSampler guiclass="TestBeanGUI" testclass="JDBCSampler" testname="Fetch OutputfileFields Details for Vendor BANK profile" enabled="true">
           <stringProp name="dataSource">VBank profile1</stringProp>
-          <stringProp name="query">select CAST(OutputFileFieldId as INTEGER) AS OutputFileField, * from Mappings where ProfileId = &apos;${__property(VBankProfileID)}&apos;</stringProp>
+          <stringProp name="query">select CAST(OutputFileFieldId as INTEGER) AS OutputFileField, * from OutputFileFields where OutputFileTypeId = &apos;${__property(VBankOutputFileType_ID)}&apos; order by OutputFileField  </stringProp>
           <stringProp name="queryArguments"></stringProp>
           <stringProp name="queryArgumentsTypes"></stringProp>
           <stringProp name="queryTimeout"></stringProp>
