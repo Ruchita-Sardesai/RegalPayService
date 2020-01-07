@@ -185,6 +185,11 @@
             <stringProp name="Argument.value">EUR</stringProp>
             <stringProp name="Argument.metadata">=</stringProp>
           </elementProp>
+          <elementProp name="Check_Payment" elementType="Argument">
+            <stringProp name="Argument.name">Check_Payment</stringProp>
+            <stringProp name="Argument.value">CHECK</stringProp>
+            <stringProp name="Argument.metadata">=</stringProp>
+          </elementProp>
         </collectionProp>
       </Arguments>
       <hashTree/>
@@ -1263,7 +1268,7 @@ vars.put(&apos;encodedstring&apos;,encodedstring);
           <stringProp name="HTTPSampler.port">UFT-8</stringProp>
           <stringProp name="HTTPSampler.protocol">https</stringProp>
           <stringProp name="HTTPSampler.contentEncoding"></stringProp>
-          <stringProp name="HTTPSampler.path">${Invoice}/${InvoiceID_3}</stringProp>
+          <stringProp name="HTTPSampler.path">${Invoice}/${InvoiceID_1}</stringProp>
           <stringProp name="HTTPSampler.method">GET</stringProp>
           <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
           <boolProp name="HTTPSampler.auto_redirects">false</boolProp>
@@ -1356,7 +1361,7 @@ vars.put(&quot;Date&quot;, formatter.format(calendar.getTime()));</stringProp>
               &quot;PaymentNumber&quot;: &quot;${Payment_number}&quot;,&#xd;
               &quot;paymentDate&quot;: &quot;${__timeShift(yyyy-MM-dd,,,,)}&quot;,&#xd;
               &quot;PaymentDescription&quot;: &quot;payment_description&quot;,&#xd;
-              &quot;PaymentMethod&quot;: 0,&#xd;
+              &quot;PaymentMethod&quot;: &quot;${Check_Payment}&quot;,&#xd;
               &quot;VendorNumber&quot;: &quot;Vendor_${Vendor_number}&quot;,&#xd;
               &quot;AddressCode&quot;: &quot;address_${address_code}&quot;,&#xd;
               &quot;CheckNumber&quot;: &quot;check_${Check_number}&quot;,&#xd;
@@ -1789,7 +1794,7 @@ vars.put(&quot;Date&quot;, formatter.format(calendar.getTime()));</stringProp>
           <stringProp name="HTTPSampler.port">UFT-8</stringProp>
           <stringProp name="HTTPSampler.protocol">https</stringProp>
           <stringProp name="HTTPSampler.contentEncoding"></stringProp>
-          <stringProp name="HTTPSampler.path">${Payment}/${PaymentD_1}</stringProp>
+          <stringProp name="HTTPSampler.path">${Payment}/</stringProp>
           <stringProp name="HTTPSampler.method">GET</stringProp>
           <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
           <boolProp name="HTTPSampler.auto_redirects">false</boolProp>
@@ -2207,7 +2212,7 @@ vars.put(&quot;Date&quot;, formatter.format(calendar.getTime()));</stringProp>
                 <stringProp name="Argument.value"> [&#xd;
           {&#xd;
             &quot;vendorName&quot;: &quot;VendorOne_${__time}_123&quot;,&#xd;
-            &quot;paymentMethod&quot;: 0,&#xd;
+            &quot;paymentMethod&quot;: &quot;${Check_Payment}&quot;,&#xd;
             &quot;taxId&quot;: &quot;${tax_ID}&quot;,&#xd;
             &quot;duns&quot;: &quot;098765&quot;,&#xd;
             &quot;vendorNumber&quot;: &quot;Vendor_${vendor_Number}&quot;,&#xd;
@@ -2345,9 +2350,18 @@ vars.put(&quot;Date&quot;, formatter.format(calendar.getTime()));</stringProp>
             &quot;accountType&quot;: &quot;SB&quot;,&#xd;
             &quot;accountCurrency&quot;: &quot;INR&quot;,&#xd;
             &quot;iban&quot;: &quot;IBAN001&quot;,&#xd;
-            &quot;otherAccountNumber&quot;: &quot;132123123_${__time}&quot;,&#xd;
-            &quot;domesticRoutingCode&quot;: &quot;09986876_${__time}&quot;,&#xd;
-            &quot;swift&quot;: &quot;654564564_${__time}&quot;&#xd;
+            &quot;otherAccountNumber&quot;: &quot;${__time}&quot;,&#xd;
+            &quot;domesticRoutingCode&quot;: &quot;${__time}&quot;,&#xd;
+            &quot;swift&quot;: &quot;${__time}&quot;,&#xd;
+            &quot;addressLine1&quot;: &quot;IBIS&quot;,&#xd;
+            &quot;addressLine2&quot;: &quot;Regus bussiness&quot;,&#xd;
+            &quot;addressLine3&quot;: &quot;Nicofi Technologies pvt ltd&quot;,&#xd;
+            &quot;addressLine4&quot;: &quot;Hosur Road&quot;,&#xd;
+            &quot;city&quot;: &quot;${City}&quot;,&#xd;
+            &quot;state&quot;: &quot;${State}&quot;,&#xd;
+            &quot;zipCode&quot;: &quot;${PinCode}&quot;,&#xd;
+            &quot;countryCode&quot;: &quot;${CCode}&quot;,&#xd;
+            &quot;country&quot;: &quot;${County}&quot;&#xd;
           },&#xd;
 &#xd;
           {&#xd;
@@ -2357,9 +2371,18 @@ vars.put(&quot;Date&quot;, formatter.format(calendar.getTime()));</stringProp>
             &quot;accountType&quot;: &quot;CB&quot;,&#xd;
             &quot;accountCurrency&quot;: &quot;USD&quot;,&#xd;
             &quot;iban&quot;: &quot;IBAN002&quot;,&#xd;
-            &quot;otherAccountNumber&quot;: &quot;987987987_${__time}&quot;,&#xd;
-            &quot;domesticRoutingCode&quot;: &quot;36925814_${__time}&quot;,&#xd;
-            &quot;swift&quot;: &quot;123456_${__time}&quot;&#xd;
+            &quot;otherAccountNumber&quot;: &quot;${__time}&quot;,&#xd;
+            &quot;domesticRoutingCode&quot;: &quot;${__time}&quot;,&#xd;
+            &quot;swift&quot;: &quot;${__time}&quot;,&#xd;
+            &quot;addressLine1&quot;: &quot;IBIS&quot;,&#xd;
+            &quot;addressLine2&quot;: &quot;Regus bussiness&quot;,&#xd;
+            &quot;addressLine3&quot;: &quot;Nicofi Technologies pvt ltd&quot;,&#xd;
+            &quot;addressLine4&quot;: &quot;Hosur Road&quot;,&#xd;
+            &quot;city&quot;: &quot;${City}&quot;,&#xd;
+            &quot;state&quot;: &quot;${State}&quot;,&#xd;
+            &quot;zipCode&quot;: &quot;${PinCode}&quot;,&#xd;
+            &quot;countryCode&quot;: &quot;${CCode}&quot;,&#xd;
+            &quot;country&quot;: &quot;${County}&quot;&#xd;
           }&#xd;
        ]</stringProp>
                 <stringProp name="Argument.metadata">=</stringProp>
@@ -2578,7 +2601,7 @@ vars.put(&quot;Date&quot;, formatter.format(calendar.getTime()));</stringProp>
               <elementProp name="" elementType="HTTPArgument">
                 <boolProp name="HTTPArgument.always_encode">false</boolProp>
                 <stringProp name="Argument.value">{&#xd;
-       &quot;id&quot;:${VendorID_1},&#xd;
+&#xd;
           &quot;vendorName&quot;: &quot;CoffeeDay_${__time}&quot;,&#xd;
           &quot;paymentMethod&quot;: &quot;${Card_Payment}&quot;,&#xd;
           &quot;taxId&quot;: &quot;${tax_ID}&quot;,&#xd;
@@ -2595,7 +2618,7 @@ vars.put(&quot;Date&quot;, formatter.format(calendar.getTime()));</stringProp>
           <stringProp name="HTTPSampler.port">UFT-8</stringProp>
           <stringProp name="HTTPSampler.protocol">https</stringProp>
           <stringProp name="HTTPSampler.contentEncoding"></stringProp>
-          <stringProp name="HTTPSampler.path">${Vendors}</stringProp>
+          <stringProp name="HTTPSampler.path">${Vendors}/${VendorID_1}</stringProp>
           <stringProp name="HTTPSampler.method">PUT</stringProp>
           <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
           <boolProp name="HTTPSampler.auto_redirects">false</boolProp>
@@ -2683,7 +2706,7 @@ vars.put(&quot;Date&quot;, formatter.format(calendar.getTime()));</stringProp>
               <elementProp name="" elementType="HTTPArgument">
                 <boolProp name="HTTPArgument.always_encode">false</boolProp>
                 <stringProp name="Argument.value">  {&#xd;
-       &quot;id&quot;: ${AddressID_3},&#xd;
+  &#xd;
       &quot;addressLine1&quot;: &quot;${__RandomString(10,qwertyuiopasra)}&quot;,&#xd;
       &quot;addressLine2&quot;: &quot;${__RandomString(10,qwertyuiopasra)}&quot;,&#xd;
       &quot;addressLine3&quot;: &quot;Nicofi Technologies pvt ltd&quot;,&#xd;
@@ -2702,7 +2725,7 @@ vars.put(&quot;Date&quot;, formatter.format(calendar.getTime()));</stringProp>
           <stringProp name="HTTPSampler.port">UFT-8</stringProp>
           <stringProp name="HTTPSampler.protocol">https</stringProp>
           <stringProp name="HTTPSampler.contentEncoding"></stringProp>
-          <stringProp name="HTTPSampler.path">${Vendors}/${VendorID_1}/addresses</stringProp>
+          <stringProp name="HTTPSampler.path">${Vendors}/${VendorID_1}/addresses/${AddressID_3}</stringProp>
           <stringProp name="HTTPSampler.method">PUT</stringProp>
           <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
           <boolProp name="HTTPSampler.auto_redirects">false</boolProp>
@@ -2763,7 +2786,7 @@ vars.put(&quot;Date&quot;, formatter.format(calendar.getTime()));</stringProp>
               <elementProp name="" elementType="HTTPArgument">
                 <boolProp name="HTTPArgument.always_encode">false</boolProp>
                 <stringProp name="Argument.value">{&#xd;
-      &quot;id&quot;: 7,&#xd;
+  &#xd;
       &quot;bankName&quot;: &quot;Hdfc&quot;,&#xd;
       &quot;accountNumber&quot;: &quot;12334234&quot;,&#xd;
       &quot;accountType&quot;: &quot;SB&quot;,&#xd;
@@ -2793,7 +2816,7 @@ vars.put(&quot;Date&quot;, formatter.format(calendar.getTime()));</stringProp>
           <stringProp name="HTTPSampler.port">UFT-8</stringProp>
           <stringProp name="HTTPSampler.protocol">https</stringProp>
           <stringProp name="HTTPSampler.contentEncoding"></stringProp>
-          <stringProp name="HTTPSampler.path">${Vendors}/${VendorID_1}/bank-account</stringProp>
+          <stringProp name="HTTPSampler.path">${Vendors}/${VendorID_1}/bank-account/7</stringProp>
           <stringProp name="HTTPSampler.method">PUT</stringProp>
           <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
           <boolProp name="HTTPSampler.auto_redirects">false</boolProp>
@@ -3011,6 +3034,76 @@ vars.put(&apos;encodedstring&apos;,encodedstring);
           </BeanShellAssertion>
           <hashTree/>
         </hashTree>
+        <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="P(M): Verify tenant_id is populated in the token" enabled="true">
+          <elementProp name="HTTPsampler.Arguments" elementType="Arguments" guiclass="HTTPArgumentsPanel" testclass="Arguments" testname="User Defined Variables" enabled="true">
+            <collectionProp name="Arguments.arguments">
+              <elementProp name="client_id" elementType="HTTPArgument">
+                <boolProp name="HTTPArgument.always_encode">false</boolProp>
+                <stringProp name="Argument.value">postman</stringProp>
+                <stringProp name="Argument.metadata">=</stringProp>
+                <boolProp name="HTTPArgument.use_equals">true</boolProp>
+                <stringProp name="Argument.name">client_id</stringProp>
+              </elementProp>
+              <elementProp name="client_secret" elementType="HTTPArgument">
+                <boolProp name="HTTPArgument.always_encode">false</boolProp>
+                <stringProp name="Argument.value">secret</stringProp>
+                <stringProp name="Argument.metadata">=</stringProp>
+                <boolProp name="HTTPArgument.use_equals">true</boolProp>
+                <stringProp name="Argument.name">client_secret</stringProp>
+              </elementProp>
+              <elementProp name="Grant_type" elementType="HTTPArgument">
+                <boolProp name="HTTPArgument.always_encode">false</boolProp>
+                <stringProp name="Argument.value">password</stringProp>
+                <stringProp name="Argument.metadata">=</stringProp>
+                <boolProp name="HTTPArgument.use_equals">true</boolProp>
+                <stringProp name="Argument.name">Grant_type</stringProp>
+              </elementProp>
+              <elementProp name="scope" elementType="HTTPArgument">
+                <boolProp name="HTTPArgument.always_encode">false</boolProp>
+                <stringProp name="Argument.value">rps:manage:company-configuration rps:view:vendor-bank-data rps:manage:vendor-bank-data rps:view:api-configuration rps:manage:vendors rps:view:data-extractor-configuration rps:manage:payments rps:manage:file-exchange-configuration rps:view:file-exchange-configuration rps:view:payments rps:manage:data-extractor-configuration rps:transmit:payments rps:view:company-configuration rps:manage:api-configuration rps:view:vendor</stringProp>
+                <stringProp name="Argument.metadata">=</stringProp>
+                <boolProp name="HTTPArgument.use_equals">true</boolProp>
+                <stringProp name="Argument.name">scope</stringProp>
+              </elementProp>
+              <elementProp name="username" elementType="HTTPArgument">
+                <boolProp name="HTTPArgument.always_encode">false</boolProp>
+                <stringProp name="Argument.value">${Username}</stringProp>
+                <stringProp name="Argument.metadata">=</stringProp>
+                <boolProp name="HTTPArgument.use_equals">true</boolProp>
+                <stringProp name="Argument.name">username</stringProp>
+              </elementProp>
+              <elementProp name="password" elementType="HTTPArgument">
+                <boolProp name="HTTPArgument.always_encode">false</boolProp>
+                <stringProp name="Argument.value">${Password}</stringProp>
+                <stringProp name="Argument.metadata">=</stringProp>
+                <boolProp name="HTTPArgument.use_equals">true</boolProp>
+                <stringProp name="Argument.name">password</stringProp>
+              </elementProp>
+              <elementProp name="acr_values" elementType="HTTPArgument">
+                <boolProp name="HTTPArgument.always_encode">false</boolProp>
+                <stringProp name="Argument.value">tenant:6CA91569-C0CF-491B-85AE-820B14BF716B</stringProp>
+                <stringProp name="Argument.metadata">=</stringProp>
+                <boolProp name="HTTPArgument.use_equals">true</boolProp>
+                <stringProp name="Argument.name">acr_values</stringProp>
+              </elementProp>
+            </collectionProp>
+          </elementProp>
+          <stringProp name="HTTPSampler.domain">${Token_URL}</stringProp>
+          <stringProp name="HTTPSampler.port">UTF-8</stringProp>
+          <stringProp name="HTTPSampler.protocol">https</stringProp>
+          <stringProp name="HTTPSampler.contentEncoding"></stringProp>
+          <stringProp name="HTTPSampler.path">${Access}</stringProp>
+          <stringProp name="HTTPSampler.method">POST</stringProp>
+          <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
+          <boolProp name="HTTPSampler.auto_redirects">false</boolProp>
+          <boolProp name="HTTPSampler.use_keepalive">true</boolProp>
+          <boolProp name="HTTPSampler.DO_MULTIPART_POST">false</boolProp>
+          <stringProp name="HTTPSampler.embedded_url_re"></stringProp>
+          <stringProp name="HTTPSampler.implementation">Java</stringProp>
+          <stringProp name="HTTPSampler.connect_timeout"></stringProp>
+          <stringProp name="HTTPSampler.response_timeout"></stringProp>
+        </HTTPSamplerProxy>
+        <hashTree/>
       </hashTree>
       <ThreadGroup guiclass="ThreadGroupGui" testclass="ThreadGroup" testname="Integration Type: DataXtractor" enabled="true">
         <stringProp name="ThreadGroup.on_sample_error">continue</stringProp>
@@ -3781,7 +3874,7 @@ vars.put(&apos;encodedstring&apos;,encodedstring);
           <stringProp name="HTTPSampler.port">UFT-8</stringProp>
           <stringProp name="HTTPSampler.protocol">https</stringProp>
           <stringProp name="HTTPSampler.contentEncoding"></stringProp>
-          <stringProp name="HTTPSampler.path">${Invoice}/${InvoiceID_3}</stringProp>
+          <stringProp name="HTTPSampler.path">${Invoice}/${InvoiceID_1}</stringProp>
           <stringProp name="HTTPSampler.method">GET</stringProp>
           <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
           <boolProp name="HTTPSampler.auto_redirects">false</boolProp>
@@ -3874,7 +3967,7 @@ vars.put(&quot;Date&quot;, formatter.format(calendar.getTime()));</stringProp>
               &quot;PaymentNumber&quot;: &quot;${Payment_number}&quot;,&#xd;
               &quot;paymentDate&quot;: &quot;${__timeShift(yyyy-MM-dd,,,,)}&quot;,&#xd;
               &quot;PaymentDescription&quot;: &quot;payment_description&quot;,&#xd;
-              &quot;PaymentMethod&quot;: 0,&#xd;
+              &quot;PaymentMethod&quot;: &quot;${Check_Payment}&quot;,&#xd;
               &quot;VendorNumber&quot;: &quot;Vendor_${Vendor_number}&quot;,&#xd;
               &quot;AddressCode&quot;: &quot;address_${address_code}&quot;,&#xd;
               &quot;CheckNumber&quot;: &quot;check_${Check_number}&quot;,&#xd;
@@ -4863,9 +4956,18 @@ vars.put(&quot;Date&quot;, formatter.format(calendar.getTime()));</stringProp>
             &quot;accountType&quot;: &quot;SB&quot;,&#xd;
             &quot;accountCurrency&quot;: &quot;INR&quot;,&#xd;
             &quot;iban&quot;: &quot;IBAN001&quot;,&#xd;
-            &quot;otherAccountNumber&quot;: &quot;132123123&quot;,&#xd;
-            &quot;domesticRoutingCode&quot;: &quot;09986876&quot;,&#xd;
-            &quot;swift&quot;: &quot;654564564&quot;&#xd;
+            &quot;otherAccountNumber&quot;: &quot;${__time}&quot;,&#xd;
+            &quot;domesticRoutingCode&quot;: &quot;${__time}&quot;,&#xd;
+            &quot;swift&quot;: &quot;${__time}&quot;,&#xd;
+            &quot;addressLine1&quot;: &quot;IBIS&quot;,&#xd;
+            &quot;addressLine2&quot;: &quot;Regus bussiness&quot;,&#xd;
+            &quot;addressLine3&quot;: &quot;Nicofi Technologies pvt ltd&quot;,&#xd;
+            &quot;addressLine4&quot;: &quot;Hosur Road&quot;,&#xd;
+            &quot;city&quot;: &quot;${City}&quot;,&#xd;
+            &quot;state&quot;: &quot;${State}&quot;,&#xd;
+            &quot;zipCode&quot;: &quot;${PinCode}&quot;,&#xd;
+            &quot;countryCode&quot;: &quot;${CCode}&quot;,&#xd;
+            &quot;country&quot;: &quot;${County}&quot;&#xd;
           },&#xd;
 &#xd;
           {&#xd;
@@ -4875,9 +4977,18 @@ vars.put(&quot;Date&quot;, formatter.format(calendar.getTime()));</stringProp>
             &quot;accountType&quot;: &quot;CB&quot;,&#xd;
             &quot;accountCurrency&quot;: &quot;USD&quot;,&#xd;
             &quot;iban&quot;: &quot;IBAN002&quot;,&#xd;
-            &quot;otherAccountNumber&quot;: &quot;987987987&quot;,&#xd;
-            &quot;domesticRoutingCode&quot;: &quot;36925814&quot;,&#xd;
-            &quot;swift&quot;: &quot;123456&quot;&#xd;
+            &quot;otherAccountNumber&quot;: &quot;${__time}&quot;,&#xd;
+            &quot;domesticRoutingCode&quot;: &quot;${__time}&quot;,&#xd;
+            &quot;swift&quot;: &quot;${__time}&quot;,&#xd;
+            &quot;addressLine1&quot;: &quot;IBIS&quot;,&#xd;
+            &quot;addressLine2&quot;: &quot;Regus bussiness&quot;,&#xd;
+            &quot;addressLine3&quot;: &quot;Nicofi Technologies pvt ltd&quot;,&#xd;
+            &quot;addressLine4&quot;: &quot;Hosur Road&quot;,&#xd;
+            &quot;city&quot;: &quot;${City}&quot;,&#xd;
+            &quot;state&quot;: &quot;${State}&quot;,&#xd;
+            &quot;zipCode&quot;: &quot;${PinCode}&quot;,&#xd;
+            &quot;countryCode&quot;: &quot;${CCode}&quot;,&#xd;
+            &quot;country&quot;: &quot;${County}&quot;&#xd;
           }&#xd;
        ]</stringProp>
                 <stringProp name="Argument.metadata">=</stringProp>
@@ -5096,7 +5207,6 @@ vars.put(&quot;Date&quot;, formatter.format(calendar.getTime()));</stringProp>
               <elementProp name="" elementType="HTTPArgument">
                 <boolProp name="HTTPArgument.always_encode">false</boolProp>
                 <stringProp name="Argument.value">{&#xd;
-       &quot;id&quot;:${VendorID_1},&#xd;
           &quot;vendorName&quot;: &quot;CoffeeDay_${__time}&quot;,&#xd;
           &quot;paymentMethod&quot;: &quot;${Card_Payment}&quot;,&#xd;
           &quot;taxId&quot;: &quot;${tax_ID}&quot;,&#xd;
@@ -5113,7 +5223,7 @@ vars.put(&quot;Date&quot;, formatter.format(calendar.getTime()));</stringProp>
           <stringProp name="HTTPSampler.port">UFT-8</stringProp>
           <stringProp name="HTTPSampler.protocol">https</stringProp>
           <stringProp name="HTTPSampler.contentEncoding"></stringProp>
-          <stringProp name="HTTPSampler.path">${Vendors}</stringProp>
+          <stringProp name="HTTPSampler.path">${Vendors}/${VendorID_1}</stringProp>
           <stringProp name="HTTPSampler.method">PUT</stringProp>
           <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
           <boolProp name="HTTPSampler.auto_redirects">false</boolProp>
@@ -5201,7 +5311,7 @@ vars.put(&quot;Date&quot;, formatter.format(calendar.getTime()));</stringProp>
               <elementProp name="" elementType="HTTPArgument">
                 <boolProp name="HTTPArgument.always_encode">false</boolProp>
                 <stringProp name="Argument.value">  {&#xd;
-       &quot;id&quot;: ${AddressID_3},&#xd;
+      &#xd;
       &quot;addressLine1&quot;: &quot;${__RandomString(10,qwertyuiopasra)}&quot;,&#xd;
       &quot;addressLine2&quot;: &quot;${__RandomString(10,qwertyuiopasra)}&quot;,&#xd;
       &quot;addressLine3&quot;: &quot;Nicofi Technologies pvt ltd&quot;,&#xd;
@@ -5220,7 +5330,7 @@ vars.put(&quot;Date&quot;, formatter.format(calendar.getTime()));</stringProp>
           <stringProp name="HTTPSampler.port">UFT-8</stringProp>
           <stringProp name="HTTPSampler.protocol">https</stringProp>
           <stringProp name="HTTPSampler.contentEncoding"></stringProp>
-          <stringProp name="HTTPSampler.path">${Vendors}/${VendorID_1}/addresses</stringProp>
+          <stringProp name="HTTPSampler.path">${Vendors}/${VendorID_1}/addresses/${AddressID_1}</stringProp>
           <stringProp name="HTTPSampler.method">PUT</stringProp>
           <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
           <boolProp name="HTTPSampler.auto_redirects">false</boolProp>
@@ -5281,7 +5391,6 @@ vars.put(&quot;Date&quot;, formatter.format(calendar.getTime()));</stringProp>
               <elementProp name="" elementType="HTTPArgument">
                 <boolProp name="HTTPArgument.always_encode">false</boolProp>
                 <stringProp name="Argument.value">{&#xd;
-      &quot;id&quot;: 7,&#xd;
       &quot;bankName&quot;: &quot;Hdfc&quot;,&#xd;
       &quot;accountNumber&quot;: &quot;12334234&quot;,&#xd;
       &quot;accountType&quot;: &quot;SB&quot;,&#xd;
@@ -5311,7 +5420,7 @@ vars.put(&quot;Date&quot;, formatter.format(calendar.getTime()));</stringProp>
           <stringProp name="HTTPSampler.port">UFT-8</stringProp>
           <stringProp name="HTTPSampler.protocol">https</stringProp>
           <stringProp name="HTTPSampler.contentEncoding"></stringProp>
-          <stringProp name="HTTPSampler.path">${Vendors}/${VendorID_1}/bank-account</stringProp>
+          <stringProp name="HTTPSampler.path">${Vendors}/${VendorID_1}/bank-account/7</stringProp>
           <stringProp name="HTTPSampler.method">PUT</stringProp>
           <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
           <boolProp name="HTTPSampler.auto_redirects">false</boolProp>
