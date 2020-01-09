@@ -372,12 +372,12 @@
           </elementProp>
           <elementProp name="APIpostURL" elementType="Argument">
             <stringProp name="Argument.name">APIpostURL</stringProp>
-            <stringProp name="Argument.value">http://regalpayservice-dev.us-west-2.elasticbeanstalk.com/api/v1/payments/uploads</stringProp>
+            <stringProp name="Argument.value">https://rps.qa.regalpayone.com/api/v1/payments/uploads</stringProp>
             <stringProp name="Argument.metadata">=</stringProp>
           </elementProp>
           <elementProp name="VendorAPIURL" elementType="Argument">
             <stringProp name="Argument.name">VendorAPIURL</stringProp>
-            <stringProp name="Argument.value">http://regalpayservice-dev.us-west-2.elasticbeanstalk.com/api/v1/vendors/uploads</stringProp>
+            <stringProp name="Argument.value">https://rps.qa.regalpayone.com/api/v1/vendors/uploads</stringProp>
             <stringProp name="Argument.metadata">=</stringProp>
           </elementProp>
           <elementProp name="----------------------------------------------" elementType="Argument">
@@ -437,7 +437,7 @@
           </elementProp>
           <elementProp name="VBankAPIURL" elementType="Argument">
             <stringProp name="Argument.name">VBankAPIURL</stringProp>
-            <stringProp name="Argument.value">http://regalpayservice-dev.us-west-2.elasticbeanstalk.com/api/v1/vendorbankdata/uploads</stringProp>
+            <stringProp name="Argument.value">https://rps.qa.regalpayone.com/api/v1/vendorbankdata/uploads</stringProp>
             <stringProp name="Argument.metadata">=</stringProp>
           </elementProp>
         </collectionProp>
@@ -2665,7 +2665,7 @@ catch (Throwable ex) {
               <elementProp name="" elementType="HTTPArgument">
                 <boolProp name="HTTPArgument.always_encode">false</boolProp>
                 <stringProp name="Argument.value">{&#xd;
-          &quot;Name&quot;:&quot;PaymentFile${__time()}&quot;,&#xd;
+          &quot;Name&quot;:&quot;VendorFile${__time()}&quot;,&#xd;
           &quot;OutputFileTypeId&quot;: ${VenOutputFileType_ID},&#xd;
           &quot;InputFileTypeId&quot; : ${__property(InputFileType_ID)},&#xd;
           &quot;hasHeader&quot;: ${true},&#xd;
@@ -3838,7 +3838,7 @@ catch (Throwable ex) {
               <elementProp name="" elementType="HTTPArgument">
                 <boolProp name="HTTPArgument.always_encode">false</boolProp>
                 <stringProp name="Argument.value">{&#xd;
-          &quot;Name&quot;:&quot;PaymentFile${__time()}&quot;,&#xd;
+          &quot;Name&quot;:&quot;VendorBankFile${__time()}&quot;,&#xd;
           &quot;OutputFileTypeId&quot;: ${VBankOutputFileType_ID},&#xd;
           &quot;InputFileTypeId&quot; : ${__property(InputFileType_ID)},&#xd;
           &quot;hasHeader&quot;: ${true},&#xd;
