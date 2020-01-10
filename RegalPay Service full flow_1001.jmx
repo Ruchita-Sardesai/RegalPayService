@@ -237,7 +237,7 @@
           </elementProp>
           <elementProp name="host" elementType="Argument">
             <stringProp name="Argument.name">host</stringProp>
-            <stringProp name="Argument.value">http://ec2-3-84-91-177.compute-1.amazonaws.com</stringProp>
+            <stringProp name="Argument.value">https://ec2-3-84-91-177.compute-1.amazonaws.com</stringProp>
             <stringProp name="Argument.metadata">=</stringProp>
           </elementProp>
           <elementProp name="port" elementType="Argument">
@@ -990,7 +990,7 @@ vars.put(&apos;encodedstring&apos;,encodedstring);
           &quot;description&quot;: &quot;ADD_ODBC connection detail for DB1${__time()}&quot;,&#xd;
           &quot;host&quot;: &quot;${host}&quot;,&#xd;
           &quot;port&quot;:&quot;${port}&quot;,&#xd;
-          &quot;dataSourceName&quot;:&quot;${Regal DB3}&quot;,&#xd;
+          &quot;dataSourceName&quot;:&quot;${DB3SourceName}&quot;,&#xd;
           &quot;databaseName&quot;:&quot;${DB3Name}&quot;,&#xd;
           &quot;serverName&quot;:&quot;${serverName}&quot;,&#xd;
           &quot;maxPoolSize&quot;: 0,&#xd;
@@ -1006,7 +1006,7 @@ vars.put(&apos;encodedstring&apos;,encodedstring);
               </elementProp>
             </collectionProp>
           </elementProp>
-          <stringProp name="HTTPSampler.domain">${URL}</stringProp>
+          <stringProp name="HTTPSampler.domain">${DE_URL}</stringProp>
           <stringProp name="HTTPSampler.port">UFT-8</stringProp>
           <stringProp name="HTTPSampler.protocol">https</stringProp>
           <stringProp name="HTTPSampler.contentEncoding"></stringProp>
@@ -1119,7 +1119,7 @@ A.InvoiceDate &apos;Date&apos;,  A.InvoiceDueDate &apos;DueDate&apos;,  A.GrossA
               </elementProp>
             </collectionProp>
           </elementProp>
-          <stringProp name="HTTPSampler.domain">${URL}</stringProp>
+          <stringProp name="HTTPSampler.domain">${DE_URL}</stringProp>
           <stringProp name="HTTPSampler.port">UFT-8</stringProp>
           <stringProp name="HTTPSampler.protocol">https</stringProp>
           <stringProp name="HTTPSampler.contentEncoding"></stringProp>
@@ -1225,7 +1225,7 @@ A.ZIPCODE  &apos;ZipCode&apos;,    A.CCODE  &apos;CountryCode&apos;,    A.COUNTR
               </elementProp>
             </collectionProp>
           </elementProp>
-          <stringProp name="HTTPSampler.domain">${URL}</stringProp>
+          <stringProp name="HTTPSampler.domain">${DE_URL}</stringProp>
           <stringProp name="HTTPSampler.port">UFT-8</stringProp>
           <stringProp name="HTTPSampler.protocol">https</stringProp>
           <stringProp name="HTTPSampler.contentEncoding"></stringProp>
@@ -1328,7 +1328,7 @@ A.ZIPCODE  &apos;ZipCode&apos;,    A.CCODE  &apos;CountryCode&apos;,    A.COUNTR
               </elementProp>
             </collectionProp>
           </elementProp>
-          <stringProp name="HTTPSampler.domain">${URL}</stringProp>
+          <stringProp name="HTTPSampler.domain">${DE_URL}</stringProp>
           <stringProp name="HTTPSampler.port">UFT-8</stringProp>
           <stringProp name="HTTPSampler.protocol">https</stringProp>
           <stringProp name="HTTPSampler.contentEncoding"></stringProp>
@@ -1441,7 +1441,7 @@ A.InvoiceDate &apos;Date&apos;,  A.InvoiceDueDate &apos;DueDate&apos;,  A.GrossA
               </elementProp>
             </collectionProp>
           </elementProp>
-          <stringProp name="HTTPSampler.domain">${URL}</stringProp>
+          <stringProp name="HTTPSampler.domain">${DE_URL}</stringProp>
           <stringProp name="HTTPSampler.port">UFT-8</stringProp>
           <stringProp name="HTTPSampler.protocol">https</stringProp>
           <stringProp name="HTTPSampler.contentEncoding"></stringProp>
@@ -1627,7 +1627,7 @@ A.ZIPCODE  &apos;ZipCode&apos;,    A.CCODE  &apos;CountryCode&apos;,    A.COUNTR
               </elementProp>
             </collectionProp>
           </elementProp>
-          <stringProp name="HTTPSampler.domain">${URL}</stringProp>
+          <stringProp name="HTTPSampler.domain">${DE_URL}</stringProp>
           <stringProp name="HTTPSampler.port">UFT-8</stringProp>
           <stringProp name="HTTPSampler.protocol">https</stringProp>
           <stringProp name="HTTPSampler.contentEncoding"></stringProp>
@@ -1810,7 +1810,7 @@ catch (Throwable ex)
               </elementProp>
             </collectionProp>
           </elementProp>
-          <stringProp name="HTTPSampler.domain">${URL}</stringProp>
+          <stringProp name="HTTPSampler.domain">${DE_URL}</stringProp>
           <stringProp name="HTTPSampler.port">UFT-8</stringProp>
           <stringProp name="HTTPSampler.protocol">https</stringProp>
           <stringProp name="HTTPSampler.contentEncoding"></stringProp>
