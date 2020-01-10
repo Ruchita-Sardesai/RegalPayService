@@ -933,7 +933,7 @@ A.ZIPCODE  &apos;ZipCode&apos;,    A.CCODE  &apos;CountryCode&apos;,    A.COUNTR
           </HeaderManager>
           <hashTree/>
           <BeanShellAssertion guiclass="BeanShellAssertionGui" testclass="BeanShellAssertion" testname="Beanshell for setproperty" enabled="true">
-            <stringProp name="BeanShellAssertion.query">${__setProperty(QueryID1, ${QueryID1})};</stringProp>
+            <stringProp name="BeanShellAssertion.query">${__setProperty(QueryID2, ${QueryID2})};</stringProp>
             <stringProp name="BeanShellAssertion.filename"></stringProp>
             <stringProp name="BeanShellAssertion.parameters"></stringProp>
             <boolProp name="BeanShellAssertion.resetInterpreter">false</boolProp>
@@ -1036,7 +1036,7 @@ A.ZIPCODE  &apos;ZipCode&apos;,    A.CCODE  &apos;CountryCode&apos;,    A.COUNTR
           </HeaderManager>
           <hashTree/>
           <BeanShellAssertion guiclass="BeanShellAssertionGui" testclass="BeanShellAssertion" testname="Beanshell for setproperty" enabled="true">
-            <stringProp name="BeanShellAssertion.query">${__setProperty(QueryID1, ${QueryID1})};</stringProp>
+            <stringProp name="BeanShellAssertion.query">${__setProperty(QueryID3, ${QueryID3})};</stringProp>
             <stringProp name="BeanShellAssertion.filename"></stringProp>
             <stringProp name="BeanShellAssertion.parameters"></stringProp>
             <boolProp name="BeanShellAssertion.resetInterpreter">false</boolProp>
