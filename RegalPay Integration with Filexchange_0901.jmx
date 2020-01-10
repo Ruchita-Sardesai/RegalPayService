@@ -372,12 +372,12 @@
           </elementProp>
           <elementProp name="APIpostURL" elementType="Argument">
             <stringProp name="Argument.name">APIpostURL</stringProp>
-            <stringProp name="Argument.value">https://rps.qa.regalpayone.com/api/v1/payments/uploads</stringProp>
+            <stringProp name="Argument.value">https://rps.qa.regalpayone.com/api/regalpayservice/v1/payments/uploads</stringProp>
             <stringProp name="Argument.metadata">=</stringProp>
           </elementProp>
           <elementProp name="VendorAPIURL" elementType="Argument">
             <stringProp name="Argument.name">VendorAPIURL</stringProp>
-            <stringProp name="Argument.value">https://rps.qa.regalpayone.com/api/v1/vendors/uploads</stringProp>
+            <stringProp name="Argument.value">https://rps.qa.regalpayone.com/api/regalpayservice/v1/vendors/uploads</stringProp>
             <stringProp name="Argument.metadata">=</stringProp>
           </elementProp>
           <elementProp name="----------------------------------------------" elementType="Argument">
@@ -437,7 +437,7 @@
           </elementProp>
           <elementProp name="VBankAPIURL" elementType="Argument">
             <stringProp name="Argument.name">VBankAPIURL</stringProp>
-            <stringProp name="Argument.value">https://rps.qa.regalpayone.com/api/v1/vendorbankdata/uploads</stringProp>
+            <stringProp name="Argument.value">https://rps.qa.regalpayone.com/api/regalpayservice/v1/vendors/bankdata/uploads</stringProp>
             <stringProp name="Argument.metadata">=</stringProp>
           </elementProp>
         </collectionProp>
