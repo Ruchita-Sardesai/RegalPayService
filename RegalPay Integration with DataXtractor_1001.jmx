@@ -10,17 +10,17 @@
         <collectionProp name="Arguments.arguments">
           <elementProp name="Token_URL" elementType="Argument">
             <stringProp name="Argument.name">Token_URL</stringProp>
-            <stringProp name="Argument.value">ids.qa.regalpayone.com</stringProp>
+            <stringProp name="Argument.value">qa.ids.regalpayone.com</stringProp>
             <stringProp name="Argument.metadata">=</stringProp>
           </elementProp>
           <elementProp name="URL" elementType="Argument">
             <stringProp name="Argument.name">URL</stringProp>
-            <stringProp name="Argument.value">dtx.qa.regalpayone.com</stringProp>
+            <stringProp name="Argument.value">qa.api.regalpayone.com</stringProp>
             <stringProp name="Argument.metadata">=</stringProp>
           </elementProp>
           <elementProp name="RPS_URL" elementType="Argument">
             <stringProp name="Argument.name">RPS_URL</stringProp>
-            <stringProp name="Argument.value">rps.qa.regalpayone.com</stringProp>
+            <stringProp name="Argument.value">qa.api.regalpayone.com</stringProp>
             <stringProp name="Argument.metadata">=</stringProp>
           </elementProp>
         </collectionProp>
