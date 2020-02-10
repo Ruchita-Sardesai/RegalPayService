@@ -8808,7 +8808,7 @@ vars.put(&quot;Date&quot;, formatter.format(calendar.getTime()));</stringProp>
               <elementProp name="" elementType="HTTPArgument">
                 <boolProp name="HTTPArgument.always_encode">false</boolProp>
                 <stringProp name="Argument.value">{&#xd;
-  &quot;amount&quot;: ${Amount}.66,&#xd;
+  &quot;amount&quot;: ${Amount},&#xd;
   &quot;numberOfApprovers&quot;: 1,&#xd;
   &quot;approvers&quot;: [&#xd;
     &quot;${Approver1}&quot;,&#xd;

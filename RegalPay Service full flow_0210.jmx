@@ -13805,15 +13805,6 @@ vars.put(&quot;Date&quot;, formatter.format(calendar.getTime()));</stringProp>
             <intProp name="Assertion.test_type">2</intProp>
           </ResponseAssertion>
           <hashTree/>
-          <RandomVariableConfig guiclass="TestBeanGUI" testclass="RandomVariableConfig" testname="Random Variable" enabled="true">
-            <stringProp name="variableName">Amount</stringProp>
-            <stringProp name="outputFormat"></stringProp>
-            <stringProp name="minimumValue">122</stringProp>
-            <stringProp name="maximumValue">500000</stringProp>
-            <stringProp name="randomSeed"></stringProp>
-            <boolProp name="perThread">false</boolProp>
-          </RandomVariableConfig>
-          <hashTree/>
         </hashTree>
         <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="(M): P: Verify user is Getting Email for the same" enabled="true">
           <boolProp name="HTTPSampler.postBodyRaw">true</boolProp>
