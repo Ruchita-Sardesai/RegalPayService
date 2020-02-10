@@ -15966,7 +15966,7 @@ vars.put(&quot;Date&quot;, formatter.format(calendar.getTime()));</stringProp>
               <elementProp name="" elementType="HTTPArgument">
                 <boolProp name="HTTPArgument.always_encode">false</boolProp>
                 <stringProp name="Argument.value">{&#xd;
-  &quot;numberOfApprovers&quot;: &#xd;
+  &quot;numberOfApprovers&quot;: 6&#xd;
 }</stringProp>
                 <stringProp name="Argument.metadata">=</stringProp>
               </elementProp>
