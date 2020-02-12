@@ -831,7 +831,7 @@
               </elementProp>
               <elementProp name="acr_values" elementType="HTTPArgument">
                 <boolProp name="HTTPArgument.always_encode">false</boolProp>
-                <stringProp name="Argument.value">tenant:FC617C2D-9675-45FF-9EA4-89950B70A370</stringProp>
+                <stringProp name="Argument.value">tenant:05ECE7BC-23B4-4050-A072-51B234B4CC0C</stringProp>
                 <stringProp name="Argument.metadata">=</stringProp>
                 <boolProp name="HTTPArgument.use_equals">true</boolProp>
                 <stringProp name="Argument.name">acr_values</stringProp>
@@ -926,7 +926,7 @@
               </elementProp>
               <elementProp name="acr_values" elementType="HTTPArgument">
                 <boolProp name="HTTPArgument.always_encode">false</boolProp>
-                <stringProp name="Argument.value">tenant:FC617C2D-9675-45FF-9EA4-89950B70A370</stringProp>
+                <stringProp name="Argument.value">tenant:05ECE7BC-23B4-4050-A072-51B234B4CC0C</stringProp>
                 <stringProp name="Argument.metadata">=</stringProp>
                 <boolProp name="HTTPArgument.use_equals">true</boolProp>
                 <stringProp name="Argument.name">acr_values</stringProp>
@@ -2034,7 +2034,7 @@ catch (Throwable ex)
               </elementProp>
               <elementProp name="acr_values" elementType="HTTPArgument">
                 <boolProp name="HTTPArgument.always_encode">false</boolProp>
-                <stringProp name="Argument.value">tenant:D7462A4E-6ADC-4B8D-876D-6DAF972844D9</stringProp>
+                <stringProp name="Argument.value">tenant:FC617C2D-9675-45FF-9EA4-89950B70A370</stringProp>
                 <stringProp name="Argument.metadata">=</stringProp>
                 <boolProp name="HTTPArgument.use_equals">true</boolProp>
                 <stringProp name="Argument.name">acr_values</stringProp>
@@ -2701,13 +2701,6 @@ catch (Throwable ex) {
               <elementProp name="" elementType="HTTPArgument">
                 <boolProp name="HTTPArgument.always_encode">false</boolProp>
                 <stringProp name="Argument.value">{&#xd;
-  &quot;fileContent&quot;: &quot;ERP Batch ID,Payment Number,Check Number,Vendor ID,Payment Date,Payment Comment,Invoice Number,Invoice Date,Invoice Due Date,Invoice Description,Invoice Gross Amount,Invoice Discount Amount,Invoice Net Amount,Currency,PO Number,Account Number,Company ID,Payment Type,Address Code,Voided&#xd;
-B10000001,PN000000001,20000000001,VEN_00000001,,Payment Comment01,INV000000001,,,Invoice Description 0001,5555.55,10,5545.55,USD,PONO00001,ACNO012300000000001,20000,MCCRD,ADDRESSCODE1,0&#xd;
-B10000002,PN000000002,20000000002,VEN_00000002,,Payment Comment02,INV000000002,,,Invoice Description 0002,5000,10,4990,USD,PONO00002,ACNO012300000000002,20000,MCCRD,ADDRESSCODE2,0&#xd;
-B10000003,PN000000003,20000000003,VEN_00000003,,Payment Comment03,INV000000003,,,Invoice Description 0003,800,0,800,USD,PONO00003,ACNO012300000000003,20000,MCCRD,ADDRESSCODE3,0&#xd;
-B10000004,PN000000004,20000000004,VEN_00000004,,Payment Comment04,INV000000004,,,Invoice Description 0004,2000,0,2000,USD,PONO00004,ACNO012300000000004,20000,MCCRD,ADDRESSCODE4,0&#xd;
-B10000005,PN000000005,20000000005,VEN_00000005,,Payment Comment05,INV000000005,,,Invoice Description 0005,22222.22,0,22222.22,USD,PONO00005,ACNO012300000000005,20000,MCCRD,ADDRESSCODE5,0&#xd;
-B10000006,PN000000006,20000000006,VEN_00000006,,Payment Comment06,INV000000006,,,Invoice Description 0006,999999999,0,999999999,USD,PONO00006,ACNO012300000000006,20000,MCCRD,ADDRESSCODE6,0{&#xd;
   &quot;fileContent&quot;: &quot;ERP Batch ID,Payment Number,Check Number,Vendor ID,Payment Date,Payment Comment,Invoice Number,Invoice Date,Invoice Due Date,Invoice Description,Invoice Gross Amount,Invoice Discount Amount,Invoice Net Amount,Currency,PO Number,Account Number,Company ID,Payment Type,Address Code,Voided&#xd;
 B10000001,PN00001${PaymentNo},20000000001,VEN_00000001,,Payment Comment01,INV000000001,,,Invoice Description 0001,5555.55,10,5545.55,USD,PONO00001,ACNO012300000000001,20000,MCCRD,ADDRESSCODE1,0&#xd;
 B10000002,PN00002${PaymentNo},20000000002,VEN_00000002,,Payment Comment02,INV000000002,,,Invoice Description 0002,5000,10,4990,USD,PONO00002,ACNO012300000000002,20000,MCCRD,ADDRESSCODE2,0&#xd;
@@ -5862,7 +5855,7 @@ catch (Throwable ex) {
         <stringProp name="script"></stringProp>
       </BeanShellPreProcessor>
       <hashTree/>
-      <ThreadGroup guiclass="ThreadGroupGui" testclass="ThreadGroup" testname="Client login for Regal Pay service" enabled="true">
+      <ThreadGroup guiclass="ThreadGroupGui" testclass="ThreadGroup" testname="Client login for Regal Pay service" enabled="false">
         <stringProp name="ThreadGroup.on_sample_error">continue</stringProp>
         <elementProp name="ThreadGroup.main_controller" elementType="LoopController" guiclass="LoopControlPanel" testclass="LoopController" testname="Loop Controller" enabled="true">
           <boolProp name="LoopController.continue_forever">false</boolProp>
@@ -5935,7 +5928,7 @@ catch (Throwable ex) {
               </elementProp>
               <elementProp name="scope" elementType="HTTPArgument">
                 <boolProp name="HTTPArgument.always_encode">false</boolProp>
-                <stringProp name="Argument.value">rps:manage:company-configuration rps:view:vendor-bank-data rps:manage:vendor-bank-data rps:view:api-configuration rps:manage:vendors rps:view:data-extractor-configuration rps:manage:payments rps:manage:file-exchange-configuration rps:view:file-exchange-configuration rps:view:payments rps:manage:data-extractor-configuration rps:transmit:payments rps:view:company-configuration rps:manage:api-configuration rps:view:vendor dtx:manage:connections dtx:manage:queries dtx:view:connections dtx:view:queries dtx:run:query fex:manage:output-file fex:view:profile fex:submit:output-file fex:manage:profile fex:view:output-file iam:view:tenant</stringProp>
+                <stringProp name="Argument.value">iam:add:clients dtx:manage:connections dtx:manage:queries dtx:view:connections dtx:view:queries dtx:run:query rps:view:vendor rps:view:company-configuration rps:manage:api-configuration rps:view:payments rps:manage:data-extractor-configuration rps:transmit:payments rps:manage:vendor-bank-data rps:manage:vendors rps:manage:payments rps:manage:file-exchange-configuration rps:view:file-exchange-configuration rps:manage:company-configuration rps:view:vendor-bank-data iam:manage:application-users rps:view:api-configuration fex:manage:output-file fex:view:profile fex:submit:output-file rps:view:data-extractor-configuration iam:manage:tenant iam:view:org iam:view:tenant-roles iam:view:application-users iam:manage:system-users iam:view:system-users iam:manage:application-roles iam:view:application-roles iam:manage:system-roles iam:view:system-roles iam:manage:organizations iam:view:organizations iam:manage:tenants iam:view:tenants iam:manage:clients iam:view:clients iam:manage:resources iam:view:resources openid iam:manage:tenant-users iam:manage:org iam:view:tenant fex:manage:profile iam:view:tenant-users iam:view:org-users iam:view:org-roles iam:manage:org-roles iam:manage:tenant-roles iam:manage:org-users fex:view:output-file</stringProp>
                 <stringProp name="Argument.metadata">=</stringProp>
                 <boolProp name="HTTPArgument.use_equals">true</boolProp>
                 <stringProp name="Argument.name">scope</stringProp>
@@ -6075,7 +6068,7 @@ catch (Throwable ex) {
         </HTTPSamplerProxy>
         <hashTree/>
       </hashTree>
-      <ThreadGroup guiclass="ThreadGroupGui" testclass="ThreadGroup" testname="Integration type: DataXtractor" enabled="true">
+      <ThreadGroup guiclass="ThreadGroupGui" testclass="ThreadGroup" testname="Integration type: DataXtractor" enabled="false">
         <stringProp name="ThreadGroup.on_sample_error">continue</stringProp>
         <elementProp name="ThreadGroup.main_controller" elementType="LoopController" guiclass="LoopControlPanel" testclass="LoopController" testname="Loop Controller" enabled="true">
           <boolProp name="LoopController.continue_forever">false</boolProp>
@@ -6496,7 +6489,7 @@ catch (Throwable ex) {
           <hashTree/>
         </hashTree>
       </hashTree>
-      <ThreadGroup guiclass="ThreadGroupGui" testclass="ThreadGroup" testname="Integration Type: FileXchange" enabled="true">
+      <ThreadGroup guiclass="ThreadGroupGui" testclass="ThreadGroup" testname="Integration Type: FileXchange" enabled="false">
         <stringProp name="ThreadGroup.on_sample_error">continue</stringProp>
         <elementProp name="ThreadGroup.main_controller" elementType="LoopController" guiclass="LoopControlPanel" testclass="LoopController" testname="Loop Controller" enabled="true">
           <boolProp name="LoopController.continue_forever">false</boolProp>
@@ -7344,7 +7337,7 @@ vars.put(&quot;Date&quot;, formatter.format(calendar.getTime()));</stringProp>
           <hashTree/>
         </hashTree>
       </hashTree>
-      <ThreadGroup guiclass="ThreadGroupGui" testclass="ThreadGroup" testname="Regal Pay service" enabled="true">
+      <ThreadGroup guiclass="ThreadGroupGui" testclass="ThreadGroup" testname="Regal Pay service" enabled="false">
         <stringProp name="ThreadGroup.on_sample_error">continue</stringProp>
         <elementProp name="ThreadGroup.main_controller" elementType="LoopController" guiclass="LoopControlPanel" testclass="LoopController" testname="Loop Controller" enabled="true">
           <boolProp name="LoopController.continue_forever">false</boolProp>
