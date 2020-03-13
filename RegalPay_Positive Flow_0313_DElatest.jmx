@@ -3913,12 +3913,12 @@ catch (Throwable ex)
                 &quot;fetchVendorContactInfoFromERP&quot;: true,&#xd;
                 &quot;numberOfDaysToPullPayments&quot;: 1,&#xd;
                 &quot;paymentQueryId&quot;: &quot;${__property(paymentQuery_id)}&quot;, &#xd;
-                &quot;invoiceQueryId&quot;: &quot;${__property(invoiceQuery_id)}&quot;,,&#xd;
+                &quot;invoiceQueryId&quot;: &quot;${__property(invoiceQuery_id)}&quot;,&#xd;
                 &quot;vendorListQueryId&quot;: null,&#xd;
-                &quot;locationListQueryId&quot;:  &quot;${__property(locationlistQuery_id)}&quot;, ,&#xd;
+                &quot;locationListQueryId&quot;:  &quot;${__property(locationlistQuery_id)}&quot;,&#xd;
                 &quot;vendorAddressQueryId&quot;:  &quot;${__property(vendoraddressQuery_id)}&quot;, &#xd;
                 &quot;vendorBankDataQueryId&quot;:  &quot;${__property(vendorbankdataQuery_id)}&quot;, &#xd;
-                &quot;vendorContactInfoQueryId&quot;&quot;${__property(vendorcontactinfoQuery_id)}&quot;,&#xd;
+                &quot;vendorContactInfoQueryId&quot;:&quot;${__property(vendorcontactinfoQuery_id)}&quot;,&#xd;
               },&#xd;
 &#xd;
               &quot;filexchangeConfiguration&quot;: null,&#xd;
@@ -3958,8 +3958,9 @@ catch (Throwable ex)
           <ResponseAssertion guiclass="AssertionGui" testclass="ResponseAssertion" testname="Response Assertion" enabled="true">
             <collectionProp name="Asserion.test_strings">
               <stringProp name="1402947425">requestStatus</stringProp>
-              <stringProp name="49">1</stringProp>
+              <stringProp name="48">0</stringProp>
               <stringProp name="-340323263">response</stringProp>
+              <stringProp name="-571467022">QueryId is not proper input, Vendor List Query Id is mandatory</stringProp>
             </collectionProp>
             <stringProp name="Assertion.custom_message"></stringProp>
             <stringProp name="Assertion.test_field">Assertion.response_data</stringProp>
@@ -4011,7 +4012,7 @@ catch (Throwable ex)
   &quot;legalName&quot;: &quot;REGALLEGAL${__time}&quot;,&#xd;
   &quot;dba&quot;: &quot;${DBA}&quot;,&#xd;
   &quot;defaultPaymentType&quot;: &quot;MCCRD&quot;,&#xd;
-  &quot;enableMultiVendorLocations&quot;: True,&#xd;
+  &quot;enableMultiVendorLocations&quot;: true,&#xd;
   &quot;addressLine1&quot;: &quot;${ADD1}&quot;,&#xd;
   &quot;addressLine2&quot;: &quot;${ADD2}&quot;,&#xd;
   &quot;addressLine3&quot;: &quot;${ADD3}&quot;,&#xd;
@@ -4033,7 +4034,7 @@ catch (Throwable ex)
                 &quot;locationListQueryId&quot;:  null, &#xd;
                 &quot;vendorAddressQueryId&quot;:  &quot;${__property(vendoraddressQuery_id)}&quot;, &#xd;
                 &quot;vendorBankDataQueryId&quot;:  &quot;${__property(vendorbankdataQuery_id)}&quot;, &#xd;
-                &quot;vendorContactInfoQueryId&quot;&quot;${__property(vendorcontactinfoQuery_id)}&quot;,&#xd;
+                &quot;vendorContactInfoQueryId&quot;:&quot;${__property(vendorcontactinfoQuery_id)}&quot;,&#xd;
               },&#xd;
 &#xd;
               &quot;filexchangeConfiguration&quot;: null,&#xd;
@@ -4073,8 +4074,9 @@ catch (Throwable ex)
           <ResponseAssertion guiclass="AssertionGui" testclass="ResponseAssertion" testname="Response Assertion" enabled="true">
             <collectionProp name="Asserion.test_strings">
               <stringProp name="1402947425">requestStatus</stringProp>
-              <stringProp name="49">1</stringProp>
+              <stringProp name="48">0</stringProp>
               <stringProp name="-340323263">response</stringProp>
+              <stringProp name="1788928357">QueryId is not proper input, Location List Query Id is mandatory</stringProp>
             </collectionProp>
             <stringProp name="Assertion.custom_message"></stringProp>
             <stringProp name="Assertion.test_field">Assertion.response_data</stringProp>
@@ -4188,8 +4190,9 @@ catch (Throwable ex)
           <ResponseAssertion guiclass="AssertionGui" testclass="ResponseAssertion" testname="Response Assertion" enabled="true">
             <collectionProp name="Asserion.test_strings">
               <stringProp name="1402947425">requestStatus</stringProp>
-              <stringProp name="49">1</stringProp>
+              <stringProp name="48">0</stringProp>
               <stringProp name="-340323263">response</stringProp>
+              <stringProp name="-2059887238">QueryId is not proper input, Vendor Bank Data Query Id is mandatory</stringProp>
             </collectionProp>
             <stringProp name="Assertion.custom_message"></stringProp>
             <stringProp name="Assertion.test_field">Assertion.response_data</stringProp>
@@ -4303,8 +4306,9 @@ catch (Throwable ex)
           <ResponseAssertion guiclass="AssertionGui" testclass="ResponseAssertion" testname="Response Assertion" enabled="true">
             <collectionProp name="Asserion.test_strings">
               <stringProp name="1402947425">requestStatus</stringProp>
-              <stringProp name="49">1</stringProp>
+              <stringProp name="48">0</stringProp>
               <stringProp name="-340323263">response</stringProp>
+              <stringProp name="-1712137438">QueryId is not proper input, Vendor Contact Info Query Id is mandatory</stringProp>
             </collectionProp>
             <stringProp name="Assertion.custom_message"></stringProp>
             <stringProp name="Assertion.test_field">Assertion.response_data</stringProp>
