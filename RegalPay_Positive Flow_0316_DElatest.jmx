@@ -4417,7 +4417,7 @@ catch (Throwable ex)
           <hashTree/>
         </hashTree>
       </hashTree>
-      <ThreadGroup guiclass="ThreadGroupGui" testclass="ThreadGroup" testname="VendorSetUp DE:When MVL(MultiVendor Locations) is FALSE" enabled="false">
+      <ThreadGroup guiclass="ThreadGroupGui" testclass="ThreadGroup" testname="VendorSetUp DE:When MVL(MultiVendor Locations) is FALSE" enabled="true">
         <stringProp name="ThreadGroup.on_sample_error">continue</stringProp>
         <elementProp name="ThreadGroup.main_controller" elementType="LoopController" guiclass="LoopControlPanel" testclass="LoopController" testname="Loop Controller" enabled="true">
           <boolProp name="LoopController.continue_forever">false</boolProp>
@@ -11262,7 +11262,7 @@ catch (Throwable ex)
                 &quot;paymentQueryId&quot;: &quot;${__property(paymentQuery_id)}&quot;, &#xd;
                 &quot;invoiceQueryId&quot;: &quot;${__property(invoiceQuery_id)}&quot;,&#xd;
                 &quot;vendorListQueryId&quot;: &quot;${__property(VendorListQueryID1)}&quot;,&#xd;
-                &quot;locationListQueryId&quot;:  null, &#xd;
+                &quot;locationListQueryId&quot;:  &quot;${__property(locationlistQuery_id)}&quot;, &#xd;
                 &quot;vendorAddressQueryId&quot;:  &quot;${__property(vendoraddressQuery_id)}&quot;, &#xd;
                 &quot;vendorBankDataQueryId&quot;:  &quot;${__property(vendorbankdataQuery_id)}&quot;, &#xd;
                 &quot;vendorContactInfoQueryId&quot;:  &quot;${__property(vendorcontactinfoQuery_id)}&quot;, &#xd;
