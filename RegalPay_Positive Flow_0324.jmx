@@ -339,12 +339,7 @@
           </elementProp>
           <elementProp name="Payment_Type_2" elementType="Argument">
             <stringProp name="Argument.name">Payment_Type_2</stringProp>
-            <stringProp name="Argument.value"></stringProp>
-            <stringProp name="Argument.metadata">=</stringProp>
-          </elementProp>
-          <elementProp name="ACETRAVE0001" elementType="Argument">
-            <stringProp name="Argument.name">ACETRAVE0001</stringProp>
-            <stringProp name="Argument.value"></stringProp>
+            <stringProp name="Argument.value">USBCRD</stringProp>
             <stringProp name="Argument.metadata">=</stringProp>
           </elementProp>
         </collectionProp>
@@ -5162,7 +5157,7 @@ where VendorMaster.VENDORID=@VendorNumber&quot;,&#xd;
           <stringProp name="script"></stringProp>
         </BeanShellPreProcessor>
         <hashTree/>
-        <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="(S-1)P: Verify user is NOT able to access: ADD Vendor location to the RegalPay when int type is DE" enabled="true">
+        <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="BUG:(S-1)P: Verify user is NOT able to access: ADD Vendor location to the RegalPay when int type is DE" enabled="true">
           <boolProp name="HTTPSampler.postBodyRaw">true</boolProp>
           <elementProp name="HTTPsampler.Arguments" elementType="Arguments">
             <collectionProp name="Arguments.arguments">
@@ -12591,7 +12586,7 @@ where VendorMaster.VENDORID=@VendorNumber&quot;,&#xd;
           <stringProp name="script"></stringProp>
         </BeanShellPreProcessor>
         <hashTree/>
-        <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="(S-2)P: Verify user is able to: PUT Vendor&apos;s Location to the RegalPay" enabled="true">
+        <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="(S-2)P: Verify user is NOT able to: PUT Vendor&apos;s Location to the RegalPay" enabled="true">
           <boolProp name="HTTPSampler.postBodyRaw">true</boolProp>
           <elementProp name="HTTPsampler.Arguments" elementType="Arguments">
             <collectionProp name="Arguments.arguments">
@@ -12741,8 +12736,9 @@ where VendorMaster.VENDORID=@VendorNumber&quot;,&#xd;
           <ResponseAssertion guiclass="AssertionGui" testclass="ResponseAssertion" testname="Response Assertion" enabled="true">
             <collectionProp name="Asserion.test_strings">
               <stringProp name="1402947425">requestStatus</stringProp>
-              <stringProp name="49">1</stringProp>
+              <stringProp name="48">0</stringProp>
               <stringProp name="-340323263">response</stringProp>
+              <stringProp name="1752238737">Action not allowed</stringProp>
             </collectionProp>
             <stringProp name="Assertion.custom_message"></stringProp>
             <stringProp name="Assertion.test_field">Assertion.response_data</stringProp>
