@@ -3787,7 +3787,7 @@ where VendorMaster.VENDORID=@VendorNumber&quot;,&#xd;
                 <stringProp name="Argument.value">{&#xd;
   &quot;name&quot;: &quot;Query_DB3${__time()}&quot;,&#xd;
   &quot;description&quot;: &quot;New query for DB2${__time()}&quot;,&#xd;
-  &quot;queryString&quot;: &quot;Select VendorMaster.VENDORID As VendorNumber,VendorMaster.VENDNAME As VendorName,VendorMaster.VADCDTRO  As LocationCode,&apos;MCCRD&apos; As PaymentType,VendorMaster.ADDRESS1 As Address1,VendorMaster.ADDRESS2 As Address2,VendorMaster.ADDRESS3 As Address3,&apos; &apos; As Address4,VendorMaster.CITY As City,VendorMaster.STATE As State,VendorMaster.ZIPCODE As Zipcode,VendorMaster.COUNTRY As Country,VendorMaster.CCode As CountryCode,&apos;&apos; As DeliveryMethod,&apos;&apos; As Signature,&apos;&apos; As Template from  PM00200 &quot;,&#xd;
+  &quot;queryString&quot;: &quot;Select VendorMaster.VENDORID As VendorNumber,VendorMaster.VENDNAME As VendorName,VendorMaster.VADCDTRO  As LocationCode,&apos;MCCRD&apos; As PaymentType,VendorMaster.ADDRESS1 As Address1,VendorMaster.ADDRESS2 As Address2,VendorMaster.ADDRESS3 As Address3,&apos; &apos; As Address4,VendorMaster.CITY As City,VendorMaster.STATE As State,VendorMaster.ZIPCODE As Zipcode,VendorMaster.COUNTRY As Country,VendorMaster.CCode As CountryCode,&apos;&apos; As DeliveryMethod,&apos;&apos; As Signature,&apos;&apos; As Template from  PM00200 VendorMaster&quot;,&#xd;
 &quot;variables&quot;: [&#xd;
 &#xd;
   ]&#xd;
