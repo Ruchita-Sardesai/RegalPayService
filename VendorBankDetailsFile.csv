@@ -1,0 +1,19 @@
+﻿VendorNumber,VendorName,LocationCode,BankName,AccountNumber,AccountType,AccountCurrency,OtherAccountNumber,DomesticRoutingCode,SWIFT,IBAN,BankAddress1,BankAddress2,BankAddress3,BankCity,BankState,BankZipcode,BankCountry,BankCountryCode,FormatCode,SecureStorage,PurposeCode,PurposeCode
+ADPINC,null,1,SBI,289589,Savings,USD,,,,,,jjjryquyhajdjf,akdajsdkka,Bangalore,India,78780,IN,India,,false,,1
+AERPHO,Aerial Photos Elite LLC,1,BOA,224589,Current,INR,12623324,112521238,8707,,,jjjryquyeurfhajdjf,akdfasdkka,Bangalore,India,78739,IN,India,,false,,1
+AGMAC,A&G Machine,1,SBI,289589,Savings,USD,,,,,,jjjryquyeurfhajdjf,akdajdffasdkka,Bangalore,India,78780,IN,India,,false,,1
+AIRCEN,Air Centers of South Carolina,1,Wells Fargo,222589,Savings,INR,12623324,112521238,8707,,,jjjryquyeurfhajdjf,akdajdffasdkka,Bangalore,India,78739,IN,India,848583,true,,1
+AMEDRU,American Drug Testing,1,SBI,2888589,Savings,USD,,,,,,jjjryquyhajdjf,akdajsdkka,Bangalore,India,78780,IN,India,,false,,1
+ATLFAS,Atlantic Fasteners,1,SBI,2899589,Savings,USD,,,,,,jjjryquyhajdjf,akdajsdkka,Bangalore,India,78780,IN,India,,false,,1
+AUDI001,AUDI,1,American Express,124589,Current,INR,122223323,12232123,,,,jyryquyeurfhajdjf,jfajsdjfhf,Bangalore,India,78729,IN,India,,false,67046-166,1
+AVIALL,AVIALL,1,SBI,2899589,Savings,USD,,,,,,jjjryquyhajdjf,akdajsdkka,Bangalore,India,78780,IN,India,,false,12345,1
+BLUKEY,Blue Key Inc.,1,Wells Fargo,222589,Savings,INR,,,,,,jjjryquyeurfhajdjf,akdajdffasdkka,Bangalore,India,78739,IN,India,,false,6789,1
+BMW001,BWM,1,USB,1234589,Current,INR,122223323,12232123,,,,jajfhajdjf,ajdhjfhjadhjfhjdf,Bangalore,India,78727,IN,India,,false,,1
+CADCUT,null,1,Wells Fargo,289589,Savings,USD,,,,,,jjjryquyeurfhajdjf,akdajdffasdkka,Bangalore,India,78739,IN,India,,false,,1
+CUTDYN,Cutting Dynamics,1,Wells Fargo,289589,Savings,USD,,,,,,jjjryquyeurfhajdjf,akdajdffasdkka,Bangalore,India,78780,IN,India,,false,,1
+JAGUAR001,JAGUAR,1,American Express,124589,Current,INR,122223323,12232123,,,,jyryquyeurfhajdjf,jfajsdjfhf,Bangalore,India,78729,IN,India,,false,,1
+PRCDES,null,1,SBI,289589,Savings,USD,,,,,,jjjryquyeurfhajdjf,akdajdffasdkka,Bangalore,India,78780,IN,India,,false,,1
+TATA001,TATA,1,BOA,224589,Current,INR,12623323,11252123,8797,,,jjjryquyeurfhajdjf,akdfasdkka,Bangalore,India,78739,IN,India,,false,,1
+TATA001,TATA_NEW,1,BOA,224589,Current,INR,12623323,11252123,8797,,,jjjryquyeurfhajdjf,akdfasdkka,Bangalore,India,78739,IN,India,,false,,1
+VOLVO001,VOLVO,1,Dubai Express,224589,Current,INR,121223323,12252123,,,,jjjryquyeurfhajdjf,akdfasdkka,Bangalore,India,78739,IN,India,,false,,1
+ZEN001,ZEN,1,Wells Fargo,123456789,Savings,USD,123123323,123432123,8698,,,jahdjfhajdjf,ajdhjfhjadhjfhjdf,Austin,Texas,78727,US,USA,C90,false,1234,1
