@@ -1,0 +1,19 @@
+VendorNumber	VendorName	LocationCode	LocationName	PaymentType	TaxId	Test
+ADPINC	"ADP, Inc."	PRIMARY	Test			1
+AERPHO	Aerial Photos Elite LLC	PRIMARY	Test			1
+AGMAC	A&G Machine	PRIMARY	Test			1
+AIRCEN	Air Centers of South Carolina	PRIMARY	Test			1
+AMEDRU	American Drug Testing	PRIMARY	Test			1
+ATLFAS	Atlantic Fasteners	PRIMARY	Test			1
+AUDI001	AUDI	PRIMARY	Test	USBWIR		1
+AVIALL	AVIALL	PRIMARY	Test			1
+BLUKEY	Blue Key Inc.	PRIMARY	Test			1
+BMW001	BWM	PRIMARY	Test	USBACH		1
+CADCUT	"Cad Cut, Inc."	PRIMARY	Test			1
+CUTDYN	Cutting Dynamics	PRIMARY	Test			1
+JAGUAR001	JAGUAR	PRIMARY	Test	USBCHK		1
+PRCDES	"Prc-Desoto International, Inc."	PRIMARY	Test			1
+TATA_new	TATA_NEW	PRIMARY	Test	MCCRD		1
+TATA001	TATA	PRIMARY	Test	MCCRD		1
+VOLVO001	VOLVO	PRIMARY	Test	USBCRD		1
+ZEN001	ZEN	PRIMARY	Test	MCCRD		1

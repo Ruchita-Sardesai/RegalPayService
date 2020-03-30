@@ -1,0 +1,20 @@
+VendorNumber	VendorName	LocationCode	ContactName	ContactLastName	ContactEmail	Phone	Secret	CardType	ValidityInDays	Test
+ADPINC	"ADP, Inc."	PRIMARY	"ADP, Inc."	"ADP, Inc."		5123456789	aadfasd	1	30	1
+AERPHO	Aerial Photos Elite LLC	PRIMARY	Aerial Photos Elite LLC	Aerial Photos Elite LLC		5123456789		0	0	1
+AGMAC	A&G Machine	PRIMARY	A&G Machine	A&G Machine		5123456789	aaaaadfasd	1	30	1
+AIRCEN	Air Centers of South Carolina	PRIMARY	Air Centers of South Carolina	Air Centers of South Carolina		5123456789		0	0	1
+AMEDRU	American Drug Testing	PRIMARY	American Drug Testing	American Drug Testing		5123456789	fasd	0	25	1
+ATLFAS	Atlantic Fasteners	PRIMARY	Atlantic Fasteners	Atlantic Fasteners		5123456789	qqqqqqsd	0	25	1
+AUDI001	AUDI	PRIMARY	AUDI	AUDI		5123456789		0	0	1
+AVIALL	AVIALL	PRIMARY	AVIALL	AVIALL		5123456789		0	0	1
+AVIALL	AVIALL	PRIMARY	AVIALL	AVIALL		5123456789		0	0	1
+BLUKEY	Blue Key Inc.	PRIMARY	Blue Key Inc.	Blue Key Inc.		5123456789		0	0	1
+BMW001	BWM	PRIMARY	BWM	BWM		5123456789	26-468-4116	0	1	1
+CADCUT	"Cad Cut, Inc."	PRIMARY	"Cad Cut, Inc."	"Cad Cut, Inc."		5123456789		0	0	1
+CUTDYN	Cutting Dynamics	PRIMARY	Cutting Dynamics	Cutting Dynamics		5123456789		0	0	1
+JAGUAR001	JAGUAR	PRIMARY	JAGUAR	JAGUAR		5123456789		0	0	1
+PRCDES	"Prc-Desoto International, Inc."	PRIMARY	"Prc-Desoto International, Inc."	"Prc-Desoto International, Inc."		5123456789		0	0	1
+TATA_new	TATA_NEW	PRIMARY	TATA_NEW	TATA_NEW		5123456789		0	0	1
+TATA001	TATA	PRIMARY	TATA	TATA		5123456789		0	0	1
+VOLVO001	VOLVO	PRIMARY	VOLVO	VOLVO		5123456789		0	0	1
+ZEN001	ZEN	PRIMARY	ZEN	ZEN		5123456789		0	0	1
