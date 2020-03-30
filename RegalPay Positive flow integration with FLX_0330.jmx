@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <jmeterTestPlan version="1.2" properties="5.0" jmeter="5.1.1 r1855137">
   <hashTree>
-    <TestPlan guiclass="TestPlanGui" testclass="TestPlan" testname="RegalPay Positive Flow_ with FLX" enabled="true">
+    <TestPlan guiclass="TestPlanGui" testclass="TestPlan" testname="RegalPay Positive Flow_ with FLX(With Comparison Scripts)" enabled="true">
       <stringProp name="TestPlan.comments"></stringProp>
       <boolProp name="TestPlan.functional_mode">false</boolProp>
       <boolProp name="TestPlan.tearDown_on_shutdown">true</boolProp>
@@ -340,6 +340,11 @@
           <elementProp name="Payment_Type_2" elementType="Argument">
             <stringProp name="Argument.name">Payment_Type_2</stringProp>
             <stringProp name="Argument.value">USBCRD</stringProp>
+            <stringProp name="Argument.metadata">=</stringProp>
+          </elementProp>
+          <elementProp name="txtID" elementType="Argument">
+            <stringProp name="Argument.name">txtID</stringProp>
+            <stringProp name="Argument.value">6001</stringProp>
             <stringProp name="Argument.metadata">=</stringProp>
           </elementProp>
         </collectionProp>
@@ -5575,7 +5580,7 @@ Vnumber2_${VendorNumber},Vname2_${VendorName},Primary,South Carolina,128,Susan,9
           <stringProp name="script"></stringProp>
         </BeanShellPreProcessor>
         <hashTree/>
-        <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="(S-1)P: Verify user is able to: GET all Vendors  ALL details" enabled="true">
+        <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="(S-1)P: Verify user is able to: GET all Vendors  ALL details(With Comparison Scripts)" enabled="true">
           <elementProp name="HTTPsampler.Arguments" elementType="Arguments" guiclass="HTTPArgumentsPanel" testclass="Arguments" testname="User Defined Variables" enabled="true">
             <collectionProp name="Arguments.arguments"/>
           </elementProp>
@@ -5641,6 +5646,38 @@ Vnumber2_${VendorNumber},Vname2_${VendorName},Primary,South Carolina,128,Susan,9
               <stringProp name="1402947425">requestStatus</stringProp>
               <stringProp name="49">1</stringProp>
               <stringProp name="-340323263">response</stringProp>
+            </collectionProp>
+            <stringProp name="Assertion.custom_message"></stringProp>
+            <stringProp name="Assertion.test_field">Assertion.response_data</stringProp>
+            <boolProp name="Assertion.assume_success">true</boolProp>
+            <intProp name="Assertion.test_type">2</intProp>
+          </ResponseAssertion>
+          <hashTree/>
+          <ResponseAssertion guiclass="AssertionGui" testclass="ResponseAssertion" testname="Comparision of Vendor Numbers" enabled="true">
+            <collectionProp name="Asserion.test_strings">
+              <stringProp name="-292858355">&quot;vendorNumber&quot;: &quot;Vnumber1_${VendorNumber}&quot;</stringProp>
+              <stringProp name="-1289930708">&quot;vendorNumber&quot;: &quot;Vnumber2_${VendorNumber}&quot;</stringProp>
+            </collectionProp>
+            <stringProp name="Assertion.custom_message"></stringProp>
+            <stringProp name="Assertion.test_field">Assertion.response_data</stringProp>
+            <boolProp name="Assertion.assume_success">true</boolProp>
+            <intProp name="Assertion.test_type">2</intProp>
+          </ResponseAssertion>
+          <hashTree/>
+          <ResponseAssertion guiclass="AssertionGui" testclass="ResponseAssertion" testname="Comparision of Vendor Name" enabled="true">
+            <collectionProp name="Asserion.test_strings">
+              <stringProp name="-858399089">&quot;vendorName&quot;: &quot;Vname1_${VendorName}&quot;</stringProp>
+              <stringProp name="-1368933266">&quot;vendorName&quot;: &quot;Vname2_${VendorName}&quot;</stringProp>
+            </collectionProp>
+            <stringProp name="Assertion.custom_message"></stringProp>
+            <stringProp name="Assertion.test_field">Assertion.response_data</stringProp>
+            <boolProp name="Assertion.assume_success">true</boolProp>
+            <intProp name="Assertion.test_type">2</intProp>
+          </ResponseAssertion>
+          <hashTree/>
+          <ResponseAssertion guiclass="AssertionGui" testclass="ResponseAssertion" testname="Comparision of Payment Type" enabled="true">
+            <collectionProp name="Asserion.test_strings">
+              <stringProp name="194755067">&quot;paymentType&quot;: &quot;MCCRD&quot;</stringProp>
             </collectionProp>
             <stringProp name="Assertion.custom_message"></stringProp>
             <stringProp name="Assertion.test_field">Assertion.response_data</stringProp>
@@ -5715,6 +5752,74 @@ Vnumber2_${VendorNumber},Vname2_${VendorName},Primary,South Carolina,128,Susan,9
               <stringProp name="1402947425">requestStatus</stringProp>
               <stringProp name="49">1</stringProp>
               <stringProp name="-340323263">response</stringProp>
+            </collectionProp>
+            <stringProp name="Assertion.custom_message"></stringProp>
+            <stringProp name="Assertion.test_field">Assertion.response_data</stringProp>
+            <boolProp name="Assertion.assume_success">true</boolProp>
+            <intProp name="Assertion.test_type">2</intProp>
+          </ResponseAssertion>
+          <hashTree/>
+          <ResponseAssertion guiclass="AssertionGui" testclass="ResponseAssertion" testname="Comparision of  a Vendor&apos;s  Bank Data and ACH and Wire from ERP" enabled="false">
+            <collectionProp name="Asserion.test_strings">
+              <stringProp name="-292858355">&quot;vendorNumber&quot;: &quot;Vnumber1_${VendorNumber}&quot;</stringProp>
+              <stringProp name="1780581494">&quot;accountNumber&quot;: &quot;4662227700&quot;,</stringProp>
+              <stringProp name="-1241685108">&quot;iban&quot;: &quot;FR77 0452 6642 63N9 N4KV RGJY W83&quot;,</stringProp>
+              <stringProp name="1243654589">&quot;otherAccountNumber&quot;: &quot;6274816687&quot;,</stringProp>
+              <stringProp name="1394672121">&quot;domesticRoutingCode&quot;: &quot;713211775&quot;,</stringProp>
+              <stringProp name="-159986513">&quot;swift&quot;: &quot;${vbcell19}&quot;,</stringProp>
+              <stringProp name="-471855297">&quot;accountType&quot;: &quot;${vbcell15}&quot;,</stringProp>
+              <stringProp name="-1874687705">&quot;accountCurrency&quot;: &quot;${vbcell16}&quot;,</stringProp>
+              <stringProp name="-125842531">&quot;bankName&quot;: &quot;${vbcell13}&quot;,</stringProp>
+              <stringProp name="-1203629552">&quot;bankAddress1&quot;: &quot;${vbcell111}&quot;,</stringProp>
+              <stringProp name="-2048071632">&quot;bankAddress2&quot;: &quot;${vbcell112}&quot;,</stringProp>
+              <stringProp name="1402453584">&quot;bankAddress3&quot;: &quot;${vbcell113}&quot;,</stringProp>
+              <stringProp name="453166427">&quot;bankCity&quot;: &quot;${vbcell114}&quot;,</stringProp>
+              <stringProp name="-2139399900">&quot;bankState&quot;: &quot;${vbcell115}&quot;,</stringProp>
+              <stringProp name="-789657664">&quot;bankZipcode&quot;: &quot;${vbcell116}&quot;,</stringProp>
+              <stringProp name="243193127">&quot;bankCountry&quot;: &quot;${vbcell117}&quot;,</stringProp>
+              <stringProp name="377104633">&quot;bankCountryCode&quot;: &quot;${vbcell118}&quot;</stringProp>
+              <stringProp name="-899818707">&quot;purposeCode&quot;: &quot;${vbcell121}&quot;</stringProp>
+              <stringProp name="-1476917709">&quot;formatCode&quot;: &quot;${vbcell119}&quot;,</stringProp>
+              <stringProp name="-592582727">&quot;secureStorage&quot;: ${vbcell120}</stringProp>
+            </collectionProp>
+            <stringProp name="Assertion.custom_message"></stringProp>
+            <stringProp name="Assertion.test_field">Assertion.response_data</stringProp>
+            <boolProp name="Assertion.assume_success">true</boolProp>
+            <intProp name="Assertion.test_type">2</intProp>
+          </ResponseAssertion>
+          <hashTree/>
+          <ResponseAssertion guiclass="AssertionGui" testclass="ResponseAssertion" testname="Comparision of  a Vendor&apos;s  Contact Details and Card from ERP" enabled="false">
+            <collectionProp name="Asserion.test_strings">
+              <stringProp name="-57536265">&quot;vendorNumber&quot;: &quot;${vccell10}&quot;</stringProp>
+              <stringProp name="447498113">&quot;contactName&quot;:</stringProp>
+              <stringProp name="-1985058139">&quot;contactEmail&quot;: &quot;${vccell15}&quot;,</stringProp>
+              <stringProp name="-2086443978">&quot;phone&quot;: &quot;${vccell16}&quot;</stringProp>
+              <stringProp name="1473976692">&quot;cardType&quot;: &quot;${vccell18}&quot;,</stringProp>
+              <stringProp name="2033109205">&quot;validityInDays&quot;: ${vccell19},</stringProp>
+              <stringProp name="396379837">&quot;secret&quot;: &quot;${vccell17}&quot;</stringProp>
+            </collectionProp>
+            <stringProp name="Assertion.custom_message"></stringProp>
+            <stringProp name="Assertion.test_field">Assertion.response_data</stringProp>
+            <boolProp name="Assertion.assume_success">true</boolProp>
+            <intProp name="Assertion.test_type">2</intProp>
+          </ResponseAssertion>
+          <hashTree/>
+          <ResponseAssertion guiclass="AssertionGui" testclass="ResponseAssertion" testname="Comparision of  a Vendor&apos;s Address Details and Check from ERP" enabled="false">
+            <collectionProp name="Asserion.test_strings">
+              <stringProp name="-737594635">&quot;vendorNumber&quot;: &quot;${vacell10}&quot;</stringProp>
+              <stringProp name="-2133942236">&quot;locationCode&quot;: &quot;${vacell12}&quot;,</stringProp>
+              <stringProp name="-1958819385">&quot;address1&quot;: &quot;${vacell14}&quot;,</stringProp>
+              <stringProp name="1339105349">&quot;address2&quot;: &quot;${vacell15}&quot;,</stringProp>
+              <stringProp name="342062787">&quot;address3&quot;: &quot;${vacell16}&quot;,</stringProp>
+              <stringProp name="-654979775">&quot;address4&quot;: &quot;${vacell17}&quot;,</stringProp>
+              <stringProp name="-1317137067">&quot;city&quot;: &quot;${vacell18}&quot;,</stringProp>
+              <stringProp name="1511579858">&quot;state&quot;: &quot;${vacell19}&quot;,</stringProp>
+              <stringProp name="1938490529">&quot;zipcode&quot;: &quot;${vacell110}&quot;,</stringProp>
+              <stringProp name="-1323625976">&quot;country&quot;: &quot;${vacell111}&quot;,</stringProp>
+              <stringProp name="1694783992">&quot;countryCode&quot;: &quot;${vacell112}&quot;</stringProp>
+              <stringProp name="1524325447">&quot;signature&quot;: &quot;${vacell114}&quot;,</stringProp>
+              <stringProp name="1148294892">&quot;template&quot;: &quot;${vacell115}&quot;,</stringProp>
+              <stringProp name="-622789853">&quot;deliveryMethod&quot;: &quot;${vacell113}&quot;</stringProp>
             </collectionProp>
             <stringProp name="Assertion.custom_message"></stringProp>
             <stringProp name="Assertion.test_field">Assertion.response_data</stringProp>
@@ -5916,18 +6021,18 @@ Vnumber2_${VendorNumber},Vname2_${VendorName},Primary,South Carolina,128,Susan,9
           <stringProp name="script"></stringProp>
         </BeanShellPreProcessor>
         <hashTree/>
-        <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="(S-1)P: Verify user is able to: UPDATE All fields of  Vendor to the RegalPay" enabled="true">
+        <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="(S-1)P: Verify user is able to: UPDATE All fields of  Vendor to the RegalPay(With Comparison Scripts)" enabled="true">
           <boolProp name="HTTPSampler.postBodyRaw">true</boolProp>
           <elementProp name="HTTPsampler.Arguments" elementType="Arguments">
             <collectionProp name="Arguments.arguments">
               <elementProp name="" elementType="HTTPArgument">
                 <boolProp name="HTTPArgument.always_encode">false</boolProp>
                 <stringProp name="Argument.value"> {&#xd;
-            &#xd;
-            &quot;vendorName&quot;: &quot;Vendor_Name_${__time}&quot;,&#xd;
+           &#xd;
+            &quot;vendorName&quot;: &quot;VendorName_${RandomNumber}&quot;,&#xd;
             &quot;paymentType&quot;: &quot;${Payment_Type_1}&quot;,&#xd;
-            &quot;taxId&quot; : &quot;60000&quot;,&#xd;
-            &quot;addresses&quot;: [&#xd;
+            &quot;taxId&quot; : &quot;${txtID}&quot;,&#xd;
+            &quot;address&quot;: &#xd;
               {&#xd;
                 &quot;locationCode&quot;: &quot;${default_locationCode}&quot;,&#xd;
                 &quot;address1&quot;: &quot;${ADD1}&quot;,&#xd;
@@ -5940,33 +6045,21 @@ Vnumber2_${VendorNumber},Vname2_${VendorName},Primary,South Carolina,128,Susan,9
                 &quot;countryCode&quot;: &quot;${CCode}&quot;,&#xd;
                 &quot;country&quot;: &quot;${County}&quot;,&#xd;
               },&#xd;
-              {&#xd;
-                &quot;locationCode&quot;: &quot;${primary_locationCode}&quot;,&#xd;
-                 &quot;address1&quot;: &quot;${ADD1}&quot;,&#xd;
-                &quot;address2&quot;: &quot;${ADD2}&quot;,&#xd;
-                &quot;address3&quot;: &quot;${ADD3}&quot;,&#xd;
-                &quot;address4&quot;: &quot;${ADD4}&quot;,&#xd;
-                &quot;city&quot;: &quot;${City}&quot;,&#xd;
-                &quot;state&quot;: &quot;${State}&quot;,&#xd;
-                &quot;zipCode&quot;: &quot;${PinCode}&quot;,&#xd;
-                &quot;countryCode&quot;: &quot;${CCode}&quot;,&#xd;
-                &quot;country&quot;: &quot;${County}&quot;,&#xd;
-              }&#xd;
-            ],&#xd;
+            &#xd;
             &quot;contactInformation&quot;: {&#xd;
-              &quot;contactName&quot;: &quot;Name_${__time}&quot;,&#xd;
-              &quot;contactEmail&quot;: &quot;Name_${__time}@gmail.com&quot;,&#xd;
-              &quot;phone&quot;: &quot;${__time()}&quot;&#xd;
+              &quot;contactName&quot;: &quot;Name_${RandomNumber}&quot;,&#xd;
+              &quot;contactEmail&quot;: &quot;Name_${RandomNumber}@gmail.com&quot;,&#xd;
+              &quot;phone&quot;: &quot;${RandomNumber}&quot;&#xd;
             },&#xd;
             &quot;BankAccount&quot;: {&#xd;
-              &quot;accountNumber&quot;: &quot;${__time()}&quot;,&#xd;
-              &quot;iban&quot;: &quot;IAB_${__time()}&quot;,&#xd;
-              &quot;otherAccountNumber&quot;: &quot;${__time()}&quot;,&#xd;
-              &quot;domesticRoutingCode&quot;: &quot;${__time()}&quot;,&#xd;
-              &quot;swift&quot;: &quot;${__time()}&quot;,&#xd;
+              &quot;accountNumber&quot;: &quot;${RandomNumber}&quot;,&#xd;
+              &quot;iban&quot;: &quot;IAB_${RandomNumber}&quot;,&#xd;
+              &quot;otherAccountNumber&quot;: &quot;${RandomNumber}&quot;,&#xd;
+              &quot;domesticRoutingCode&quot;: &quot;${RandomNumber}&quot;,&#xd;
+              &quot;swift&quot;: &quot;${RandomNumber}&quot;,&#xd;
               &quot;accountType&quot;:&quot;Savings&quot;,&#xd;
               &quot;accountCurrency&quot;: &quot;${American_Cur}&quot;,&#xd;
-              &quot;bankName&quot;: &quot;Bank_${__time()}&quot;,&#xd;
+              &quot;bankName&quot;: &quot;Bank_${RandomNumber}&quot;,&#xd;
               &quot;bankAddress1&quot;: &quot;${ADD1}&quot;,&#xd;
               &quot;bankAddress2&quot;: &quot;${ADD2}&quot;,&#xd;
               &quot;bankAddress3&quot;: &quot;${ADD3}&quot;,&#xd;
@@ -6085,6 +6178,145 @@ Vnumber2_${VendorNumber},Vname2_${VendorName},Primary,South Carolina,128,Susan,9
             <stringProp name="Assertion.test_field">Assertion.response_data</stringProp>
             <boolProp name="Assertion.assume_success">true</boolProp>
             <intProp name="Assertion.test_type">2</intProp>
+          </ResponseAssertion>
+          <hashTree/>
+          <RandomVariableConfig guiclass="TestBeanGUI" testclass="RandomVariableConfig" testname="Random Variable for RandomNumber" enabled="true">
+            <stringProp name="variableName">RandomNumber</stringProp>
+            <stringProp name="outputFormat"></stringProp>
+            <stringProp name="minimumValue">11111</stringProp>
+            <stringProp name="maximumValue">99999</stringProp>
+            <stringProp name="randomSeed"></stringProp>
+            <boolProp name="perThread">false</boolProp>
+          </RandomVariableConfig>
+          <hashTree/>
+        </hashTree>
+        <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="(S-1)P: Verify all data has been udated in DB(With Comparison Script)" enabled="true">
+          <elementProp name="HTTPsampler.Arguments" elementType="Arguments" guiclass="HTTPArgumentsPanel" testclass="Arguments" testname="User Defined Variables" enabled="true">
+            <collectionProp name="Arguments.arguments"/>
+          </elementProp>
+          <stringProp name="HTTPSampler.domain">${URL}</stringProp>
+          <stringProp name="HTTPSampler.port">UFT-8</stringProp>
+          <stringProp name="HTTPSampler.protocol">https</stringProp>
+          <stringProp name="HTTPSampler.contentEncoding"></stringProp>
+          <stringProp name="HTTPSampler.path">${Vendors}/${vendorNumber_1}</stringProp>
+          <stringProp name="HTTPSampler.method">GET</stringProp>
+          <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
+          <boolProp name="HTTPSampler.auto_redirects">false</boolProp>
+          <boolProp name="HTTPSampler.use_keepalive">true</boolProp>
+          <boolProp name="HTTPSampler.DO_MULTIPART_POST">false</boolProp>
+          <stringProp name="HTTPSampler.embedded_url_re"></stringProp>
+          <stringProp name="HTTPSampler.connect_timeout"></stringProp>
+          <stringProp name="HTTPSampler.response_timeout"></stringProp>
+        </HTTPSamplerProxy>
+        <hashTree>
+          <ResponseAssertion guiclass="AssertionGui" testclass="ResponseAssertion" testname="Response Code200" enabled="true">
+            <collectionProp name="Asserion.test_strings">
+              <stringProp name="-1146597565">${Response200}</stringProp>
+            </collectionProp>
+            <stringProp name="Assertion.custom_message"></stringProp>
+            <stringProp name="Assertion.test_field">Assertion.response_code</stringProp>
+            <boolProp name="Assertion.assume_success">true</boolProp>
+            <intProp name="Assertion.test_type">2</intProp>
+          </ResponseAssertion>
+          <hashTree/>
+          <HeaderManager guiclass="HeaderPanel" testclass="HeaderManager" testname="HTTP Header Manager" enabled="true">
+            <collectionProp name="HeaderManager.headers">
+              <elementProp name="Accept-Language" elementType="Header">
+                <stringProp name="Header.name">Accept-Language</stringProp>
+                <stringProp name="Header.value">en-US,en;q=0.5</stringProp>
+              </elementProp>
+              <elementProp name="Content-Type" elementType="Header">
+                <stringProp name="Header.name">Content-Type</stringProp>
+                <stringProp name="Header.value">application/json; charset=UTF-8</stringProp>
+              </elementProp>
+              <elementProp name="Cache-Control" elementType="Header">
+                <stringProp name="Header.name">Cache-Control</stringProp>
+                <stringProp name="Header.value">no-cache</stringProp>
+              </elementProp>
+              <elementProp name="Accept" elementType="Header">
+                <stringProp name="Header.name">Accept</stringProp>
+                <stringProp name="Header.value">application/json</stringProp>
+              </elementProp>
+              <elementProp name="" elementType="Header">
+                <stringProp name="Header.name">Authorization</stringProp>
+                <stringProp name="Header.value">Bearer ${__property(Access_Token_1)}</stringProp>
+              </elementProp>
+            </collectionProp>
+          </HeaderManager>
+          <hashTree/>
+          <ResponseAssertion guiclass="AssertionGui" testclass="ResponseAssertion" testname="Response Assertion" enabled="true">
+            <collectionProp name="Asserion.test_strings">
+              <stringProp name="1402947425">requestStatus</stringProp>
+              <stringProp name="49">1</stringProp>
+              <stringProp name="-340323263">response</stringProp>
+            </collectionProp>
+            <stringProp name="Assertion.custom_message"></stringProp>
+            <stringProp name="Assertion.test_field">Assertion.response_data</stringProp>
+            <boolProp name="Assertion.assume_success">true</boolProp>
+            <intProp name="Assertion.test_type">2</intProp>
+          </ResponseAssertion>
+          <hashTree/>
+          <ResponseAssertion guiclass="AssertionGui" testclass="ResponseAssertion" testname="Verify updated Vendor contact Information in regalDB" enabled="true">
+            <collectionProp name="Asserion.test_strings">
+              <stringProp name="-1403867981">&quot;contactName&quot;: &quot;Name_${RandomNumber}&quot;,</stringProp>
+              <stringProp name="-265978951">&quot;contactEmail&quot;: &quot;Name_${RandomNumber}@gmail.com&quot;,</stringProp>
+              <stringProp name="-1065041458">&quot;phone&quot;: &quot;${RandomNumber}&quot;</stringProp>
+            </collectionProp>
+            <stringProp name="Assertion.custom_message"></stringProp>
+            <stringProp name="Assertion.test_field">Assertion.response_data</stringProp>
+            <boolProp name="Assertion.assume_success">false</boolProp>
+            <intProp name="Assertion.test_type">16</intProp>
+          </ResponseAssertion>
+          <hashTree/>
+          <ResponseAssertion guiclass="AssertionGui" testclass="ResponseAssertion" testname="Verify updated Vendor bank data in regalDb" enabled="true">
+            <collectionProp name="Asserion.test_strings">
+              <stringProp name="-1695004490">&quot;accountNumber&quot;: &quot;${RandomNumber}&quot;,</stringProp>
+              <stringProp name="-427410387">&quot;iban&quot;: &quot;IAB_${RandomNumber}&quot;,</stringProp>
+              <stringProp name="-961608222">&quot;otherAccountNumber&quot;: &quot;${RandomNumber}&quot;,</stringProp>
+              <stringProp name="1554722967">&quot;domesticRoutingCode&quot;: &quot;${RandomNumber}&quot;,</stringProp>
+              <stringProp name="-1129070439">&quot;swift&quot;: &quot;${RandomNumber}&quot;,</stringProp>
+              <stringProp name="213444612">&quot;accountType&quot;: &quot;Savings&quot;,</stringProp>
+              <stringProp name="-1048271879">&quot;accountCurrency&quot;: &quot;${American_Cur}&quot;,</stringProp>
+              <stringProp name="1924399556">&quot;bankName&quot;: &quot;Bank_${RandomNumber}&quot;,</stringProp>
+              <stringProp name="-496247925">&quot;bankAddress1&quot;: &quot;${ADD1}&quot;,</stringProp>
+              <stringProp name="-1001776759">&quot;bankAddress2&quot;: &quot;${ADD2}&quot;,</stringProp>
+              <stringProp name="-1507305593">&quot;bankAddress3&quot;: &quot;${ADD3}&quot;,</stringProp>
+              <stringProp name="-432813822">&quot;bankCity&quot;: &quot;${City}&quot;,</stringProp>
+              <stringProp name="-1141573702">&quot;bankState&quot;: &quot;${State}&quot;,</stringProp>
+              <stringProp name="560792070">&quot;bankZipcode&quot;: &quot;${PinCode}&quot;,</stringProp>
+              <stringProp name="1120153792">&quot;bankCountry&quot;: &quot;${CCode}&quot;,</stringProp>
+              <stringProp name="2025539461">&quot;bankCountryCode&quot;: &quot;${County}&quot;</stringProp>
+              <stringProp name="548836425">&quot;formatCode&quot;: &quot;${format_code}&quot;,</stringProp>
+              <stringProp name="934169588">&quot;secureStorage&quot;: true</stringProp>
+              <stringProp name="-1880123145">&quot;signature&quot;: &quot;sign&quot;,</stringProp>
+              <stringProp name="-1661006406">&quot;template&quot;: &quot;template&quot;,</stringProp>
+              <stringProp name="639032497">&quot;deliveryMethod&quot;: &quot;post&quot;</stringProp>
+              <stringProp name="1942715476">&quot;purposeCode&quot;: &quot;P0001&quot;</stringProp>
+            </collectionProp>
+            <stringProp name="Assertion.custom_message"></stringProp>
+            <stringProp name="Assertion.test_field">Assertion.response_data</stringProp>
+            <boolProp name="Assertion.assume_success">false</boolProp>
+            <intProp name="Assertion.test_type">16</intProp>
+          </ResponseAssertion>
+          <hashTree/>
+          <ResponseAssertion guiclass="AssertionGui" testclass="ResponseAssertion" testname="Verify updated Paytype in regal DB" enabled="true">
+            <collectionProp name="Asserion.test_strings">
+              <stringProp name="115306081">${Payment_Type_1}</stringProp>
+            </collectionProp>
+            <stringProp name="Assertion.custom_message"></stringProp>
+            <stringProp name="Assertion.test_field">Assertion.response_data</stringProp>
+            <boolProp name="Assertion.assume_success">true</boolProp>
+            <intProp name="Assertion.test_type">2</intProp>
+          </ResponseAssertion>
+          <hashTree/>
+          <ResponseAssertion guiclass="AssertionGui" testclass="ResponseAssertion" testname="Verify user is able to update vendor name" enabled="true">
+            <collectionProp name="Asserion.test_strings">
+              <stringProp name="838576267">&quot;vendorName&quot;: &quot;UpVendorN_${RandomNumber}&quot;</stringProp>
+            </collectionProp>
+            <stringProp name="Assertion.custom_message"></stringProp>
+            <stringProp name="Assertion.test_field">Assertion.response_data</stringProp>
+            <boolProp name="Assertion.assume_success">false</boolProp>
+            <intProp name="Assertion.test_type">16</intProp>
           </ResponseAssertion>
           <hashTree/>
         </hashTree>
@@ -15288,18 +15520,18 @@ Vnumber2_${VendorNumber_8},Vname2_${VendorName_8},Primary,South Carolina,128,Sus
           <stringProp name="script"></stringProp>
         </BeanShellPreProcessor>
         <hashTree/>
-        <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="(S-8)P: Verify user is able to: UPDATE All fields of  Vendor to the RegalPay" enabled="true">
+        <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="(S-8)P: Verify user is able to: UPDATE All fields of  Vendor to the RegalPay(With Comparison Script)" enabled="true">
           <boolProp name="HTTPSampler.postBodyRaw">true</boolProp>
           <elementProp name="HTTPsampler.Arguments" elementType="Arguments">
             <collectionProp name="Arguments.arguments">
               <elementProp name="" elementType="HTTPArgument">
                 <boolProp name="HTTPArgument.always_encode">false</boolProp>
                 <stringProp name="Argument.value"> {&#xd;
-            &#xd;
-            &quot;vendorName&quot;: &quot;Vendor_Name_${__time}&quot;,&#xd;
+           &#xd;
+            &quot;vendorName&quot;: &quot;VendorName_${RandomNumber}&quot;,&#xd;
             &quot;paymentType&quot;: &quot;${Payment_Type_1}&quot;,&#xd;
-            &quot;taxId&quot; : &quot;60000&quot;,&#xd;
-            &quot;addresses&quot;: [&#xd;
+            &quot;taxId&quot; : &quot;${txtID}&quot;,&#xd;
+            &quot;address&quot;: &#xd;
               {&#xd;
                 &quot;locationCode&quot;: &quot;${default_locationCode}&quot;,&#xd;
                 &quot;address1&quot;: &quot;${ADD1}&quot;,&#xd;
@@ -15312,33 +15544,21 @@ Vnumber2_${VendorNumber_8},Vname2_${VendorName_8},Primary,South Carolina,128,Sus
                 &quot;countryCode&quot;: &quot;${CCode}&quot;,&#xd;
                 &quot;country&quot;: &quot;${County}&quot;,&#xd;
               },&#xd;
-              {&#xd;
-                &quot;locationCode&quot;: &quot;${primary_locationCode}&quot;,&#xd;
-                 &quot;address1&quot;: &quot;${ADD1}&quot;,&#xd;
-                &quot;address2&quot;: &quot;${ADD2}&quot;,&#xd;
-                &quot;address3&quot;: &quot;${ADD3}&quot;,&#xd;
-                &quot;address4&quot;: &quot;${ADD4}&quot;,&#xd;
-                &quot;city&quot;: &quot;${City}&quot;,&#xd;
-                &quot;state&quot;: &quot;${State}&quot;,&#xd;
-                &quot;zipCode&quot;: &quot;${PinCode}&quot;,&#xd;
-                &quot;countryCode&quot;: &quot;${CCode}&quot;,&#xd;
-                &quot;country&quot;: &quot;${County}&quot;,&#xd;
-              }&#xd;
-            ],&#xd;
+            &#xd;
             &quot;contactInformation&quot;: {&#xd;
-              &quot;contactName&quot;: &quot;Name_${__time}&quot;,&#xd;
-              &quot;contactEmail&quot;: &quot;Name_${__time}@gmail.com&quot;,&#xd;
-              &quot;phone&quot;: &quot;${__time()}&quot;&#xd;
+              &quot;contactName&quot;: &quot;Name_${RandomNumber}&quot;,&#xd;
+              &quot;contactEmail&quot;: &quot;Name_${RandomNumber}@gmail.com&quot;,&#xd;
+              &quot;phone&quot;: &quot;${RandomNumber}&quot;&#xd;
             },&#xd;
             &quot;BankAccount&quot;: {&#xd;
-              &quot;accountNumber&quot;: &quot;${__time()}&quot;,&#xd;
-              &quot;iban&quot;: &quot;IAB_${__time()}&quot;,&#xd;
-              &quot;otherAccountNumber&quot;: &quot;${__time()}&quot;,&#xd;
-              &quot;domesticRoutingCode&quot;: &quot;${__time()}&quot;,&#xd;
-              &quot;swift&quot;: &quot;${__time()}&quot;,&#xd;
+              &quot;accountNumber&quot;: &quot;${RandomNumber}&quot;,&#xd;
+              &quot;iban&quot;: &quot;IAB_${RandomNumber}&quot;,&#xd;
+              &quot;otherAccountNumber&quot;: &quot;${RandomNumber}&quot;,&#xd;
+              &quot;domesticRoutingCode&quot;: &quot;${RandomNumber}&quot;,&#xd;
+              &quot;swift&quot;: &quot;${RandomNumber}&quot;,&#xd;
               &quot;accountType&quot;:&quot;Savings&quot;,&#xd;
               &quot;accountCurrency&quot;: &quot;${American_Cur}&quot;,&#xd;
-              &quot;bankName&quot;: &quot;Bank_${__time()}&quot;,&#xd;
+              &quot;bankName&quot;: &quot;Bank_${RandomNumber}&quot;,&#xd;
               &quot;bankAddress1&quot;: &quot;${ADD1}&quot;,&#xd;
               &quot;bankAddress2&quot;: &quot;${ADD2}&quot;,&#xd;
               &quot;bankAddress3&quot;: &quot;${ADD3}&quot;,&#xd;
@@ -15457,6 +15677,145 @@ Vnumber2_${VendorNumber_8},Vname2_${VendorName_8},Primary,South Carolina,128,Sus
             <stringProp name="Assertion.test_field">Assertion.response_data</stringProp>
             <boolProp name="Assertion.assume_success">true</boolProp>
             <intProp name="Assertion.test_type">2</intProp>
+          </ResponseAssertion>
+          <hashTree/>
+          <RandomVariableConfig guiclass="TestBeanGUI" testclass="RandomVariableConfig" testname="Random Variable for RandomNumber" enabled="true">
+            <stringProp name="variableName">RandomNumber</stringProp>
+            <stringProp name="outputFormat"></stringProp>
+            <stringProp name="minimumValue">11111</stringProp>
+            <stringProp name="maximumValue">99999</stringProp>
+            <stringProp name="randomSeed"></stringProp>
+            <boolProp name="perThread">false</boolProp>
+          </RandomVariableConfig>
+          <hashTree/>
+        </hashTree>
+        <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="(S-8)P: Verify user is able to: GET particular Vendors details(With Comparison Script)" enabled="true">
+          <elementProp name="HTTPsampler.Arguments" elementType="Arguments" guiclass="HTTPArgumentsPanel" testclass="Arguments" testname="User Defined Variables" enabled="true">
+            <collectionProp name="Arguments.arguments"/>
+          </elementProp>
+          <stringProp name="HTTPSampler.domain">${URL}</stringProp>
+          <stringProp name="HTTPSampler.port">UFT-8</stringProp>
+          <stringProp name="HTTPSampler.protocol">https</stringProp>
+          <stringProp name="HTTPSampler.contentEncoding"></stringProp>
+          <stringProp name="HTTPSampler.path">${Vendors}/${vendorNumber_8}</stringProp>
+          <stringProp name="HTTPSampler.method">GET</stringProp>
+          <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
+          <boolProp name="HTTPSampler.auto_redirects">false</boolProp>
+          <boolProp name="HTTPSampler.use_keepalive">true</boolProp>
+          <boolProp name="HTTPSampler.DO_MULTIPART_POST">false</boolProp>
+          <stringProp name="HTTPSampler.embedded_url_re"></stringProp>
+          <stringProp name="HTTPSampler.connect_timeout"></stringProp>
+          <stringProp name="HTTPSampler.response_timeout"></stringProp>
+        </HTTPSamplerProxy>
+        <hashTree>
+          <ResponseAssertion guiclass="AssertionGui" testclass="ResponseAssertion" testname="Response Code200" enabled="true">
+            <collectionProp name="Asserion.test_strings">
+              <stringProp name="-1146597565">${Response200}</stringProp>
+            </collectionProp>
+            <stringProp name="Assertion.custom_message"></stringProp>
+            <stringProp name="Assertion.test_field">Assertion.response_code</stringProp>
+            <boolProp name="Assertion.assume_success">true</boolProp>
+            <intProp name="Assertion.test_type">2</intProp>
+          </ResponseAssertion>
+          <hashTree/>
+          <HeaderManager guiclass="HeaderPanel" testclass="HeaderManager" testname="HTTP Header Manager" enabled="true">
+            <collectionProp name="HeaderManager.headers">
+              <elementProp name="Accept-Language" elementType="Header">
+                <stringProp name="Header.name">Accept-Language</stringProp>
+                <stringProp name="Header.value">en-US,en;q=0.5</stringProp>
+              </elementProp>
+              <elementProp name="Content-Type" elementType="Header">
+                <stringProp name="Header.name">Content-Type</stringProp>
+                <stringProp name="Header.value">application/json; charset=UTF-8</stringProp>
+              </elementProp>
+              <elementProp name="Cache-Control" elementType="Header">
+                <stringProp name="Header.name">Cache-Control</stringProp>
+                <stringProp name="Header.value">no-cache</stringProp>
+              </elementProp>
+              <elementProp name="Accept" elementType="Header">
+                <stringProp name="Header.name">Accept</stringProp>
+                <stringProp name="Header.value">application/json</stringProp>
+              </elementProp>
+              <elementProp name="" elementType="Header">
+                <stringProp name="Header.name">Authorization</stringProp>
+                <stringProp name="Header.value">Bearer ${__property(Access_Token_1)}</stringProp>
+              </elementProp>
+            </collectionProp>
+          </HeaderManager>
+          <hashTree/>
+          <ResponseAssertion guiclass="AssertionGui" testclass="ResponseAssertion" testname="Response Assertion" enabled="true">
+            <collectionProp name="Asserion.test_strings">
+              <stringProp name="1402947425">requestStatus</stringProp>
+              <stringProp name="49">1</stringProp>
+              <stringProp name="-340323263">response</stringProp>
+            </collectionProp>
+            <stringProp name="Assertion.custom_message"></stringProp>
+            <stringProp name="Assertion.test_field">Assertion.response_data</stringProp>
+            <boolProp name="Assertion.assume_success">true</boolProp>
+            <intProp name="Assertion.test_type">2</intProp>
+          </ResponseAssertion>
+          <hashTree/>
+          <ResponseAssertion guiclass="AssertionGui" testclass="ResponseAssertion" testname="Verify updated Vendor contact Information in regalDB" enabled="true">
+            <collectionProp name="Asserion.test_strings">
+              <stringProp name="-1403867981">&quot;contactName&quot;: &quot;Name_${RandomNumber}&quot;,</stringProp>
+              <stringProp name="-265978951">&quot;contactEmail&quot;: &quot;Name_${RandomNumber}@gmail.com&quot;,</stringProp>
+              <stringProp name="-1065041458">&quot;phone&quot;: &quot;${RandomNumber}&quot;</stringProp>
+            </collectionProp>
+            <stringProp name="Assertion.custom_message"></stringProp>
+            <stringProp name="Assertion.test_field">Assertion.response_data</stringProp>
+            <boolProp name="Assertion.assume_success">false</boolProp>
+            <intProp name="Assertion.test_type">16</intProp>
+          </ResponseAssertion>
+          <hashTree/>
+          <ResponseAssertion guiclass="AssertionGui" testclass="ResponseAssertion" testname="Verify updated Vendor bank data in regalDb" enabled="true">
+            <collectionProp name="Asserion.test_strings">
+              <stringProp name="-1695004490">&quot;accountNumber&quot;: &quot;${RandomNumber}&quot;,</stringProp>
+              <stringProp name="-427410387">&quot;iban&quot;: &quot;IAB_${RandomNumber}&quot;,</stringProp>
+              <stringProp name="-961608222">&quot;otherAccountNumber&quot;: &quot;${RandomNumber}&quot;,</stringProp>
+              <stringProp name="1554722967">&quot;domesticRoutingCode&quot;: &quot;${RandomNumber}&quot;,</stringProp>
+              <stringProp name="-1129070439">&quot;swift&quot;: &quot;${RandomNumber}&quot;,</stringProp>
+              <stringProp name="213444612">&quot;accountType&quot;: &quot;Savings&quot;,</stringProp>
+              <stringProp name="-1048271879">&quot;accountCurrency&quot;: &quot;${American_Cur}&quot;,</stringProp>
+              <stringProp name="1924399556">&quot;bankName&quot;: &quot;Bank_${RandomNumber}&quot;,</stringProp>
+              <stringProp name="-496247925">&quot;bankAddress1&quot;: &quot;${ADD1}&quot;,</stringProp>
+              <stringProp name="-1001776759">&quot;bankAddress2&quot;: &quot;${ADD2}&quot;,</stringProp>
+              <stringProp name="-1507305593">&quot;bankAddress3&quot;: &quot;${ADD3}&quot;,</stringProp>
+              <stringProp name="-432813822">&quot;bankCity&quot;: &quot;${City}&quot;,</stringProp>
+              <stringProp name="-1141573702">&quot;bankState&quot;: &quot;${State}&quot;,</stringProp>
+              <stringProp name="560792070">&quot;bankZipcode&quot;: &quot;${PinCode}&quot;,</stringProp>
+              <stringProp name="1120153792">&quot;bankCountry&quot;: &quot;${CCode}&quot;,</stringProp>
+              <stringProp name="2025539461">&quot;bankCountryCode&quot;: &quot;${County}&quot;</stringProp>
+              <stringProp name="548836425">&quot;formatCode&quot;: &quot;${format_code}&quot;,</stringProp>
+              <stringProp name="934169588">&quot;secureStorage&quot;: true</stringProp>
+              <stringProp name="-1880123145">&quot;signature&quot;: &quot;sign&quot;,</stringProp>
+              <stringProp name="-1661006406">&quot;template&quot;: &quot;template&quot;,</stringProp>
+              <stringProp name="639032497">&quot;deliveryMethod&quot;: &quot;post&quot;</stringProp>
+              <stringProp name="1942715476">&quot;purposeCode&quot;: &quot;P0001&quot;</stringProp>
+            </collectionProp>
+            <stringProp name="Assertion.custom_message"></stringProp>
+            <stringProp name="Assertion.test_field">Assertion.response_data</stringProp>
+            <boolProp name="Assertion.assume_success">false</boolProp>
+            <intProp name="Assertion.test_type">16</intProp>
+          </ResponseAssertion>
+          <hashTree/>
+          <ResponseAssertion guiclass="AssertionGui" testclass="ResponseAssertion" testname="Verify updated Paytype in regal DB" enabled="true">
+            <collectionProp name="Asserion.test_strings">
+              <stringProp name="115306081">${Payment_Type_1}</stringProp>
+            </collectionProp>
+            <stringProp name="Assertion.custom_message"></stringProp>
+            <stringProp name="Assertion.test_field">Assertion.response_data</stringProp>
+            <boolProp name="Assertion.assume_success">true</boolProp>
+            <intProp name="Assertion.test_type">2</intProp>
+          </ResponseAssertion>
+          <hashTree/>
+          <ResponseAssertion guiclass="AssertionGui" testclass="ResponseAssertion" testname="Verify user is able to update vendor name" enabled="true">
+            <collectionProp name="Asserion.test_strings">
+              <stringProp name="838576267">&quot;vendorName&quot;: &quot;UpVendorN_${RandomNumber}&quot;</stringProp>
+            </collectionProp>
+            <stringProp name="Assertion.custom_message"></stringProp>
+            <stringProp name="Assertion.test_field">Assertion.response_data</stringProp>
+            <boolProp name="Assertion.assume_success">false</boolProp>
+            <intProp name="Assertion.test_type">16</intProp>
           </ResponseAssertion>
           <hashTree/>
         </hashTree>
@@ -16454,7 +16813,7 @@ Vnumber2_${VendorNumber},Vname2_${VendorName},Primary,South Carolina,128,Susan,9
           <stringProp name="script"></stringProp>
         </BeanShellPreProcessor>
         <hashTree/>
-        <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="(S-1)P: Verify user is  able to: GET Informations about all vendors location" enabled="true">
+        <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="(S-1)P: Verify user is  able to: GET Informations about all vendors location(With Comparison Scripts)" enabled="true">
           <elementProp name="HTTPsampler.Arguments" elementType="Arguments" guiclass="HTTPArgumentsPanel" testclass="Arguments" testname="User Defined Variables" enabled="true">
             <collectionProp name="Arguments.arguments"/>
           </elementProp>
@@ -16520,6 +16879,38 @@ Vnumber2_${VendorNumber},Vname2_${VendorName},Primary,South Carolina,128,Susan,9
               <stringProp name="1402947425">requestStatus</stringProp>
               <stringProp name="49">1</stringProp>
               <stringProp name="-340323263">response</stringProp>
+            </collectionProp>
+            <stringProp name="Assertion.custom_message"></stringProp>
+            <stringProp name="Assertion.test_field">Assertion.response_data</stringProp>
+            <boolProp name="Assertion.assume_success">true</boolProp>
+            <intProp name="Assertion.test_type">2</intProp>
+          </ResponseAssertion>
+          <hashTree/>
+          <ResponseAssertion guiclass="AssertionGui" testclass="ResponseAssertion" testname="Comparision of Vendor Numbers" enabled="true">
+            <collectionProp name="Asserion.test_strings">
+              <stringProp name="-292858355">&quot;vendorNumber&quot;: &quot;Vnumber1_${VendorNumber}&quot;</stringProp>
+              <stringProp name="-1289930708">&quot;vendorNumber&quot;: &quot;Vnumber2_${VendorNumber}&quot;</stringProp>
+            </collectionProp>
+            <stringProp name="Assertion.custom_message"></stringProp>
+            <stringProp name="Assertion.test_field">Assertion.response_data</stringProp>
+            <boolProp name="Assertion.assume_success">true</boolProp>
+            <intProp name="Assertion.test_type">2</intProp>
+          </ResponseAssertion>
+          <hashTree/>
+          <ResponseAssertion guiclass="AssertionGui" testclass="ResponseAssertion" testname="Comparision of Vendor Name" enabled="true">
+            <collectionProp name="Asserion.test_strings">
+              <stringProp name="-858399089">&quot;vendorName&quot;: &quot;Vname1_${VendorName}&quot;</stringProp>
+              <stringProp name="-1368933266">&quot;vendorName&quot;: &quot;Vname2_${VendorName}&quot;</stringProp>
+            </collectionProp>
+            <stringProp name="Assertion.custom_message"></stringProp>
+            <stringProp name="Assertion.test_field">Assertion.response_data</stringProp>
+            <boolProp name="Assertion.assume_success">true</boolProp>
+            <intProp name="Assertion.test_type">2</intProp>
+          </ResponseAssertion>
+          <hashTree/>
+          <ResponseAssertion guiclass="AssertionGui" testclass="ResponseAssertion" testname="Comparision of Payment Type" enabled="true">
+            <collectionProp name="Asserion.test_strings">
+              <stringProp name="194755067">&quot;paymentType&quot;: &quot;MCCRD&quot;</stringProp>
             </collectionProp>
             <stringProp name="Assertion.custom_message"></stringProp>
             <stringProp name="Assertion.test_field">Assertion.response_data</stringProp>
@@ -16777,17 +17168,17 @@ Vnumber2_${VendorNumber},Vname2_${VendorName},Primary,South Carolina,128,Susan,9
           <stringProp name="script"></stringProp>
         </BeanShellPreProcessor>
         <hashTree/>
-        <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="(S-1)P: Verify user is able to: UPDATE All fields of  Vendor&apos;s location to the RegalPay" enabled="true">
+        <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="(S-1)P: Verify user is able to: UPDATE All fields of  Vendor&apos;s location to the RegalPay(With Comparison Scripts)" enabled="true">
           <boolProp name="HTTPSampler.postBodyRaw">true</boolProp>
           <elementProp name="HTTPsampler.Arguments" elementType="Arguments">
             <collectionProp name="Arguments.arguments">
               <elementProp name="" elementType="HTTPArgument">
                 <boolProp name="HTTPArgument.always_encode">false</boolProp>
                 <stringProp name="Argument.value"> {&#xd;
-           &#xd;
-            &quot;locationName&quot;: &quot;locationName_${__time}&quot;,&#xd;
-            &quot;paymentType&quot;: &quot;MCCRD&quot;,&#xd;
-            &quot;taxId&quot; : &quot;60000&quot;,&#xd;
+           &quot;vendorName&quot;: &quot;UpVendorN_${RandomNumber}&quot;,&#xd;
+            &quot;locationName&quot;: &quot;locationName_${RandomNumber}&quot;,&#xd;
+            &quot;paymentType&quot;: &quot;${Payment_Type_1}&quot;,&#xd;
+            &quot;taxId&quot; : &quot;${txtID}&quot;,&#xd;
             &quot;address&quot;: &#xd;
               {&#xd;
                 &quot;locationCode&quot;: &quot;${default_locationCode}&quot;,&#xd;
@@ -16803,19 +17194,19 @@ Vnumber2_${VendorNumber},Vname2_${VendorName},Primary,South Carolina,128,Susan,9
               },&#xd;
             &#xd;
             &quot;contactInformation&quot;: {&#xd;
-              &quot;contactName&quot;: &quot;Name_${__time}&quot;,&#xd;
-              &quot;contactEmail&quot;: &quot;Name_${__time}@gmail.com&quot;,&#xd;
-              &quot;phone&quot;: &quot;${__time()}&quot;&#xd;
+              &quot;contactName&quot;: &quot;Name_${RandomNumber}&quot;,&#xd;
+              &quot;contactEmail&quot;: &quot;Name_${RandomNumber}@gmail.com&quot;,&#xd;
+              &quot;phone&quot;: &quot;${RandomNumber}&quot;&#xd;
             },&#xd;
             &quot;BankAccount&quot;: {&#xd;
-              &quot;accountNumber&quot;: &quot;${__time()}&quot;,&#xd;
-              &quot;iban&quot;: &quot;IAB_${__time()}&quot;,&#xd;
-              &quot;otherAccountNumber&quot;: &quot;${__time()}&quot;,&#xd;
-              &quot;domesticRoutingCode&quot;: &quot;${__time()}&quot;,&#xd;
-              &quot;swift&quot;: &quot;${__time()}&quot;,&#xd;
+              &quot;accountNumber&quot;: &quot;${RandomNumber}&quot;,&#xd;
+              &quot;iban&quot;: &quot;IAB_${RandomNumber}&quot;,&#xd;
+              &quot;otherAccountNumber&quot;: &quot;${RandomNumber}&quot;,&#xd;
+              &quot;domesticRoutingCode&quot;: &quot;${RandomNumber}&quot;,&#xd;
+              &quot;swift&quot;: &quot;${RandomNumber}&quot;,&#xd;
               &quot;accountType&quot;:&quot;Savings&quot;,&#xd;
               &quot;accountCurrency&quot;: &quot;${American_Cur}&quot;,&#xd;
-              &quot;bankName&quot;: &quot;Bank_${__time()}&quot;,&#xd;
+              &quot;bankName&quot;: &quot;Bank_${RandomNumber}&quot;,&#xd;
               &quot;bankAddress1&quot;: &quot;${ADD1}&quot;,&#xd;
               &quot;bankAddress2&quot;: &quot;${ADD2}&quot;,&#xd;
               &quot;bankAddress3&quot;: &quot;${ADD3}&quot;,&#xd;
@@ -16934,6 +17325,146 @@ Vnumber2_${VendorNumber},Vname2_${VendorName},Primary,South Carolina,128,Susan,9
             <stringProp name="Assertion.test_field">Assertion.response_data</stringProp>
             <boolProp name="Assertion.assume_success">true</boolProp>
             <intProp name="Assertion.test_type">2</intProp>
+          </ResponseAssertion>
+          <hashTree/>
+          <RandomVariableConfig guiclass="TestBeanGUI" testclass="RandomVariableConfig" testname="Random Variable for RandomNumber" enabled="true">
+            <stringProp name="variableName">RandomNumber</stringProp>
+            <stringProp name="outputFormat"></stringProp>
+            <stringProp name="minimumValue">11111</stringProp>
+            <stringProp name="maximumValue">99999</stringProp>
+            <stringProp name="randomSeed"></stringProp>
+            <boolProp name="perThread">false</boolProp>
+          </RandomVariableConfig>
+          <hashTree/>
+        </hashTree>
+        <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="(S-1)P: Verify user is  able to: GET Informations about particular vendor&apos;s location(With Comparison Scripts)" enabled="true">
+          <elementProp name="HTTPsampler.Arguments" elementType="Arguments" guiclass="HTTPArgumentsPanel" testclass="Arguments" testname="User Defined Variables" enabled="true">
+            <collectionProp name="Arguments.arguments"/>
+          </elementProp>
+          <stringProp name="HTTPSampler.domain">${URL}</stringProp>
+          <stringProp name="HTTPSampler.port">UFT-8</stringProp>
+          <stringProp name="HTTPSampler.protocol">https</stringProp>
+          <stringProp name="HTTPSampler.contentEncoding"></stringProp>
+          <stringProp name="HTTPSampler.path">${Vendors}/${vendorNumber_9}/locations/${locationCode_1}</stringProp>
+          <stringProp name="HTTPSampler.method">GET</stringProp>
+          <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
+          <boolProp name="HTTPSampler.auto_redirects">false</boolProp>
+          <boolProp name="HTTPSampler.use_keepalive">true</boolProp>
+          <boolProp name="HTTPSampler.DO_MULTIPART_POST">false</boolProp>
+          <stringProp name="HTTPSampler.embedded_url_re"></stringProp>
+          <stringProp name="HTTPSampler.connect_timeout"></stringProp>
+          <stringProp name="HTTPSampler.response_timeout"></stringProp>
+        </HTTPSamplerProxy>
+        <hashTree>
+          <ResponseAssertion guiclass="AssertionGui" testclass="ResponseAssertion" testname="Response Code200" enabled="true">
+            <collectionProp name="Asserion.test_strings">
+              <stringProp name="-1146597565">${Response200}</stringProp>
+            </collectionProp>
+            <stringProp name="Assertion.custom_message"></stringProp>
+            <stringProp name="Assertion.test_field">Assertion.response_code</stringProp>
+            <boolProp name="Assertion.assume_success">true</boolProp>
+            <intProp name="Assertion.test_type">2</intProp>
+          </ResponseAssertion>
+          <hashTree/>
+          <HeaderManager guiclass="HeaderPanel" testclass="HeaderManager" testname="HTTP Header Manager" enabled="true">
+            <collectionProp name="HeaderManager.headers">
+              <elementProp name="Accept-Language" elementType="Header">
+                <stringProp name="Header.name">Accept-Language</stringProp>
+                <stringProp name="Header.value">en-US,en;q=0.5</stringProp>
+              </elementProp>
+              <elementProp name="Content-Type" elementType="Header">
+                <stringProp name="Header.name">Content-Type</stringProp>
+                <stringProp name="Header.value">application/json; charset=UTF-8</stringProp>
+              </elementProp>
+              <elementProp name="Cache-Control" elementType="Header">
+                <stringProp name="Header.name">Cache-Control</stringProp>
+                <stringProp name="Header.value">no-cache</stringProp>
+              </elementProp>
+              <elementProp name="Accept" elementType="Header">
+                <stringProp name="Header.name">Accept</stringProp>
+                <stringProp name="Header.value">application/json</stringProp>
+              </elementProp>
+              <elementProp name="" elementType="Header">
+                <stringProp name="Header.name">Authorization</stringProp>
+                <stringProp name="Header.value">Bearer ${__property(Access_Token_1)}</stringProp>
+              </elementProp>
+            </collectionProp>
+          </HeaderManager>
+          <hashTree/>
+          <ResponseAssertion guiclass="AssertionGui" testclass="ResponseAssertion" testname="Response Assertion" enabled="true">
+            <collectionProp name="Asserion.test_strings">
+              <stringProp name="1402947425">requestStatus</stringProp>
+              <stringProp name="49">1</stringProp>
+              <stringProp name="-340323263">response</stringProp>
+            </collectionProp>
+            <stringProp name="Assertion.custom_message"></stringProp>
+            <stringProp name="Assertion.test_field">Assertion.response_data</stringProp>
+            <boolProp name="Assertion.assume_success">true</boolProp>
+            <intProp name="Assertion.test_type">2</intProp>
+          </ResponseAssertion>
+          <hashTree/>
+          <ResponseAssertion guiclass="AssertionGui" testclass="ResponseAssertion" testname="Verify updated Vendor contact Information in regalDB" enabled="true">
+            <collectionProp name="Asserion.test_strings">
+              <stringProp name="-1403867981">&quot;contactName&quot;: &quot;Name_${RandomNumber}&quot;,</stringProp>
+              <stringProp name="-265978951">&quot;contactEmail&quot;: &quot;Name_${RandomNumber}@gmail.com&quot;,</stringProp>
+              <stringProp name="-1065041458">&quot;phone&quot;: &quot;${RandomNumber}&quot;</stringProp>
+            </collectionProp>
+            <stringProp name="Assertion.custom_message"></stringProp>
+            <stringProp name="Assertion.test_field">Assertion.response_data</stringProp>
+            <boolProp name="Assertion.assume_success">false</boolProp>
+            <intProp name="Assertion.test_type">16</intProp>
+          </ResponseAssertion>
+          <hashTree/>
+          <ResponseAssertion guiclass="AssertionGui" testclass="ResponseAssertion" testname="Verify updated Vendor bank data in regalDb" enabled="true">
+            <collectionProp name="Asserion.test_strings">
+              <stringProp name="-1695004490">&quot;accountNumber&quot;: &quot;${RandomNumber}&quot;,</stringProp>
+              <stringProp name="-427410387">&quot;iban&quot;: &quot;IAB_${RandomNumber}&quot;,</stringProp>
+              <stringProp name="-961608222">&quot;otherAccountNumber&quot;: &quot;${RandomNumber}&quot;,</stringProp>
+              <stringProp name="1554722967">&quot;domesticRoutingCode&quot;: &quot;${RandomNumber}&quot;,</stringProp>
+              <stringProp name="-1129070439">&quot;swift&quot;: &quot;${RandomNumber}&quot;,</stringProp>
+              <stringProp name="213444612">&quot;accountType&quot;: &quot;Savings&quot;,</stringProp>
+              <stringProp name="-1048271879">&quot;accountCurrency&quot;: &quot;${American_Cur}&quot;,</stringProp>
+              <stringProp name="1924399556">&quot;bankName&quot;: &quot;Bank_${RandomNumber}&quot;,</stringProp>
+              <stringProp name="-496247925">&quot;bankAddress1&quot;: &quot;${ADD1}&quot;,</stringProp>
+              <stringProp name="-1001776759">&quot;bankAddress2&quot;: &quot;${ADD2}&quot;,</stringProp>
+              <stringProp name="-1507305593">&quot;bankAddress3&quot;: &quot;${ADD3}&quot;,</stringProp>
+              <stringProp name="-432813822">&quot;bankCity&quot;: &quot;${City}&quot;,</stringProp>
+              <stringProp name="-1141573702">&quot;bankState&quot;: &quot;${State}&quot;,</stringProp>
+              <stringProp name="560792070">&quot;bankZipcode&quot;: &quot;${PinCode}&quot;,</stringProp>
+              <stringProp name="1120153792">&quot;bankCountry&quot;: &quot;${CCode}&quot;,</stringProp>
+              <stringProp name="2025539461">&quot;bankCountryCode&quot;: &quot;${County}&quot;</stringProp>
+              <stringProp name="548836425">&quot;formatCode&quot;: &quot;${format_code}&quot;,</stringProp>
+              <stringProp name="934169588">&quot;secureStorage&quot;: true</stringProp>
+              <stringProp name="-1880123145">&quot;signature&quot;: &quot;sign&quot;,</stringProp>
+              <stringProp name="-1661006406">&quot;template&quot;: &quot;template&quot;,</stringProp>
+              <stringProp name="639032497">&quot;deliveryMethod&quot;: &quot;post&quot;</stringProp>
+              <stringProp name="1942715476">&quot;purposeCode&quot;: &quot;P0001&quot;</stringProp>
+            </collectionProp>
+            <stringProp name="Assertion.custom_message"></stringProp>
+            <stringProp name="Assertion.test_field">Assertion.response_data</stringProp>
+            <boolProp name="Assertion.assume_success">false</boolProp>
+            <intProp name="Assertion.test_type">16</intProp>
+          </ResponseAssertion>
+          <hashTree/>
+          <ResponseAssertion guiclass="AssertionGui" testclass="ResponseAssertion" testname="Verify updated Paytype in regal DB" enabled="true">
+            <collectionProp name="Asserion.test_strings">
+              <stringProp name="115306081">${Payment_Type_1}</stringProp>
+            </collectionProp>
+            <stringProp name="Assertion.custom_message"></stringProp>
+            <stringProp name="Assertion.test_field">Assertion.response_data</stringProp>
+            <boolProp name="Assertion.assume_success">true</boolProp>
+            <intProp name="Assertion.test_type">2</intProp>
+          </ResponseAssertion>
+          <hashTree/>
+          <ResponseAssertion guiclass="AssertionGui" testclass="ResponseAssertion" testname="Verify user is able to update vendor name and Location Name" enabled="true">
+            <collectionProp name="Asserion.test_strings">
+              <stringProp name="838576267">&quot;vendorName&quot;: &quot;UpVendorN_${RandomNumber}&quot;</stringProp>
+              <stringProp name="-882019189">&quot;locationName&quot;: &quot;locationName_${RandomNumber}&quot;</stringProp>
+            </collectionProp>
+            <stringProp name="Assertion.custom_message"></stringProp>
+            <stringProp name="Assertion.test_field">Assertion.response_data</stringProp>
+            <boolProp name="Assertion.assume_success">false</boolProp>
+            <intProp name="Assertion.test_type">16</intProp>
           </ResponseAssertion>
           <hashTree/>
         </hashTree>
@@ -18119,10 +18650,10 @@ Vnumber2_${VendorNumber_1},Vname2_${VendorName_1},Primary,South Carolina,128,Sus
               <elementProp name="" elementType="HTTPArgument">
                 <boolProp name="HTTPArgument.always_encode">false</boolProp>
                 <stringProp name="Argument.value"> {&#xd;
-           &#xd;
-            &quot;locationName&quot;: &quot;locationName_${__time}&quot;,&#xd;
-            &quot;paymentType&quot;: &quot;MCCRD&quot;,&#xd;
-            &quot;taxId&quot; : &quot;60000&quot;,&#xd;
+           &quot;vendorName&quot;: &quot;UpVendorN_${RandomNumber}&quot;,&#xd;
+            &quot;locationName&quot;: &quot;locationName_${RandomNumber}&quot;,&#xd;
+            &quot;paymentType&quot;: &quot;${Payment_Type_1}&quot;,&#xd;
+            &quot;taxId&quot; : &quot;${txtID}&quot;,&#xd;
             &quot;address&quot;: &#xd;
               {&#xd;
                 &quot;locationCode&quot;: &quot;${default_locationCode}&quot;,&#xd;
@@ -18138,19 +18669,19 @@ Vnumber2_${VendorNumber_1},Vname2_${VendorName_1},Primary,South Carolina,128,Sus
               },&#xd;
             &#xd;
             &quot;contactInformation&quot;: {&#xd;
-              &quot;contactName&quot;: &quot;Name_${__time}&quot;,&#xd;
-              &quot;contactEmail&quot;: &quot;Name_${__time}@gmail.com&quot;,&#xd;
-              &quot;phone&quot;: &quot;${__time()}&quot;&#xd;
+              &quot;contactName&quot;: &quot;Name_${RandomNumber}&quot;,&#xd;
+              &quot;contactEmail&quot;: &quot;Name_${RandomNumber}@gmail.com&quot;,&#xd;
+              &quot;phone&quot;: &quot;${RandomNumber}&quot;&#xd;
             },&#xd;
             &quot;BankAccount&quot;: {&#xd;
-              &quot;accountNumber&quot;: &quot;${__time()}&quot;,&#xd;
-              &quot;iban&quot;: &quot;IAB_${__time()}&quot;,&#xd;
-              &quot;otherAccountNumber&quot;: &quot;${__time()}&quot;,&#xd;
-              &quot;domesticRoutingCode&quot;: &quot;${__time()}&quot;,&#xd;
-              &quot;swift&quot;: &quot;${__time()}&quot;,&#xd;
+              &quot;accountNumber&quot;: &quot;${RandomNumber}&quot;,&#xd;
+              &quot;iban&quot;: &quot;IAB_${RandomNumber}&quot;,&#xd;
+              &quot;otherAccountNumber&quot;: &quot;${RandomNumber}&quot;,&#xd;
+              &quot;domesticRoutingCode&quot;: &quot;${RandomNumber}&quot;,&#xd;
+              &quot;swift&quot;: &quot;${RandomNumber}&quot;,&#xd;
               &quot;accountType&quot;:&quot;Savings&quot;,&#xd;
               &quot;accountCurrency&quot;: &quot;${American_Cur}&quot;,&#xd;
-              &quot;bankName&quot;: &quot;Bank_${__time()}&quot;,&#xd;
+              &quot;bankName&quot;: &quot;Bank_${RandomNumber}&quot;,&#xd;
               &quot;bankAddress1&quot;: &quot;${ADD1}&quot;,&#xd;
               &quot;bankAddress2&quot;: &quot;${ADD2}&quot;,&#xd;
               &quot;bankAddress3&quot;: &quot;${ADD3}&quot;,&#xd;
@@ -26055,17 +26586,17 @@ Vnumber2_${VendorNumber_7},Vname2_${VendorName_7},Primary,South Carolina,128,Sus
           <stringProp name="script"></stringProp>
         </BeanShellPreProcessor>
         <hashTree/>
-        <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="(S-8)P: Verify user is able to: UPDATE All fields of  Vendor&apos;s location  to the RegalPay" enabled="true">
+        <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="(S-8)P: Verify user is able to: UPDATE All fields of  Vendor&apos;s location  to the RegalPay(With Comparison Scripts)" enabled="true">
           <boolProp name="HTTPSampler.postBodyRaw">true</boolProp>
           <elementProp name="HTTPsampler.Arguments" elementType="Arguments">
             <collectionProp name="Arguments.arguments">
               <elementProp name="" elementType="HTTPArgument">
                 <boolProp name="HTTPArgument.always_encode">false</boolProp>
                 <stringProp name="Argument.value"> {&#xd;
-           &#xd;
-            &quot;locationName&quot;: &quot;locationName_${__time}&quot;,&#xd;
-            &quot;paymentType&quot;: &quot;MCCRD&quot;,&#xd;
-            &quot;taxId&quot; : &quot;60000&quot;,&#xd;
+           &quot;vendorName&quot;: &quot;UpVendorN_${RandomNumber}&quot;,&#xd;
+            &quot;locationName&quot;: &quot;locationName_${RandomNumber}&quot;,&#xd;
+            &quot;paymentType&quot;: &quot;${Payment_Type_1}&quot;,&#xd;
+            &quot;taxId&quot; : &quot;${txtID}&quot;,&#xd;
             &quot;address&quot;: &#xd;
               {&#xd;
                 &quot;locationCode&quot;: &quot;${default_locationCode}&quot;,&#xd;
@@ -26081,19 +26612,19 @@ Vnumber2_${VendorNumber_7},Vname2_${VendorName_7},Primary,South Carolina,128,Sus
               },&#xd;
             &#xd;
             &quot;contactInformation&quot;: {&#xd;
-              &quot;contactName&quot;: &quot;Name_${__time}&quot;,&#xd;
-              &quot;contactEmail&quot;: &quot;Name_${__time}@gmail.com&quot;,&#xd;
-              &quot;phone&quot;: &quot;${__time()}&quot;&#xd;
+              &quot;contactName&quot;: &quot;Name_${RandomNumber}&quot;,&#xd;
+              &quot;contactEmail&quot;: &quot;Name_${RandomNumber}@gmail.com&quot;,&#xd;
+              &quot;phone&quot;: &quot;${RandomNumber}&quot;&#xd;
             },&#xd;
             &quot;BankAccount&quot;: {&#xd;
-              &quot;accountNumber&quot;: &quot;${__time()}&quot;,&#xd;
-              &quot;iban&quot;: &quot;IAB_${__time()}&quot;,&#xd;
-              &quot;otherAccountNumber&quot;: &quot;${__time()}&quot;,&#xd;
-              &quot;domesticRoutingCode&quot;: &quot;${__time()}&quot;,&#xd;
-              &quot;swift&quot;: &quot;${__time()}&quot;,&#xd;
+              &quot;accountNumber&quot;: &quot;${RandomNumber}&quot;,&#xd;
+              &quot;iban&quot;: &quot;IAB_${RandomNumber}&quot;,&#xd;
+              &quot;otherAccountNumber&quot;: &quot;${RandomNumber}&quot;,&#xd;
+              &quot;domesticRoutingCode&quot;: &quot;${RandomNumber}&quot;,&#xd;
+              &quot;swift&quot;: &quot;${RandomNumber}&quot;,&#xd;
               &quot;accountType&quot;:&quot;Savings&quot;,&#xd;
               &quot;accountCurrency&quot;: &quot;${American_Cur}&quot;,&#xd;
-              &quot;bankName&quot;: &quot;Bank_${__time()}&quot;,&#xd;
+              &quot;bankName&quot;: &quot;Bank_${RandomNumber}&quot;,&#xd;
               &quot;bankAddress1&quot;: &quot;${ADD1}&quot;,&#xd;
               &quot;bankAddress2&quot;: &quot;${ADD2}&quot;,&#xd;
               &quot;bankAddress3&quot;: &quot;${ADD3}&quot;,&#xd;
@@ -26212,6 +26743,146 @@ Vnumber2_${VendorNumber_7},Vname2_${VendorName_7},Primary,South Carolina,128,Sus
             <stringProp name="Assertion.test_field">Assertion.response_data</stringProp>
             <boolProp name="Assertion.assume_success">true</boolProp>
             <intProp name="Assertion.test_type">2</intProp>
+          </ResponseAssertion>
+          <hashTree/>
+          <RandomVariableConfig guiclass="TestBeanGUI" testclass="RandomVariableConfig" testname="Random Variable for RandomNumber" enabled="true">
+            <stringProp name="variableName">RandomNumber</stringProp>
+            <stringProp name="outputFormat"></stringProp>
+            <stringProp name="minimumValue">11111</stringProp>
+            <stringProp name="maximumValue">99999</stringProp>
+            <stringProp name="randomSeed"></stringProp>
+            <boolProp name="perThread">false</boolProp>
+          </RandomVariableConfig>
+          <hashTree/>
+        </hashTree>
+        <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="(S-8)P: Verify user is  able to: GET Informations about particular vendor&apos;s location(With Comparison Scripts)" enabled="true">
+          <elementProp name="HTTPsampler.Arguments" elementType="Arguments" guiclass="HTTPArgumentsPanel" testclass="Arguments" testname="User Defined Variables" enabled="true">
+            <collectionProp name="Arguments.arguments"/>
+          </elementProp>
+          <stringProp name="HTTPSampler.domain">${URL}</stringProp>
+          <stringProp name="HTTPSampler.port">UFT-8</stringProp>
+          <stringProp name="HTTPSampler.protocol">https</stringProp>
+          <stringProp name="HTTPSampler.contentEncoding"></stringProp>
+          <stringProp name="HTTPSampler.path">${Vendors}/${vendorNumber_17}/locations/${locationCode_2}</stringProp>
+          <stringProp name="HTTPSampler.method">GET</stringProp>
+          <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
+          <boolProp name="HTTPSampler.auto_redirects">false</boolProp>
+          <boolProp name="HTTPSampler.use_keepalive">true</boolProp>
+          <boolProp name="HTTPSampler.DO_MULTIPART_POST">false</boolProp>
+          <stringProp name="HTTPSampler.embedded_url_re"></stringProp>
+          <stringProp name="HTTPSampler.connect_timeout"></stringProp>
+          <stringProp name="HTTPSampler.response_timeout"></stringProp>
+        </HTTPSamplerProxy>
+        <hashTree>
+          <ResponseAssertion guiclass="AssertionGui" testclass="ResponseAssertion" testname="Response Code200" enabled="true">
+            <collectionProp name="Asserion.test_strings">
+              <stringProp name="-1146597565">${Response200}</stringProp>
+            </collectionProp>
+            <stringProp name="Assertion.custom_message"></stringProp>
+            <stringProp name="Assertion.test_field">Assertion.response_code</stringProp>
+            <boolProp name="Assertion.assume_success">true</boolProp>
+            <intProp name="Assertion.test_type">2</intProp>
+          </ResponseAssertion>
+          <hashTree/>
+          <HeaderManager guiclass="HeaderPanel" testclass="HeaderManager" testname="HTTP Header Manager" enabled="true">
+            <collectionProp name="HeaderManager.headers">
+              <elementProp name="Accept-Language" elementType="Header">
+                <stringProp name="Header.name">Accept-Language</stringProp>
+                <stringProp name="Header.value">en-US,en;q=0.5</stringProp>
+              </elementProp>
+              <elementProp name="Content-Type" elementType="Header">
+                <stringProp name="Header.name">Content-Type</stringProp>
+                <stringProp name="Header.value">application/json; charset=UTF-8</stringProp>
+              </elementProp>
+              <elementProp name="Cache-Control" elementType="Header">
+                <stringProp name="Header.name">Cache-Control</stringProp>
+                <stringProp name="Header.value">no-cache</stringProp>
+              </elementProp>
+              <elementProp name="Accept" elementType="Header">
+                <stringProp name="Header.name">Accept</stringProp>
+                <stringProp name="Header.value">application/json</stringProp>
+              </elementProp>
+              <elementProp name="" elementType="Header">
+                <stringProp name="Header.name">Authorization</stringProp>
+                <stringProp name="Header.value">Bearer ${__property(Access_Token_1)}</stringProp>
+              </elementProp>
+            </collectionProp>
+          </HeaderManager>
+          <hashTree/>
+          <ResponseAssertion guiclass="AssertionGui" testclass="ResponseAssertion" testname="Response Assertion" enabled="true">
+            <collectionProp name="Asserion.test_strings">
+              <stringProp name="1402947425">requestStatus</stringProp>
+              <stringProp name="49">1</stringProp>
+              <stringProp name="-340323263">response</stringProp>
+            </collectionProp>
+            <stringProp name="Assertion.custom_message"></stringProp>
+            <stringProp name="Assertion.test_field">Assertion.response_data</stringProp>
+            <boolProp name="Assertion.assume_success">true</boolProp>
+            <intProp name="Assertion.test_type">2</intProp>
+          </ResponseAssertion>
+          <hashTree/>
+          <ResponseAssertion guiclass="AssertionGui" testclass="ResponseAssertion" testname="Verify updated Vendor contact Information in regalDB" enabled="true">
+            <collectionProp name="Asserion.test_strings">
+              <stringProp name="-1403867981">&quot;contactName&quot;: &quot;Name_${RandomNumber}&quot;,</stringProp>
+              <stringProp name="-265978951">&quot;contactEmail&quot;: &quot;Name_${RandomNumber}@gmail.com&quot;,</stringProp>
+              <stringProp name="-1065041458">&quot;phone&quot;: &quot;${RandomNumber}&quot;</stringProp>
+            </collectionProp>
+            <stringProp name="Assertion.custom_message"></stringProp>
+            <stringProp name="Assertion.test_field">Assertion.response_data</stringProp>
+            <boolProp name="Assertion.assume_success">false</boolProp>
+            <intProp name="Assertion.test_type">16</intProp>
+          </ResponseAssertion>
+          <hashTree/>
+          <ResponseAssertion guiclass="AssertionGui" testclass="ResponseAssertion" testname="Verify updated Vendor bank data in regalDb" enabled="true">
+            <collectionProp name="Asserion.test_strings">
+              <stringProp name="-1695004490">&quot;accountNumber&quot;: &quot;${RandomNumber}&quot;,</stringProp>
+              <stringProp name="-427410387">&quot;iban&quot;: &quot;IAB_${RandomNumber}&quot;,</stringProp>
+              <stringProp name="-961608222">&quot;otherAccountNumber&quot;: &quot;${RandomNumber}&quot;,</stringProp>
+              <stringProp name="1554722967">&quot;domesticRoutingCode&quot;: &quot;${RandomNumber}&quot;,</stringProp>
+              <stringProp name="-1129070439">&quot;swift&quot;: &quot;${RandomNumber}&quot;,</stringProp>
+              <stringProp name="213444612">&quot;accountType&quot;: &quot;Savings&quot;,</stringProp>
+              <stringProp name="-1048271879">&quot;accountCurrency&quot;: &quot;${American_Cur}&quot;,</stringProp>
+              <stringProp name="1924399556">&quot;bankName&quot;: &quot;Bank_${RandomNumber}&quot;,</stringProp>
+              <stringProp name="-496247925">&quot;bankAddress1&quot;: &quot;${ADD1}&quot;,</stringProp>
+              <stringProp name="-1001776759">&quot;bankAddress2&quot;: &quot;${ADD2}&quot;,</stringProp>
+              <stringProp name="-1507305593">&quot;bankAddress3&quot;: &quot;${ADD3}&quot;,</stringProp>
+              <stringProp name="-432813822">&quot;bankCity&quot;: &quot;${City}&quot;,</stringProp>
+              <stringProp name="-1141573702">&quot;bankState&quot;: &quot;${State}&quot;,</stringProp>
+              <stringProp name="560792070">&quot;bankZipcode&quot;: &quot;${PinCode}&quot;,</stringProp>
+              <stringProp name="1120153792">&quot;bankCountry&quot;: &quot;${CCode}&quot;,</stringProp>
+              <stringProp name="2025539461">&quot;bankCountryCode&quot;: &quot;${County}&quot;</stringProp>
+              <stringProp name="548836425">&quot;formatCode&quot;: &quot;${format_code}&quot;,</stringProp>
+              <stringProp name="934169588">&quot;secureStorage&quot;: true</stringProp>
+              <stringProp name="-1880123145">&quot;signature&quot;: &quot;sign&quot;,</stringProp>
+              <stringProp name="-1661006406">&quot;template&quot;: &quot;template&quot;,</stringProp>
+              <stringProp name="639032497">&quot;deliveryMethod&quot;: &quot;post&quot;</stringProp>
+              <stringProp name="1942715476">&quot;purposeCode&quot;: &quot;P0001&quot;</stringProp>
+            </collectionProp>
+            <stringProp name="Assertion.custom_message"></stringProp>
+            <stringProp name="Assertion.test_field">Assertion.response_data</stringProp>
+            <boolProp name="Assertion.assume_success">false</boolProp>
+            <intProp name="Assertion.test_type">16</intProp>
+          </ResponseAssertion>
+          <hashTree/>
+          <ResponseAssertion guiclass="AssertionGui" testclass="ResponseAssertion" testname="Verify updated Paytype in regal DB" enabled="true">
+            <collectionProp name="Asserion.test_strings">
+              <stringProp name="115306081">${Payment_Type_1}</stringProp>
+            </collectionProp>
+            <stringProp name="Assertion.custom_message"></stringProp>
+            <stringProp name="Assertion.test_field">Assertion.response_data</stringProp>
+            <boolProp name="Assertion.assume_success">true</boolProp>
+            <intProp name="Assertion.test_type">2</intProp>
+          </ResponseAssertion>
+          <hashTree/>
+          <ResponseAssertion guiclass="AssertionGui" testclass="ResponseAssertion" testname="Verify user is able to update vendor name and Location Name" enabled="true">
+            <collectionProp name="Asserion.test_strings">
+              <stringProp name="838576267">&quot;vendorName&quot;: &quot;UpVendorN_${RandomNumber}&quot;</stringProp>
+              <stringProp name="-882019189">&quot;locationName&quot;: &quot;locationName_${RandomNumber}&quot;</stringProp>
+            </collectionProp>
+            <stringProp name="Assertion.custom_message"></stringProp>
+            <stringProp name="Assertion.test_field">Assertion.response_data</stringProp>
+            <boolProp name="Assertion.assume_success">false</boolProp>
+            <intProp name="Assertion.test_type">16</intProp>
           </ResponseAssertion>
           <hashTree/>
         </hashTree>
