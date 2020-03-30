@@ -17337,7 +17337,7 @@ Vnumber2_${VendorNumber},Vname2_${VendorName},Primary,South Carolina,128,Susan,9
           </RandomVariableConfig>
           <hashTree/>
         </hashTree>
-        <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="(S-1)P: Verify user is  able to: GET Informations about particular vendor&apos;s location(With Comparison Scripts)" enabled="true">
+        <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="(BUG)(S-1)P: Verify user is  able to: GET Informations about particular vendor&apos;s location(With Comparison Scripts)" enabled="true">
           <elementProp name="HTTPsampler.Arguments" elementType="Arguments" guiclass="HTTPArgumentsPanel" testclass="Arguments" testname="User Defined Variables" enabled="true">
             <collectionProp name="Arguments.arguments"/>
           </elementProp>
@@ -26755,7 +26755,7 @@ Vnumber2_${VendorNumber_7},Vname2_${VendorName_7},Primary,South Carolina,128,Sus
           </RandomVariableConfig>
           <hashTree/>
         </hashTree>
-        <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="(S-8)P: Verify user is  able to: GET Informations about particular vendor&apos;s location(With Comparison Scripts)" enabled="true">
+        <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="(Same BUG as above)(S-8)P: Verify user is  able to: GET Informations about particular vendor&apos;s location(With Comparison Scripts)" enabled="true">
           <elementProp name="HTTPsampler.Arguments" elementType="Arguments" guiclass="HTTPArgumentsPanel" testclass="Arguments" testname="User Defined Variables" enabled="true">
             <collectionProp name="Arguments.arguments"/>
           </elementProp>
