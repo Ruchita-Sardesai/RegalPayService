@@ -1,6 +1,6 @@
 VendorNumber	VendorName	LocationCode	LocationName	PaymentType	TaxId	Test
 ADPINC	"ADP, Inc."	PRIMARY	Test			1
-AERPHO	Aerial Photos Elite LLC	PRIMARY	Test			1
+AERPHO	Aerial Photos Elite LLC	PRIMARY	Test	USBCRD		1
 AGMAC	A&G Machine	PRIMARY	Test			1
 AIRCEN	Air Centers of South Carolina	PRIMARY	Test			1
 AMEDRU	American Drug Testing	PRIMARY	Test			1
