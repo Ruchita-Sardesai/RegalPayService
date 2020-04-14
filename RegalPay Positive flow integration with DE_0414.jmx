@@ -2129,7 +2129,7 @@
         <stringProp name="script"></stringProp>
       </BeanShellPreProcessor>
       <hashTree/>
-      <ThreadGroup guiclass="ThreadGroupGui" testclass="ThreadGroup" testname="Beanshell Scripts" enabled="true">
+      <ThreadGroup guiclass="ThreadGroupGui" testclass="ThreadGroup" testname="Beanshell Scripts" enabled="false">
         <stringProp name="ThreadGroup.on_sample_error">continue</stringProp>
         <elementProp name="ThreadGroup.main_controller" elementType="LoopController" guiclass="LoopControlPanel" testclass="LoopController" testname="Loop Controller" enabled="true">
           <boolProp name="LoopController.continue_forever">false</boolProp>
@@ -3865,6 +3865,1360 @@ ${__setProperty(PICell1230, ${PICell1230})};
             <stringProp name="BeanShellAssertion.parameters"></stringProp>
             <boolProp name="BeanShellAssertion.resetInterpreter">false</boolProp>
           </BeanShellAssertion>
+          <hashTree/>
+        </hashTree>
+      </hashTree>
+      <ThreadGroup guiclass="ThreadGroupGui" testclass="ThreadGroup" testname="Company set up for DataXtractor" enabled="true">
+        <stringProp name="ThreadGroup.on_sample_error">continue</stringProp>
+        <elementProp name="ThreadGroup.main_controller" elementType="LoopController" guiclass="LoopControlPanel" testclass="LoopController" testname="Loop Controller" enabled="true">
+          <boolProp name="LoopController.continue_forever">false</boolProp>
+          <stringProp name="LoopController.loops">1</stringProp>
+        </elementProp>
+        <stringProp name="ThreadGroup.num_threads">1</stringProp>
+        <stringProp name="ThreadGroup.ramp_time">1</stringProp>
+        <boolProp name="ThreadGroup.scheduler">false</boolProp>
+        <stringProp name="ThreadGroup.duration"></stringProp>
+        <stringProp name="ThreadGroup.delay"></stringProp>
+      </ThreadGroup>
+      <hashTree>
+        <BeanShellPreProcessor guiclass="TestBeanGUI" testclass="BeanShellPreProcessor" testname="GET All Companies" enabled="false">
+          <stringProp name="filename"></stringProp>
+          <stringProp name="parameters"></stringProp>
+          <boolProp name="resetInterpreter">false</boolProp>
+          <stringProp name="script"></stringProp>
+        </BeanShellPreProcessor>
+        <hashTree/>
+        <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="P: Verify user is able to GET Company Details" enabled="true">
+          <elementProp name="HTTPsampler.Arguments" elementType="Arguments" guiclass="HTTPArgumentsPanel" testclass="Arguments" testname="User Defined Variables" enabled="true">
+            <collectionProp name="Arguments.arguments"/>
+          </elementProp>
+          <stringProp name="HTTPSampler.domain">${URL}</stringProp>
+          <stringProp name="HTTPSampler.port">UFT-8</stringProp>
+          <stringProp name="HTTPSampler.protocol">https</stringProp>
+          <stringProp name="HTTPSampler.contentEncoding"></stringProp>
+          <stringProp name="HTTPSampler.path">${Company}</stringProp>
+          <stringProp name="HTTPSampler.method">GET</stringProp>
+          <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
+          <boolProp name="HTTPSampler.auto_redirects">false</boolProp>
+          <boolProp name="HTTPSampler.use_keepalive">true</boolProp>
+          <boolProp name="HTTPSampler.DO_MULTIPART_POST">false</boolProp>
+          <stringProp name="HTTPSampler.embedded_url_re"></stringProp>
+          <stringProp name="HTTPSampler.connect_timeout"></stringProp>
+          <stringProp name="HTTPSampler.response_timeout"></stringProp>
+        </HTTPSamplerProxy>
+        <hashTree>
+          <ResponseAssertion guiclass="AssertionGui" testclass="ResponseAssertion" testname="Response Code200" enabled="true">
+            <collectionProp name="Asserion.test_strings">
+              <stringProp name="-1146597565">${Response200}</stringProp>
+            </collectionProp>
+            <stringProp name="Assertion.custom_message"></stringProp>
+            <stringProp name="Assertion.test_field">Assertion.response_code</stringProp>
+            <boolProp name="Assertion.assume_success">true</boolProp>
+            <intProp name="Assertion.test_type">2</intProp>
+          </ResponseAssertion>
+          <hashTree/>
+          <ResponseAssertion guiclass="AssertionGui" testclass="ResponseAssertion" testname="Response Assertion" enabled="true">
+            <collectionProp name="Asserion.test_strings">
+              <stringProp name="1402947425">requestStatus</stringProp>
+              <stringProp name="49">1</stringProp>
+              <stringProp name="-340323263">response</stringProp>
+            </collectionProp>
+            <stringProp name="Assertion.custom_message"></stringProp>
+            <stringProp name="Assertion.test_field">Assertion.response_data</stringProp>
+            <boolProp name="Assertion.assume_success">true</boolProp>
+            <intProp name="Assertion.test_type">2</intProp>
+          </ResponseAssertion>
+          <hashTree/>
+          <HeaderManager guiclass="HeaderPanel" testclass="HeaderManager" testname="HTTP Header Manager" enabled="true">
+            <collectionProp name="HeaderManager.headers">
+              <elementProp name="Accept-Language" elementType="Header">
+                <stringProp name="Header.name">Accept-Language</stringProp>
+                <stringProp name="Header.value">en-US,en;q=0.5</stringProp>
+              </elementProp>
+              <elementProp name="Content-Type" elementType="Header">
+                <stringProp name="Header.name">Content-Type</stringProp>
+                <stringProp name="Header.value">application/json; charset=UTF-8</stringProp>
+              </elementProp>
+              <elementProp name="Cache-Control" elementType="Header">
+                <stringProp name="Header.name">Cache-Control</stringProp>
+                <stringProp name="Header.value">no-cache</stringProp>
+              </elementProp>
+              <elementProp name="Accept" elementType="Header">
+                <stringProp name="Header.name">Accept</stringProp>
+                <stringProp name="Header.value">application/json</stringProp>
+              </elementProp>
+              <elementProp name="" elementType="Header">
+                <stringProp name="Header.name">Authorization</stringProp>
+                <stringProp name="Header.value">Bearer ${__property(Access_Token_2)}</stringProp>
+              </elementProp>
+            </collectionProp>
+          </HeaderManager>
+          <hashTree/>
+        </hashTree>
+        <BeanShellPreProcessor guiclass="TestBeanGUI" testclass="BeanShellPreProcessor" testname="POST  Add/update Company to the RegalPay" enabled="false">
+          <stringProp name="filename"></stringProp>
+          <stringProp name="parameters"></stringProp>
+          <boolProp name="resetInterpreter">false</boolProp>
+          <stringProp name="script"></stringProp>
+        </BeanShellPreProcessor>
+        <hashTree/>
+        <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="P: Verify user is able to ADD/UPDATE the Company" enabled="true">
+          <boolProp name="HTTPSampler.postBodyRaw">true</boolProp>
+          <elementProp name="HTTPsampler.Arguments" elementType="Arguments">
+            <collectionProp name="Arguments.arguments">
+              <elementProp name="" elementType="HTTPArgument">
+                <boolProp name="HTTPArgument.always_encode">false</boolProp>
+                <stringProp name="Argument.value">{&#xd;
+  &quot;name&quot;: &quot;RegalPAY_${__time}&quot;,&#xd;
+  &quot;legalName&quot;: &quot;REGALLEGAL${__time}&quot;,&#xd;
+  &quot;dba&quot;: &quot;${DBA}&quot;,&#xd;
+  &quot;defaultPaymentType&quot;: &quot;MCCRD&quot;,&#xd;
+  &quot;enableMultiVendorLocations&quot;: false,&#xd;
+  &quot;addressLine1&quot;: &quot;${ADD1}&quot;,&#xd;
+  &quot;addressLine2&quot;: &quot;${ADD2}&quot;,&#xd;
+  &quot;addressLine3&quot;: &quot;${ADD3}&quot;,&#xd;
+  &quot;addressLine4&quot;: &quot;${ADD4}&quot;,&#xd;
+  &quot;city&quot;: &quot;${City}&quot;,&#xd;
+  &quot;state&quot;: &quot;${State}&quot;,&#xd;
+  &quot;zipCode&quot;: &quot;${PinCode}&quot;,&#xd;
+  &quot;countryCode&quot;: &quot;${CCode}&quot;,&#xd;
+  &quot;country&quot;: &quot;${County}&quot;,&#xd;
+  &quot;integrationType&quot;: &quot;${IT2}&quot;,&#xd;
+  &quot;dataxtractorConfiguration&quot;: {&#xd;
+                &quot;fetchVendorPayTypeFromERP&quot;: true,&#xd;
+                &quot;fetchVendorBankDataFromERP&quot;: true,&#xd;
+                &quot;fetchVendorContactInfoFromERP&quot;: true,&#xd;
+                &quot;numberOfDaysToPullPayments&quot;: 1,&#xd;
+                &quot;paymentQueryId&quot;: &quot;${__property(paymentQuery_id)}&quot;, &#xd;
+                &quot;invoiceQueryId&quot;: &quot;${__property(invoiceQuery_id)}&quot;,&#xd;
+                &quot;vendorListQueryId&quot;: &quot;${__property(VendorListQueryID1)}&quot;,&#xd;
+                &quot;locationListQueryId&quot;:  &quot;${__property(locationlistQuery_id)}&quot;, &#xd;
+                &quot;vendorAddressQueryId&quot;:  &quot;${__property(vendoraddressQuery_id)}&quot;, &#xd;
+                &quot;vendorBankDataQueryId&quot;:  &quot;${__property(vendorbankdataQuery_id)}&quot;, &#xd;
+                &quot;vendorContactInfoQueryId&quot;:  &quot;${__property(vendorcontactinfoQuery_id)}&quot;, &#xd;
+              },&#xd;
+&#xd;
+              &quot;filexchangeConfiguration&quot;: null,&#xd;
+              &quot;apiConfiguration&quot;: null,&#xd;
+              &quot;logo&quot;: &quot;string&quot;&#xd;
+            }&#xd;
+}</stringProp>
+                <stringProp name="Argument.metadata">=</stringProp>
+              </elementProp>
+            </collectionProp>
+          </elementProp>
+          <stringProp name="HTTPSampler.domain">${URL}</stringProp>
+          <stringProp name="HTTPSampler.port">UFT-8</stringProp>
+          <stringProp name="HTTPSampler.protocol">https</stringProp>
+          <stringProp name="HTTPSampler.contentEncoding"></stringProp>
+          <stringProp name="HTTPSampler.path">${Company}</stringProp>
+          <stringProp name="HTTPSampler.method">POST</stringProp>
+          <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
+          <boolProp name="HTTPSampler.auto_redirects">false</boolProp>
+          <boolProp name="HTTPSampler.use_keepalive">true</boolProp>
+          <boolProp name="HTTPSampler.DO_MULTIPART_POST">false</boolProp>
+          <stringProp name="HTTPSampler.embedded_url_re"></stringProp>
+          <stringProp name="HTTPSampler.connect_timeout"></stringProp>
+          <stringProp name="HTTPSampler.response_timeout"></stringProp>
+        </HTTPSamplerProxy>
+        <hashTree>
+          <ResponseAssertion guiclass="AssertionGui" testclass="ResponseAssertion" testname="Response Code200" enabled="true">
+            <collectionProp name="Asserion.test_strings">
+              <stringProp name="-1146597565">${Response200}</stringProp>
+            </collectionProp>
+            <stringProp name="Assertion.custom_message"></stringProp>
+            <stringProp name="Assertion.test_field">Assertion.response_code</stringProp>
+            <boolProp name="Assertion.assume_success">true</boolProp>
+            <intProp name="Assertion.test_type">2</intProp>
+          </ResponseAssertion>
+          <hashTree/>
+          <ResponseAssertion guiclass="AssertionGui" testclass="ResponseAssertion" testname="Response Assertion" enabled="true">
+            <collectionProp name="Asserion.test_strings">
+              <stringProp name="1402947425">requestStatus</stringProp>
+              <stringProp name="49">1</stringProp>
+              <stringProp name="-340323263">response</stringProp>
+            </collectionProp>
+            <stringProp name="Assertion.custom_message"></stringProp>
+            <stringProp name="Assertion.test_field">Assertion.response_data</stringProp>
+            <boolProp name="Assertion.assume_success">true</boolProp>
+            <intProp name="Assertion.test_type">2</intProp>
+          </ResponseAssertion>
+          <hashTree/>
+          <HeaderManager guiclass="HeaderPanel" testclass="HeaderManager" testname="HTTP Header Manager" enabled="true">
+            <collectionProp name="HeaderManager.headers">
+              <elementProp name="Accept-Language" elementType="Header">
+                <stringProp name="Header.name">Accept-Language</stringProp>
+                <stringProp name="Header.value">en-US,en;q=0.5</stringProp>
+              </elementProp>
+              <elementProp name="Content-Type" elementType="Header">
+                <stringProp name="Header.name">Content-Type</stringProp>
+                <stringProp name="Header.value">application/json; charset=UTF-8</stringProp>
+              </elementProp>
+              <elementProp name="Cache-Control" elementType="Header">
+                <stringProp name="Header.name">Cache-Control</stringProp>
+                <stringProp name="Header.value">no-cache</stringProp>
+              </elementProp>
+              <elementProp name="Accept" elementType="Header">
+                <stringProp name="Header.name">Accept</stringProp>
+                <stringProp name="Header.value">application/json</stringProp>
+              </elementProp>
+              <elementProp name="" elementType="Header">
+                <stringProp name="Header.name">Authorization</stringProp>
+                <stringProp name="Header.value">Bearer ${__property(Access_Token_2)}</stringProp>
+              </elementProp>
+            </collectionProp>
+          </HeaderManager>
+          <hashTree/>
+        </hashTree>
+        <BeanShellPreProcessor guiclass="TestBeanGUI" testclass="BeanShellPreProcessor" testname="POST Payment  Query field is  always Mandatory " enabled="false">
+          <stringProp name="filename"></stringProp>
+          <stringProp name="parameters"></stringProp>
+          <boolProp name="resetInterpreter">false</boolProp>
+          <stringProp name="script"></stringProp>
+        </BeanShellPreProcessor>
+        <hashTree/>
+        <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="P: Verify user is getting validation when Payment  Query field is  missing " enabled="true">
+          <boolProp name="HTTPSampler.postBodyRaw">true</boolProp>
+          <elementProp name="HTTPsampler.Arguments" elementType="Arguments">
+            <collectionProp name="Arguments.arguments">
+              <elementProp name="" elementType="HTTPArgument">
+                <boolProp name="HTTPArgument.always_encode">false</boolProp>
+                <stringProp name="Argument.value">{&#xd;
+  &quot;name&quot;: &quot;RegalPAY_${__time}&quot;,&#xd;
+  &quot;legalName&quot;: &quot;REGALLEGAL${__time}&quot;,&#xd;
+  &quot;dba&quot;: &quot;${DBA}&quot;,&#xd;
+  &quot;defaultPaymentType&quot;: &quot;MCCRD&quot;,&#xd;
+  &quot;enableMultiVendorLocations&quot;: true,&#xd;
+  &quot;addressLine1&quot;: &quot;${ADD1}&quot;,&#xd;
+  &quot;addressLine2&quot;: &quot;${ADD2}&quot;,&#xd;
+  &quot;addressLine3&quot;: &quot;${ADD3}&quot;,&#xd;
+  &quot;addressLine4&quot;: &quot;${ADD4}&quot;,&#xd;
+  &quot;city&quot;: &quot;${City}&quot;,&#xd;
+  &quot;state&quot;: &quot;${State}&quot;,&#xd;
+  &quot;zipCode&quot;: &quot;${PinCode}&quot;,&#xd;
+  &quot;countryCode&quot;: &quot;${CCode}&quot;,&#xd;
+  &quot;country&quot;: &quot;${County}&quot;,&#xd;
+  &quot;integrationType&quot;: &quot;${IT2}&quot;,&#xd;
+  &quot;dataxtractorConfiguration&quot;: {&#xd;
+                &quot;fetchVendorPayTypeFromERP&quot;: true,&#xd;
+                &quot;fetchVendorBankDataFromERP&quot;: true,&#xd;
+                &quot;fetchVendorContactInfoFromERP&quot;: true,&#xd;
+                &quot;numberOfDaysToPullPayments&quot;: 1,&#xd;
+                &quot;paymentQueryId&quot;: null, &#xd;
+                &quot;invoiceQueryId&quot;: &quot;${__property(invoiceQuery_id)}&quot;,&#xd;
+                &quot;vendorListQueryId&quot;: &quot;${__property(VendorListQueryID1)}&quot;,&#xd;
+                &quot;locationListQueryId&quot;:  &quot;${__property(locationlistQuery_id)}&quot;, &#xd;
+                &quot;vendorAddressQueryId&quot;:  &quot;${__property(vendoraddressQuery_id)}&quot;, &#xd;
+                &quot;vendorBankDataQueryId&quot;:   &quot;${__property(vendorbankdataQuery_id)}&quot;, &#xd;
+                &quot;vendorContactInfoQueryId&quot;:  &quot;${__property(vendorcontactinfoQuery_id)}&quot;, &#xd;
+              },&#xd;
+&#xd;
+              &quot;filexchangeConfiguration&quot;: null,&#xd;
+              &quot;apiConfiguration&quot;: null,&#xd;
+              &quot;logo&quot;: &quot;string&quot;&#xd;
+            }&#xd;
+}</stringProp>
+                <stringProp name="Argument.metadata">=</stringProp>
+              </elementProp>
+            </collectionProp>
+          </elementProp>
+          <stringProp name="HTTPSampler.domain">${URL}</stringProp>
+          <stringProp name="HTTPSampler.port">UFT-8</stringProp>
+          <stringProp name="HTTPSampler.protocol">https</stringProp>
+          <stringProp name="HTTPSampler.contentEncoding"></stringProp>
+          <stringProp name="HTTPSampler.path">${Company}</stringProp>
+          <stringProp name="HTTPSampler.method">POST</stringProp>
+          <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
+          <boolProp name="HTTPSampler.auto_redirects">false</boolProp>
+          <boolProp name="HTTPSampler.use_keepalive">true</boolProp>
+          <boolProp name="HTTPSampler.DO_MULTIPART_POST">false</boolProp>
+          <stringProp name="HTTPSampler.embedded_url_re"></stringProp>
+          <stringProp name="HTTPSampler.connect_timeout"></stringProp>
+          <stringProp name="HTTPSampler.response_timeout"></stringProp>
+        </HTTPSamplerProxy>
+        <hashTree>
+          <ResponseAssertion guiclass="AssertionGui" testclass="ResponseAssertion" testname="Response Code200" enabled="true">
+            <collectionProp name="Asserion.test_strings">
+              <stringProp name="-1146597565">${Response200}</stringProp>
+            </collectionProp>
+            <stringProp name="Assertion.custom_message"></stringProp>
+            <stringProp name="Assertion.test_field">Assertion.response_code</stringProp>
+            <boolProp name="Assertion.assume_success">true</boolProp>
+            <intProp name="Assertion.test_type">2</intProp>
+          </ResponseAssertion>
+          <hashTree/>
+          <ResponseAssertion guiclass="AssertionGui" testclass="ResponseAssertion" testname="Response Assertion" enabled="true">
+            <collectionProp name="Asserion.test_strings">
+              <stringProp name="1402947425">requestStatus</stringProp>
+              <stringProp name="48">0</stringProp>
+              <stringProp name="-340323263">response</stringProp>
+              <stringProp name="-1026058294">QueryId is not proper input, Payment and Invoice Query Id are mandatory</stringProp>
+            </collectionProp>
+            <stringProp name="Assertion.custom_message"></stringProp>
+            <stringProp name="Assertion.test_field">Assertion.response_data</stringProp>
+            <boolProp name="Assertion.assume_success">true</boolProp>
+            <intProp name="Assertion.test_type">2</intProp>
+          </ResponseAssertion>
+          <hashTree/>
+          <HeaderManager guiclass="HeaderPanel" testclass="HeaderManager" testname="HTTP Header Manager" enabled="true">
+            <collectionProp name="HeaderManager.headers">
+              <elementProp name="Accept-Language" elementType="Header">
+                <stringProp name="Header.name">Accept-Language</stringProp>
+                <stringProp name="Header.value">en-US,en;q=0.5</stringProp>
+              </elementProp>
+              <elementProp name="Content-Type" elementType="Header">
+                <stringProp name="Header.name">Content-Type</stringProp>
+                <stringProp name="Header.value">application/json; charset=UTF-8</stringProp>
+              </elementProp>
+              <elementProp name="Cache-Control" elementType="Header">
+                <stringProp name="Header.name">Cache-Control</stringProp>
+                <stringProp name="Header.value">no-cache</stringProp>
+              </elementProp>
+              <elementProp name="Accept" elementType="Header">
+                <stringProp name="Header.name">Accept</stringProp>
+                <stringProp name="Header.value">application/json</stringProp>
+              </elementProp>
+              <elementProp name="" elementType="Header">
+                <stringProp name="Header.name">Authorization</stringProp>
+                <stringProp name="Header.value">Bearer ${__property(Access_Token_2)}</stringProp>
+              </elementProp>
+            </collectionProp>
+          </HeaderManager>
+          <hashTree/>
+        </hashTree>
+        <BeanShellPreProcessor guiclass="TestBeanGUI" testclass="BeanShellPreProcessor" testname="POST Invoice Query field is  always Mandatory " enabled="false">
+          <stringProp name="filename"></stringProp>
+          <stringProp name="parameters"></stringProp>
+          <boolProp name="resetInterpreter">false</boolProp>
+          <stringProp name="script"></stringProp>
+        </BeanShellPreProcessor>
+        <hashTree/>
+        <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="P: Verify user is getting validation when Invoice Query field is  missing " enabled="true">
+          <boolProp name="HTTPSampler.postBodyRaw">true</boolProp>
+          <elementProp name="HTTPsampler.Arguments" elementType="Arguments">
+            <collectionProp name="Arguments.arguments">
+              <elementProp name="" elementType="HTTPArgument">
+                <boolProp name="HTTPArgument.always_encode">false</boolProp>
+                <stringProp name="Argument.value">{&#xd;
+  &quot;name&quot;: &quot;RegalPAY_${__time}&quot;,&#xd;
+  &quot;legalName&quot;: &quot;REGALLEGAL${__time}&quot;,&#xd;
+  &quot;dba&quot;: &quot;${DBA}&quot;,&#xd;
+  &quot;defaultPaymentType&quot;: &quot;MCCRD&quot;,&#xd;
+  &quot;enableMultiVendorLocations&quot;: true,&#xd;
+  &quot;addressLine1&quot;: &quot;${ADD1}&quot;,&#xd;
+  &quot;addressLine2&quot;: &quot;${ADD2}&quot;,&#xd;
+  &quot;addressLine3&quot;: &quot;${ADD3}&quot;,&#xd;
+  &quot;addressLine4&quot;: &quot;${ADD4}&quot;,&#xd;
+  &quot;city&quot;: &quot;${City}&quot;,&#xd;
+  &quot;state&quot;: &quot;${State}&quot;,&#xd;
+  &quot;zipCode&quot;: &quot;${PinCode}&quot;,&#xd;
+  &quot;countryCode&quot;: &quot;${CCode}&quot;,&#xd;
+  &quot;country&quot;: &quot;${County}&quot;,&#xd;
+  &quot;integrationType&quot;: &quot;${IT2}&quot;,&#xd;
+  &quot;dataxtractorConfiguration&quot;: {&#xd;
+                &quot;fetchVendorPayTypeFromERP&quot;: true,&#xd;
+                &quot;fetchVendorBankDataFromERP&quot;: true,&#xd;
+                &quot;fetchVendorContactInfoFromERP&quot;: true,&#xd;
+                &quot;numberOfDaysToPullPayments&quot;: 1,&#xd;
+                &quot;paymentQueryId&quot;: &quot;${__property(paymentQuery_id)}&quot;, &#xd;
+               &#xd;
+                &quot;invoiceQueryId&quot;: null,&#xd;
+                &quot;vendorListQueryId&quot;: &quot;${__property(VendorListQueryID1)}&quot;,&#xd;
+                &quot;locationListQueryId&quot;:  &quot;${__property(locationlistQuery_id)}&quot;, &#xd;
+                &quot;vendorAddressQueryId&quot;:  &quot;${__property(vendoraddressQuery_id)}&quot;, &#xd;
+                &quot;vendorBankDataQueryId&quot;:   &quot;${__property(vendorbankdataQuery_id)}&quot;,&#xd;
+                &quot;vendorContactInfoQueryId&quot;:  &quot;${__property(vendorcontactinfoQuery_id)}&quot;, &#xd;
+              },&#xd;
+&#xd;
+              &quot;filexchangeConfiguration&quot;: null,&#xd;
+              &quot;apiConfiguration&quot;: null,&#xd;
+              &quot;logo&quot;: &quot;string&quot;&#xd;
+            }&#xd;
+}</stringProp>
+                <stringProp name="Argument.metadata">=</stringProp>
+              </elementProp>
+            </collectionProp>
+          </elementProp>
+          <stringProp name="HTTPSampler.domain">${URL}</stringProp>
+          <stringProp name="HTTPSampler.port">UFT-8</stringProp>
+          <stringProp name="HTTPSampler.protocol">https</stringProp>
+          <stringProp name="HTTPSampler.contentEncoding"></stringProp>
+          <stringProp name="HTTPSampler.path">${Company}</stringProp>
+          <stringProp name="HTTPSampler.method">POST</stringProp>
+          <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
+          <boolProp name="HTTPSampler.auto_redirects">false</boolProp>
+          <boolProp name="HTTPSampler.use_keepalive">true</boolProp>
+          <boolProp name="HTTPSampler.DO_MULTIPART_POST">false</boolProp>
+          <stringProp name="HTTPSampler.embedded_url_re"></stringProp>
+          <stringProp name="HTTPSampler.connect_timeout"></stringProp>
+          <stringProp name="HTTPSampler.response_timeout"></stringProp>
+        </HTTPSamplerProxy>
+        <hashTree>
+          <ResponseAssertion guiclass="AssertionGui" testclass="ResponseAssertion" testname="Response Code200" enabled="true">
+            <collectionProp name="Asserion.test_strings">
+              <stringProp name="-1146597565">${Response200}</stringProp>
+            </collectionProp>
+            <stringProp name="Assertion.custom_message"></stringProp>
+            <stringProp name="Assertion.test_field">Assertion.response_code</stringProp>
+            <boolProp name="Assertion.assume_success">true</boolProp>
+            <intProp name="Assertion.test_type">2</intProp>
+          </ResponseAssertion>
+          <hashTree/>
+          <ResponseAssertion guiclass="AssertionGui" testclass="ResponseAssertion" testname="Response Assertion" enabled="true">
+            <collectionProp name="Asserion.test_strings">
+              <stringProp name="1402947425">requestStatus</stringProp>
+              <stringProp name="48">0</stringProp>
+              <stringProp name="-340323263">response</stringProp>
+              <stringProp name="-1026058294">QueryId is not proper input, Payment and Invoice Query Id are mandatory</stringProp>
+            </collectionProp>
+            <stringProp name="Assertion.custom_message"></stringProp>
+            <stringProp name="Assertion.test_field">Assertion.response_data</stringProp>
+            <boolProp name="Assertion.assume_success">true</boolProp>
+            <intProp name="Assertion.test_type">2</intProp>
+          </ResponseAssertion>
+          <hashTree/>
+          <HeaderManager guiclass="HeaderPanel" testclass="HeaderManager" testname="HTTP Header Manager" enabled="true">
+            <collectionProp name="HeaderManager.headers">
+              <elementProp name="Accept-Language" elementType="Header">
+                <stringProp name="Header.name">Accept-Language</stringProp>
+                <stringProp name="Header.value">en-US,en;q=0.5</stringProp>
+              </elementProp>
+              <elementProp name="Content-Type" elementType="Header">
+                <stringProp name="Header.name">Content-Type</stringProp>
+                <stringProp name="Header.value">application/json; charset=UTF-8</stringProp>
+              </elementProp>
+              <elementProp name="Cache-Control" elementType="Header">
+                <stringProp name="Header.name">Cache-Control</stringProp>
+                <stringProp name="Header.value">no-cache</stringProp>
+              </elementProp>
+              <elementProp name="Accept" elementType="Header">
+                <stringProp name="Header.name">Accept</stringProp>
+                <stringProp name="Header.value">application/json</stringProp>
+              </elementProp>
+              <elementProp name="" elementType="Header">
+                <stringProp name="Header.name">Authorization</stringProp>
+                <stringProp name="Header.value">Bearer ${__property(Access_Token_2)}</stringProp>
+              </elementProp>
+            </collectionProp>
+          </HeaderManager>
+          <hashTree/>
+        </hashTree>
+        <BeanShellPreProcessor guiclass="TestBeanGUI" testclass="BeanShellPreProcessor" testname="POST Vendor Address Query field is  always Mandatory " enabled="false">
+          <stringProp name="filename"></stringProp>
+          <stringProp name="parameters"></stringProp>
+          <boolProp name="resetInterpreter">false</boolProp>
+          <stringProp name="script"></stringProp>
+        </BeanShellPreProcessor>
+        <hashTree/>
+        <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="P: Verify user is getting validation when Vendor Address  Query field is  missing " enabled="true">
+          <boolProp name="HTTPSampler.postBodyRaw">true</boolProp>
+          <elementProp name="HTTPsampler.Arguments" elementType="Arguments">
+            <collectionProp name="Arguments.arguments">
+              <elementProp name="" elementType="HTTPArgument">
+                <boolProp name="HTTPArgument.always_encode">false</boolProp>
+                <stringProp name="Argument.value">{&#xd;
+  &quot;name&quot;: &quot;RegalPAY_${__time}&quot;,&#xd;
+  &quot;legalName&quot;: &quot;REGALLEGAL${__time}&quot;,&#xd;
+  &quot;dba&quot;: &quot;${DBA}&quot;,&#xd;
+  &quot;defaultPaymentType&quot;: &quot;MCCRD&quot;,&#xd;
+  &quot;enableMultiVendorLocations&quot;: true,&#xd;
+  &quot;addressLine1&quot;: &quot;${ADD1}&quot;,&#xd;
+  &quot;addressLine2&quot;: &quot;${ADD2}&quot;,&#xd;
+  &quot;addressLine3&quot;: &quot;${ADD3}&quot;,&#xd;
+  &quot;addressLine4&quot;: &quot;${ADD4}&quot;,&#xd;
+  &quot;city&quot;: &quot;${City}&quot;,&#xd;
+  &quot;state&quot;: &quot;${State}&quot;,&#xd;
+  &quot;zipCode&quot;: &quot;${PinCode}&quot;,&#xd;
+  &quot;countryCode&quot;: &quot;${CCode}&quot;,&#xd;
+  &quot;country&quot;: &quot;${County}&quot;,&#xd;
+  &quot;integrationType&quot;: &quot;${IT2}&quot;,&#xd;
+  &quot;dataxtractorConfiguration&quot;: {&#xd;
+                &quot;fetchVendorPayTypeFromERP&quot;: true,&#xd;
+                &quot;fetchVendorBankDataFromERP&quot;: true,&#xd;
+                &quot;fetchVendorContactInfoFromERP&quot;: true,&#xd;
+                &quot;numberOfDaysToPullPayments&quot;: 1,&#xd;
+                &quot;paymentQueryId&quot;: &quot;${__property(paymentQuery_id)}&quot;,  &#xd;
+                &quot;invoiceQueryId&quot;: &quot;${__property(invoiceQuery_id)}&quot;,&#xd;
+                &quot;vendorListQueryId&quot;: &quot;${__property(VendorListQueryID1)}&quot;,&#xd;
+                &quot;locationListQueryId&quot;:  &quot;${__property(locationlistQuery_id)}&quot;, &#xd;
+                &quot;vendorAddressQueryId&quot;:  null, &#xd;
+                &quot;vendorBankDataQueryId&quot;:   &quot;${__property(vendorbankdataQuery_id)}&quot;,&#xd;
+                &quot;vendorContactInfoQueryId&quot;:&quot;${__property(vendorcontactinfoQuery_id)}&quot;, &#xd;
+              },&#xd;
+&#xd;
+              &quot;filexchangeConfiguration&quot;: null,&#xd;
+              &quot;apiConfiguration&quot;: null,&#xd;
+              &quot;logo&quot;: &quot;string&quot;&#xd;
+            }&#xd;
+}</stringProp>
+                <stringProp name="Argument.metadata">=</stringProp>
+              </elementProp>
+            </collectionProp>
+          </elementProp>
+          <stringProp name="HTTPSampler.domain">${URL}</stringProp>
+          <stringProp name="HTTPSampler.port">UFT-8</stringProp>
+          <stringProp name="HTTPSampler.protocol">https</stringProp>
+          <stringProp name="HTTPSampler.contentEncoding"></stringProp>
+          <stringProp name="HTTPSampler.path">${Company}</stringProp>
+          <stringProp name="HTTPSampler.method">POST</stringProp>
+          <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
+          <boolProp name="HTTPSampler.auto_redirects">false</boolProp>
+          <boolProp name="HTTPSampler.use_keepalive">true</boolProp>
+          <boolProp name="HTTPSampler.DO_MULTIPART_POST">false</boolProp>
+          <stringProp name="HTTPSampler.embedded_url_re"></stringProp>
+          <stringProp name="HTTPSampler.connect_timeout"></stringProp>
+          <stringProp name="HTTPSampler.response_timeout"></stringProp>
+        </HTTPSamplerProxy>
+        <hashTree>
+          <ResponseAssertion guiclass="AssertionGui" testclass="ResponseAssertion" testname="Response Code200" enabled="true">
+            <collectionProp name="Asserion.test_strings">
+              <stringProp name="-1146597565">${Response200}</stringProp>
+            </collectionProp>
+            <stringProp name="Assertion.custom_message"></stringProp>
+            <stringProp name="Assertion.test_field">Assertion.response_code</stringProp>
+            <boolProp name="Assertion.assume_success">true</boolProp>
+            <intProp name="Assertion.test_type">2</intProp>
+          </ResponseAssertion>
+          <hashTree/>
+          <ResponseAssertion guiclass="AssertionGui" testclass="ResponseAssertion" testname="Response Assertion" enabled="true">
+            <collectionProp name="Asserion.test_strings">
+              <stringProp name="1402947425">requestStatus</stringProp>
+              <stringProp name="48">0</stringProp>
+              <stringProp name="-340323263">response</stringProp>
+              <stringProp name="871140544">QueryId is not proper input, Vendor Address Query Id is mandatory</stringProp>
+            </collectionProp>
+            <stringProp name="Assertion.custom_message"></stringProp>
+            <stringProp name="Assertion.test_field">Assertion.response_data</stringProp>
+            <boolProp name="Assertion.assume_success">true</boolProp>
+            <intProp name="Assertion.test_type">2</intProp>
+          </ResponseAssertion>
+          <hashTree/>
+          <HeaderManager guiclass="HeaderPanel" testclass="HeaderManager" testname="HTTP Header Manager" enabled="true">
+            <collectionProp name="HeaderManager.headers">
+              <elementProp name="Accept-Language" elementType="Header">
+                <stringProp name="Header.name">Accept-Language</stringProp>
+                <stringProp name="Header.value">en-US,en;q=0.5</stringProp>
+              </elementProp>
+              <elementProp name="Content-Type" elementType="Header">
+                <stringProp name="Header.name">Content-Type</stringProp>
+                <stringProp name="Header.value">application/json; charset=UTF-8</stringProp>
+              </elementProp>
+              <elementProp name="Cache-Control" elementType="Header">
+                <stringProp name="Header.name">Cache-Control</stringProp>
+                <stringProp name="Header.value">no-cache</stringProp>
+              </elementProp>
+              <elementProp name="Accept" elementType="Header">
+                <stringProp name="Header.name">Accept</stringProp>
+                <stringProp name="Header.value">application/json</stringProp>
+              </elementProp>
+              <elementProp name="" elementType="Header">
+                <stringProp name="Header.name">Authorization</stringProp>
+                <stringProp name="Header.value">Bearer ${__property(Access_Token_2)}</stringProp>
+              </elementProp>
+            </collectionProp>
+          </HeaderManager>
+          <hashTree/>
+        </hashTree>
+        <BeanShellPreProcessor guiclass="TestBeanGUI" testclass="BeanShellPreProcessor" testname="POST Vendor Bank data  Query field is  Mandatory When GET Vendor Bank data from ERP is True" enabled="false">
+          <stringProp name="filename"></stringProp>
+          <stringProp name="parameters"></stringProp>
+          <boolProp name="resetInterpreter">false</boolProp>
+          <stringProp name="script"></stringProp>
+        </BeanShellPreProcessor>
+        <hashTree/>
+        <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="P: Verify user is getting validations for Vendor Bank data  Query when Vendor Bank data from ERP is TRUE" enabled="true">
+          <boolProp name="HTTPSampler.postBodyRaw">true</boolProp>
+          <elementProp name="HTTPsampler.Arguments" elementType="Arguments">
+            <collectionProp name="Arguments.arguments">
+              <elementProp name="" elementType="HTTPArgument">
+                <boolProp name="HTTPArgument.always_encode">false</boolProp>
+                <stringProp name="Argument.value">{&#xd;
+  &quot;name&quot;: &quot;RegalPAY_${__time}&quot;,&#xd;
+  &quot;legalName&quot;: &quot;REGALLEGAL${__time}&quot;,&#xd;
+  &quot;dba&quot;: &quot;${DBA}&quot;,&#xd;
+  &quot;defaultPaymentType&quot;: &quot;MCCRD&quot;,&#xd;
+  &quot;enableMultiVendorLocations&quot;: true,&#xd;
+  &quot;addressLine1&quot;: &quot;${ADD1}&quot;,&#xd;
+  &quot;addressLine2&quot;: &quot;${ADD2}&quot;,&#xd;
+  &quot;addressLine3&quot;: &quot;${ADD3}&quot;,&#xd;
+  &quot;addressLine4&quot;: &quot;${ADD4}&quot;,&#xd;
+  &quot;city&quot;: &quot;${City}&quot;,&#xd;
+  &quot;state&quot;: &quot;${State}&quot;,&#xd;
+  &quot;zipCode&quot;: &quot;${PinCode}&quot;,&#xd;
+  &quot;countryCode&quot;: &quot;${CCode}&quot;,&#xd;
+  &quot;country&quot;: &quot;${County}&quot;,&#xd;
+  &quot;integrationType&quot;: &quot;${IT2}&quot;,&#xd;
+  &quot;dataxtractorConfiguration&quot;: {&#xd;
+                &quot;fetchVendorPayTypeFromERP&quot;: true,&#xd;
+                &quot;fetchVendorBankDataFromERP&quot;: true,&#xd;
+                &quot;fetchVendorContactInfoFromERP&quot;: true,&#xd;
+                &quot;numberOfDaysToPullPayments&quot;: 1,&#xd;
+                &quot;paymentQueryId&quot;: &quot;${__property(paymentQuery_id)}&quot;, &#xd;
+                &quot;invoiceQueryId&quot;: &quot;${__property(invoiceQuery_id)}&quot;,&#xd;
+                &quot;vendorListQueryId&quot;: &quot;${__property(VendorListQueryID1)}&quot;,&#xd;
+                &quot;locationListQueryId&quot;:  &quot;${__property(locationlistQuery_id)}&quot;, &#xd;
+                &quot;vendorAddressQueryId&quot;:  &quot;${__property(vendoraddressQuery_id)}&quot;, &#xd;
+                &quot;vendorBankDataQueryId&quot;:  null, &#xd;
+                &quot;vendorContactInfoQueryId&quot;:  &quot;${__property(vendorcontactinfoQuery_id)}&quot;, &#xd;
+              },&#xd;
+&#xd;
+              &quot;filexchangeConfiguration&quot;: null,&#xd;
+              &quot;apiConfiguration&quot;: null,&#xd;
+              &quot;logo&quot;: &quot;string&quot;&#xd;
+            }&#xd;
+}</stringProp>
+                <stringProp name="Argument.metadata">=</stringProp>
+              </elementProp>
+            </collectionProp>
+          </elementProp>
+          <stringProp name="HTTPSampler.domain">${URL}</stringProp>
+          <stringProp name="HTTPSampler.port">UFT-8</stringProp>
+          <stringProp name="HTTPSampler.protocol">https</stringProp>
+          <stringProp name="HTTPSampler.contentEncoding"></stringProp>
+          <stringProp name="HTTPSampler.path">${Company}</stringProp>
+          <stringProp name="HTTPSampler.method">POST</stringProp>
+          <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
+          <boolProp name="HTTPSampler.auto_redirects">false</boolProp>
+          <boolProp name="HTTPSampler.use_keepalive">true</boolProp>
+          <boolProp name="HTTPSampler.DO_MULTIPART_POST">false</boolProp>
+          <stringProp name="HTTPSampler.embedded_url_re"></stringProp>
+          <stringProp name="HTTPSampler.connect_timeout"></stringProp>
+          <stringProp name="HTTPSampler.response_timeout"></stringProp>
+        </HTTPSamplerProxy>
+        <hashTree>
+          <ResponseAssertion guiclass="AssertionGui" testclass="ResponseAssertion" testname="Response Code200" enabled="true">
+            <collectionProp name="Asserion.test_strings">
+              <stringProp name="-1146597565">${Response200}</stringProp>
+            </collectionProp>
+            <stringProp name="Assertion.custom_message"></stringProp>
+            <stringProp name="Assertion.test_field">Assertion.response_code</stringProp>
+            <boolProp name="Assertion.assume_success">true</boolProp>
+            <intProp name="Assertion.test_type">2</intProp>
+          </ResponseAssertion>
+          <hashTree/>
+          <ResponseAssertion guiclass="AssertionGui" testclass="ResponseAssertion" testname="Response Assertion" enabled="true">
+            <collectionProp name="Asserion.test_strings">
+              <stringProp name="1402947425">requestStatus</stringProp>
+              <stringProp name="48">0</stringProp>
+              <stringProp name="-340323263">response</stringProp>
+              <stringProp name="-2059887238">QueryId is not proper input, Vendor Bank Data Query Id is mandatory</stringProp>
+            </collectionProp>
+            <stringProp name="Assertion.custom_message"></stringProp>
+            <stringProp name="Assertion.test_field">Assertion.response_data</stringProp>
+            <boolProp name="Assertion.assume_success">true</boolProp>
+            <intProp name="Assertion.test_type">2</intProp>
+          </ResponseAssertion>
+          <hashTree/>
+          <HeaderManager guiclass="HeaderPanel" testclass="HeaderManager" testname="HTTP Header Manager" enabled="true">
+            <collectionProp name="HeaderManager.headers">
+              <elementProp name="Accept-Language" elementType="Header">
+                <stringProp name="Header.name">Accept-Language</stringProp>
+                <stringProp name="Header.value">en-US,en;q=0.5</stringProp>
+              </elementProp>
+              <elementProp name="Content-Type" elementType="Header">
+                <stringProp name="Header.name">Content-Type</stringProp>
+                <stringProp name="Header.value">application/json; charset=UTF-8</stringProp>
+              </elementProp>
+              <elementProp name="Cache-Control" elementType="Header">
+                <stringProp name="Header.name">Cache-Control</stringProp>
+                <stringProp name="Header.value">no-cache</stringProp>
+              </elementProp>
+              <elementProp name="Accept" elementType="Header">
+                <stringProp name="Header.name">Accept</stringProp>
+                <stringProp name="Header.value">application/json</stringProp>
+              </elementProp>
+              <elementProp name="" elementType="Header">
+                <stringProp name="Header.name">Authorization</stringProp>
+                <stringProp name="Header.value">Bearer ${__property(Access_Token_2)}</stringProp>
+              </elementProp>
+            </collectionProp>
+          </HeaderManager>
+          <hashTree/>
+        </hashTree>
+        <BeanShellPreProcessor guiclass="TestBeanGUI" testclass="BeanShellPreProcessor" testname="POST Vendor List Query field is  Mandatory When Enable Multi Locations for Vendors is False" enabled="false">
+          <stringProp name="filename"></stringProp>
+          <stringProp name="parameters"></stringProp>
+          <boolProp name="resetInterpreter">false</boolProp>
+          <stringProp name="script"></stringProp>
+        </BeanShellPreProcessor>
+        <hashTree/>
+        <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="P: Verify user is getting validations for Vendor List Query when Enable Multi Location for Vendor is FALSE" enabled="true">
+          <boolProp name="HTTPSampler.postBodyRaw">true</boolProp>
+          <elementProp name="HTTPsampler.Arguments" elementType="Arguments">
+            <collectionProp name="Arguments.arguments">
+              <elementProp name="" elementType="HTTPArgument">
+                <boolProp name="HTTPArgument.always_encode">false</boolProp>
+                <stringProp name="Argument.value">{&#xd;
+  &quot;name&quot;: &quot;RegalPAY_${__time}&quot;,&#xd;
+  &quot;legalName&quot;: &quot;REGALLEGAL${__time}&quot;,&#xd;
+  &quot;dba&quot;: &quot;${DBA}&quot;,&#xd;
+  &quot;defaultPaymentType&quot;: &quot;MCCRD&quot;,&#xd;
+  &quot;enableMultiVendorLocations&quot;: false,&#xd;
+  &quot;addressLine1&quot;: &quot;${ADD1}&quot;,&#xd;
+  &quot;addressLine2&quot;: &quot;${ADD2}&quot;,&#xd;
+  &quot;addressLine3&quot;: &quot;${ADD3}&quot;,&#xd;
+  &quot;addressLine4&quot;: &quot;${ADD4}&quot;,&#xd;
+  &quot;city&quot;: &quot;${City}&quot;,&#xd;
+  &quot;state&quot;: &quot;${State}&quot;,&#xd;
+  &quot;zipCode&quot;: &quot;${PinCode}&quot;,&#xd;
+  &quot;countryCode&quot;: &quot;${CCode}&quot;,&#xd;
+  &quot;country&quot;: &quot;${County}&quot;,&#xd;
+  &quot;integrationType&quot;: &quot;${IT2}&quot;,&#xd;
+  &quot;dataxtractorConfiguration&quot;: {&#xd;
+                &quot;fetchVendorPayTypeFromERP&quot;: true,&#xd;
+                &quot;fetchVendorBankDataFromERP&quot;: true,&#xd;
+                &quot;fetchVendorContactInfoFromERP&quot;: true,&#xd;
+                &quot;numberOfDaysToPullPayments&quot;: 1,&#xd;
+                &quot;paymentQueryId&quot;: &quot;${__property(paymentQuery_id)}&quot;, &#xd;
+                &quot;invoiceQueryId&quot;: &quot;${__property(invoiceQuery_id)}&quot;,&#xd;
+                &quot;vendorListQueryId&quot;: null,&#xd;
+                &quot;locationListQueryId&quot;:  &quot;${__property(locationlistQuery_id)}&quot;,&#xd;
+                &quot;vendorAddressQueryId&quot;:  &quot;${__property(vendoraddressQuery_id)}&quot;, &#xd;
+                &quot;vendorBankDataQueryId&quot;:  &quot;${__property(vendorbankdataQuery_id)}&quot;, &#xd;
+                &quot;vendorContactInfoQueryId&quot;:&quot;${__property(vendorcontactinfoQuery_id)}&quot;,&#xd;
+              },&#xd;
+&#xd;
+              &quot;filexchangeConfiguration&quot;: null,&#xd;
+              &quot;apiConfiguration&quot;: null,&#xd;
+              &quot;logo&quot;: &quot;string&quot;&#xd;
+            }&#xd;
+}</stringProp>
+                <stringProp name="Argument.metadata">=</stringProp>
+              </elementProp>
+            </collectionProp>
+          </elementProp>
+          <stringProp name="HTTPSampler.domain">${URL}</stringProp>
+          <stringProp name="HTTPSampler.port">UFT-8</stringProp>
+          <stringProp name="HTTPSampler.protocol">https</stringProp>
+          <stringProp name="HTTPSampler.contentEncoding"></stringProp>
+          <stringProp name="HTTPSampler.path">${Company}</stringProp>
+          <stringProp name="HTTPSampler.method">POST</stringProp>
+          <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
+          <boolProp name="HTTPSampler.auto_redirects">false</boolProp>
+          <boolProp name="HTTPSampler.use_keepalive">true</boolProp>
+          <boolProp name="HTTPSampler.DO_MULTIPART_POST">false</boolProp>
+          <stringProp name="HTTPSampler.embedded_url_re"></stringProp>
+          <stringProp name="HTTPSampler.connect_timeout"></stringProp>
+          <stringProp name="HTTPSampler.response_timeout"></stringProp>
+        </HTTPSamplerProxy>
+        <hashTree>
+          <ResponseAssertion guiclass="AssertionGui" testclass="ResponseAssertion" testname="Response Code200" enabled="true">
+            <collectionProp name="Asserion.test_strings">
+              <stringProp name="-1146597565">${Response200}</stringProp>
+            </collectionProp>
+            <stringProp name="Assertion.custom_message"></stringProp>
+            <stringProp name="Assertion.test_field">Assertion.response_code</stringProp>
+            <boolProp name="Assertion.assume_success">true</boolProp>
+            <intProp name="Assertion.test_type">2</intProp>
+          </ResponseAssertion>
+          <hashTree/>
+          <ResponseAssertion guiclass="AssertionGui" testclass="ResponseAssertion" testname="Response Assertion" enabled="true">
+            <collectionProp name="Asserion.test_strings">
+              <stringProp name="1402947425">requestStatus</stringProp>
+              <stringProp name="48">0</stringProp>
+              <stringProp name="-340323263">response</stringProp>
+              <stringProp name="-571467022">QueryId is not proper input, Vendor List Query Id is mandatory</stringProp>
+            </collectionProp>
+            <stringProp name="Assertion.custom_message"></stringProp>
+            <stringProp name="Assertion.test_field">Assertion.response_data</stringProp>
+            <boolProp name="Assertion.assume_success">true</boolProp>
+            <intProp name="Assertion.test_type">2</intProp>
+          </ResponseAssertion>
+          <hashTree/>
+          <HeaderManager guiclass="HeaderPanel" testclass="HeaderManager" testname="HTTP Header Manager" enabled="true">
+            <collectionProp name="HeaderManager.headers">
+              <elementProp name="Accept-Language" elementType="Header">
+                <stringProp name="Header.name">Accept-Language</stringProp>
+                <stringProp name="Header.value">en-US,en;q=0.5</stringProp>
+              </elementProp>
+              <elementProp name="Content-Type" elementType="Header">
+                <stringProp name="Header.name">Content-Type</stringProp>
+                <stringProp name="Header.value">application/json; charset=UTF-8</stringProp>
+              </elementProp>
+              <elementProp name="Cache-Control" elementType="Header">
+                <stringProp name="Header.name">Cache-Control</stringProp>
+                <stringProp name="Header.value">no-cache</stringProp>
+              </elementProp>
+              <elementProp name="Accept" elementType="Header">
+                <stringProp name="Header.name">Accept</stringProp>
+                <stringProp name="Header.value">application/json</stringProp>
+              </elementProp>
+              <elementProp name="" elementType="Header">
+                <stringProp name="Header.name">Authorization</stringProp>
+                <stringProp name="Header.value">Bearer ${__property(Access_Token_2)}</stringProp>
+              </elementProp>
+            </collectionProp>
+          </HeaderManager>
+          <hashTree/>
+        </hashTree>
+        <BeanShellPreProcessor guiclass="TestBeanGUI" testclass="BeanShellPreProcessor" testname="POST Location List Query field is  Mandatory When Enable Multi Locations for Vendors is True" enabled="false">
+          <stringProp name="filename"></stringProp>
+          <stringProp name="parameters"></stringProp>
+          <boolProp name="resetInterpreter">false</boolProp>
+          <stringProp name="script"></stringProp>
+        </BeanShellPreProcessor>
+        <hashTree/>
+        <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="P: Verify user is getting validations for Location List Query when Enable Multi Location for Vendor is TRUE" enabled="true">
+          <boolProp name="HTTPSampler.postBodyRaw">true</boolProp>
+          <elementProp name="HTTPsampler.Arguments" elementType="Arguments">
+            <collectionProp name="Arguments.arguments">
+              <elementProp name="" elementType="HTTPArgument">
+                <boolProp name="HTTPArgument.always_encode">false</boolProp>
+                <stringProp name="Argument.value">{&#xd;
+  &quot;name&quot;: &quot;RegalPAY_${__time}&quot;,&#xd;
+  &quot;legalName&quot;: &quot;REGALLEGAL${__time}&quot;,&#xd;
+  &quot;dba&quot;: &quot;${DBA}&quot;,&#xd;
+  &quot;defaultPaymentType&quot;: &quot;MCCRD&quot;,&#xd;
+  &quot;enableMultiVendorLocations&quot;: true,&#xd;
+  &quot;addressLine1&quot;: &quot;${ADD1}&quot;,&#xd;
+  &quot;addressLine2&quot;: &quot;${ADD2}&quot;,&#xd;
+  &quot;addressLine3&quot;: &quot;${ADD3}&quot;,&#xd;
+  &quot;addressLine4&quot;: &quot;${ADD4}&quot;,&#xd;
+  &quot;city&quot;: &quot;${City}&quot;,&#xd;
+  &quot;state&quot;: &quot;${State}&quot;,&#xd;
+  &quot;zipCode&quot;: &quot;${PinCode}&quot;,&#xd;
+  &quot;countryCode&quot;: &quot;${CCode}&quot;,&#xd;
+  &quot;country&quot;: &quot;${County}&quot;,&#xd;
+  &quot;integrationType&quot;: &quot;${IT2}&quot;,&#xd;
+  &quot;dataxtractorConfiguration&quot;: {&#xd;
+                &quot;fetchVendorPayTypeFromERP&quot;: true,&#xd;
+                &quot;fetchVendorBankDataFromERP&quot;: true,&#xd;
+                &quot;fetchVendorContactInfoFromERP&quot;: true,&#xd;
+                &quot;numberOfDaysToPullPayments&quot;: 1,&#xd;
+                &quot;paymentQueryId&quot;: &quot;${__property(paymentQuery_id)}&quot;, &#xd;
+                &quot;invoiceQueryId&quot;: &quot;${__property(invoiceQuery_id)}&quot;,&#xd;
+                &quot;vendorListQueryId&quot;: &quot;${__property(VendorListQueryID1)}&quot;,&#xd;
+                &quot;locationListQueryId&quot;:  null, &#xd;
+                &quot;vendorAddressQueryId&quot;:  &quot;${__property(vendoraddressQuery_id)}&quot;, &#xd;
+                &quot;vendorBankDataQueryId&quot;:  &quot;${__property(vendorbankdataQuery_id)}&quot;, &#xd;
+                &quot;vendorContactInfoQueryId&quot;:&quot;${__property(vendorcontactinfoQuery_id)}&quot;,&#xd;
+              },&#xd;
+&#xd;
+              &quot;filexchangeConfiguration&quot;: null,&#xd;
+              &quot;apiConfiguration&quot;: null,&#xd;
+              &quot;logo&quot;: &quot;string&quot;&#xd;
+            }&#xd;
+}</stringProp>
+                <stringProp name="Argument.metadata">=</stringProp>
+              </elementProp>
+            </collectionProp>
+          </elementProp>
+          <stringProp name="HTTPSampler.domain">${URL}</stringProp>
+          <stringProp name="HTTPSampler.port">UFT-8</stringProp>
+          <stringProp name="HTTPSampler.protocol">https</stringProp>
+          <stringProp name="HTTPSampler.contentEncoding"></stringProp>
+          <stringProp name="HTTPSampler.path">${Company}</stringProp>
+          <stringProp name="HTTPSampler.method">POST</stringProp>
+          <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
+          <boolProp name="HTTPSampler.auto_redirects">false</boolProp>
+          <boolProp name="HTTPSampler.use_keepalive">true</boolProp>
+          <boolProp name="HTTPSampler.DO_MULTIPART_POST">false</boolProp>
+          <stringProp name="HTTPSampler.embedded_url_re"></stringProp>
+          <stringProp name="HTTPSampler.connect_timeout"></stringProp>
+          <stringProp name="HTTPSampler.response_timeout"></stringProp>
+        </HTTPSamplerProxy>
+        <hashTree>
+          <ResponseAssertion guiclass="AssertionGui" testclass="ResponseAssertion" testname="Response Code200" enabled="true">
+            <collectionProp name="Asserion.test_strings">
+              <stringProp name="-1146597565">${Response200}</stringProp>
+            </collectionProp>
+            <stringProp name="Assertion.custom_message"></stringProp>
+            <stringProp name="Assertion.test_field">Assertion.response_code</stringProp>
+            <boolProp name="Assertion.assume_success">true</boolProp>
+            <intProp name="Assertion.test_type">2</intProp>
+          </ResponseAssertion>
+          <hashTree/>
+          <ResponseAssertion guiclass="AssertionGui" testclass="ResponseAssertion" testname="Response Assertion" enabled="true">
+            <collectionProp name="Asserion.test_strings">
+              <stringProp name="1402947425">requestStatus</stringProp>
+              <stringProp name="48">0</stringProp>
+              <stringProp name="-340323263">response</stringProp>
+              <stringProp name="1788928357">QueryId is not proper input, Location List Query Id is mandatory</stringProp>
+            </collectionProp>
+            <stringProp name="Assertion.custom_message"></stringProp>
+            <stringProp name="Assertion.test_field">Assertion.response_data</stringProp>
+            <boolProp name="Assertion.assume_success">true</boolProp>
+            <intProp name="Assertion.test_type">2</intProp>
+          </ResponseAssertion>
+          <hashTree/>
+          <HeaderManager guiclass="HeaderPanel" testclass="HeaderManager" testname="HTTP Header Manager" enabled="true">
+            <collectionProp name="HeaderManager.headers">
+              <elementProp name="Accept-Language" elementType="Header">
+                <stringProp name="Header.name">Accept-Language</stringProp>
+                <stringProp name="Header.value">en-US,en;q=0.5</stringProp>
+              </elementProp>
+              <elementProp name="Content-Type" elementType="Header">
+                <stringProp name="Header.name">Content-Type</stringProp>
+                <stringProp name="Header.value">application/json; charset=UTF-8</stringProp>
+              </elementProp>
+              <elementProp name="Cache-Control" elementType="Header">
+                <stringProp name="Header.name">Cache-Control</stringProp>
+                <stringProp name="Header.value">no-cache</stringProp>
+              </elementProp>
+              <elementProp name="Accept" elementType="Header">
+                <stringProp name="Header.name">Accept</stringProp>
+                <stringProp name="Header.value">application/json</stringProp>
+              </elementProp>
+              <elementProp name="" elementType="Header">
+                <stringProp name="Header.name">Authorization</stringProp>
+                <stringProp name="Header.value">Bearer ${__property(Access_Token_2)}</stringProp>
+              </elementProp>
+            </collectionProp>
+          </HeaderManager>
+          <hashTree/>
+        </hashTree>
+        <BeanShellPreProcessor guiclass="TestBeanGUI" testclass="BeanShellPreProcessor" testname="POST Vendor Bank data  Query field is  Mandatory When GET Vendor Bank data from ERP is True" enabled="false">
+          <stringProp name="filename"></stringProp>
+          <stringProp name="parameters"></stringProp>
+          <boolProp name="resetInterpreter">false</boolProp>
+          <stringProp name="script"></stringProp>
+        </BeanShellPreProcessor>
+        <hashTree/>
+        <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="P: Verify user is getting validations for Vendor Bank data  Query when Vendor Bank data from ERP is TRUE" enabled="true">
+          <boolProp name="HTTPSampler.postBodyRaw">true</boolProp>
+          <elementProp name="HTTPsampler.Arguments" elementType="Arguments">
+            <collectionProp name="Arguments.arguments">
+              <elementProp name="" elementType="HTTPArgument">
+                <boolProp name="HTTPArgument.always_encode">false</boolProp>
+                <stringProp name="Argument.value">{&#xd;
+  &quot;name&quot;: &quot;RegalPAY_${__time}&quot;,&#xd;
+  &quot;legalName&quot;: &quot;REGALLEGAL${__time}&quot;,&#xd;
+  &quot;dba&quot;: &quot;${DBA}&quot;,&#xd;
+  &quot;defaultPaymentType&quot;: &quot;MCCRD&quot;,&#xd;
+  &quot;enableMultiVendorLocations&quot;: true,&#xd;
+  &quot;addressLine1&quot;: &quot;${ADD1}&quot;,&#xd;
+  &quot;addressLine2&quot;: &quot;${ADD2}&quot;,&#xd;
+  &quot;addressLine3&quot;: &quot;${ADD3}&quot;,&#xd;
+  &quot;addressLine4&quot;: &quot;${ADD4}&quot;,&#xd;
+  &quot;city&quot;: &quot;${City}&quot;,&#xd;
+  &quot;state&quot;: &quot;${State}&quot;,&#xd;
+  &quot;zipCode&quot;: &quot;${PinCode}&quot;,&#xd;
+  &quot;countryCode&quot;: &quot;${CCode}&quot;,&#xd;
+  &quot;country&quot;: &quot;${County}&quot;,&#xd;
+  &quot;integrationType&quot;: &quot;${IT2}&quot;,&#xd;
+  &quot;dataxtractorConfiguration&quot;: {&#xd;
+                &quot;fetchVendorPayTypeFromERP&quot;: true,&#xd;
+                &quot;fetchVendorBankDataFromERP&quot;: true,&#xd;
+                &quot;fetchVendorContactInfoFromERP&quot;: true,&#xd;
+                &quot;numberOfDaysToPullPayments&quot;: 1,&#xd;
+                &quot;paymentQueryId&quot;: &quot;${__property(paymentQuery_id)}&quot;, &#xd;
+                &quot;invoiceQueryId&quot;: &quot;${__property(invoiceQuery_id)}&quot;,&#xd;
+                &quot;vendorListQueryId&quot;: &quot;${__property(VendorListQueryID1)}&quot;,&#xd;
+                &quot;locationListQueryId&quot;:  &quot;${__property(locationlistQuery_id)}&quot;, &#xd;
+                &quot;vendorAddressQueryId&quot;:  &quot;${__property(vendoraddressQuery_id)}&quot;, &#xd;
+                &quot;vendorBankDataQueryId&quot;:  null, &#xd;
+                &quot;vendorContactInfoQueryId&quot;:  &quot;${__property(vendorcontactinfoQuery_id)}&quot;, &#xd;
+              },&#xd;
+&#xd;
+              &quot;filexchangeConfiguration&quot;: null,&#xd;
+              &quot;apiConfiguration&quot;: null,&#xd;
+              &quot;logo&quot;: &quot;string&quot;&#xd;
+            }&#xd;
+}</stringProp>
+                <stringProp name="Argument.metadata">=</stringProp>
+              </elementProp>
+            </collectionProp>
+          </elementProp>
+          <stringProp name="HTTPSampler.domain">${URL}</stringProp>
+          <stringProp name="HTTPSampler.port">UFT-8</stringProp>
+          <stringProp name="HTTPSampler.protocol">https</stringProp>
+          <stringProp name="HTTPSampler.contentEncoding"></stringProp>
+          <stringProp name="HTTPSampler.path">${Company}</stringProp>
+          <stringProp name="HTTPSampler.method">POST</stringProp>
+          <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
+          <boolProp name="HTTPSampler.auto_redirects">false</boolProp>
+          <boolProp name="HTTPSampler.use_keepalive">true</boolProp>
+          <boolProp name="HTTPSampler.DO_MULTIPART_POST">false</boolProp>
+          <stringProp name="HTTPSampler.embedded_url_re"></stringProp>
+          <stringProp name="HTTPSampler.connect_timeout"></stringProp>
+          <stringProp name="HTTPSampler.response_timeout"></stringProp>
+        </HTTPSamplerProxy>
+        <hashTree>
+          <ResponseAssertion guiclass="AssertionGui" testclass="ResponseAssertion" testname="Response Code200" enabled="true">
+            <collectionProp name="Asserion.test_strings">
+              <stringProp name="-1146597565">${Response200}</stringProp>
+            </collectionProp>
+            <stringProp name="Assertion.custom_message"></stringProp>
+            <stringProp name="Assertion.test_field">Assertion.response_code</stringProp>
+            <boolProp name="Assertion.assume_success">true</boolProp>
+            <intProp name="Assertion.test_type">2</intProp>
+          </ResponseAssertion>
+          <hashTree/>
+          <ResponseAssertion guiclass="AssertionGui" testclass="ResponseAssertion" testname="Response Assertion" enabled="true">
+            <collectionProp name="Asserion.test_strings">
+              <stringProp name="1402947425">requestStatus</stringProp>
+              <stringProp name="48">0</stringProp>
+              <stringProp name="-340323263">response</stringProp>
+              <stringProp name="-2059887238">QueryId is not proper input, Vendor Bank Data Query Id is mandatory</stringProp>
+            </collectionProp>
+            <stringProp name="Assertion.custom_message"></stringProp>
+            <stringProp name="Assertion.test_field">Assertion.response_data</stringProp>
+            <boolProp name="Assertion.assume_success">true</boolProp>
+            <intProp name="Assertion.test_type">2</intProp>
+          </ResponseAssertion>
+          <hashTree/>
+          <HeaderManager guiclass="HeaderPanel" testclass="HeaderManager" testname="HTTP Header Manager" enabled="true">
+            <collectionProp name="HeaderManager.headers">
+              <elementProp name="Accept-Language" elementType="Header">
+                <stringProp name="Header.name">Accept-Language</stringProp>
+                <stringProp name="Header.value">en-US,en;q=0.5</stringProp>
+              </elementProp>
+              <elementProp name="Content-Type" elementType="Header">
+                <stringProp name="Header.name">Content-Type</stringProp>
+                <stringProp name="Header.value">application/json; charset=UTF-8</stringProp>
+              </elementProp>
+              <elementProp name="Cache-Control" elementType="Header">
+                <stringProp name="Header.name">Cache-Control</stringProp>
+                <stringProp name="Header.value">no-cache</stringProp>
+              </elementProp>
+              <elementProp name="Accept" elementType="Header">
+                <stringProp name="Header.name">Accept</stringProp>
+                <stringProp name="Header.value">application/json</stringProp>
+              </elementProp>
+              <elementProp name="" elementType="Header">
+                <stringProp name="Header.name">Authorization</stringProp>
+                <stringProp name="Header.value">Bearer ${__property(Access_Token_2)}</stringProp>
+              </elementProp>
+            </collectionProp>
+          </HeaderManager>
+          <hashTree/>
+        </hashTree>
+        <BeanShellPreProcessor guiclass="TestBeanGUI" testclass="BeanShellPreProcessor" testname="POST Vendor Contact Info  Query field is  Mandatory When GET Vendor Contact Info  from ERP is True" enabled="false">
+          <stringProp name="filename"></stringProp>
+          <stringProp name="parameters"></stringProp>
+          <boolProp name="resetInterpreter">false</boolProp>
+          <stringProp name="script"></stringProp>
+        </BeanShellPreProcessor>
+        <hashTree/>
+        <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="P: Verify user is getting validations for Vendor Contact Info  Query  when Vendor Contact Info  from ERP is TRUE" enabled="true">
+          <boolProp name="HTTPSampler.postBodyRaw">true</boolProp>
+          <elementProp name="HTTPsampler.Arguments" elementType="Arguments">
+            <collectionProp name="Arguments.arguments">
+              <elementProp name="" elementType="HTTPArgument">
+                <boolProp name="HTTPArgument.always_encode">false</boolProp>
+                <stringProp name="Argument.value">{&#xd;
+  &quot;name&quot;: &quot;RegalPAY_${__time}&quot;,&#xd;
+  &quot;legalName&quot;: &quot;REGALLEGAL${__time}&quot;,&#xd;
+  &quot;dba&quot;: &quot;${DBA}&quot;,&#xd;
+  &quot;defaultPaymentType&quot;: &quot;MCCRD&quot;,&#xd;
+  &quot;enableMultiVendorLocations&quot;: true,&#xd;
+  &quot;addressLine1&quot;: &quot;${ADD1}&quot;,&#xd;
+  &quot;addressLine2&quot;: &quot;${ADD2}&quot;,&#xd;
+  &quot;addressLine3&quot;: &quot;${ADD3}&quot;,&#xd;
+  &quot;addressLine4&quot;: &quot;${ADD4}&quot;,&#xd;
+  &quot;city&quot;: &quot;${City}&quot;,&#xd;
+  &quot;state&quot;: &quot;${State}&quot;,&#xd;
+  &quot;zipCode&quot;: &quot;${PinCode}&quot;,&#xd;
+  &quot;countryCode&quot;: &quot;${CCode}&quot;,&#xd;
+  &quot;country&quot;: &quot;${County}&quot;,&#xd;
+  &quot;integrationType&quot;: &quot;${IT2}&quot;,&#xd;
+  &quot;dataxtractorConfiguration&quot;: {&#xd;
+                &quot;fetchVendorPayTypeFromERP&quot;: true,&#xd;
+                &quot;fetchVendorBankDataFromERP&quot;: true,&#xd;
+                &quot;fetchVendorContactInfoFromERP&quot;: true,&#xd;
+                &quot;numberOfDaysToPullPayments&quot;: 1,&#xd;
+                &quot;paymentQueryId&quot;: &quot;${__property(paymentQuery_id)}&quot;, &#xd;
+                &quot;invoiceQueryId&quot;: &quot;${__property(invoiceQuery_id)}&quot;,&#xd;
+                &quot;vendorListQueryId&quot;: null,&#xd;
+                &quot;locationListQueryId&quot;:  &quot;${__property(locationlistQuery_id)}&quot;, &#xd;
+                &quot;vendorAddressQueryId&quot;:  &quot;${__property(vendoraddressQuery_id)}&quot;, &#xd;
+                &quot;vendorBankDataQueryId&quot;:  &quot;${__property(vendorbankdataQuery_id)}&quot;, &#xd;
+                &quot;vendorContactInfoQueryId&quot;:  null,&#xd;
+              },&#xd;
+&#xd;
+              &quot;filexchangeConfiguration&quot;: null,&#xd;
+              &quot;apiConfiguration&quot;: null,&#xd;
+              &quot;logo&quot;: &quot;string&quot;&#xd;
+            }&#xd;
+}</stringProp>
+                <stringProp name="Argument.metadata">=</stringProp>
+              </elementProp>
+            </collectionProp>
+          </elementProp>
+          <stringProp name="HTTPSampler.domain">${URL}</stringProp>
+          <stringProp name="HTTPSampler.port">UFT-8</stringProp>
+          <stringProp name="HTTPSampler.protocol">https</stringProp>
+          <stringProp name="HTTPSampler.contentEncoding"></stringProp>
+          <stringProp name="HTTPSampler.path">${Company}</stringProp>
+          <stringProp name="HTTPSampler.method">POST</stringProp>
+          <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
+          <boolProp name="HTTPSampler.auto_redirects">false</boolProp>
+          <boolProp name="HTTPSampler.use_keepalive">true</boolProp>
+          <boolProp name="HTTPSampler.DO_MULTIPART_POST">false</boolProp>
+          <stringProp name="HTTPSampler.embedded_url_re"></stringProp>
+          <stringProp name="HTTPSampler.connect_timeout"></stringProp>
+          <stringProp name="HTTPSampler.response_timeout"></stringProp>
+        </HTTPSamplerProxy>
+        <hashTree>
+          <ResponseAssertion guiclass="AssertionGui" testclass="ResponseAssertion" testname="Response Code200" enabled="true">
+            <collectionProp name="Asserion.test_strings">
+              <stringProp name="-1146597565">${Response200}</stringProp>
+            </collectionProp>
+            <stringProp name="Assertion.custom_message"></stringProp>
+            <stringProp name="Assertion.test_field">Assertion.response_code</stringProp>
+            <boolProp name="Assertion.assume_success">true</boolProp>
+            <intProp name="Assertion.test_type">2</intProp>
+          </ResponseAssertion>
+          <hashTree/>
+          <ResponseAssertion guiclass="AssertionGui" testclass="ResponseAssertion" testname="Response Assertion" enabled="true">
+            <collectionProp name="Asserion.test_strings">
+              <stringProp name="1402947425">requestStatus</stringProp>
+              <stringProp name="48">0</stringProp>
+              <stringProp name="-340323263">response</stringProp>
+              <stringProp name="-1712137438">QueryId is not proper input, Vendor Contact Info Query Id is mandatory</stringProp>
+            </collectionProp>
+            <stringProp name="Assertion.custom_message"></stringProp>
+            <stringProp name="Assertion.test_field">Assertion.response_data</stringProp>
+            <boolProp name="Assertion.assume_success">true</boolProp>
+            <intProp name="Assertion.test_type">2</intProp>
+          </ResponseAssertion>
+          <hashTree/>
+          <HeaderManager guiclass="HeaderPanel" testclass="HeaderManager" testname="HTTP Header Manager" enabled="true">
+            <collectionProp name="HeaderManager.headers">
+              <elementProp name="Accept-Language" elementType="Header">
+                <stringProp name="Header.name">Accept-Language</stringProp>
+                <stringProp name="Header.value">en-US,en;q=0.5</stringProp>
+              </elementProp>
+              <elementProp name="Content-Type" elementType="Header">
+                <stringProp name="Header.name">Content-Type</stringProp>
+                <stringProp name="Header.value">application/json; charset=UTF-8</stringProp>
+              </elementProp>
+              <elementProp name="Cache-Control" elementType="Header">
+                <stringProp name="Header.name">Cache-Control</stringProp>
+                <stringProp name="Header.value">no-cache</stringProp>
+              </elementProp>
+              <elementProp name="Accept" elementType="Header">
+                <stringProp name="Header.name">Accept</stringProp>
+                <stringProp name="Header.value">application/json</stringProp>
+              </elementProp>
+              <elementProp name="" elementType="Header">
+                <stringProp name="Header.name">Authorization</stringProp>
+                <stringProp name="Header.value">Bearer ${__property(Access_Token_2)}</stringProp>
+              </elementProp>
+            </collectionProp>
+          </HeaderManager>
+          <hashTree/>
+        </hashTree>
+        <BeanShellPreProcessor guiclass="TestBeanGUI" testclass="BeanShellPreProcessor" testname="GET All Companies" enabled="false">
+          <stringProp name="filename"></stringProp>
+          <stringProp name="parameters"></stringProp>
+          <boolProp name="resetInterpreter">false</boolProp>
+          <stringProp name="script"></stringProp>
+        </BeanShellPreProcessor>
+        <hashTree/>
+        <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="P: Verify user is able to GET Company Details" enabled="true">
+          <elementProp name="HTTPsampler.Arguments" elementType="Arguments" guiclass="HTTPArgumentsPanel" testclass="Arguments" testname="User Defined Variables" enabled="true">
+            <collectionProp name="Arguments.arguments"/>
+          </elementProp>
+          <stringProp name="HTTPSampler.domain">${URL}</stringProp>
+          <stringProp name="HTTPSampler.port">UFT-8</stringProp>
+          <stringProp name="HTTPSampler.protocol">https</stringProp>
+          <stringProp name="HTTPSampler.contentEncoding"></stringProp>
+          <stringProp name="HTTPSampler.path">${Company}</stringProp>
+          <stringProp name="HTTPSampler.method">GET</stringProp>
+          <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
+          <boolProp name="HTTPSampler.auto_redirects">false</boolProp>
+          <boolProp name="HTTPSampler.use_keepalive">true</boolProp>
+          <boolProp name="HTTPSampler.DO_MULTIPART_POST">false</boolProp>
+          <stringProp name="HTTPSampler.embedded_url_re"></stringProp>
+          <stringProp name="HTTPSampler.connect_timeout"></stringProp>
+          <stringProp name="HTTPSampler.response_timeout"></stringProp>
+        </HTTPSamplerProxy>
+        <hashTree>
+          <ResponseAssertion guiclass="AssertionGui" testclass="ResponseAssertion" testname="Response Code200" enabled="true">
+            <collectionProp name="Asserion.test_strings">
+              <stringProp name="-1146597565">${Response200}</stringProp>
+            </collectionProp>
+            <stringProp name="Assertion.custom_message"></stringProp>
+            <stringProp name="Assertion.test_field">Assertion.response_code</stringProp>
+            <boolProp name="Assertion.assume_success">true</boolProp>
+            <intProp name="Assertion.test_type">2</intProp>
+          </ResponseAssertion>
+          <hashTree/>
+          <ResponseAssertion guiclass="AssertionGui" testclass="ResponseAssertion" testname="Response Assertion" enabled="true">
+            <collectionProp name="Asserion.test_strings">
+              <stringProp name="1402947425">requestStatus</stringProp>
+              <stringProp name="49">1</stringProp>
+              <stringProp name="-340323263">response</stringProp>
+            </collectionProp>
+            <stringProp name="Assertion.custom_message"></stringProp>
+            <stringProp name="Assertion.test_field">Assertion.response_data</stringProp>
+            <boolProp name="Assertion.assume_success">true</boolProp>
+            <intProp name="Assertion.test_type">2</intProp>
+          </ResponseAssertion>
+          <hashTree/>
+          <HeaderManager guiclass="HeaderPanel" testclass="HeaderManager" testname="HTTP Header Manager" enabled="true">
+            <collectionProp name="HeaderManager.headers">
+              <elementProp name="Accept-Language" elementType="Header">
+                <stringProp name="Header.name">Accept-Language</stringProp>
+                <stringProp name="Header.value">en-US,en;q=0.5</stringProp>
+              </elementProp>
+              <elementProp name="Content-Type" elementType="Header">
+                <stringProp name="Header.name">Content-Type</stringProp>
+                <stringProp name="Header.value">application/json; charset=UTF-8</stringProp>
+              </elementProp>
+              <elementProp name="Cache-Control" elementType="Header">
+                <stringProp name="Header.name">Cache-Control</stringProp>
+                <stringProp name="Header.value">no-cache</stringProp>
+              </elementProp>
+              <elementProp name="Accept" elementType="Header">
+                <stringProp name="Header.name">Accept</stringProp>
+                <stringProp name="Header.value">application/json</stringProp>
+              </elementProp>
+              <elementProp name="" elementType="Header">
+                <stringProp name="Header.name">Authorization</stringProp>
+                <stringProp name="Header.value">Bearer ${__property(Access_Token_2)}</stringProp>
+              </elementProp>
+            </collectionProp>
+          </HeaderManager>
+          <hashTree/>
+        </hashTree>
+        <BeanShellPreProcessor guiclass="TestBeanGUI" testclass="BeanShellPreProcessor" testname="P:Verify user is able to GET Informations about Integrations Type Names" enabled="false">
+          <stringProp name="filename"></stringProp>
+          <stringProp name="parameters"></stringProp>
+          <boolProp name="resetInterpreter">false</boolProp>
+          <stringProp name="script"></stringProp>
+        </BeanShellPreProcessor>
+        <hashTree/>
+        <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="P: Verify user is able to GET Informations about Integrations Type Names" enabled="true">
+          <elementProp name="HTTPsampler.Arguments" elementType="Arguments" guiclass="HTTPArgumentsPanel" testclass="Arguments" testname="User Defined Variables" enabled="true">
+            <collectionProp name="Arguments.arguments"/>
+          </elementProp>
+          <stringProp name="HTTPSampler.domain">${URL}</stringProp>
+          <stringProp name="HTTPSampler.port">UFT-8</stringProp>
+          <stringProp name="HTTPSampler.protocol">https</stringProp>
+          <stringProp name="HTTPSampler.contentEncoding"></stringProp>
+          <stringProp name="HTTPSampler.path">${Integrations}</stringProp>
+          <stringProp name="HTTPSampler.method">GET</stringProp>
+          <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
+          <boolProp name="HTTPSampler.auto_redirects">false</boolProp>
+          <boolProp name="HTTPSampler.use_keepalive">true</boolProp>
+          <boolProp name="HTTPSampler.DO_MULTIPART_POST">false</boolProp>
+          <stringProp name="HTTPSampler.embedded_url_re"></stringProp>
+          <stringProp name="HTTPSampler.connect_timeout"></stringProp>
+          <stringProp name="HTTPSampler.response_timeout"></stringProp>
+        </HTTPSamplerProxy>
+        <hashTree>
+          <ResponseAssertion guiclass="AssertionGui" testclass="ResponseAssertion" testname="Response Code200" enabled="true">
+            <collectionProp name="Asserion.test_strings">
+              <stringProp name="-1146597565">${Response200}</stringProp>
+            </collectionProp>
+            <stringProp name="Assertion.custom_message"></stringProp>
+            <stringProp name="Assertion.test_field">Assertion.response_code</stringProp>
+            <boolProp name="Assertion.assume_success">true</boolProp>
+            <intProp name="Assertion.test_type">2</intProp>
+          </ResponseAssertion>
+          <hashTree/>
+          <ResponseAssertion guiclass="AssertionGui" testclass="ResponseAssertion" testname="Response Assertion" enabled="true">
+            <collectionProp name="Asserion.test_strings">
+              <stringProp name="1402947425">requestStatus</stringProp>
+              <stringProp name="49">1</stringProp>
+              <stringProp name="-340323263">response</stringProp>
+            </collectionProp>
+            <stringProp name="Assertion.custom_message"></stringProp>
+            <stringProp name="Assertion.test_field">Assertion.response_data</stringProp>
+            <boolProp name="Assertion.assume_success">true</boolProp>
+            <intProp name="Assertion.test_type">2</intProp>
+          </ResponseAssertion>
+          <hashTree/>
+          <HeaderManager guiclass="HeaderPanel" testclass="HeaderManager" testname="HTTP Header Manager" enabled="true">
+            <collectionProp name="HeaderManager.headers">
+              <elementProp name="Accept-Language" elementType="Header">
+                <stringProp name="Header.name">Accept-Language</stringProp>
+                <stringProp name="Header.value">en-US,en;q=0.5</stringProp>
+              </elementProp>
+              <elementProp name="Content-Type" elementType="Header">
+                <stringProp name="Header.name">Content-Type</stringProp>
+                <stringProp name="Header.value">application/json; charset=UTF-8</stringProp>
+              </elementProp>
+              <elementProp name="Cache-Control" elementType="Header">
+                <stringProp name="Header.name">Cache-Control</stringProp>
+                <stringProp name="Header.value">no-cache</stringProp>
+              </elementProp>
+              <elementProp name="Accept" elementType="Header">
+                <stringProp name="Header.name">Accept</stringProp>
+                <stringProp name="Header.value">application/json</stringProp>
+              </elementProp>
+              <elementProp name="" elementType="Header">
+                <stringProp name="Header.name">Authorization</stringProp>
+                <stringProp name="Header.value">Bearer ${__property(Access_Token_2)}</stringProp>
+              </elementProp>
+            </collectionProp>
+          </HeaderManager>
+          <hashTree/>
+        </hashTree>
+        <BeanShellPreProcessor guiclass="TestBeanGUI" testclass="BeanShellPreProcessor" testname="P:Verify user is able to GET Informations about Payments Type Names" enabled="false">
+          <stringProp name="filename"></stringProp>
+          <stringProp name="parameters"></stringProp>
+          <boolProp name="resetInterpreter">false</boolProp>
+          <stringProp name="script"></stringProp>
+        </BeanShellPreProcessor>
+        <hashTree/>
+        <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="P: Verify user is able to GET Informations about Payment Type Names" enabled="true">
+          <elementProp name="HTTPsampler.Arguments" elementType="Arguments" guiclass="HTTPArgumentsPanel" testclass="Arguments" testname="User Defined Variables" enabled="true">
+            <collectionProp name="Arguments.arguments"/>
+          </elementProp>
+          <stringProp name="HTTPSampler.domain">${URL}</stringProp>
+          <stringProp name="HTTPSampler.port">UFT-8</stringProp>
+          <stringProp name="HTTPSampler.protocol">https</stringProp>
+          <stringProp name="HTTPSampler.contentEncoding"></stringProp>
+          <stringProp name="HTTPSampler.path">${PaymentTypes}</stringProp>
+          <stringProp name="HTTPSampler.method">GET</stringProp>
+          <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
+          <boolProp name="HTTPSampler.auto_redirects">false</boolProp>
+          <boolProp name="HTTPSampler.use_keepalive">true</boolProp>
+          <boolProp name="HTTPSampler.DO_MULTIPART_POST">false</boolProp>
+          <stringProp name="HTTPSampler.embedded_url_re"></stringProp>
+          <stringProp name="HTTPSampler.connect_timeout"></stringProp>
+          <stringProp name="HTTPSampler.response_timeout"></stringProp>
+        </HTTPSamplerProxy>
+        <hashTree>
+          <ResponseAssertion guiclass="AssertionGui" testclass="ResponseAssertion" testname="Response Code200" enabled="true">
+            <collectionProp name="Asserion.test_strings">
+              <stringProp name="-1146597565">${Response200}</stringProp>
+            </collectionProp>
+            <stringProp name="Assertion.custom_message"></stringProp>
+            <stringProp name="Assertion.test_field">Assertion.response_code</stringProp>
+            <boolProp name="Assertion.assume_success">true</boolProp>
+            <intProp name="Assertion.test_type">2</intProp>
+          </ResponseAssertion>
+          <hashTree/>
+          <ResponseAssertion guiclass="AssertionGui" testclass="ResponseAssertion" testname="Response Assertion" enabled="true">
+            <collectionProp name="Asserion.test_strings">
+              <stringProp name="1402947425">requestStatus</stringProp>
+              <stringProp name="49">1</stringProp>
+              <stringProp name="-340323263">response</stringProp>
+            </collectionProp>
+            <stringProp name="Assertion.custom_message"></stringProp>
+            <stringProp name="Assertion.test_field">Assertion.response_data</stringProp>
+            <boolProp name="Assertion.assume_success">true</boolProp>
+            <intProp name="Assertion.test_type">2</intProp>
+          </ResponseAssertion>
+          <hashTree/>
+          <HeaderManager guiclass="HeaderPanel" testclass="HeaderManager" testname="HTTP Header Manager" enabled="true">
+            <collectionProp name="HeaderManager.headers">
+              <elementProp name="Accept-Language" elementType="Header">
+                <stringProp name="Header.name">Accept-Language</stringProp>
+                <stringProp name="Header.value">en-US,en;q=0.5</stringProp>
+              </elementProp>
+              <elementProp name="Content-Type" elementType="Header">
+                <stringProp name="Header.name">Content-Type</stringProp>
+                <stringProp name="Header.value">application/json; charset=UTF-8</stringProp>
+              </elementProp>
+              <elementProp name="Cache-Control" elementType="Header">
+                <stringProp name="Header.name">Cache-Control</stringProp>
+                <stringProp name="Header.value">no-cache</stringProp>
+              </elementProp>
+              <elementProp name="Accept" elementType="Header">
+                <stringProp name="Header.name">Accept</stringProp>
+                <stringProp name="Header.value">application/json</stringProp>
+              </elementProp>
+              <elementProp name="" elementType="Header">
+                <stringProp name="Header.name">Authorization</stringProp>
+                <stringProp name="Header.value">Bearer ${__property(Access_Token_2)}</stringProp>
+              </elementProp>
+            </collectionProp>
+          </HeaderManager>
           <hashTree/>
         </hashTree>
       </hashTree>
@@ -12913,7 +14267,7 @@ catch (Throwable ex) {
           <hashTree/>
           <ResponseAssertion guiclass="AssertionGui" testclass="ResponseAssertion" testname="Comparision of  a Vendor Address Details are always coming from  the ERP" enabled="true">
             <collectionProp name="Asserion.test_strings">
-              <stringProp name="-324136694">&quot;payeeNumber&quot;: &quot;${vacell80}&quot;</stringProp>
+              <stringProp name="-737386098">&quot;vendorNumber&quot;: &quot;${vacell80}&quot;</stringProp>
               <stringProp name="-1952354738">&quot;address1&quot;: &quot;${vacell84}&quot;,</stringProp>
               <stringProp name="1345569996">&quot;address2&quot;: &quot;${vacell85}&quot;,</stringProp>
               <stringProp name="348527434">&quot;address3&quot;: &quot;${vacell86}&quot;,</stringProp>
@@ -23242,7 +24596,7 @@ catch (Throwable ex) {
           <hashTree/>
           <ResponseAssertion guiclass="AssertionGui" testclass="ResponseAssertion" testname="Comparision of  a Vendor Address Details are always coming from  the ERP" enabled="true">
             <collectionProp name="Asserion.test_strings">
-              <stringProp name="-1464600383">&quot;payeeNumber&quot;: &quot;${vacell180}&quot;</stringProp>
+              <stringProp name="-1390430019">&quot;vendorNumber&quot;: &quot;${vacell180}&quot;</stringProp>
               <stringProp name="-592252265">&quot;address1&quot;: &quot;${vacell184}&quot;,</stringProp>
               <stringProp name="-1436694345">&quot;address2&quot;: &quot;${vacell185}&quot;,</stringProp>
               <stringProp name="2013830871">&quot;address3&quot;: &quot;${vacell186}&quot;,</stringProp>
@@ -26810,8 +28164,8 @@ catch (Throwable ex) {
           <hashTree/>
           <ResponseAssertion guiclass="AssertionGui" testclass="ResponseAssertion" testname="Comapare CARD details coming from ERP" enabled="true">
             <collectionProp name="Asserion.test_strings">
-              <stringProp name="-2113189611"> &quot;cardType&quot;: &quot;${vccell28}&quot;,</stringProp>
-              <stringProp name="-1370810160">&quot;validityInDays&quot;: &quot;${vccell29}&quot;,</stringProp>
+              <stringProp name="-1319586025"> &quot;cardType&quot;: ${vccell28},</stringProp>
+              <stringProp name="2033138996">&quot;validityInDays&quot;: ${vccell29},</stringProp>
               <stringProp name="396409628">&quot;secret&quot;: &quot;${vccell27}&quot;</stringProp>
             </collectionProp>
             <stringProp name="Assertion.custom_message"></stringProp>
@@ -30974,11 +32328,11 @@ catch (Throwable ex) {
             <intProp name="Assertion.test_type">16</intProp>
           </ResponseAssertion>
           <hashTree/>
-          <ResponseAssertion guiclass="AssertionGui" testclass="ResponseAssertion" testname="BUG:Comapare CARD details coming from RegalDB" enabled="true">
+          <ResponseAssertion guiclass="AssertionGui" testclass="ResponseAssertion" testname="Comapare CARD details coming from RegalDB" enabled="true">
             <collectionProp name="Asserion.test_strings">
-              <stringProp name="-1698722263"> &quot;cardType&quot;: null,</stringProp>
-              <stringProp name="-31618252">&quot;validityInDays&quot;: 0,</stringProp>
-              <stringProp name="-1999876362">&quot;secret&quot;: &quot;&quot;</stringProp>
+              <stringProp name="1512568835"> &quot;cardType&quot;: &quot;SingleUse&quot;,</stringProp>
+              <stringProp name="-980164683">&quot;validityInDays&quot;: 10,</stringProp>
+              <stringProp name="703686470">&quot;secret&quot;: &quot;secret&quot;</stringProp>
             </collectionProp>
             <stringProp name="Assertion.custom_message"></stringProp>
             <stringProp name="Assertion.test_field">Assertion.response_data</stringProp>
@@ -31745,7 +33099,6 @@ catch (Throwable ex) {
           <hashTree/>
           <ResponseAssertion guiclass="AssertionGui" testclass="ResponseAssertion" testname="PayorDetails:--Verify Payor Details are coming properly from CompanySetup" enabled="true">
             <collectionProp name="Asserion.test_strings">
-              <stringProp name="1770573162">&quot;name&quot;: &quot;RegalPAY_${__property(RandomVariable)}&quot;,</stringProp>
               <stringProp name="-500771993">&quot;address1&quot;: &quot;${ADD1}&quot;,</stringProp>
               <stringProp name="-1006300827">&quot;address2&quot;: &quot;${ADD2}&quot;,</stringProp>
               <stringProp name="-1511829661">&quot;address3&quot;: &quot;${ADD3}&quot;,</stringProp>
@@ -35094,7 +36447,7 @@ catch (Throwable ex) {
               <stringProp name="138792179">&quot;amount&quot;: ${__property(PICell73)},</stringProp>
               <stringProp name="1234418953">&quot;obi&quot;: &quot;${__property(PICell79)}&quot;,</stringProp>
               <stringProp name="-779069829">&quot;trxNumber&quot;: &quot;${__property(PICell78)}&quot;,</stringProp>
-              <stringProp name="955153452">&quot;payeeName&quot;: &quot;${llcell90}&quot;,</stringProp>
+              <stringProp name="953395783">&quot;payeeName&quot;: &quot;${llcell73}&quot;,</stringProp>
               <stringProp name="1499996970">&quot;payeeNumber&quot;: &quot;${__property(PICell75)}&quot;,</stringProp>
             </collectionProp>
             <stringProp name="Assertion.custom_message"></stringProp>
@@ -35179,7 +36532,7 @@ catch (Throwable ex) {
           <hashTree/>
           <ResponseAssertion guiclass="AssertionGui" testclass="ResponseAssertion" testname="PayeeAddress:-- Comparision of  a Payee Address Details are always coming from  the ERP" enabled="true">
             <collectionProp name="Asserion.test_strings">
-              <stringProp name="-1959008774">&quot;address1&quot;: &quot;${vacell101}&quot;</stringProp>
+              <stringProp name="-1959005891">&quot;address1&quot;: &quot;${vacell104}&quot;</stringProp>
               <stringProp name="-1444082513">&quot;address2&quot;: &quot;${vacell105}&quot;,</stringProp>
               <stringProp name="2006442703">&quot;address3&quot;: &quot;${vacell106}&quot;,</stringProp>
               <stringProp name="1162000623">&quot;address4&quot;: &quot;${vacell107}&quot;,</stringProp>
@@ -35421,7 +36774,7 @@ catch (Throwable ex) {
           <hashTree/>
           <ResponseAssertion guiclass="AssertionGui" testclass="ResponseAssertion" testname="ContactDetails:--USBACH PayType:Comparision of a Payee Contact Details are coming from  ERP" enabled="true">
             <collectionProp name="Asserion.test_strings">
-              <stringProp name="345828384">&quot;contactName&quot;: &quot;${vccell110}&quot;,</stringProp>
+              <stringProp name="345917757">&quot;contactName&quot;: &quot;${vccell113}&quot;,</stringProp>
               <stringProp name="-1413012016">&quot;contactEmail&quot;: &quot;${vccell115}&quot;,</stringProp>
               <stringProp name="-255468209">&quot;phone&quot;: &quot;${vccell116}&quot;</stringProp>
             </collectionProp>
@@ -39515,7 +40868,7 @@ catch (Throwable ex) {
               <stringProp name="-165811954">&quot;amount&quot;: ${__property(PICell113)},</stringProp>
               <stringProp name="-1634445042">&quot;obi&quot;: &quot;${__property(PICell119)}&quot;,</stringProp>
               <stringProp name="399617786">&quot;trxNumber&quot;: &quot;${__property(PICell118)}&quot;,</stringProp>
-              <stringProp name="-685330469">&quot;payeeName&quot;: &quot;${llcell110}&quot;,</stringProp>
+              <stringProp name="-679699970">&quot;payeeName&quot;: &quot;${llcell173}&quot;,</stringProp>
               <stringProp name="-1880638587">&quot;payeeNumber&quot;: &quot;${__property(PICell115)}&quot;,</stringProp>
             </collectionProp>
             <stringProp name="Assertion.custom_message"></stringProp>
@@ -39680,7 +41033,7 @@ catch (Throwable ex) {
             <intProp name="Assertion.test_type">16</intProp>
           </ResponseAssertion>
           <hashTree/>
-          <ResponseAssertion guiclass="AssertionGui" testclass="ResponseAssertion" testname="BUG:Comapare CARD details coming from RegalDB" enabled="true">
+          <ResponseAssertion guiclass="AssertionGui" testclass="ResponseAssertion" testname="QUN:Comapare CARD details coming from RegalDB when vendor is not saved in DB" enabled="true">
             <collectionProp name="Asserion.test_strings">
               <stringProp name="-1698722263"> &quot;cardType&quot;: null,</stringProp>
               <stringProp name="-31618252">&quot;validityInDays&quot;: 0,</stringProp>
@@ -39893,11 +41246,11 @@ catch (Throwable ex) {
             <intProp name="Assertion.test_type">16</intProp>
           </ResponseAssertion>
           <hashTree/>
-          <ResponseAssertion guiclass="AssertionGui" testclass="ResponseAssertion" testname="BUG:Comapare CARD details coming from RegalDB" enabled="true">
+          <ResponseAssertion guiclass="AssertionGui" testclass="ResponseAssertion" testname="Comapare CARD details coming from RegalDB" enabled="true">
             <collectionProp name="Asserion.test_strings">
-              <stringProp name="-1698722263"> &quot;cardType&quot;: null,</stringProp>
-              <stringProp name="-31618252">&quot;validityInDays&quot;: 0,</stringProp>
-              <stringProp name="-1999876362">&quot;secret&quot;: &quot;&quot;</stringProp>
+              <stringProp name="1512568835"> &quot;cardType&quot;: &quot;SingleUse&quot;,</stringProp>
+              <stringProp name="-980164683">&quot;validityInDays&quot;: 10,</stringProp>
+              <stringProp name="703686470">&quot;secret&quot;: &quot;secret&quot;</stringProp>
             </collectionProp>
             <stringProp name="Assertion.custom_message"></stringProp>
             <stringProp name="Assertion.test_field">Assertion.response_data</stringProp>
