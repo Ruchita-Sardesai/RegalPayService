@@ -1055,30 +1055,30 @@
         </collectionProp>
       </Arguments>
       <hashTree/>
-      <Arguments guiclass="ArgumentsPanel" testclass="Arguments" testname="Disable this when running FLX scripts: ProfileDetails" enabled="false">
+      <Arguments guiclass="ArgumentsPanel" testclass="Arguments" testname="Disable this when running FLX scripts: ProfileDetails" enabled="true">
         <collectionProp name="Arguments.arguments">
           <elementProp name="PaymentProfileID" elementType="Argument">
             <stringProp name="Argument.name">PaymentProfileID</stringProp>
-            <stringProp name="Argument.value">f67c8f64-99de-472c-9e98-3ddd3f38cdc9</stringProp>
+            <stringProp name="Argument.value">92c93172-5951-4ae2-a249-d7c37463d0ed</stringProp>
             <stringProp name="Argument.metadata">=</stringProp>
           </elementProp>
-          <elementProp name="VendorsMappingId" elementType="Argument">
-            <stringProp name="Argument.name">VendorsMappingId</stringProp>
-            <stringProp name="Argument.value">456141c8-fe12-4c30-af6f-109d80d99746</stringProp>
+          <elementProp name="VendorProfileID" elementType="Argument">
+            <stringProp name="Argument.name">VendorProfileID</stringProp>
+            <stringProp name="Argument.value">a795c88b-7073-445b-99ed-da9e193a1243</stringProp>
             <stringProp name="Argument.metadata">=</stringProp>
           </elementProp>
-          <elementProp name="VendorBankDataMappingId" elementType="Argument">
-            <stringProp name="Argument.name">VendorBankDataMappingId</stringProp>
-            <stringProp name="Argument.value">0082550d-ce2c-4156-b6ee-9e1f2bdb4ea3</stringProp>
+          <elementProp name="VBankProfileID" elementType="Argument">
+            <stringProp name="Argument.name">VBankProfileID</stringProp>
+            <stringProp name="Argument.value">b1aa128f-1958-486b-b826-15774450d538</stringProp>
             <stringProp name="Argument.metadata">=</stringProp>
           </elementProp>
         </collectionProp>
       </Arguments>
       <hashTree/>
-      <BeanShellAssertion guiclass="BeanShellAssertionGui" testclass="BeanShellAssertion" testname="Disable this when running FLX scripts:Beanshell for setproperty for profiledetails" enabled="false">
+      <BeanShellAssertion guiclass="BeanShellAssertionGui" testclass="BeanShellAssertion" testname="Disable this when running FLX scripts:Beanshell for setproperty for profiledetails" enabled="true">
         <stringProp name="BeanShellAssertion.query">${__setProperty(PaymentProfileID, ${PaymentProfileID})};
-${__setProperty(VendorsMappingId, ${VendorsMappingId})};
-${__setProperty(VendorBankDataMappingId, ${VendorBankDataMappingId})};</stringProp>
+${__setProperty(VendorProfileID, ${VendorProfileID})};
+${__setProperty(VBankProfileID, ${VBankProfileID})};</stringProp>
         <stringProp name="BeanShellAssertion.filename"></stringProp>
         <stringProp name="BeanShellAssertion.parameters"></stringProp>
         <boolProp name="BeanShellAssertion.resetInterpreter">false</boolProp>
@@ -1091,7 +1091,7 @@ ${__setProperty(VendorBankDataMappingId, ${VendorBankDataMappingId})};</stringPr
         <stringProp name="script"></stringProp>
       </BeanShellPreProcessor>
       <hashTree/>
-      <ThreadGroup guiclass="ThreadGroupGui" testclass="ThreadGroup" testname="Client Login for Filexchange" enabled="true">
+      <ThreadGroup guiclass="ThreadGroupGui" testclass="ThreadGroup" testname="Client Login for Filexchange" enabled="false">
         <stringProp name="ThreadGroup.on_sample_error">continue</stringProp>
         <elementProp name="ThreadGroup.main_controller" elementType="LoopController" guiclass="LoopControlPanel" testclass="LoopController" testname="Loop Controller" enabled="true">
           <boolProp name="LoopController.continue_forever">false</boolProp>
@@ -1209,7 +1209,7 @@ ${__setProperty(VendorBankDataMappingId, ${VendorBankDataMappingId})};</stringPr
           <hashTree/>
         </hashTree>
       </hashTree>
-      <ThreadGroup guiclass="ThreadGroupGui" testclass="ThreadGroup" testname="PAYMENT: Create Payment File from FileXchange" enabled="true">
+      <ThreadGroup guiclass="ThreadGroupGui" testclass="ThreadGroup" testname="PAYMENT: Create Payment File from FileXchange" enabled="false">
         <stringProp name="ThreadGroup.on_sample_error">continue</stringProp>
         <elementProp name="ThreadGroup.main_controller" elementType="LoopController" guiclass="LoopControlPanel" testclass="LoopController" testname="Loop Controller" enabled="true">
           <boolProp name="LoopController.continue_forever">false</boolProp>
@@ -1858,7 +1858,7 @@ B123,P333,03/03/2020,23.222,USD,AB021,Secondary,MCCRD,TNX123,PaymentDesc,123456,
           <hashTree/>
         </hashTree>
       </hashTree>
-      <ThreadGroup guiclass="ThreadGroupGui" testclass="ThreadGroup" testname="PAYMENT:Fetch MappingID Details from DB for Payment profile" enabled="true">
+      <ThreadGroup guiclass="ThreadGroupGui" testclass="ThreadGroup" testname="PAYMENT:Fetch MappingID Details from DB for Payment profile" enabled="false">
         <stringProp name="ThreadGroup.on_sample_error">continue</stringProp>
         <elementProp name="ThreadGroup.main_controller" elementType="LoopController" guiclass="LoopControlPanel" testclass="LoopController" testname="Loop Controller" enabled="true">
           <boolProp name="LoopController.continue_forever">false</boolProp>
@@ -1954,7 +1954,7 @@ catch (Throwable ex) {
           <hashTree/>
         </hashTree>
       </hashTree>
-      <ThreadGroup guiclass="ThreadGroupGui" testclass="ThreadGroup" testname="PAYMENT:Fetch OutputfileFields Details from DB for Payment profile" enabled="true">
+      <ThreadGroup guiclass="ThreadGroupGui" testclass="ThreadGroup" testname="PAYMENT:Fetch OutputfileFields Details from DB for Payment profile" enabled="false">
         <stringProp name="ThreadGroup.on_sample_error">continue</stringProp>
         <elementProp name="ThreadGroup.main_controller" elementType="LoopController" guiclass="LoopControlPanel" testclass="LoopController" testname="Loop Controller" enabled="true">
           <boolProp name="LoopController.continue_forever">false</boolProp>
@@ -2050,7 +2050,7 @@ catch (Throwable ex) {
           <hashTree/>
         </hashTree>
       </hashTree>
-      <ThreadGroup guiclass="ThreadGroupGui" testclass="ThreadGroup" testname="PAYMENT:Fetch InputfileFields Details from DB for Payment profile" enabled="true">
+      <ThreadGroup guiclass="ThreadGroupGui" testclass="ThreadGroup" testname="PAYMENT:Fetch InputfileFields Details from DB for Payment profile" enabled="false">
         <stringProp name="ThreadGroup.on_sample_error">continue</stringProp>
         <elementProp name="ThreadGroup.main_controller" elementType="LoopController" guiclass="LoopControlPanel" testclass="LoopController" testname="Loop Controller" enabled="true">
           <boolProp name="LoopController.continue_forever">false</boolProp>
@@ -2146,7 +2146,7 @@ catch (Throwable ex) {
           <hashTree/>
         </hashTree>
       </hashTree>
-      <ThreadGroup guiclass="ThreadGroupGui" testclass="ThreadGroup" testname="PAYMENT:Create Mapping and submit the Payment File" enabled="true">
+      <ThreadGroup guiclass="ThreadGroupGui" testclass="ThreadGroup" testname="PAYMENT:Create Mapping and submit the Payment File" enabled="false">
         <stringProp name="ThreadGroup.on_sample_error">continue</stringProp>
         <elementProp name="ThreadGroup.main_controller" elementType="LoopController" guiclass="LoopControlPanel" testclass="LoopController" testname="Loop Controller" enabled="true">
           <boolProp name="LoopController.continue_forever">false</boolProp>
@@ -2697,7 +2697,7 @@ catch (Throwable ex) {
           <hashTree/>
         </hashTree>
       </hashTree>
-      <ThreadGroup guiclass="ThreadGroupGui" testclass="ThreadGroup" testname="VENDOR: Create Vendor File from FileXchange" enabled="true">
+      <ThreadGroup guiclass="ThreadGroupGui" testclass="ThreadGroup" testname="VENDOR: Create Vendor File from FileXchange" enabled="false">
         <stringProp name="ThreadGroup.on_sample_error">continue</stringProp>
         <elementProp name="ThreadGroup.main_controller" elementType="LoopController" guiclass="LoopControlPanel" testclass="LoopController" testname="Loop Controller" enabled="true">
           <boolProp name="LoopController.continue_forever">false</boolProp>
@@ -3351,7 +3351,7 @@ A333,Aidox,Remit,South Carolina,20000,2nd,Susan road,bazar,aptview,bankgok,thail
           <hashTree/>
         </hashTree>
       </hashTree>
-      <ThreadGroup guiclass="ThreadGroupGui" testclass="ThreadGroup" testname="VENDOR: Fetch MappingID Details from DB for Vendor profile" enabled="true">
+      <ThreadGroup guiclass="ThreadGroupGui" testclass="ThreadGroup" testname="VENDOR: Fetch MappingID Details from DB for Vendor profile" enabled="false">
         <stringProp name="ThreadGroup.on_sample_error">continue</stringProp>
         <elementProp name="ThreadGroup.main_controller" elementType="LoopController" guiclass="LoopControlPanel" testclass="LoopController" testname="Loop Controller" enabled="true">
           <boolProp name="LoopController.continue_forever">false</boolProp>
@@ -3447,7 +3447,7 @@ catch (Throwable ex) {
           <hashTree/>
         </hashTree>
       </hashTree>
-      <ThreadGroup guiclass="ThreadGroupGui" testclass="ThreadGroup" testname="VENDOR: Fetch OutputfileFields Details from DB for Vendor profile" enabled="true">
+      <ThreadGroup guiclass="ThreadGroupGui" testclass="ThreadGroup" testname="VENDOR: Fetch OutputfileFields Details from DB for Vendor profile" enabled="false">
         <stringProp name="ThreadGroup.on_sample_error">continue</stringProp>
         <elementProp name="ThreadGroup.main_controller" elementType="LoopController" guiclass="LoopControlPanel" testclass="LoopController" testname="Loop Controller" enabled="true">
           <boolProp name="LoopController.continue_forever">false</boolProp>
@@ -3543,7 +3543,7 @@ catch (Throwable ex) {
           <hashTree/>
         </hashTree>
       </hashTree>
-      <ThreadGroup guiclass="ThreadGroupGui" testclass="ThreadGroup" testname="VENDOR: Fetch InputfileFields Details from DB for Vendor profile" enabled="true">
+      <ThreadGroup guiclass="ThreadGroupGui" testclass="ThreadGroup" testname="VENDOR: Fetch InputfileFields Details from DB for Vendor profile" enabled="false">
         <stringProp name="ThreadGroup.on_sample_error">continue</stringProp>
         <elementProp name="ThreadGroup.main_controller" elementType="LoopController" guiclass="LoopControlPanel" testclass="LoopController" testname="Loop Controller" enabled="true">
           <boolProp name="LoopController.continue_forever">false</boolProp>
@@ -3639,7 +3639,7 @@ catch (Throwable ex) {
           <hashTree/>
         </hashTree>
       </hashTree>
-      <ThreadGroup guiclass="ThreadGroupGui" testclass="ThreadGroup" testname="VENDOR: Create Mapping and submit the Vendor  File" enabled="true">
+      <ThreadGroup guiclass="ThreadGroupGui" testclass="ThreadGroup" testname="VENDOR: Create Mapping and submit the Vendor  File" enabled="false">
         <stringProp name="ThreadGroup.on_sample_error">continue</stringProp>
         <elementProp name="ThreadGroup.main_controller" elementType="LoopController" guiclass="LoopControlPanel" testclass="LoopController" testname="Loop Controller" enabled="true">
           <boolProp name="LoopController.continue_forever">false</boolProp>
@@ -3913,7 +3913,7 @@ catch (Throwable ex) {
           <hashTree/>
         </hashTree>
       </hashTree>
-      <ThreadGroup guiclass="ThreadGroupGui" testclass="ThreadGroup" testname="VENDOR-BANK: Create Vendor Bank Details File from FileXchange" enabled="true">
+      <ThreadGroup guiclass="ThreadGroupGui" testclass="ThreadGroup" testname="VENDOR-BANK: Create Vendor Bank Details File from FileXchange" enabled="false">
         <stringProp name="ThreadGroup.on_sample_error">continue</stringProp>
         <elementProp name="ThreadGroup.main_controller" elementType="LoopController" guiclass="LoopControlPanel" testclass="LoopController" testname="Loop Controller" enabled="true">
           <boolProp name="LoopController.continue_forever">false</boolProp>
@@ -4440,7 +4440,7 @@ JPM,JP morgan,255550000,JPM Bank Adrress1,JPM Bank Adrress1,JPM Bank Adrress1,CT
           <hashTree/>
         </hashTree>
       </hashTree>
-      <ThreadGroup guiclass="ThreadGroupGui" testclass="ThreadGroup" testname="VENDOR-BANK: Fetch MappingID Details from DB for Vendor BANK profile" enabled="true">
+      <ThreadGroup guiclass="ThreadGroupGui" testclass="ThreadGroup" testname="VENDOR-BANK: Fetch MappingID Details from DB for Vendor BANK profile" enabled="false">
         <stringProp name="ThreadGroup.on_sample_error">continue</stringProp>
         <elementProp name="ThreadGroup.main_controller" elementType="LoopController" guiclass="LoopControlPanel" testclass="LoopController" testname="Loop Controller" enabled="true">
           <boolProp name="LoopController.continue_forever">false</boolProp>
@@ -4536,7 +4536,7 @@ catch (Throwable ex) {
           <hashTree/>
         </hashTree>
       </hashTree>
-      <ThreadGroup guiclass="ThreadGroupGui" testclass="ThreadGroup" testname="VENDOR-BANK: Fetch OutputfileFields Details from DB for Vendor BANK profile" enabled="true">
+      <ThreadGroup guiclass="ThreadGroupGui" testclass="ThreadGroup" testname="VENDOR-BANK: Fetch OutputfileFields Details from DB for Vendor BANK profile" enabled="false">
         <stringProp name="ThreadGroup.on_sample_error">continue</stringProp>
         <elementProp name="ThreadGroup.main_controller" elementType="LoopController" guiclass="LoopControlPanel" testclass="LoopController" testname="Loop Controller" enabled="true">
           <boolProp name="LoopController.continue_forever">false</boolProp>
@@ -4632,7 +4632,7 @@ catch (Throwable ex) {
           <hashTree/>
         </hashTree>
       </hashTree>
-      <ThreadGroup guiclass="ThreadGroupGui" testclass="ThreadGroup" testname="VENDOR-BANK: Fetch InputfileFields Details from DB for Vendor BANK profile" enabled="true">
+      <ThreadGroup guiclass="ThreadGroupGui" testclass="ThreadGroup" testname="VENDOR-BANK: Fetch InputfileFields Details from DB for Vendor BANK profile" enabled="false">
         <stringProp name="ThreadGroup.on_sample_error">continue</stringProp>
         <elementProp name="ThreadGroup.main_controller" elementType="LoopController" guiclass="LoopControlPanel" testclass="LoopController" testname="Loop Controller" enabled="true">
           <boolProp name="LoopController.continue_forever">false</boolProp>
@@ -4728,7 +4728,7 @@ catch (Throwable ex) {
           <hashTree/>
         </hashTree>
       </hashTree>
-      <ThreadGroup guiclass="ThreadGroupGui" testclass="ThreadGroup" testname="VENDOR-BANK: Create Mapping and submit the all three file " enabled="true">
+      <ThreadGroup guiclass="ThreadGroupGui" testclass="ThreadGroup" testname="VENDOR-BANK: Create Mapping and submit the all three file " enabled="false">
         <stringProp name="ThreadGroup.on_sample_error">continue</stringProp>
         <elementProp name="ThreadGroup.main_controller" elementType="LoopController" guiclass="LoopControlPanel" testclass="LoopController" testname="Loop Controller" enabled="true">
           <boolProp name="LoopController.continue_forever">false</boolProp>
